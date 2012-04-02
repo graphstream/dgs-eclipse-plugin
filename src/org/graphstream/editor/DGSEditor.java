@@ -26,13 +26,49 @@
 
 package org.graphstream.editor;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.jface.text.IDocument;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.editors.text.TextEditor;
 
 public class DGSEditor extends TextEditor {
 	
-	public DGSEditor() {
+	
+	private static IEditorInput input;
+	
+	/*
+	 * Création de l'éditeur et mise en place de la configuration de celui-ci.
+	 */
+	
+	public DGSEditor(){
 		super();
-		DGSEditorSourceViewerConfiguration configuration = new DGSEditorSourceViewerConfiguration();
-		setSourceViewerConfiguration(configuration);
+		setSourceViewerConfiguration(new DGSConfiguration());
+		setDocumentProvider(new DGSDocumentProvider());
+	}
+	
+	public void editorSaved(){
+		super.editorSaved();
+	}
+	
+	public void doSetInput(IEditorInput newInput) throws CoreException{
+		super.doSetInput(newInput);
+		DGSEditor.input = newInput;
+	}
+	
+	public IDocument getInputDocument(){
+		IDocument document = getDocumentProvider().getDocument(input);
+		return document;
+	}
+
+	public static IFile getInputFile(){
+		IFileEditorInput ife = (IFileEditorInput) input;
+		IFile file = ife.getFile();
+		return file;
+	}
+	
+	public static IEditorInput getInput(){
+		return input;
 	}
 }

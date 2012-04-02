@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+		point="org.eclipse.ui.editors">
+		<editor
+        class="org.graphstream.editor.DGSEditor"
+        contributorClass="org.graphstream.editor.DGSEditorActionBarContributor"
+        default="true"
+        extensions="dgs"
+        icon="icons/gsicon.png"
+        id="org.graphstream.editor.DGSEditor"
+        name="DGS Editor">
+		</editor>
+	</extension>
+ <extension
+          point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.graphstream.editor.DGSMenuHandler"
+            id="org.graphstream.editor.DGSMenu"
+            name="DGSMenu">
+      </command>
+ </extension>
+ <extension
+       point="org.eclipse.ui.commandImages">
+    <image
+          commandId="org.graphstream.editor.DGSMenu"
+          icon="icons/gsicon.png">
+    </image>
+ </extension>
+</plugin>
