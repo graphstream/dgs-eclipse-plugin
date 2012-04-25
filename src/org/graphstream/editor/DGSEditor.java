@@ -27,48 +27,83 @@
 package org.graphstream.editor;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.editors.text.TextEditor;
+import org.graphstream.partitionner.DGSDocumentProvider;
+
+/************************************ Begin of Summary ************************************/
+/*
+	This class handle the plugin's behaviour, and store all global attributes.
+	
+	An editor must extends TextEditor, this class can be considered as a root.
+	
+	Errors (markers) are stored in the input, this is the best (and natural) way to handle them.
+ */
+/************************************* End of Summary *************************************/
 
 public class DGSEditor extends TextEditor {
 	
+	/************************************* Attributes *************************************/
 	
+	/* Contains all resources, like file for example */
 	private static IEditorInput input;
 	
-	/*
-	 * Création de l'éditeur et mise en place de la configuration de celui-ci.
-	 */
 	
+	/************************************ Constructors ***********************************/
+	
+	/* Creates editor and associates configuration and partitioner */
 	public DGSEditor(){
 		super();
 		setSourceViewerConfiguration(new DGSConfiguration());
 		setDocumentProvider(new DGSDocumentProvider());
 	}
 	
-	public void editorSaved(){
-		super.editorSaved();
-	}
-	
+	/* Called when opening a file  */
 	public void doSetInput(IEditorInput newInput) throws CoreException{
 		super.doSetInput(newInput);
-		DGSEditor.input = newInput;
+		DGSEditor.input = newInput; 
 	}
 	
-	public IDocument getInputDocument(){
-		IDocument document = getDocumentProvider().getDocument(input);
-		return document;
+	
+	/************************************* Accessors *************************************/
+	
+	/* Returns current input */
+	public static IEditorInput getInput(){
+		return input;
 	}
 
+	/* Returns current file */
 	public static IFile getInputFile(){
 		IFileEditorInput ife = (IFileEditorInput) input;
 		IFile file = ife.getFile();
 		return file;
 	}
 	
-	public static IEditorInput getInput(){
-		return input;
+	/* Returns current document */
+	public IDocument getInputDocument(){
+		IDocument document = getDocumentProvider().getDocument(input);
+		return document;
+	}
+	
+	
+	/********************************** Error Handling ***********************************/
+
+    /* Returns all errors */
+    public static IMarker[] getErrors() {
+    	try {
+    		return getInputFile().findMarkers(null, true, IResource.DEPTH_INFINITE);
+		} catch (CoreException e) { return null; }
+	}
+    
+    /* Clear all errors */
+    public static void clearErrors() {
+    	try {
+			getInputFile().deleteMarkers(null, true, IResource.DEPTH_INFINITE);
+		} catch (CoreException e) {}
 	}
 }

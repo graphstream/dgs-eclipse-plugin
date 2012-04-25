@@ -1,20 +1,30 @@
 package org.graphstream.scanners;
 
-import org.eclipse.jface.text.rules.IRule;
-import org.eclipse.jface.text.rules.RuleBasedScanner;
 import org.graphstream.editor.DGSConstants;
-import org.graphstream.rules.EventRule;
-import org.graphstream.rules.NextWordRule;
+import org.graphstream.words.Attribute;
+import org.graphstream.words.Error;
+import org.graphstream.words.Event;
+import org.graphstream.words.Operator;
+import org.graphstream.words.Undefined;
+import org.graphstream.words.Value;
+import org.graphstream.words.Word;
 
-public class DGSDeScanner extends RuleBasedScanner {
+public class DGSDeScanner extends DGSScanner {
+	
+	public Word wordType(int wordNumber){
+		if(wordNumber == 1) return new Event();
+		else if(wordNumber == 2) return new Attribute();
+		else if(wordNumber == 3) return new Operator();
+		else if(wordNumber == 4) return new Value();
+		else if(wordNumber > getParametersNumberMax()+1) return new Error();
+		else return new Undefined();
+	}
 
-	public DGSDeScanner() {
+	public int getParametersNumberMin() {
+		return DGSConstants.DE_PARAMATERS_NUMBER_MIN;
+	}
 
-		IRule[] rules = new IRule[]{
-				new EventRule("de",DGSConstants.EVENT),
-				new NextWordRule(DGSConstants.ID)
-		};
-
-		setRules(rules);
+	public int getParametersNumberMax() {
+		return DGSConstants.DE_PARAMATERS_NUMBER_MAX;
 	}
 }

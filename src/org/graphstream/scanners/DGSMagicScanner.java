@@ -1,20 +1,24 @@
 package org.graphstream.scanners;
 
-import org.eclipse.jface.text.rules.EndOfLineRule;
-import org.eclipse.jface.text.rules.IRule;
-import org.eclipse.jface.text.rules.RuleBasedScanner;
-import org.eclipse.jface.text.rules.SingleLineRule;
 import org.graphstream.editor.DGSConstants;
+import org.graphstream.words.Error;
+import org.graphstream.words.Event;
+import org.graphstream.words.Undefined;
+import org.graphstream.words.Word;
 
-public class DGSMagicScanner extends RuleBasedScanner {
+public class DGSMagicScanner extends DGSScanner {
+	
+	public Word wordType(int wordNumber){
+		if(wordNumber == 1) return new Event();
+		else if(wordNumber > getParametersNumberMax()+1) return new Error();
+		else return new Undefined();
+	}
+	
+	public int getParametersNumberMin() {
+		return DGSConstants.MAGIC_PARAMATERS_NUMBER_MIN;
+	}
 
-	public DGSMagicScanner() {
-
-		IRule[] rules = new IRule[]{
-				new SingleLineRule("DG", "S", DGSConstants.ID),
-				new EndOfLineRule("0", DGSConstants.NUMBER)
-		};
-		
-		setRules(rules);
+	public int getParametersNumberMax() {
+		return DGSConstants.MAGIC_PARAMATERS_NUMBER_MAX;
 	}
 }

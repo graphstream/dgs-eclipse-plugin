@@ -1,22 +1,35 @@
 package org.graphstream.scanners;
 
-import org.eclipse.jface.text.rules.IRule;
-import org.eclipse.jface.text.rules.RuleBasedScanner;
 import org.graphstream.editor.DGSConstants;
-import org.graphstream.rules.EventRule;
-import org.graphstream.rules.NextWordRule;
-import org.graphstream.rules.WhiteSpacePredicateRule;
+import org.graphstream.words.Attribute;
+import org.graphstream.words.Error;
+import org.graphstream.words.Event;
+import org.graphstream.words.Id;
+import org.graphstream.words.Operator;
+import org.graphstream.words.Undefined;
+import org.graphstream.words.Value;
+import org.graphstream.words.Word;
 
-public class DGSAeScanner extends RuleBasedScanner {
+public class DGSAeScanner extends DGSScanner {
+	
+	public Word wordType(int wordNumber){
+		if(wordNumber == 1) return new Event();
+		else if(wordNumber == 2) return new Id();
+		else if(wordNumber == 3) return new Id();
+		else if(wordNumber == 4) return new Id();
+		/* Operator */
+		else if(wordNumber == 5) return new Attribute();
+		else if(wordNumber == 6) return new Operator();
+		else if(wordNumber == 7) return new Value();
+		else if(wordNumber > getParametersNumberMax()+1) return new Error();
+		else return new Undefined();
+	}
 
-	public DGSAeScanner() {
+	public int getParametersNumberMin() {
+		return DGSConstants.AE_PARAMATERS_NUMBER_MIN;
+	}
 
-		IRule[] rules = new IRule[]{
-				new WhiteSpacePredicateRule(DGSConstants.COMMENT),
-				new EventRule("ae",DGSConstants.EVENT),
-				new NextWordRule(DGSConstants.ID)
-		};
-
-		setRules(rules);
+	public int getParametersNumberMax() {
+		return DGSConstants.AE_PARAMATERS_NUMBER_MAX;
 	}
 }

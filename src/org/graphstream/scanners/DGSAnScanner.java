@@ -1,35 +1,32 @@
 package org.graphstream.scanners;
 
-import org.eclipse.core.resources.IMarker;
-import org.eclipse.jface.text.rules.IToken;
-import org.eclipse.jface.text.rules.Token;
 import org.graphstream.editor.DGSConstants;
-import org.graphstream.editor.DGSMarker;
+import org.graphstream.words.Attribute;
+import org.graphstream.words.Error;
+import org.graphstream.words.Event;
+import org.graphstream.words.Id;
+import org.graphstream.words.Operator;
+import org.graphstream.words.Undefined;
+import org.graphstream.words.Value;
+import org.graphstream.words.Word;
 
 public class DGSAnScanner extends DGSScanner {
 	
-	private int cpt = 0;
-	
-	public IToken coloring() {
-		if (cpt < words.size()){
-			tokenOffset = words.get(cpt).getOffset();
-			tokenLength = words.get(cpt).getLength();
-			System.out.println(cpt+" - "+words.get(cpt).getWord()+" : "+ tokenOffset + " -- " + tokenLength);
-			cpt++;
-			if(cpt == 1) return DGSConstants.EVENT;
-			else if(cpt == 2) return DGSConstants.ID;
-			else if(cpt == 3) return DGSConstants.ATTRIBUTE;
-			else if(cpt == 5) return DGSConstants.VALEUR;
-			else return Token.UNDEFINED;
-		}
-		else{
-			cpt = 0;
-			return Token.EOF;
-		}
+	public Word wordType(int wordNumber){
+		if(wordNumber == 1) return new Event();
+		else if(wordNumber == 2) return new Id();
+		else if(wordNumber == 3) return new Attribute();
+		else if(wordNumber == 4) return new Operator();
+		else if(wordNumber == 5) return new Value();
+		else if(wordNumber > getParametersNumberMax()+1) return new Error();
+		else return new Undefined();
 	}
 
-	public void errorDetector() {
-		//DGSMarker marker = new DGSMarker(IMarker.PROBLEM,"test",2,IMarker.SEVERITY_ERROR,IMarker.PRIORITY_NORMAL);
-		//marker.delete();
+	public int getParametersNumberMin() {
+		return DGSConstants.AN_PARAMATERS_NUMBER_MIN;
+	}
+
+	public int getParametersNumberMax() {
+		return DGSConstants.AN_PARAMATERS_NUMBER_MAX;
 	}
 }
