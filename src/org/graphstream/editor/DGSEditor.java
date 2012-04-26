@@ -67,6 +67,9 @@ public class DGSEditor extends TextEditor {
 	public void doSetInput(IEditorInput newInput) throws CoreException{
 		super.doSetInput(newInput);
 		DGSEditor.input = newInput; 
+		
+    	// Clear all errors
+    	clearErrors();
 	}
 	
 	
@@ -106,4 +109,15 @@ public class DGSEditor extends TextEditor {
 			getInputFile().deleteMarkers(null, true, IResource.DEPTH_INFINITE);
 		} catch (CoreException e) {}
 	}
+    
+    /************************************ Debug Mode *************************************/
+    
+    public static String displayCharacter(int c){
+    	if(c == DGSConstants.CARRIAGE_RETURN) return DGSConstants.CARRIAGE_RETURN_DISPLAY;
+    	if(c == DGSConstants.HORIZONTAL_TAB) return DGSConstants.HORIZONTAL_TAB_DISPLAY;
+    	if(c == DGSConstants.NEW_LINE) return DGSConstants.NEW_LINE_DISPLAY + "\n";
+    	if(c == DGSConstants.WHITESPACE) return DGSConstants.WHITESPACE_DISPLAY;
+    	if(c == DGSConstants.END_OF_FILE) return DGSConstants.END_OF_FILE_DISPLAY + "\n";
+    	return (char) c + "";
+    }
 }

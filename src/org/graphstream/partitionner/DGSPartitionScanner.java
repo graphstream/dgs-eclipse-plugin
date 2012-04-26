@@ -31,6 +31,7 @@ import org.eclipse.jface.text.rules.IPredicateRule;
 import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.RuleBasedPartitionScanner;
 import org.eclipse.jface.text.rules.Token;
+import org.graphstream.rules.DGSLineRule;
 import org.graphstream.rules.NextLineRule;
 
 /************************************ Begin of Summary ************************************/
@@ -89,15 +90,15 @@ public class DGSPartitionScanner extends RuleBasedPartitionScanner {
 		IPredicateRule[] rules = new IPredicateRule[]{
 				new NextLineRule(dgsMagic),
 				new NextLineRule(dgsNameObsolete),
-				new EndOfLineRule("an ",dgsAn),
-				new EndOfLineRule("cn ",dgsCn),
-				new EndOfLineRule("dn ",dgsDn),
-				new EndOfLineRule("ae ",dgsAe),
-				new EndOfLineRule("ce ",dgsCe),
-				new EndOfLineRule("de ",dgsDe),
-				new EndOfLineRule("cg ",dgsCg),
-				new EndOfLineRule("st ",dgsSt),
-				new EndOfLineRule("cl ",dgsCl),
+				new DGSLineRule("an ",dgsAn),
+				new DGSLineRule("cn ",dgsCn),
+				new DGSLineRule("dn ",dgsDn),
+				new DGSLineRule("ae ",dgsAe),
+				new DGSLineRule("ce ",dgsCe),
+				new DGSLineRule("de ",dgsDe),
+				new DGSLineRule("cg ",dgsCg),
+				new DGSLineRule("st ",dgsSt),
+				new DGSLineRule("cl ",dgsCl),
 				new EndOfLineRule("#", dgsComment)
 		};
 

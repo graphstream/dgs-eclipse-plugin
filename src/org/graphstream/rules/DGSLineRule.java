@@ -35,28 +35,30 @@ import org.graphstream.editor.DGSEditor;
 
 /************************************ Begin of Summary ************************************/
 /*
-	Rule created for this plugin, it returns the first line that have not been affected yet.
-	
-	Used for line 1 (Magic) and line 2 (Name_Obsolete).
+	Rule created for this plugin, it returns a DGS Line.
  */
 /************************************* End of Summary *************************************/
 
-public class NextLineRule implements IPredicateRule {
+public class DGSLineRule implements IPredicateRule {
 
 	/************************************* Attributes *************************************/
+	
+	/* End Sequences */
+	private String[] endSequences = {"ae ","an ","ce ","cg ","cl ","cn ","de ","dn ","st "};
 	
 	/* Success Token */
 	private IToken token;
 	
-	/* Stop research once line founded */
-	private boolean trouve = false;
+	/* Begin Sequence */
+	private String beginSequence;
 	
 	
 	/************************************ Constructors ***********************************/
 	
-	public NextLineRule(IToken token){
+	public DGSLineRule(String beginSequence, IToken token){
 		super();
 		this.token = token;
+		this.beginSequence = beginSequence;
 	}
 	
 	
@@ -70,8 +72,8 @@ public class NextLineRule implements IPredicateRule {
 	/* Search first occurence of "\n" or "End Of File" and returns success Token (which automatically takes offset and length of the CharacterScanner) */
 	public IToken evaluate(ICharacterScanner scanner) {
 		
-		// If we are at the beginning of a line and the next line have not been discover yet
-		if(scanner.getColumn() == 0 && !trouve){
+		// If we are at the beginning of a line and the begin sequence has been found
+		if(scanner.getColumn() == 0 && findSequence(scanner,beginSequence)){
 			int c;
 			int length = 0;
 			
@@ -82,7 +84,7 @@ public class NextLineRule implements IPredicateRule {
 	        }
 	        // *DEBUG MODE* end
 	        
-	        // Read characters until end of line or end of file
+	        // Read characters until end of line or new line with an end sequence
 			do{
 				c = scanner.read();
 				
@@ -90,11 +92,8 @@ public class NextLineRule implements IPredicateRule {
 		        if(DGSConstants.DEBUG_MODE) System.out.print(DGSEditor.displayCharacter(c));
 		        // *DEBUG MODE* end
 		        
-				length++;
-			}while((char) c != '\n' && c != ICharacterScanner.EOF);
-			
-			// We found it
-			trouve = true;
+		        length++;
+			}while(((char) c != '\n' || !findEndSequence(scanner)) && c != ICharacterScanner.EOF); 
 			
 			// *DEBUG MODE* beginning
 	        if(DGSConstants.DEBUG_MODE){
@@ -106,7 +105,28 @@ public class NextLineRule implements IPredicateRule {
 	        // Returns partition
 			return token;
 		}
-		return Token.UNDEFINED;
+		else return Token.UNDEFINED;
+	}
+	
+	/* Returns if an end sequence can be found */
+	public boolean findEndSequence(ICharacterScanner scanner){
+		for(String sequence : endSequences){
+			if(findSequence(scanner,sequence)) return true;
+		}
+		return false;
+	}
+	
+	/* Returns if sequence can be found */
+	public boolean findSequence(ICharacterScanner scanner, String sequence){
+		boolean found = true;
+		int charCounter = 0;
+		for(char c : sequence.toCharArray()){
+			if((char) scanner.read() != c) found = false;	
+			charCounter++;
+			if(!found) break;
+		}
+		for(int i=0;i<charCounter;i++) scanner.unread();
+		return found;
 	}
 	
 	

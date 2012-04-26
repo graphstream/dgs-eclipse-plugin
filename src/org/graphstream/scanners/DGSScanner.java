@@ -15,6 +15,32 @@ import org.graphstream.editor.DGSConstants;
 import org.graphstream.editor.DGSEditor;
 import org.graphstream.words.Word;
 
+/************************************ Begin of Summary ************************************/
+/*
+	The superclass of all line scanners.
+	
+	All errors have been cleared before see DGSEditor.java in package editor.
+	
+	setRange() check the line and initialize our CharacterScanner's implementation.
+	
+	wordDetector() : 1) Split the line following separators in a word collection.
+				     2) For each word, calls abstract wordType() which determine word's type.
+				     3) If a word is not recognized by scanner -> parameter error.
+				     4) wordType() is implemented in subclasses, and creates word's instances.
+				     5) Each word instance has a pattern error detector.
+				     6) Each word instance has a token (color, style).
+				     7) nextToken() loop on words collection and returns token
+				     
+	Two things to keep in mind : 
+		- An error is associated to the document as soon as it's instanced and stored in the input,
+		  that's why, wanting to organize them, copy them ... leads to conflicts.
+		  The best thing to do is to clear them at the beginning and recompute them on the fly.
+		  
+		- nextToken is the only function which can affect token, unless you want to recreate the repairer
+		and the presentationreconciler, this would be a loss of time.
+ */
+/************************************* End of Summary *************************************/
+
 public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
 	
 	/************************************* Attributes *************************************/
@@ -26,6 +52,9 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
     
     /* Document's length */
     protected int documentLength;
+    
+    /* Is document initialized ? */
+    protected static boolean documentInitialized;
     
     /* ----------- Current Line ----------- */
     
@@ -57,34 +86,16 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
     
     /* ---------- Error Detection --------- */
     
-    /* Parameters number error's existence */
-    protected boolean parametersNumberError;
+    /* If a parameter error has been found */
+    protected boolean parametersErrorFound;
     
-    /* ------------- Coloring -------------- */
+    /* ------------- Coloring ------------- */
     
     /* The offset of the last read token */
     protected int tokenOffset;
     
     /* The offset of the last read token */
     protected int tokenLength;
-    
-    
-    /************************************** Constants *************************************/
-    
-    /* Honrizontal Tab (Ascii) */
-    protected static final int HT = 9;
-    
-    /* New Line (Ascii) */
-    protected static final int NL = 10;
-    
-    /* Carriage return (Ascii) */
-    protected static final int CR = 13;
-    
-    /* WhiteSpace (Ascii) */
-    protected static final int WS = 32;
-    
-    /* Operator (Ascii), 58 = ':', 61 = '=' */
-    protected static final int[] OP = {58,61};
     
     
     /************************************ Constructors ***********************************/
@@ -104,33 +115,42 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
         lineLength = length; 
         nextOffset = offset;
         rangeEnd = offset + length;
+        parametersErrorFound = false;
         
         // *DEBUG MODE* beginning
         if(DGSConstants.DEBUG_MODE){
-        	System.out.print("\n\n------------------------------------------ Line n°" + line + " : offset = " + offset + ", length = " + length + " ---------------------------------------------\n\n");
+        	if(!documentInitialized){
+        		if(offset == 0){
+        			System.out.print("\n//////////////////////////////////////////////// End of Partitionning ////////////////////////////////////////////////////\n\n");
+        			System.out.print("\n/////////////////////////////////////////////// Begin of Line Treatment //////////////////////////////////////////////////\n");
+        		}
+        		System.out.print("\n\n_________________________ Line n°" + line + " __________________________\n\n");
+        	}
+        	else
+        		System.out.print("\n\n___________________ Line n°" + line + " has changed ____________________\n\n");
+        	System.out.print("offset =  " + offset + ", length = " + length + "\n");
+        	System.out.print("Scanner associé : " + this.getClass().getSimpleName() + "\n");
         	System.out.print("\n************* Word Detection *************\n\n");
         }
         // *DEBUG MODE* end
         
-        // Word Detection
+        // Word Detection (Type, Errors, ...)
         words = wordDetector();
         
         // Re-initialize attributes in case of futures updates (keep this in mind !)
         nextOffset = offset;
         
         // *DEBUG MODE* beginning
-        if(DGSConstants.DEBUG_MODE) System.out.print("\n\n*********** Error Detection ************\n\n");
-        // *DEBUG MODE* end
-        
-    	// Clear all errors
-    	DGSEditor.clearErrors();
-    	
-        // Error Detection
-        parametersNumberError = false;
-        errorDetector();
-        
-        // *DEBUG MODE* beginning
-        if(DGSConstants.DEBUG_MODE) System.out.print("\n\n*************** Coloring ***************\n\n");
+        if(DGSConstants.DEBUG_MODE){
+        	System.out.print("\n\n*********** Errors Detected ************\n\n");
+	    	try {
+				for(IMarker newError : DGSEditor.getErrors()){
+					System.out.println(newError.getType() + " : Severity = " + newError.getAttribute(IMarker.SEVERITY) + 
+								", Priority = " + newError.getAttribute(IMarker.PRIORITY) + " (line n°" + line + ")");
+				}
+			} catch (CoreException e) {}
+	    	System.out.print("\n\n*************** Coloring ***************\n\n");
+        }
         // *DEBUG MODE* end
 	}
 
@@ -176,11 +196,11 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
 	
 	/********************************** Word Detection ***********************************/
 	
-	/* Cut the line in a collections of words */
+	/* Cuts the line in a collections of words (and finds errors on the fly) */
 	public Vector<Word> wordDetector(){
 		
 		// Initialize locals attributes
-		Vector<Word> tab = new Vector<Word>();
+		Vector<Word> lineWords = new Vector<Word>();
 		String word = "";
 		int wordNumber = 1;
         int wordOffset = nextOffset;
@@ -212,11 +232,13 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
         		else{
         			
         			// We add this new word to the collection
-	        		tab.add(createWord(word, wordNumber, wordOffset, wordLength));
+	        		lineWords.add(createWord(word, wordNumber, wordOffset, wordLength));
 	        		
 	        		// *DEBUG MODE* beginning
-	                if(DGSConstants.DEBUG_MODE) System.out.println("[Word n°" + wordNumber + " detected : text = " + word + 
-	                											   ", offset = " + wordOffset + ", length = " + wordLength + "]");
+	                if(DGSConstants.DEBUG_MODE) System.out.println("[Word n°" + wordNumber + " detected : type = " + 
+	                		lineWords.get(lineWords.size()-1).getClass().toString().substring(lineWords.get(lineWords.size()-1).getClass().toString().lastIndexOf(".") + 1) 
+	                		+ ", text = " + word + ", offset = " + wordOffset + ", length = " + wordLength + "]");
+	                
 	                // *DEBUG MODE* end
 	                
 	                // Re_initialize attributes to next words
@@ -224,10 +246,6 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
 	        		wordNumber++;
 	        		wordOffset += wordLength+1;
 	        		wordLength = 0;
-	        		
-	        		// If the separator was an operator, we add him in the collection
-	        		if(isOperator(current))
-	        			tab.add(createWord((char) current + "", wordNumber++, wordOffset-1, 1));
         		}
         		
         		// *DEBUG MODE* beginning
@@ -237,10 +255,10 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
         } while(current != EOF);
         
         // Returns collection
-		return tab;
+		return lineWords;
 	}
 	
-	/* Create a word (not using a real constructor in order to simplify plugin's administration since there are no parameters) */
+	/* Creates a word (not using a real constructor in order to simplify plugin's administration since there are no parameters) */
 	public Word createWord(String word, int wordNumber, int wordOffset, int wordLength){
 		Word w = wordType(wordNumber);
 		w.setWord(word);
@@ -250,18 +268,13 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
 		return w;
 	}
 	
-	/* Give words' type, each sub-scanner has its definition */
+	/* Gives word's type and detects errors on the fly, each sub-scanner has its definition */
 	public abstract Word wordType(int wordNumber);
 	
 	/* Returns if the character is a separator */
 	public boolean isSeparator(int c){
-		return isOperator(c) || current == EOF || current == WS || current == NL || current == CR || current == HT ;
-	}
-	
-	/* Returns if the character is an operator */
-	public boolean isOperator(int c){
-		for(int i=0;i<OP.length;i++)
-			if(OP[i] == c) return true;
+		for(int separator : DGSConstants.SEPARATORS)
+			if(c == separator) return true;
 		return false;
 	}
 	
@@ -279,12 +292,22 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
 			tokenLength = words.get(wordsCounter).getLength();
 			
     		// *DEBUG MODE* beginning
-            if(DGSConstants.DEBUG_MODE) 
+            if(DGSConstants.DEBUG_MODE){
             	System.out.println("Word n°" + (wordsCounter + 1) + 
             			" : text = " + words.get(wordsCounter).getWord()+", " + 
             			"(offset = "+ tokenOffset + ", length = " + tokenLength + 
-            			"), type associé = " + words.get(wordsCounter).getClass().toString().substring(words.get(wordsCounter).getClass().toString().lastIndexOf(".") + 1));
+            			"), token associé = " + words.get(words.size()-1).getClass().toString().substring(words.get(words.size()-1).getClass().toString().lastIndexOf(".") + 1));
+            	if(!documentInitialized && rangeEnd >= documentLength && wordsCounter == words.size()-1){
+            		System.out.print("\n//////////////////////////////////////////////// End of Line Treatment ///////////////////////////////////////////////////");
+            		System.out.print("\n\n################################################################# DOCUMENT INITIALIZED ################################################################\n");
+            		System.out.print("\n\n################################################################## USER MODIFICATIONS #################################################################\n");
+            	}
+            		
+            }
             // *DEBUG MODE* end
+            
+            // Documents has been initialized
+            if(!documentInitialized && rangeEnd >= documentLength && wordsCounter == words.size()-1) documentInitialized = true;
             
             // Don't use other loop formats
             wordsCounter++;
@@ -313,74 +336,4 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
     public int getTokenLength() {
         return tokenLength;
     }
-    
-	
-    /********************************* Error Detection ***********************************/
-	
-    /* Handle error detection, be aware markers are persistants ! */
-    public void errorDetector(){
-    	
-		// Parameters number error
-		if(DGSConstants.ERROR_ON_PARAMETERS_NUMBER_IS_ACTIVE)
-			parametersNumberError = numberOfParametersError(getParametersNumberMin(), getParametersNumberMax());
-		
-		// Word syntax errors
-		if(!parametersNumberError && DGSConstants.ERROR_ON_PATTERN_IS_ACTIVE){
-			
-			// Call error detection function for each word
-			//for(Word word : words) word.errorDetector(line);
-		}
-		
-		// *DEBUG MODE* beginning
-        if(DGSConstants.DEBUG_MODE){
-    	
-        	// Add each line's errors to the global collection (and so active them)
-        	try {
-				for(IMarker newError : DGSEditor.getErrors()){
-					System.out.println(newError.getType() + " : Severity = " + newError.getAttribute(IMarker.SEVERITY) + 
-								", Priority = " + newError.getAttribute(IMarker.PRIORITY) + " (line n°" + line + ")");
-				}
-			} catch (CoreException e) {}
-    	}
-        // *DEBUG MODE* end
-    }
-    
-    /* Create an error */
-	public static void createMarker(String type, String message, int lineNumber, int severity, int priority) {
-		IMarker marker = null;
-		try {
-			marker = DGSEditor.getInputFile().createMarker(type);
-			marker.setAttribute(IMarker.MESSAGE, message);
-			marker.setAttribute(IMarker.LINE_NUMBER, lineNumber);
-			marker.setAttribute(IMarker.SEVERITY, severity);
-			marker.setAttribute(IMarker.PRIORITY, priority);
-			marker.setAttribute(IMarker.TRANSIENT, false);
-		} catch (CoreException e) {}
-	}
-
-	/* Returns possible number of parameters' error*/
-	public boolean numberOfParametersError(int numberOfParametersMin, int numberOfParametersMax) {
-		boolean exist = false;
-		String message = "";
-		
-		// Returns the right error message between too much and not enough
-		if(words.size()-1 < numberOfParametersMin){
-			message = DGSConstants.ERROR_ON_PARAMETERS_NUMBER_MESSAGE_LESS;
-			exist = true;
-		}
-		if(words.size()-1 > numberOfParametersMax){
-			message = DGSConstants.ERROR_ON_PARAMETERS_NUMBER_MESSAGE_MORE;
-			exist = true;
-		}
-		
-		// If there is an error, create it
-		if(exist) createMarker("org.graphstream.editor.DGSError", message, line, DGSConstants.ERROR_ON_PARAMETERS_NUMBER_SEVERITY, DGSConstants.ERROR_ON_PARAMETERS_NUMBER_PRIORITY);
-		
-		// Returns if the error exist
-		return exist;
-	}
-	
-	public abstract int getParametersNumberMin();
-	
-	public abstract int getParametersNumberMax();
 }

@@ -26,72 +26,46 @@
 
 package org.graphstream.editor;
 
-import org.eclipse.core.resources.IMarker;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.RGB;
 
 /************************************ Begin of Summary ************************************/
 /*
-	This class contains all constants that you can modify safely (colors, styles, ...).
+	This class contains all constants that you can modify safely (styles, error messages ...).
  */
 /************************************* End of Summary *************************************/
 
 public class DGSConstants {
 	
+	
+	/*********************************** Partitioning ***********************************/
+	
+	/* ---------------- Special ASCII Characters --------------- */
+	
+	public static final int END_OF_FILE = -1;
+    public static final int HORIZONTAL_TAB = 9;
+    public static final int NEW_LINE = 10;
+    public static final int CARRIAGE_RETURN = 13;
+    public static final int WHITESPACE = 32;
+
+    public static final int[] SEPARATORS = {HORIZONTAL_TAB, NEW_LINE, CARRIAGE_RETURN, WHITESPACE};
+    
+	
 	/********************************* Error Detection **********************************/
 	
-	// IMarker.SEVERITY_INFO < IMarker.SEVERITY_WARNING < IMarker.SEVERITY_ERROR, see IMarker's Javadoc for more 
+	/* --------------------- Error Message --------------------- */
 	
-	// IMarker.PRIORITY_LOW < IMarker.PRIORITY_NORMAL < IMarker.PRIORITY_HIGH, see IMarker's Javadoc for more 
+	public static final String MAGIC_PARAMETERS_ERROR_MESSAGE = "Magic Line contains only one word.";
 	
-	/* ------------------ Parameters Number ----------------- */
-	
-	public static final boolean ERROR_ON_PARAMETERS_NUMBER_IS_ACTIVE = true;
-	
-	public static final String ERROR_ON_PARAMETERS_NUMBER_MESSAGE_MORE = "Too much parameters";
-	public static final String ERROR_ON_PARAMETERS_NUMBER_MESSAGE_LESS = "Not enough parameters";
-	public static final int ERROR_ON_PARAMETERS_NUMBER_SEVERITY = IMarker.SEVERITY_ERROR;
-	public static final int ERROR_ON_PARAMETERS_NUMBER_PRIORITY = IMarker.PRIORITY_NORMAL;
-	
-	public static final int MAGIC_PARAMATERS_NUMBER_MIN = 0;
-	public static final int MAGIC_PARAMATERS_NUMBER_MAX = 0;
-	public static final int NAME_OBSOLETE_PARAMATERS_NUMBER_MIN = 2;
-	public static final int NAME_OBSOLETE_PARAMATERS_NUMBER_MAX = 2;
-	public static final int AN_PARAMATERS_NUMBER_MIN = 4;
-	public static final int AN_PARAMATERS_NUMBER_MAX = 4;
-	public static final int CN_PARAMATERS_NUMBER_MIN = 4;
-	public static final int CN_PARAMATERS_NUMBER_MAX = 4;
-	public static final int DN_PARAMATERS_NUMBER_MIN = 1;
-	public static final int DN_PARAMATERS_NUMBER_MAX = 1;
-	public static final int AE_PARAMATERS_NUMBER_MIN = 6;
-	public static final int AE_PARAMATERS_NUMBER_MAX = 7;
-	public static final int CE_PARAMATERS_NUMBER_MIN = 4;
-	public static final int CE_PARAMATERS_NUMBER_MAX = 4;
-	public static final int DE_PARAMATERS_NUMBER_MIN = 3;
-	public static final int DE_PARAMATERS_NUMBER_MAX = 3;
-	public static final int CG_PARAMATERS_NUMBER_MIN = 3;
-	public static final int CG_PARAMATERS_NUMBER_MAX = 3;
-	public static final int ST_PARAMATERS_NUMBER_MIN = 1;
-	public static final int ST_PARAMATERS_NUMBER_MAX = 1;
-	public static final int CL_PARAMATERS_NUMBER_MIN = 0;
-	public static final int CL_PARAMATERS_NUMBER_MAX = 0;
-	
-	/* ------------------- Pattern Errors ------------------- */
-	
-	public static final boolean ERROR_ON_PATTERN_IS_ACTIVE = true;
-	
-	public static final int ERROR_ON_PATTERN_SEVERITY = IMarker.SEVERITY_ERROR;
-	public static final int ERROR_ON_PATTERN_PRIORITY = IMarker.PRIORITY_LOW;
+	public static final String ATTRIBUTE_ERROR_MESSAGE = "Syntax error";
+	public static final String ID_ERROR_MESSAGE = "Syntax error";
+	public static final String NUMBER_ERROR_MESSAGE = "Syntax error";
+	public static final String VALUE_ERROR_MESSAGE = "Syntax error";
 	
 	public static final String ATTRIBUTE_PATTERN = "test";
 	public static final String ID_PATTERN = "test";
 	public static final String NUMBER_PATTERN = "test";
 	public static final String VALUE_PATTERN = "test";
-	
-	public static final String ATTRIBUTE_ERROR_MESSAGE = "Syntax error";
-	public static final String ID_ERROR_MESSAGE = "Syntax error";
-	public static final String NUMBER_ERROR_MESSAGE = "Syntax error";
-	public static final String VALUE_ERROR_MESSAGE = "Synatx error";
 	
 	
 	/************************************* Coloring *************************************/
@@ -131,7 +105,7 @@ public class DGSConstants {
 
 	public static final RGB ATTRIBUTE_BACKGROUND = BLANC;
 	public static final RGB COMMENT_BACKGROUND = BLANC;
-	public static final RGB ERROR_BACKGROUND = ROUGE;
+	public static final RGB ERROR_BACKGROUND = BLANC;
 	public static final RGB EVENT_BACKGROUND = BLANC;
 	public static final RGB ID_BACKGROUND = BLANC;
 	public static final RGB NUMBER_BACKGROUND = BLANC;
@@ -157,4 +131,10 @@ public class DGSConstants {
 	/* --------------------- Debug Mode --------------------- */
 	
 	public static final boolean DEBUG_MODE = true;
+	
+	public static final String END_OF_FILE_DISPLAY = "*EOF*";
+	public static final String CARRIAGE_RETURN_DISPLAY = "*CR*";
+	public static final String HORIZONTAL_TAB_DISPLAY = "*HT*";
+	public static final String NEW_LINE_DISPLAY = "*NL*";
+	public static final String WHITESPACE_DISPLAY = " "; 
 }

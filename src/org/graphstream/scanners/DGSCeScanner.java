@@ -18,15 +18,7 @@ public class DGSCeScanner extends DGSScanner {
 		else if(wordNumber == 3) return new Attribute();
 		else if(wordNumber == 4) return new Operator();
 		else if(wordNumber == 5) return new Value();
-		else if(wordNumber > getParametersNumberMax()+1) return new Error();
+		else if(wordNumber > 5) return new Error();
 		else return new Undefined();
-	}
-
-	public int getParametersNumberMin() {
-		return DGSConstants.CE_PARAMATERS_NUMBER_MIN;
-	}
-
-	public int getParametersNumberMax() {
-		return DGSConstants.CE_PARAMATERS_NUMBER_MAX;
 	}
 }

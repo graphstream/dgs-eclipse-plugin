@@ -27,7 +27,9 @@
 package org.graphstream.partitionner;
 
 import org.eclipse.jface.text.BadLocationException;
+import org.eclipse.jface.text.DocumentEvent;
 import org.eclipse.jface.text.IDocument;
+import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.ITypedRegion;
 import org.eclipse.jface.text.rules.FastPartitioner;
 import org.eclipse.jface.text.rules.IPartitionTokenScanner;
@@ -46,43 +48,59 @@ public class DGSPartitioner extends FastPartitioner {
 	/* Creates a partitioner */
 	public DGSPartitioner(IPartitionTokenScanner scanner, String[] legalContentTypes){
 		super(scanner, legalContentTypes);
-	}
-	
-	
-	/************************************ Partitionning **********************************/
-
-	/* Called when document has changed */
-	public void connect(IDocument document, boolean delayInitialization){
-		super.connect(document, delayInitialization);
-		
         // *DEBUG MODE* beginning
-        if(DGSConstants.DEBUG_MODE) printPartitions(document);
+        if(DGSConstants.DEBUG_MODE){
+        	System.out.print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN OF DEBUG MOD README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n");
+        	System.out.print("Special characters representation :\n");
+        	System.out.print("	- " + DGSConstants.CARRIAGE_RETURN_DISPLAY + " : Carriage Return\n");
+        	System.out.print("	- " + DGSConstants.HORIZONTAL_TAB_DISPLAY + " : Horizontal Tab\n");
+        	System.out.print("	- " + DGSConstants.NEW_LINE_DISPLAY + " : New Line\n");
+        	System.out.print("	- " + DGSConstants.WHITESPACE_DISPLAY + " : Whitespace\n");
+        	System.out.print("\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF DEBUG MOD README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n");
+        	System.out.print("\n\n################################################################ INITIALIZING DOCUMENT ################################################################\n");
+        	System.out.print("\n\n///////////////////////////////////////////// Beginning of Partitionning /////////////////////////////////////////////////\n\n");
+        	System.out.print("\n_________________________ Computing Partitions _________________________\n\n");
+        }
         // *DEBUG MODE* end
 	}
 	
 	
-	/************************************** Affichage ************************************/
+	/************************************ Partitioning ***********************************/
+
+	/* Called when partitioner has been connected with document */
+	public void connect(IDocument document, boolean delayInitialization){
+		super.connect(document, delayInitialization);
+		
+        // *DEBUG MODE* beginning
+        if(DGSConstants.DEBUG_MODE) displayPartitions(document);
+        // *DEBUG MODE* end
+	}
+	
+	/* Update partitions when document changed */
+	public IRegion documentChanged2(DocumentEvent de){
+		return super.documentChanged2(de);
+	}
+	
+	
+	/************************************** Display **************************************/
 
 	/* Print all partitions if debug mode is active */
-	public void printPartitions(IDocument document){
-		StringBuffer buffer = new StringBuffer();
+	public void displayPartitions(IDocument document){
 
+		/* Compute partitions only for display, the real computing is in the superclass */
 		ITypedRegion[] partitions = computePartitioning(0, document.getLength());
-		buffer.append("---------------------------------------------- Beginning of Partitionning --------------------------------------------------\n\n");
+		
+		System.out.print("\n___________________________ Partitions Found ___________________________\n\n\n");
+		
+		/* Display all paritions */
 		for (int i=0;i<partitions.length;i++){
 			try{
-				buffer.append("Partition type: " + partitions[i].getType() + ", offset: " + partitions[i].getOffset()
-						+ ", length: " + partitions[i].getLength());
-				buffer.append("\n");
-				buffer.append("Text:\n");
-				buffer.append(document.get(partitions[i].getOffset(), partitions[i].getLength()));
-				if(i!=partitions.length-1)buffer.append("\n---------------------------\n\n");
+				System.out.print("Partition n° " + (i+1) + ": type = " + partitions[i].getType() + ", offset: " + partitions[i].getOffset() + ", length: " + partitions[i].getLength());
+				System.out.println("\nText:");
+				System.out.print(document.get(partitions[i].getOffset(), partitions[i].getLength()));
+				if(i!=partitions.length-1) System.out.print("\n---------------------------\n\n");
 			}
-			catch (BadLocationException e){
-				e.printStackTrace();
-			}
+			catch (BadLocationException e){e.printStackTrace();}
 		}
-		buffer.append("\n------------------------------------------------- End of Partitionning -----------------------------------------------------\n\n");
-		System.out.print(buffer);
 	}
 }

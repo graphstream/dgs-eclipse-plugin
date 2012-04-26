@@ -13,16 +13,8 @@ public class DGSNameObsoleteScanner extends DGSScanner {
 		if(wordNumber == 1) return new Event();
 		else if(wordNumber == 2) return new Number();
 		else if(wordNumber == 3) return new Number();
-		else if(wordNumber > getParametersNumberMax()+1) return new Error();
+		else if(wordNumber > 3) return new Error();
 		else return new Undefined();
-	}
-
-	public int getParametersNumberMin() {
-		return DGSConstants.NAME_OBSOLETE_PARAMATERS_NUMBER_MIN;
-	}
-
-	public int getParametersNumberMax() {
-		return DGSConstants.NAME_OBSOLETE_PARAMATERS_NUMBER_MAX;
 	}
 }
 

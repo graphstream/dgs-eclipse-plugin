@@ -12,15 +12,7 @@ public class DGSDnScanner extends DGSScanner {
 	public Word wordType(int wordNumber){
 		if(wordNumber == 1) return new Event();
 		else if(wordNumber == 2) return new Id();
-		else if(wordNumber > getParametersNumberMax()+1) return new Error();
+		else if(wordNumber > 2) return new Error();
 		else return new Undefined();
-	}
-
-	public int getParametersNumberMin() {
-		return DGSConstants.DN_PARAMATERS_NUMBER_MIN;
-	}
-
-	public int getParametersNumberMax() {
-		return DGSConstants.DN_PARAMATERS_NUMBER_MAX;
 	}
 }
