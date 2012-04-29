@@ -30,10 +30,9 @@ import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.DocumentEvent;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.IRegion;
-import org.eclipse.jface.text.ITypedRegion;
 import org.eclipse.jface.text.rules.FastPartitioner;
 import org.eclipse.jface.text.rules.IPartitionTokenScanner;
-import org.graphstream.editor.DGSConstants;
+import org.graphstream.rules.DGSRule;
 
 /************************************ Begin of Summary ************************************/
 /*
@@ -48,20 +47,6 @@ public class DGSPartitioner extends FastPartitioner {
 	/* Creates a partitioner */
 	public DGSPartitioner(IPartitionTokenScanner scanner, String[] legalContentTypes){
 		super(scanner, legalContentTypes);
-        // *DEBUG MODE* beginning
-        if(DGSConstants.DEBUG_MODE){
-        	System.out.print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN OF DEBUG MOD README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n");
-        	System.out.print("Special characters representation :\n");
-        	System.out.print("	- " + DGSConstants.CARRIAGE_RETURN_DISPLAY + " : Carriage Return\n");
-        	System.out.print("	- " + DGSConstants.HORIZONTAL_TAB_DISPLAY + " : Horizontal Tab\n");
-        	System.out.print("	- " + DGSConstants.NEW_LINE_DISPLAY + " : New Line\n");
-        	System.out.print("	- " + DGSConstants.WHITESPACE_DISPLAY + " : Whitespace\n");
-        	System.out.print("\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF DEBUG MOD README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n");
-        	System.out.print("\n\n################################################################ INITIALIZING DOCUMENT ################################################################\n");
-        	System.out.print("\n\n///////////////////////////////////////////// Beginning of Partitionning /////////////////////////////////////////////////\n\n");
-        	System.out.print("\n_________________________ Computing Partitions _________________________\n\n");
-        }
-        // *DEBUG MODE* end
 	}
 	
 	
@@ -70,37 +55,13 @@ public class DGSPartitioner extends FastPartitioner {
 	/* Called when partitioner has been connected with document */
 	public void connect(IDocument document, boolean delayInitialization){
 		super.connect(document, delayInitialization);
-		
-        // *DEBUG MODE* beginning
-        if(DGSConstants.DEBUG_MODE) displayPartitions(document);
-        // *DEBUG MODE* end
 	}
 	
 	/* Update partitions when document changed */
 	public IRegion documentChanged2(DocumentEvent de){
+		try {
+			DGSRule.setLine(de.getDocument().getLineOfOffset(de.getOffset())+1);
+		} catch (BadLocationException e) {}
 		return super.documentChanged2(de);
-	}
-	
-	
-	/************************************** Display **************************************/
-
-	/* Print all partitions if debug mode is active */
-	public void displayPartitions(IDocument document){
-
-		/* Compute partitions only for display, the real computing is in the superclass */
-		ITypedRegion[] partitions = computePartitioning(0, document.getLength());
-		
-		System.out.print("\n___________________________ Partitions Found ___________________________\n\n\n");
-		
-		/* Display all paritions */
-		for (int i=0;i<partitions.length;i++){
-			try{
-				System.out.print("Partition n° " + (i+1) + ": type = " + partitions[i].getType() + ", offset: " + partitions[i].getOffset() + ", length: " + partitions[i].getLength());
-				System.out.println("\nText:");
-				System.out.print(document.get(partitions[i].getOffset(), partitions[i].getLength()));
-				if(i!=partitions.length-1) System.out.print("\n---------------------------\n\n");
-			}
-			catch (BadLocationException e){e.printStackTrace();}
-		}
 	}
 }

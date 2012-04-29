@@ -1,6 +1,7 @@
 package org.graphstream.scanners;
 
 import org.eclipse.core.resources.IMarker;
+import org.eclipse.jface.text.BadLocationException;
 import org.graphstream.editor.DGSConstants;
 import org.graphstream.markers.DGSMarker;
 import org.graphstream.words.Error;
@@ -14,7 +15,9 @@ public class DGSMagicScanner extends DGSScanner {
 		else{
 			if(!parametersErrorFound){
 				parametersErrorFound = true;
-				new DGSMarker(IMarker.PROBLEM, DGSConstants.MAGIC_PARAMETERS_ERROR_MESSAGE, line, IMarker.SEVERITY_ERROR, IMarker.PRIORITY_HIGH);
+				try {
+					new DGSMarker(IMarker.PROBLEM, DGSConstants.MAGIC_PARAMETERS_ERROR_MESSAGE, document.getLineOfOffset(words.get(wordNumber).getOffset()), IMarker.SEVERITY_ERROR, IMarker.PRIORITY_HIGH);
+				} catch (BadLocationException e) {}
 			}
 			return new Error();
 		}

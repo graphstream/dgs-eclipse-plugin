@@ -31,8 +31,9 @@ import org.eclipse.jface.text.rules.IPredicateRule;
 import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.RuleBasedPartitionScanner;
 import org.eclipse.jface.text.rules.Token;
+import org.graphstream.editor.DGSConstants;
 import org.graphstream.rules.DGSLineRule;
-import org.graphstream.rules.NextLineRule;
+import org.graphstream.rules.DGSPartitionRule;
 
 /************************************ Begin of Summary ************************************/
 /*
@@ -72,6 +73,21 @@ public class DGSPartitionScanner extends RuleBasedPartitionScanner {
 	
 	public DGSPartitionScanner(){
 
+        // *DEBUG MODE* beginning
+        if(DGSConstants.DEBUG_MODE){
+        	System.out.print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN OF DEBUG MOD README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n");
+        	System.out.print("Special characters representation :\n");
+        	System.out.print("	- " + DGSConstants.CARRIAGE_RETURN_DISPLAY + " : Carriage Return\n");
+        	System.out.print("	- " + DGSConstants.HORIZONTAL_TAB_DISPLAY + " : Horizontal Tab\n");
+        	System.out.print("	- " + DGSConstants.NEW_LINE_DISPLAY + " : New Line\n");
+        	System.out.print("	- " + DGSConstants.WHITESPACE_DISPLAY + " : Whitespace\n");
+        	System.out.print("\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF DEBUG MOD README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n");
+        	System.out.print("\n\n################################################################ INITIALIZING DOCUMENT ################################################################\n");
+        	System.out.print("\n\n///////////////////////////////////////////// Beginning of Partitionning /////////////////////////////////////////////////\n\n");
+        	System.out.print("\n_________________________ Computing Partitions _________________________\n\n");
+        }
+        // *DEBUG MODE* end
+        
 		// Create partitions
 		IToken dgsMagic = new Token(DGS_MAGIC);
 		IToken dgsNameObsolete = new Token(DGS_NAME_OBSOLETE);
@@ -88,17 +104,17 @@ public class DGSPartitionScanner extends RuleBasedPartitionScanner {
 
 		// Affecting them
 		IPredicateRule[] rules = new IPredicateRule[]{
-				new NextLineRule(dgsMagic),
-				new NextLineRule(dgsNameObsolete),
-				new DGSLineRule("an ",dgsAn),
-				new DGSLineRule("cn ",dgsCn),
-				new DGSLineRule("dn ",dgsDn),
-				new DGSLineRule("ae ",dgsAe),
-				new DGSLineRule("ce ",dgsCe),
-				new DGSLineRule("de ",dgsDe),
-				new DGSLineRule("cg ",dgsCg),
-				new DGSLineRule("st ",dgsSt),
-				new DGSLineRule("cl ",dgsCl),
+				new DGSLineRule(dgsMagic,1),
+				new DGSLineRule(dgsNameObsolete,2),
+				new DGSPartitionRule("an ",dgsAn),
+				new DGSPartitionRule("cn ",dgsCn),
+				new DGSPartitionRule("dn ",dgsDn),
+				new DGSPartitionRule("ae ",dgsAe),
+				new DGSPartitionRule("ce ",dgsCe),
+				new DGSPartitionRule("de ",dgsDe),
+				new DGSPartitionRule("cg ",dgsCg),
+				new DGSPartitionRule("st ",dgsSt),
+				new DGSPartitionRule("cl ",dgsCl),
 				new EndOfLineRule("#", dgsComment)
 		};
 

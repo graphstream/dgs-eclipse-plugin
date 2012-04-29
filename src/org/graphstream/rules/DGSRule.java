@@ -31,89 +31,108 @@ import org.eclipse.jface.text.rules.IPredicateRule;
 import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.Token;
 import org.graphstream.editor.DGSConstants;
-import org.graphstream.editor.DGSEditor;
 
 /************************************ Begin of Summary ************************************/
 /*
-	Rule created for this plugin, it returns the first line that have not been affected yet.
-	
-	Used for line 1 (Magic) and line 2 (Name_Obsolete).
+	This class handles DGS Rules.
  */
 /************************************* End of Summary *************************************/
 
-public class NextLineRule implements IPredicateRule {
-
+public abstract class DGSRule implements IPredicateRule {
+	
+	
 	/************************************* Attributes *************************************/
 	
-	/* Success Token */
-	private IToken token;
+	/* Rule Counter */
+	protected static int counter = 0;
 	
-	/* Stop research once line founded */
-	private boolean trouve = false;
+	/* Rule number */
+	protected int number = 0;
+	
+	/* Rule Id */
+	protected int idRule;
+	
+	/* Current analyzed line */
+	protected static int line = 1;
+	
+	/* Partition type */
+	protected final IToken TOKEN;
+	
+	/* Current partition length */
+	protected int length;	
 	
 	
 	/************************************ Constructors ***********************************/
 	
-	public NextLineRule(IToken token){
-		super();
-		this.token = token;
+	public DGSRule(IToken token){
+		this.TOKEN = token;
+		counter++;
+		number = counter;
 	}
 	
 	
 	/************************************** Evaluate *************************************/
 	
 	/* Has to be implemented due to IPredicateRule */
-	public IToken evaluate(ICharacterScanner scanner, boolean resume) {
+	public IToken evaluate(ICharacterScanner scanner, boolean resume) { 
 		return evaluate(scanner);
 	}
 	
-	/* Search first occurence of "\n" or "End Of File" and returns success Token (which automatically takes offset and length of the CharacterScanner) */
-	public IToken evaluate(ICharacterScanner scanner) {
+	/* Evaluation method */
+	public IToken evaluate(ICharacterScanner scanner){
 		
-		// If we are at the beginning of a line and the next line have not been discover yet
-		if(scanner.getColumn() == 0 && !trouve){
-			int c;
-			int length = 0;
+		// If we are at the beginning of a line
+		if(scanner.getColumn() == 0){
 			
 			// *DEBUG MODE* beginning
-	        if(DGSConstants.DEBUG_MODE){
-	        	System.out.print("-------------------------------------------- \n");
-	        	System.out.print(this.getClass().getSimpleName() + " is reading : \n\n");
-	        }
-	        // *DEBUG MODE* end
-	        
-	        // Read characters until end of line or end of file
-			do{
-				c = scanner.read();
+		    if(number == 1 && DGSConstants.DEBUG_MODE) System.out.print("\n******* Line n°" + line + " is being analyzed ******* \n\n");
+		    // *DEBUG MODE* end
+		    
+		    // Analyze line
+			IToken tokenFounded = evaluateLine(scanner);
+			
+			// If the current rule have not matched the current line
+			if(tokenFounded == Token.UNDEFINED){
+				
+				// For final rule
+				if(number == counter){
+					
+					// Increments line if no rules have matched
+					line++;
+					
+					// *DEBUG MODE* beginning
+			        if(DGSConstants.DEBUG_MODE) System.out.print("Line redirected to DGSUnknownScanner ...\n\n");
+			        // *DEBUG MODE* end
+				}
+			}
+			
+			// If the current rule have matched the current line
+			else{
 				
 				// *DEBUG MODE* beginning
-		        if(DGSConstants.DEBUG_MODE) System.out.print(DGSEditor.displayCharacter(c));
+		        if(DGSConstants.DEBUG_MODE) System.out.print("\n!!! New partition found, associed type = " + TOKEN.getData() + ", length = " + length + " !!!\n\n");
 		        // *DEBUG MODE* end
-		        
-				length++;
-			}while((char) c != '\n' && c != ICharacterScanner.EOF);
+			}
 			
-			// We found it
-			trouve = true;
-			
-			// *DEBUG MODE* beginning
-	        if(DGSConstants.DEBUG_MODE){
-	        	System.out.print("\n!!! New partition found, associed type = " + token.getData() + ", length = " + length + " !!!\n");
-	        	System.out.print("-------------------------------------------- \n\n");
-	        }
-	        // *DEBUG MODE* end
-	        
-	        // Returns partition
-			return token;
+			// Returns token
+			return tokenFounded;
 		}
-		return Token.UNDEFINED;
+		else return Token.UNDEFINED;
 	}
 	
-	
+	/* Each rule implements his own evaluation method */
+	public abstract IToken evaluateLine(ICharacterScanner scanner);
+
+
 	/************************************* Accessors *************************************/
 
 	/* Return success token, has to be implemented due to IPredicateRule */
 	public IToken getSuccessToken() {
-		return token;
+		return TOKEN;
+	}
+	
+	/* Change line attribute */
+	public static void setLine(int line){
+		DGSRule.line = line;
 	}
 }

@@ -97,6 +97,7 @@ public class DGSConstants {
 	public static final RGB ERROR_FOREGROUND = NOIR;
 	public static final RGB EVENT_FOREGROUND = VIOLET;
 	public static final RGB ID_FOREGROUND = BLEU;
+	public static final RGB MAGIC_FOREGROUND = KAKI;
 	public static final RGB NUMBER_FOREGROUND = ORANGE;
 	public static final RGB OPERATOR_FOREGROUND = NOIR;
 	public static final RGB VALUE_FOREGROUND = GRIS_CLAIR;
@@ -108,6 +109,7 @@ public class DGSConstants {
 	public static final RGB ERROR_BACKGROUND = BLANC;
 	public static final RGB EVENT_BACKGROUND = BLANC;
 	public static final RGB ID_BACKGROUND = BLANC;
+	public static final RGB MAGIC_BACKGROUND = BLANC;
 	public static final RGB NUMBER_BACKGROUND = BLANC;
 	public static final RGB OPERATOR_BACKGROUND = BLANC;
 	public static final RGB VALUE_BACKGROUND = BLANC;
@@ -121,6 +123,7 @@ public class DGSConstants {
 	public static final int ERROR_STYLE = 0;
 	public static final int EVENT_STYLE = 0;
 	public static final int ID_STYLE = 0;
+	public static final int MAGIC_STYLE = 0;
 	public static final int NUMBER_STYLE = 0;
 	public static final int OPERATOR_STYLE = 0;
 	public static final int VALUE_STYLE = SWT.ITALIC;

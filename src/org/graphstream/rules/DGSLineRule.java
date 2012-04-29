@@ -27,7 +27,6 @@
 package org.graphstream.rules;
 
 import org.eclipse.jface.text.rules.ICharacterScanner;
-import org.eclipse.jface.text.rules.IPredicateRule;
 import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.Token;
 import org.graphstream.editor.DGSConstants;
@@ -35,56 +34,52 @@ import org.graphstream.editor.DGSEditor;
 
 /************************************ Begin of Summary ************************************/
 /*
-	Rule created for this plugin, it returns a DGS Line.
+	Rule created for this plugin, it returns the line whose number is asked.
+	
+	Used for line 1 (Magic) and line 2 (Name_Obsolete).
  */
 /************************************* End of Summary *************************************/
 
-public class DGSLineRule implements IPredicateRule {
+public class DGSLineRule extends DGSRule {
 
 	/************************************* Attributes *************************************/
 	
-	/* End Sequences */
-	private String[] endSequences = {"ae ","an ","ce ","cg ","cl ","cn ","de ","dn ","st "};
+	/* Id Counter */
+	protected static int id = 0;
 	
-	/* Success Token */
-	private IToken token;
-	
-	/* Begin Sequence */
-	private String beginSequence;
+	/* Stop research once line founded */
+	protected int lineNumber;
 	
 	
 	/************************************ Constructors ***********************************/
 	
-	public DGSLineRule(String beginSequence, IToken token){
-		super();
-		this.token = token;
-		this.beginSequence = beginSequence;
+	public DGSLineRule(IToken token, int lineNumber){
+		super(token);
+		id++;
+		this.idRule = id;
+		this.lineNumber = lineNumber;
+		
+		// *DEBUG MODE* beginning
+        if(DGSConstants.DEBUG_MODE) System.out.print(this.getClass().getSimpleName() + " n°" + idRule + " detected, line searched : " + lineNumber + "\n" );
+        // *DEBUG MODE* end
 	}
 	
 	
 	/************************************** Evaluate *************************************/
 	
-	/* Has to be implemented due to IPredicateRule */
-	public IToken evaluate(ICharacterScanner scanner, boolean resume) {
-		return evaluate(scanner);
-	}
-	
-	/* Search first occurence of "\n" or "End Of File" and returns success Token (which automatically takes offset and length of the CharacterScanner) */
-	public IToken evaluate(ICharacterScanner scanner) {
+	/* Search asked line and returns success Token (which automatically takes offset and length of the CharacterScanner) */
+	public IToken evaluateLine(ICharacterScanner scanner) {
 		
-		// If we are at the beginning of a line and the begin sequence has been found
-		if(scanner.getColumn() == 0 && findSequence(scanner,beginSequence)){
+		// If we are at the beginning of the asked line
+		if(line == lineNumber){
 			int c;
-			int length = 0;
+			length = 0;
 			
 			// *DEBUG MODE* beginning
-	        if(DGSConstants.DEBUG_MODE){
-	        	System.out.print("-------------------------------------------- \n");
-	        	System.out.print(this.getClass().getSimpleName() + " is reading : \n\n");
-	        }
+	        if(DGSConstants.DEBUG_MODE) System.out.print("---> " + this.getClass().getSimpleName() + " n°" + idRule + " has matched.\n\n");
 	        // *DEBUG MODE* end
 	        
-	        // Read characters until end of line or new line with an end sequence
+	        // Read characters until end of line or end of file
 			do{
 				c = scanner.read();
 				
@@ -92,48 +87,21 @@ public class DGSLineRule implements IPredicateRule {
 		        if(DGSConstants.DEBUG_MODE) System.out.print(DGSEditor.displayCharacter(c));
 		        // *DEBUG MODE* end
 		        
-		        length++;
-			}while(((char) c != '\n' || !findEndSequence(scanner)) && c != ICharacterScanner.EOF); 
+				length++;
+			}while((char) c != '\n' && c != ICharacterScanner.EOF);
 			
-			// *DEBUG MODE* beginning
-	        if(DGSConstants.DEBUG_MODE){
-	        	System.out.print("\n!!! New partition found, associed type = " + token.getData() + ", length = " + length + " !!!\n");
-	        	System.out.print("-------------------------------------------- \n\n");
-	        }
-	        // *DEBUG MODE* end
+			// Increments line
+			line++;
 	        
 	        // Returns partition
-			return token;
+			return TOKEN;
 		}
-		else return Token.UNDEFINED;
-	}
-	
-	/* Returns if an end sequence can be found */
-	public boolean findEndSequence(ICharacterScanner scanner){
-		for(String sequence : endSequences){
-			if(findSequence(scanner,sequence)) return true;
+		else{
+			
+			// *DEBUG MODE* beginning
+	        if(DGSConstants.DEBUG_MODE) System.out.print("---> " + this.getClass().getSimpleName() + " n°" + idRule + " has found nothing\n\n");
+	        // *DEBUG MODE* end
 		}
-		return false;
-	}
-	
-	/* Returns if sequence can be found */
-	public boolean findSequence(ICharacterScanner scanner, String sequence){
-		boolean found = true;
-		int charCounter = 0;
-		for(char c : sequence.toCharArray()){
-			if((char) scanner.read() != c) found = false;	
-			charCounter++;
-			if(!found) break;
-		}
-		for(int i=0;i<charCounter;i++) scanner.unread();
-		return found;
-	}
-	
-	
-	/************************************* Accessors *************************************/
-
-	/* Return success token, has to be implemented due to IPredicateRule */
-	public IToken getSuccessToken() {
-		return token;
+		return Token.UNDEFINED;
 	}
 }

@@ -112,6 +112,7 @@ public class DGSEditor extends TextEditor {
     
     /************************************ Debug Mode *************************************/
     
+    /* Returns character's representation for debug mode */
     public static String displayCharacter(int c){
     	if(c == DGSConstants.CARRIAGE_RETURN) return DGSConstants.CARRIAGE_RETURN_DISPLAY;
     	if(c == DGSConstants.HORIZONTAL_TAB) return DGSConstants.HORIZONTAL_TAB_DISPLAY;

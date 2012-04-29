@@ -17,13 +17,13 @@ import org.graphstream.words.Word;
 
 /************************************ Begin of Summary ************************************/
 /*
-	The superclass of all line scanners.
+	The superclass of all partition scanners.
 	
-	All errors have been cleared before see DGSEditor.java in package editor.
+	All errors have been cleared before, see DGSEditor.java in package editor.
 	
-	setRange() check the line and initialize our CharacterScanner's implementation.
+	setRange() check the partition and initialize our CharacterScanner's implementation.
 	
-	wordDetector() : 1) Split the line following separators in a word collection.
+	wordDetector() : 1) Split the partition following separators in a word collection.
 				     2) For each word, calls abstract wordType() which determine word's type.
 				     3) If a word is not recognized by scanner -> parameter error.
 				     4) wordType() is implemented in subclasses, and creates word's instances.
@@ -56,16 +56,16 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
     /* Is document initialized ? */
     protected static boolean documentInitialized;
     
-    /* ----------- Current Line ----------- */
+    /* --------- Current Partition -------- */
     
-    /* The current line to be read */
-    protected int line;
+    /* The current  to be read */
+    protected static int partition;
     
-    /* The offset of the current line to be read */
-    protected int lineOffset;
+    /* The offset of the current  to be read */
+    protected int partitionOffset;
     
-    /* The length of the current line to be read */
-    protected int lineLength;
+    /* The length of the current  to be read */
+    protected int partitionLength;
     
     /* The current character to be read */
     protected int current;
@@ -78,7 +78,7 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
     
     /* ---------- Word Detection ---------- */
     
-    /* Collections of word of the current line */
+    /* Collections of word of the current  */
     protected Vector<Word> words;
     
     /* Loop on words */
@@ -100,19 +100,19 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
     
     /************************************ Constructors ***********************************/
 
-    /* Call to initialize each line, so it can be considered as a constructor */
+    /* Call to initialize each partition, so it can be considered as a constructor */
 	public void setRange(IDocument document, int offset, int length) {
 	
-		// Check the line
+		// Check the partition
         Assert.isLegal(document != null);
         documentLength = document.getLength();
         checkRange(offset, length, documentLength);
 
         // Initialize attributes
         this.document = document;
-        try { line = document.getLineOfOffset(offset)+1; } catch (BadLocationException e) {}
-        lineOffset = offset;
-        lineLength = length; 
+        if(offset == 0) partition = 1;
+        partitionOffset = offset;
+        partitionLength = length; 
         nextOffset = offset;
         rangeEnd = offset + length;
         parametersErrorFound = false;
@@ -122,12 +122,12 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
         	if(!documentInitialized){
         		if(offset == 0){
         			System.out.print("\n//////////////////////////////////////////////// End of Partitionning ////////////////////////////////////////////////////\n\n");
-        			System.out.print("\n/////////////////////////////////////////////// Begin of Line Treatment //////////////////////////////////////////////////\n");
+        			System.out.print("\n//////////////////////////////////////////// Begin of Partitions Treatment ///////////////////////////////////////////////\n");
         		}
-        		System.out.print("\n\n_________________________ Line n°" + line + " __________________________\n\n");
+        		System.out.print("\n\n______________________ Partition n°" + partition + " ________________________\n\n");
         	}
         	else
-        		System.out.print("\n\n___________________ Line n°" + line + " has changed ____________________\n\n");
+        		System.out.print("\n\n________________ Partition n°" + partition + " has changed __________________\n\n");
         	System.out.print("offset =  " + offset + ", length = " + length + "\n");
         	System.out.print("Scanner associé : " + this.getClass().getSimpleName() + "\n");
         	System.out.print("\n************* Word Detection *************\n\n");
@@ -140,13 +140,16 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
         // Re-initialize attributes in case of futures updates (keep this in mind !)
         nextOffset = offset;
         
+        // Increments partition number
+        partition++;
+        
         // *DEBUG MODE* beginning
         if(DGSConstants.DEBUG_MODE){
         	System.out.print("\n\n*********** Errors Detected ************\n\n");
 	    	try {
 				for(IMarker newError : DGSEditor.getErrors()){
 					System.out.println(newError.getType() + " : Severity = " + newError.getAttribute(IMarker.SEVERITY) + 
-								", Priority = " + newError.getAttribute(IMarker.PRIORITY) + " (line n°" + line + ")");
+								", Priority = " + newError.getAttribute(IMarker.PRIORITY) + " (partition n°" + partition + ")");
 				}
 			} catch (CoreException e) {}
 	    	System.out.print("\n\n*************** Coloring ***************\n\n");
@@ -154,7 +157,7 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
         // *DEBUG MODE* end
 	}
 
-	/* Check if this line is in the document */
+	/* Check if this partition is in the document */
 	public void checkRange(int offset, int length, int documentLength) {
         Assert.isLegal(offset > -1);
         Assert.isLegal(length > -1);
@@ -185,28 +188,28 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
     
 	/* Returns current column */
     public int getColumn() {
-        return nextOffset - lineOffset;
+        return nextOffset - partitionOffset;
     }
     
     /* Useless but has to be implemented */
 	public char[][] getLegalLineDelimiters() {
 		return null;
 	}
-	
+
 	
 	/********************************** Word Detection ***********************************/
 	
-	/* Cuts the line in a collections of words (and finds errors on the fly) */
+	/* Cuts the partition in a collections of words (and finds errors on the fly) */
 	public Vector<Word> wordDetector(){
 		
 		// Initialize locals attributes
-		Vector<Word> lineWords = new Vector<Word>();
+		Vector<Word> partitionWords = new Vector<Word>();
 		String word = "";
 		int wordNumber = 1;
         int wordOffset = nextOffset;
         int wordLength = 0;
         
-        // While End Of Line has not been reached
+        // While End Of File has not been reached
         do{
         	// Read the next character
         	current = read();
@@ -232,11 +235,10 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
         		else{
         			
         			// We add this new word to the collection
-	        		lineWords.add(createWord(word, wordNumber, wordOffset, wordLength));
+	        		partitionWords.add(createWord(word, wordNumber, wordOffset, wordLength));
 	        		
 	        		// *DEBUG MODE* beginning
-	                if(DGSConstants.DEBUG_MODE) System.out.println("[Word n°" + wordNumber + " detected : type = " + 
-	                		lineWords.get(lineWords.size()-1).getClass().toString().substring(lineWords.get(lineWords.size()-1).getClass().toString().lastIndexOf(".") + 1) 
+	                if(DGSConstants.DEBUG_MODE) System.out.println("[Word n°" + wordNumber + " detected : type = " + partitionWords.get(partitionWords.size()-1).getClass().getSimpleName() 
 	                		+ ", text = " + word + ", offset = " + wordOffset + ", length = " + wordLength + "]");
 	                
 	                // *DEBUG MODE* end
@@ -255,7 +257,7 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
         } while(current != EOF);
         
         // Returns collection
-		return lineWords;
+		return partitionWords;
 	}
 	
 	/* Creates a word (not using a real constructor in order to simplify plugin's administration since there are no parameters) */
@@ -284,7 +286,7 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
 	/* Returns the last token (used by the Repairer) */
 	public IToken nextToken(){
 		
-		// For each word in the current line (don't use local counter since a scanner read all lines without distinctions)
+		// For each word in the current  (don't use local counter since a scanner read all s without distinctions)
 		if(wordsCounter < words.size()){
 			
 			// Store current word's offset and length (used by the Repairer)
@@ -293,12 +295,10 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
 			
     		// *DEBUG MODE* beginning
             if(DGSConstants.DEBUG_MODE){
-            	System.out.println("Word n°" + (wordsCounter + 1) + 
-            			" : text = " + words.get(wordsCounter).getWord()+", " + 
-            			"(offset = "+ tokenOffset + ", length = " + tokenLength + 
-            			"), token associé = " + words.get(words.size()-1).getClass().toString().substring(words.get(words.size()-1).getClass().toString().lastIndexOf(".") + 1));
+            	System.out.println("Word n°" + (wordsCounter + 1) + " : text = " + words.get(wordsCounter).getWord()+", " + 
+            			"(offset = "+ tokenOffset + ", length = " + tokenLength + "), token associé = " + words.get(wordsCounter).getClass().getSimpleName());
             	if(!documentInitialized && rangeEnd >= documentLength && wordsCounter == words.size()-1){
-            		System.out.print("\n//////////////////////////////////////////////// End of Line Treatment ///////////////////////////////////////////////////");
+            		System.out.print("\n//////////////////////////////////////////////// End of Partition Treatment ///////////////////////////////////////////////////");
             		System.out.print("\n\n################################################################# DOCUMENT INITIALIZED ################################################################\n");
             		System.out.print("\n\n################################################################## USER MODIFICATIONS #################################################################\n");
             	}
@@ -322,7 +322,7 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
 			// Re-initialize counter 
 			wordsCounter = 0;
 			
-			// Returns special token for End Of Line (see Token's Javadoc)
+			// Returns special token for End Of  (see Token's Javadoc)
 			return Token.EOF;
 		}
 	}
