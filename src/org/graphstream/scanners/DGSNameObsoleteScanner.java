@@ -16,5 +16,9 @@ public class DGSNameObsoleteScanner extends DGSScanner {
 		else if(wordNumber > 3) return new Error();
 		else return new Undefined();
 	}
+
+	public void errorDetection() {
+
+	}
 }
 

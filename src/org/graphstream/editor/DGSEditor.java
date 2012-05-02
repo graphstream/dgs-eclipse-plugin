@@ -29,11 +29,15 @@ package org.graphstream.editor;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.editors.text.TextEditor;
+import org.graphstream.listener.DGSListener;
 import org.graphstream.partitionner.DGSDocumentProvider;
 
 /************************************ Begin of Summary ************************************/
@@ -53,6 +57,12 @@ public class DGSEditor extends TextEditor {
 	/* Contains all resources, like file for example */
 	private static IEditorInput input;
 	
+	/* For displaying readme in debug mode */
+	private static boolean firstDocument = true;
+	
+    /* Is document initialized ? */
+    public static boolean documentInitialized;
+	
 	
 	/************************************ Constructors ***********************************/
 	
@@ -61,15 +71,29 @@ public class DGSEditor extends TextEditor {
 		super();
 		setSourceViewerConfiguration(new DGSConfiguration());
 		setDocumentProvider(new DGSDocumentProvider());
+		IResourceChangeListener listener = new DGSListener();
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(listener,IResourceChangeEvent.POST_CHANGE);
 	}
 	
 	/* Called when opening a file  */
 	public void doSetInput(IEditorInput newInput) throws CoreException{
-		super.doSetInput(newInput);
-		DGSEditor.input = newInput; 
-		
-    	// Clear all errors
-    	clearErrors();
+		DGSEditor.input = newInput;
+
+		documentInitialized = false;
+        // *DEBUG MODE* beginning
+        if(DGSConstants.DEBUG_MODE){
+        	if(firstDocument){
+        		System.out.println(readme());
+        		firstDocument = false;
+        	}
+        	System.out.print("\n\n############################################################### INITIALIZING NEW DOCUMENT ##############################################################\n\n");
+        	System.out.print("----> New File : " + getInputFile().getName());
+        	System.out.print("\n\n///////////////////////////////////////////// Beginning of Partitionning /////////////////////////////////////////////////\n\n");
+        	System.out.print("\n_________________________ Computing Partitions _________________________\n\n");
+        }
+        // *DEBUG MODE* end
+        
+        super.doSetInput(newInput);
 	}
 	
 	
@@ -120,5 +144,17 @@ public class DGSEditor extends TextEditor {
     	if(c == DGSConstants.WHITESPACE) return DGSConstants.WHITESPACE_DISPLAY;
     	if(c == DGSConstants.END_OF_FILE) return DGSConstants.END_OF_FILE_DISPLAY + "\n";
     	return (char) c + "";
+    }
+    
+    public String readme(){
+    	String s = "";
+    	s += "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN OF DEBUG MOD README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n";
+    	s += "Special characters representation :\n";
+    	s += "	- " + DGSConstants.CARRIAGE_RETURN_DISPLAY + " : Carriage Return\n";
+    	s += "	- " + DGSConstants.HORIZONTAL_TAB_DISPLAY + " : Horizontal Tab\n";
+    	s += "	- " + DGSConstants.NEW_LINE_DISPLAY + " : New Line\n";
+    	s += "	- " + DGSConstants.WHITESPACE_DISPLAY + " : Whitespace\n";
+    	s += "\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF DEBUG MOD README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
+    	return s;
     }
 }

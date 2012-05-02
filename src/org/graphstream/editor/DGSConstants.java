@@ -55,7 +55,7 @@ public class DGSConstants {
 	
 	/* --------------------- Error Message --------------------- */
 	
-	public static final String MAGIC_PARAMETERS_ERROR_MESSAGE = "Magic Line contains only one word.";
+	public static final String MAGIC_ERROR_MESSAGE = "First line must be \"DGS003\" or \"DGS004\".";
 	
 	public static final String ATTRIBUTE_ERROR_MESSAGE = "Syntax error";
 	public static final String ID_ERROR_MESSAGE = "Syntax error";
@@ -133,7 +133,7 @@ public class DGSConstants {
 	
 	/* --------------------- Debug Mode --------------------- */
 	
-	public static final boolean DEBUG_MODE = true;
+	public static final boolean DEBUG_MODE = false;
 	
 	public static final String END_OF_FILE_DISPLAY = "*EOF*";
 	public static final String CARRIAGE_RETURN_DISPLAY = "*CR*";

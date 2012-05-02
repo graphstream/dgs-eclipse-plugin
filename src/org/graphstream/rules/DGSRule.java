@@ -41,19 +41,7 @@ import org.graphstream.editor.DGSConstants;
 public abstract class DGSRule implements IPredicateRule {
 	
 	
-	/************************************* Attributes *************************************/
-	
-	/* Rule Counter */
-	protected static int counter = 0;
-	
-	/* Rule number */
-	protected int number = 0;
-	
-	/* Rule Id */
-	protected int idRule;
-	
-	/* Current analyzed line */
-	protected static int line = 1;
+	/************************************* Attributes *************************************/	
 	
 	/* Partition type */
 	protected final IToken TOKEN;
@@ -66,8 +54,6 @@ public abstract class DGSRule implements IPredicateRule {
 	
 	public DGSRule(IToken token){
 		this.TOKEN = token;
-		counter++;
-		number = counter;
 	}
 	
 	
@@ -83,31 +69,12 @@ public abstract class DGSRule implements IPredicateRule {
 		
 		// If we are at the beginning of a line
 		if(scanner.getColumn() == 0){
-			
-			// *DEBUG MODE* beginning
-		    if(number == 1 && DGSConstants.DEBUG_MODE) System.out.print("\n******* Line n°" + line + " is being analyzed ******* \n\n");
-		    // *DEBUG MODE* end
 		    
 		    // Analyze line
 			IToken tokenFounded = evaluateLine(scanner);
 			
-			// If the current rule have not matched the current line
-			if(tokenFounded == Token.UNDEFINED){
-				
-				// For final rule
-				if(number == counter){
-					
-					// Increments line if no rules have matched
-					line++;
-					
-					// *DEBUG MODE* beginning
-			        if(DGSConstants.DEBUG_MODE) System.out.print("Line redirected to DGSUnknownScanner ...\n\n");
-			        // *DEBUG MODE* end
-				}
-			}
-			
 			// If the current rule have matched the current line
-			else{
+			if(tokenFounded != Token.UNDEFINED){
 				
 				// *DEBUG MODE* beginning
 		        if(DGSConstants.DEBUG_MODE) System.out.print("\n!!! New partition found, associed type = " + TOKEN.getData() + ", length = " + length + " !!!\n\n");
@@ -129,10 +96,5 @@ public abstract class DGSRule implements IPredicateRule {
 	/* Return success token, has to be implemented due to IPredicateRule */
 	public IToken getSuccessToken() {
 		return TOKEN;
-	}
-	
-	/* Change line attribute */
-	public static void setLine(int line){
-		DGSRule.line = line;
 	}
 }

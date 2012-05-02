@@ -16,4 +16,10 @@ public class DGSUnknownScanner extends DGSScanner {
 	public int getParametersNumberMax() {
 		return 99;
 	}
+
+	@Override
+	public void errorDetection() {
+		// TODO Auto-generated method stub
+		
+	}
 }

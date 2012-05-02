@@ -154,6 +154,11 @@ public class DGSConfiguration extends TextSourceViewerConfiguration{
 
     /* Associates a partition to a scanner, damager extracts modified text, repairer put colors and style */
 	public IPresentationReconciler getPresentationReconciler(ISourceViewer sourceViewer) {
+		
+        // *DEBUG MODE* beginning
+        if(DGSConstants.DEBUG_MODE) System.out.print("\n**************** Scanners **************** \n\n");
+        // *DEBUG MODE* end
+        
 		PresentationReconciler reconciler = new PresentationReconciler();
  
 		DefaultDamagerRepairer dr = new DefaultDamagerRepairer(getDGSMagicScanner());

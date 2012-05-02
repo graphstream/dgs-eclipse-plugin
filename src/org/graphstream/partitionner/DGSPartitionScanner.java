@@ -26,14 +26,15 @@
 
 package org.graphstream.partitionner;
 
-import org.eclipse.jface.text.rules.EndOfLineRule;
 import org.eclipse.jface.text.rules.IPredicateRule;
 import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.RuleBasedPartitionScanner;
 import org.eclipse.jface.text.rules.Token;
-import org.graphstream.editor.DGSConstants;
+import org.graphstream.rules.DGSCommentRule;
+import org.graphstream.rules.DGSInitializeRule;
 import org.graphstream.rules.DGSLineRule;
 import org.graphstream.rules.DGSPartitionRule;
+import org.graphstream.rules.DGSUnknownRule;
 
 /************************************ Begin of Summary ************************************/
 /*
@@ -56,37 +57,22 @@ public class DGSPartitionScanner extends RuleBasedPartitionScanner {
 	/************************************* Attributes *************************************/
 	
 	/* Partitions' name, can be changed */
-	public final static String DGS_MAGIC = "__dgs_magic";
-	public final static String DGS_NAME_OBSOLETE = "__dgs_name_obsolete";
-	public final static String DGS_AN = "__dgs_an";
-	public final static String DGS_CN = "__dgs_cn";
-	public final static String DGS_DN = "__dgs_dn";
-	public final static String DGS_AE = "__dgs_ae";
-	public final static String DGS_CE = "__dgs_ce";
-	public final static String DGS_DE = "__dgs_de";
-	public final static String DGS_CG = "__dgs_cg";
-	public final static String DGS_ST = "__dgs_st";
-	public final static String DGS_CL = "__dgs_cl";
-	public final static String DGS_COMMENT = "__dgs_comment";
+	public final static String DGS_MAGIC = "DGSMagic";
+	public final static String DGS_NAME_OBSOLETE = "DGSName";
+	public final static String DGS_AN = "DGSAn";
+	public final static String DGS_CN = "DGSCn";
+	public final static String DGS_DN = "DGSDn";
+	public final static String DGS_AE = "DGSAe";
+	public final static String DGS_CE = "DGSCe";
+	public final static String DGS_DE = "DGSDe";
+	public final static String DGS_CG = "DGSCg";
+	public final static String DGS_ST = "DGSSt";
+	public final static String DGS_CL = "DGSCl";
+	public final static String DGS_COMMENT = "DGSComment";
 	
 	/************************************ Constructors ***********************************/
 	
 	public DGSPartitionScanner(){
-
-        // *DEBUG MODE* beginning
-        if(DGSConstants.DEBUG_MODE){
-        	System.out.print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BEGIN OF DEBUG MOD README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n");
-        	System.out.print("Special characters representation :\n");
-        	System.out.print("	- " + DGSConstants.CARRIAGE_RETURN_DISPLAY + " : Carriage Return\n");
-        	System.out.print("	- " + DGSConstants.HORIZONTAL_TAB_DISPLAY + " : Horizontal Tab\n");
-        	System.out.print("	- " + DGSConstants.NEW_LINE_DISPLAY + " : New Line\n");
-        	System.out.print("	- " + DGSConstants.WHITESPACE_DISPLAY + " : Whitespace\n");
-        	System.out.print("\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF DEBUG MOD README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n");
-        	System.out.print("\n\n################################################################ INITIALIZING DOCUMENT ################################################################\n");
-        	System.out.print("\n\n///////////////////////////////////////////// Beginning of Partitionning /////////////////////////////////////////////////\n\n");
-        	System.out.print("\n_________________________ Computing Partitions _________________________\n\n");
-        }
-        // *DEBUG MODE* end
         
 		// Create partitions
 		IToken dgsMagic = new Token(DGS_MAGIC);
@@ -104,6 +90,7 @@ public class DGSPartitionScanner extends RuleBasedPartitionScanner {
 
 		// Affecting them
 		IPredicateRule[] rules = new IPredicateRule[]{
+				new DGSInitializeRule(),
 				new DGSLineRule(dgsMagic,1),
 				new DGSLineRule(dgsNameObsolete,2),
 				new DGSPartitionRule("an ",dgsAn),
@@ -115,7 +102,8 @@ public class DGSPartitionScanner extends RuleBasedPartitionScanner {
 				new DGSPartitionRule("cg ",dgsCg),
 				new DGSPartitionRule("st ",dgsSt),
 				new DGSPartitionRule("cl ",dgsCl),
-				new EndOfLineRule("#", dgsComment)
+				new DGSCommentRule("#", dgsComment),
+				new DGSUnknownRule()
 		};
 
 		setPredicateRules(rules);

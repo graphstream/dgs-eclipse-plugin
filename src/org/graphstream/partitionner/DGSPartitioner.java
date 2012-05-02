@@ -32,7 +32,6 @@ import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.rules.FastPartitioner;
 import org.eclipse.jface.text.rules.IPartitionTokenScanner;
-import org.graphstream.rules.DGSRule;
 
 /************************************ Begin of Summary ************************************/
 /*
@@ -41,6 +40,9 @@ import org.graphstream.rules.DGSRule;
 /************************************* End of Summary *************************************/
 
 public class DGSPartitioner extends FastPartitioner {
+	
+	/* Current analyzed line */
+	public static int line;
 
 	/************************************ Constructors ***********************************/
 	
@@ -54,13 +56,14 @@ public class DGSPartitioner extends FastPartitioner {
 
 	/* Called when partitioner has been connected with document */
 	public void connect(IDocument document, boolean delayInitialization){
+		line = 1;
 		super.connect(document, delayInitialization);
 	}
 	
 	/* Update partitions when document changed */
 	public IRegion documentChanged2(DocumentEvent de){
 		try {
-			DGSRule.setLine(de.getDocument().getLineOfOffset(de.getOffset())+1);
+			line = de.getDocument().getLineOfOffset(de.getOffset())+1;
 		} catch (BadLocationException e) {}
 		return super.documentChanged2(de);
 	}

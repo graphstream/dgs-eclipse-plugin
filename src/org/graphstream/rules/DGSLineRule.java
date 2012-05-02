@@ -31,6 +31,7 @@ import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.Token;
 import org.graphstream.editor.DGSConstants;
 import org.graphstream.editor.DGSEditor;
+import org.graphstream.partitionner.DGSPartitioner;
 
 /************************************ Begin of Summary ************************************/
 /*
@@ -44,9 +45,6 @@ public class DGSLineRule extends DGSRule {
 
 	/************************************* Attributes *************************************/
 	
-	/* Id Counter */
-	protected static int id = 0;
-	
 	/* Stop research once line founded */
 	protected int lineNumber;
 	
@@ -55,12 +53,10 @@ public class DGSLineRule extends DGSRule {
 	
 	public DGSLineRule(IToken token, int lineNumber){
 		super(token);
-		id++;
-		this.idRule = id;
 		this.lineNumber = lineNumber;
 		
 		// *DEBUG MODE* beginning
-        if(DGSConstants.DEBUG_MODE) System.out.print(this.getClass().getSimpleName() + " n°" + idRule + " detected, line searched : " + lineNumber + "\n" );
+        if(DGSConstants.DEBUG_MODE) System.out.print(this.getClass().getSimpleName() + " detected, line searched : " + lineNumber + "\n" );
         // *DEBUG MODE* end
 	}
 	
@@ -71,12 +67,12 @@ public class DGSLineRule extends DGSRule {
 	public IToken evaluateLine(ICharacterScanner scanner) {
 		
 		// If we are at the beginning of the asked line
-		if(line == lineNumber){
+		if(DGSPartitioner.line == lineNumber){
 			int c;
 			length = 0;
 			
 			// *DEBUG MODE* beginning
-	        if(DGSConstants.DEBUG_MODE) System.out.print("---> " + this.getClass().getSimpleName() + " n°" + idRule + " has matched.\n\n");
+	        if(DGSConstants.DEBUG_MODE) System.out.print("---> " + this.getClass().getSimpleName() + " (line n°" + lineNumber + ") has matched.\n\n");
 	        // *DEBUG MODE* end
 	        
 	        // Read characters until end of line or end of file
@@ -91,7 +87,7 @@ public class DGSLineRule extends DGSRule {
 			}while((char) c != '\n' && c != ICharacterScanner.EOF);
 			
 			// Increments line
-			line++;
+			DGSPartitioner.line++;
 	        
 	        // Returns partition
 			return TOKEN;
@@ -99,7 +95,7 @@ public class DGSLineRule extends DGSRule {
 		else{
 			
 			// *DEBUG MODE* beginning
-	        if(DGSConstants.DEBUG_MODE) System.out.print("---> " + this.getClass().getSimpleName() + " n°" + idRule + " has found nothing\n\n");
+	        if(DGSConstants.DEBUG_MODE) System.out.print("---> " + this.getClass().getSimpleName() + " (line n°" + lineNumber + ") has found nothing\n\n");
 	        // *DEBUG MODE* end
 		}
 		return Token.UNDEFINED;

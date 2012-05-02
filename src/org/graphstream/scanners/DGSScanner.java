@@ -13,6 +13,7 @@ import org.eclipse.jface.text.rules.ITokenScanner;
 import org.eclipse.jface.text.rules.Token;
 import org.graphstream.editor.DGSConstants;
 import org.graphstream.editor.DGSEditor;
+import org.graphstream.markers.DGSMarker;
 import org.graphstream.words.Word;
 
 /************************************ Begin of Summary ************************************/
@@ -53,19 +54,21 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
     /* Document's length */
     protected int documentLength;
     
-    /* Is document initialized ? */
-    protected static boolean documentInitialized;
-    
     /* --------- Current Partition -------- */
     
-    /* The current  to be read */
-    protected static int partition;
-    
-    /* The offset of the current  to be read */
+    /* The offset of the current partition */
     protected int partitionOffset;
     
-    /* The length of the current  to be read */
+    /* The length of the current partition */
     protected int partitionLength;
+    
+    /* The beginning line of the current partition */
+    protected int beginningLine;
+    
+    /* The end line of the current partition */
+    protected int endLine;
+    
+    /* --------- Character Scanner -------- */
     
     /* The current character to be read */
     protected int current;
@@ -82,12 +85,12 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
     protected Vector<Word> words;
     
     /* Loop on words */
-    private int wordsCounter = 0;
+    protected int wordsCounter = 0;
     
     /* ---------- Error Detection --------- */
     
-    /* If a parameter error has been found */
-    protected boolean parametersErrorFound;
+    /* Tells if an error on parameters has been found */
+    protected boolean hasErrorOnParameters = false;
     
     /* ------------- Coloring ------------- */
     
@@ -100,56 +103,76 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
     
     /************************************ Constructors ***********************************/
 
+    public DGSScanner(){
+    	
+        // *DEBUG MODE* beginning
+        if(DGSConstants.DEBUG_MODE) System.out.print("Scanner created : " + this.getClass().getSimpleName() + "\n");
+        // *DEBUG MODE* end
+    }
+    
     /* Call to initialize each partition, so it can be considered as a constructor */
 	public void setRange(IDocument document, int offset, int length) {
 	
-		// Check the partition
+		// Check the document
         Assert.isLegal(document != null);
         documentLength = document.getLength();
         checkRange(offset, length, documentLength);
 
-        // Initialize attributes
-        this.document = document;
-        if(offset == 0) partition = 1;
+        // Initialize current partition
+		this.document = document;
         partitionOffset = offset;
         partitionLength = length; 
         nextOffset = offset;
         rangeEnd = offset + length;
-        parametersErrorFound = false;
+        try { 
+        	beginningLine = document.getLineOfOffset(nextOffset) + 1;
+        	endLine = document.getLineOfOffset(rangeEnd) + 1;
+		} catch (BadLocationException e1) {}
+          
+        // Delete line's previous errors
+		for(IMarker newError : DGSEditor.getErrors()){
+			if(newError.getAttribute(IMarker.LINE_NUMBER,-1) >= beginningLine && newError.getAttribute(IMarker.LINE_NUMBER,-1) <= endLine)
+				try { newError.delete();
+					} catch (CoreException e) {}
+		}
         
         // *DEBUG MODE* beginning
         if(DGSConstants.DEBUG_MODE){
-        	if(!documentInitialized){
+        	if(!DGSEditor.documentInitialized){
         		if(offset == 0){
         			System.out.print("\n//////////////////////////////////////////////// End of Partitionning ////////////////////////////////////////////////////\n\n");
         			System.out.print("\n//////////////////////////////////////////// Begin of Partitions Treatment ///////////////////////////////////////////////\n");
         		}
-        		System.out.print("\n\n______________________ Partition n°" + partition + " ________________________\n\n");
-        	}
-        	else
-        		System.out.print("\n\n________________ Partition n°" + partition + " has changed __________________\n\n");
-        	System.out.print("offset =  " + offset + ", length = " + length + "\n");
-        	System.out.print("Scanner associé : " + this.getClass().getSimpleName() + "\n");
+        		try {
+					System.out.print("\n\n______________________ Partition " + document.getPartition(nextOffset).getType() + " ________________________\n\n");
+				} catch (BadLocationException e) {}
+        	} else
+				try {
+					System.out.print("\n\n________________ Partition " + document.getPartition(nextOffset).getType() + " has changed __________________\n\n");
+				} catch (BadLocationException e) {}
+        	System.out.print("From line n°" + beginningLine + " to line n°" + endLine + ", offset = " + offset + ", length = " + length + "\n");
+        	System.out.print("Associated scanner : " + this.getClass().getSimpleName() + "\n");
         	System.out.print("\n************* Word Detection *************\n\n");
         }
         // *DEBUG MODE* end
         
-        // Word Detection (Type, Errors, ...)
+        // Word Detection
         words = wordDetector();
+        
+        // Error Detection
+        errorDetection();
         
         // Re-initialize attributes in case of futures updates (keep this in mind !)
         nextOffset = offset;
-        
-        // Increments partition number
-        partition++;
         
         // *DEBUG MODE* beginning
         if(DGSConstants.DEBUG_MODE){
         	System.out.print("\n\n*********** Errors Detected ************\n\n");
 	    	try {
 				for(IMarker newError : DGSEditor.getErrors()){
-					System.out.println(newError.getType() + " : Severity = " + newError.getAttribute(IMarker.SEVERITY) + 
-								", Priority = " + newError.getAttribute(IMarker.PRIORITY) + " (partition n°" + partition + ")");
+					if(newError.getAttribute(IMarker.LINE_NUMBER,-1) >= beginningLine && newError.getAttribute(IMarker.LINE_NUMBER,-1) <= endLine)
+						System.out.println(newError.getAttribute(IMarker.MESSAGE) + "  : Line n°" + newError.getAttribute(IMarker.LINE_NUMBER,-1) + 
+								", Priority = " + newError.getAttribute(IMarker.PRIORITY));
 				}
 			} catch (CoreException e) {}
 	    	System.out.print("\n\n*************** Coloring ***************\n\n");
@@ -254,7 +277,7 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
                 if(DGSConstants.DEBUG_MODE) System.out.println((nextOffset-1) + " : " + (char) current + ", (separator)");
                 // *DEBUG MODE* end
         	}
-        } while(current != EOF);
+        } while(current != EOF && nextOffset < rangeEnd);
         
         // Returns collection
 		return partitionWords;
@@ -297,7 +320,7 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
             if(DGSConstants.DEBUG_MODE){
             	System.out.println("Word n°" + (wordsCounter + 1) + " : text = " + words.get(wordsCounter).getWord()+", " + 
             			"(offset = "+ tokenOffset + ", length = " + tokenLength + "), token associé = " + words.get(wordsCounter).getClass().getSimpleName());
-            	if(!documentInitialized && rangeEnd >= documentLength && wordsCounter == words.size()-1){
+            	if(!DGSEditor.documentInitialized && rangeEnd >= documentLength && wordsCounter == words.size()-1){
             		System.out.print("\n//////////////////////////////////////////////// End of Partition Treatment ///////////////////////////////////////////////////");
             		System.out.print("\n\n################################################################# DOCUMENT INITIALIZED ################################################################\n");
             		System.out.print("\n\n################################################################## USER MODIFICATIONS #################################################################\n");
@@ -307,7 +330,7 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
             // *DEBUG MODE* end
             
             // Documents has been initialized
-            if(!documentInitialized && rangeEnd >= documentLength && wordsCounter == words.size()-1) documentInitialized = true;
+            if(!DGSEditor.documentInitialized && rangeEnd >= documentLength && wordsCounter == words.size()-1) DGSEditor.documentInitialized = true;
             
             // Don't use other loop formats
             wordsCounter++;
@@ -335,5 +358,18 @@ public abstract class DGSScanner implements ICharacterScanner, ITokenScanner {
 	/* Returns length of the last token (used by the Repairer) */
     public int getTokenLength() {
         return tokenLength;
+    }
+    
+    
+    /*********************************** Error Detector **********************************/
+    
+    /* Each scanner has its own error detector */
+    public abstract void errorDetection();
+    
+    /* Creates an error (only certain errors type interests us) */
+    public void error(String message, int offset, int priority){
+		try {
+			new DGSMarker(IMarker.PROBLEM, message, document.getLineOfOffset(offset)+1, IMarker.SEVERITY_ERROR, priority);
+		} catch (BadLocationException e) {}
     }
 }

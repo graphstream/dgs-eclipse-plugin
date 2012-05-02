@@ -21,4 +21,10 @@ public class DGSCnScanner extends DGSScanner {
 		else if(wordNumber > 5) return new Error();
 		else return new Undefined();
 	}
+
+	@Override
+	public void errorDetection() {
+		// TODO Auto-generated method stub
+		
+	}
 }

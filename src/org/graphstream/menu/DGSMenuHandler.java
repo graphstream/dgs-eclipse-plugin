@@ -31,9 +31,15 @@ import java.io.File;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.resources.IMarker;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.graphstream.editor.DGSEditor;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.SingleGraph;
+import org.graphstream.listener.DGSListener;
+import org.graphstream.markers.DGSMarker;
 
 /************************************ Begin of Summary ************************************/
 /*
