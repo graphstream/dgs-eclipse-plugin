@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.graphstream.DGSPlugin/src-gen"
+    editDirectory="/org.graphstream.DGSPlugin.edit/src" editorDirectory="/org.graphstream.DGSPlugin.editor/src"
+    modelPluginID="org.graphstream.DGSPlugin" forceOverwrite="true" modelName="DGS"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.graphstream.DGSPlugin.edit"
+    editorPluginID="org.graphstream.DGSPlugin.editor">
+  <genPackages prefix="DGS" basePackage="org.graphstream" disposableProviderFactory="true"
+      ecorePackage="DGS.ecore#/">
+    <genClasses ecoreClass="DGS.ecore#//Dgs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Dgs/header"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Dgs/event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Dgs/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Header">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Header/magic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Header/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Header/numberOfSteps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Header/numberOfEvents"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Event">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Event/an"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Event/cn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Event/dn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Event/ae"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Event/ce"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Event/de"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Event/cg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Event/st"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Event/cl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Event/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//An">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//An/idNode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//An/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Cn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Cn/idNode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Cn/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Dn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Dn/idNode"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Ae">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Ae/idEdge"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Ae/idNode1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Ae/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Ae/idNode2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Ae/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Ce">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Ce/idNode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Ce/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//De">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//De/idEdge"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Cg">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Cg/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//St">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//St/real"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Attributes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Attributes/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Attribute/idAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Attribute/assign"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Attribute/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Attribute/otherValues"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Value">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Value/string"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Value/real"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Value/array"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Value/map"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Array">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Array/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Array/otherValues"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Map">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Map/mapping"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Map/otherMapping"/>
+    </genClasses>
+    <genClasses ecoreClass="DGS.ecore#//Mapping">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Mapping/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Mapping/assign"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Mapping/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,61 @@
+grammar org.graphstream.DGS hidden(WS)
+
+generate dGS "http://www.graphstream.org/DGS"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Dgs: header=Header (event+=Event | comment+=COMMENT | EOL)*;
+
+Header: magic=MAGIC EOL name=(ID | STRING) numberOfSteps=INT numberOfEvents=INT EOL;
+
+terminal MAGIC: 'DGS003'|'DGS004';
+
+Event: (an=An|cn=Cn|dn=Dn|ae=Ae|ce=Ce|de=De|cg=Cg|st=St|cl=Cl) (comment=COMMENT | EOL);
+
+An: 'an' idNode=(ID | STRING) attributes=Attributes;
+	
+Cn: 'cn' idNode=(ID | STRING) attributes=Attributes;
+	
+Dn: 'dn' idNode=(ID | STRING);
+	
+Ae: 'ae' idEdge=(ID | STRING) idNode1=(ID | STRING) (direction=DIRECTION)? idNode2=(ID | STRING) attributes=Attributes;
+	
+Ce: 'ce' idNode=(ID | STRING) attributes=Attributes;
+	
+De: 'de' idEdge=(ID | STRING);
+	
+Cg: 'cg' attributes=Attributes;
+	
+St: 'st' real=Real;
+
+terminal Cl: 'cl';
+
+Attributes: {Attributes} (attribute+=Attribute)*;
+	
+Attribute: ('+'|'-')? idAttribute=(ID | STRING) (assign=ASSIGN value=Value (',' otherValues+=Value)*)?;
+	
+Value: (string=STRING | real=Real | array=Array | map=Map);
+	
+Array: {Array} '{' (value=Value (',' otherValues+=Value)*)? '}';
+		
+Map: '[' mapping=Mapping (',' otherMapping+=Mapping)* ']';
+
+Mapping: id=(ID | STRING) assign=ASSIGN value=Value;
+
+terminal DIRECTION: '<'|'>';
+	
+terminal ASSIGN: '='|':';
+
+terminal COMMENT: '#' -> EOL;
+
+Real returns ecore::EDouble: INT ('.' ('0')* INT);
+
+terminal INT returns ecore::EInt: ('0' | ('1'..'9') ('0'..'9')*);
+
+terminal STRING returns ecore::EString: '"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"';
+
+terminal ID returns ecore::EString: ('a'..'z' | 'A'..'Z' | '0'..'9')+; //?
+
+terminal EOL: ('\r')? '\n';
+
+terminal WS: (' '|'\t')+;
