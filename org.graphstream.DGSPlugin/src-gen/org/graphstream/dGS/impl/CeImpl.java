@@ -26,7 +26,7 @@ import org.graphstream.dGS.DGSPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.graphstream.dGS.impl.CeImpl#getIdNode <em>Id Node</em>}</li>
+ *   <li>{@link org.graphstream.dGS.impl.CeImpl#getIdEdge <em>Id Edge</em>}</li>
  *   <li>{@link org.graphstream.dGS.impl.CeImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  * </p>
@@ -36,24 +36,24 @@ import org.graphstream.dGS.DGSPackage;
 public class CeImpl extends MinimalEObjectImpl.Container implements Ce
 {
   /**
-   * The default value of the '{@link #getIdNode() <em>Id Node</em>}' attribute.
+   * The default value of the '{@link #getIdEdge() <em>Id Edge</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdNode()
+   * @see #getIdEdge()
    * @generated
    * @ordered
    */
-  protected static final String ID_NODE_EDEFAULT = null;
+  protected static final String ID_EDGE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getIdNode() <em>Id Node</em>}' attribute.
+   * The cached value of the '{@link #getIdEdge() <em>Id Edge</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getIdNode()
+   * @see #getIdEdge()
    * @generated
    * @ordered
    */
-  protected String idNode = ID_NODE_EDEFAULT;
+  protected String idEdge = ID_EDGE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference.
@@ -91,9 +91,9 @@ public class CeImpl extends MinimalEObjectImpl.Container implements Ce
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getIdNode()
+  public String getIdEdge()
   {
-    return idNode;
+    return idEdge;
   }
 
   /**
@@ -101,12 +101,12 @@ public class CeImpl extends MinimalEObjectImpl.Container implements Ce
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setIdNode(String newIdNode)
+  public void setIdEdge(String newIdEdge)
   {
-    String oldIdNode = idNode;
-    idNode = newIdNode;
+    String oldIdEdge = idEdge;
+    idEdge = newIdEdge;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DGSPackage.CE__ID_NODE, oldIdNode, idNode));
+      eNotify(new ENotificationImpl(this, Notification.SET, DGSPackage.CE__ID_EDGE, oldIdEdge, idEdge));
   }
 
   /**
@@ -183,8 +183,8 @@ public class CeImpl extends MinimalEObjectImpl.Container implements Ce
   {
     switch (featureID)
     {
-      case DGSPackage.CE__ID_NODE:
-        return getIdNode();
+      case DGSPackage.CE__ID_EDGE:
+        return getIdEdge();
       case DGSPackage.CE__ATTRIBUTES:
         return getAttributes();
     }
@@ -201,8 +201,8 @@ public class CeImpl extends MinimalEObjectImpl.Container implements Ce
   {
     switch (featureID)
     {
-      case DGSPackage.CE__ID_NODE:
-        setIdNode((String)newValue);
+      case DGSPackage.CE__ID_EDGE:
+        setIdEdge((String)newValue);
         return;
       case DGSPackage.CE__ATTRIBUTES:
         setAttributes((Attributes)newValue);
@@ -221,8 +221,8 @@ public class CeImpl extends MinimalEObjectImpl.Container implements Ce
   {
     switch (featureID)
     {
-      case DGSPackage.CE__ID_NODE:
-        setIdNode(ID_NODE_EDEFAULT);
+      case DGSPackage.CE__ID_EDGE:
+        setIdEdge(ID_EDGE_EDEFAULT);
         return;
       case DGSPackage.CE__ATTRIBUTES:
         setAttributes((Attributes)null);
@@ -241,8 +241,8 @@ public class CeImpl extends MinimalEObjectImpl.Container implements Ce
   {
     switch (featureID)
     {
-      case DGSPackage.CE__ID_NODE:
-        return ID_NODE_EDEFAULT == null ? idNode != null : !ID_NODE_EDEFAULT.equals(idNode);
+      case DGSPackage.CE__ID_EDGE:
+        return ID_EDGE_EDEFAULT == null ? idEdge != null : !ID_EDGE_EDEFAULT.equals(idEdge);
       case DGSPackage.CE__ATTRIBUTES:
         return attributes != null;
     }
@@ -260,8 +260,8 @@ public class CeImpl extends MinimalEObjectImpl.Container implements Ce
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (idNode: ");
-    result.append(idNode);
+    result.append(" (idEdge: ");
+    result.append(idEdge);
     result.append(')');
     return result.toString();
   }

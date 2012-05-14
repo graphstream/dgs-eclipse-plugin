@@ -21,9 +21,8 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDGSParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_COMMENT", "RULE_EOL", "RULE_MAGIC", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_CL", "RULE_DIRECTION", "RULE_ASSIGN", "RULE_WS", "'an'", "'cn'", "'dn'", "'ae'", "'ce'", "'de'", "'cg'", "'st'", "'+'", "'-'", "','", "'{'", "'}'", "'['", "']'", "'.'", "'0'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_COMMENT", "RULE_EOL", "RULE_MAGIC", "RULE_INT", "RULE_CL", "RULE_DIRECTION", "RULE_REAL", "RULE_OPERATOR", "RULE_ASSIGN", "RULE_STRING", "RULE_WORD", "RULE_WS", "'an'", "'cn'", "'dn'", "'ae'", "'ce'", "'de'", "'cg'", "'st'", "','", "'{'", "'}'", "'['", "']'", "'.'"
     };
-    public static final int RULE_ID=7;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -38,19 +37,19 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
     public static final int RULE_COMMENT=4;
     public static final int EOF=-1;
     public static final int RULE_ASSIGN=12;
-    public static final int T__30=30;
     public static final int T__19=19;
     public static final int RULE_MAGIC=6;
-    public static final int RULE_STRING=8;
+    public static final int RULE_STRING=13;
     public static final int T__16=16;
-    public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
-    public static final int RULE_CL=10;
-    public static final int T__14=14;
-    public static final int RULE_INT=9;
-    public static final int RULE_DIRECTION=11;
-    public static final int RULE_WS=13;
+    public static final int RULE_CL=8;
+    public static final int RULE_INT=7;
+    public static final int RULE_REAL=10;
+    public static final int RULE_DIRECTION=9;
+    public static final int RULE_OPERATOR=11;
+    public static final int RULE_WS=15;
+    public static final int RULE_WORD=14;
 
     // delegates
     // delegators
@@ -184,14 +183,14 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                 int alt1=4;
                 switch ( input.LA(1) ) {
                 case RULE_CL:
-                case 14:
-                case 15:
                 case 16:
                 case 17:
                 case 18:
                 case 19:
                 case 20:
                 case 21:
+                case 22:
+                case 23:
                     {
                     alt1=1;
                     }
@@ -352,26 +351,26 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeader"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:157:1: ruleHeader returns [EObject current=null] : ( ( (lv_magic_0_0= RULE_MAGIC ) ) this_EOL_1= RULE_EOL ( ( (lv_name_2_1= RULE_ID | lv_name_2_2= RULE_STRING ) ) ) ( (lv_numberOfSteps_3_0= RULE_INT ) ) ( (lv_numberOfEvents_4_0= RULE_INT ) ) this_EOL_5= RULE_EOL ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:157:1: ruleHeader returns [EObject current=null] : ( ( (lv_magic_0_0= RULE_MAGIC ) ) this_EOL_1= RULE_EOL ( (lv_name_2_0= ruleId ) ) ( (lv_numberOfSteps_3_0= RULE_INT ) ) ( (lv_numberOfEvents_4_0= RULE_INT ) ) this_EOL_5= RULE_EOL ) ;
     public final EObject ruleHeader() throws RecognitionException {
         EObject current = null;
 
         Token lv_magic_0_0=null;
         Token this_EOL_1=null;
-        Token lv_name_2_1=null;
-        Token lv_name_2_2=null;
         Token lv_numberOfSteps_3_0=null;
         Token lv_numberOfEvents_4_0=null;
         Token this_EOL_5=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:160:28: ( ( ( (lv_magic_0_0= RULE_MAGIC ) ) this_EOL_1= RULE_EOL ( ( (lv_name_2_1= RULE_ID | lv_name_2_2= RULE_STRING ) ) ) ( (lv_numberOfSteps_3_0= RULE_INT ) ) ( (lv_numberOfEvents_4_0= RULE_INT ) ) this_EOL_5= RULE_EOL ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:161:1: ( ( (lv_magic_0_0= RULE_MAGIC ) ) this_EOL_1= RULE_EOL ( ( (lv_name_2_1= RULE_ID | lv_name_2_2= RULE_STRING ) ) ) ( (lv_numberOfSteps_3_0= RULE_INT ) ) ( (lv_numberOfEvents_4_0= RULE_INT ) ) this_EOL_5= RULE_EOL )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:160:28: ( ( ( (lv_magic_0_0= RULE_MAGIC ) ) this_EOL_1= RULE_EOL ( (lv_name_2_0= ruleId ) ) ( (lv_numberOfSteps_3_0= RULE_INT ) ) ( (lv_numberOfEvents_4_0= RULE_INT ) ) this_EOL_5= RULE_EOL ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:161:1: ( ( (lv_magic_0_0= RULE_MAGIC ) ) this_EOL_1= RULE_EOL ( (lv_name_2_0= ruleId ) ) ( (lv_numberOfSteps_3_0= RULE_INT ) ) ( (lv_numberOfEvents_4_0= RULE_INT ) ) this_EOL_5= RULE_EOL )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:161:1: ( ( (lv_magic_0_0= RULE_MAGIC ) ) this_EOL_1= RULE_EOL ( ( (lv_name_2_1= RULE_ID | lv_name_2_2= RULE_STRING ) ) ) ( (lv_numberOfSteps_3_0= RULE_INT ) ) ( (lv_numberOfEvents_4_0= RULE_INT ) ) this_EOL_5= RULE_EOL )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:161:2: ( (lv_magic_0_0= RULE_MAGIC ) ) this_EOL_1= RULE_EOL ( ( (lv_name_2_1= RULE_ID | lv_name_2_2= RULE_STRING ) ) ) ( (lv_numberOfSteps_3_0= RULE_INT ) ) ( (lv_numberOfEvents_4_0= RULE_INT ) ) this_EOL_5= RULE_EOL
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:161:1: ( ( (lv_magic_0_0= RULE_MAGIC ) ) this_EOL_1= RULE_EOL ( (lv_name_2_0= ruleId ) ) ( (lv_numberOfSteps_3_0= RULE_INT ) ) ( (lv_numberOfEvents_4_0= RULE_INT ) ) this_EOL_5= RULE_EOL )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:161:2: ( (lv_magic_0_0= RULE_MAGIC ) ) this_EOL_1= RULE_EOL ( (lv_name_2_0= ruleId ) ) ( (lv_numberOfSteps_3_0= RULE_INT ) ) ( (lv_numberOfEvents_4_0= RULE_INT ) ) this_EOL_5= RULE_EOL
             {
             // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:161:2: ( (lv_magic_0_0= RULE_MAGIC ) )
             // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:162:1: (lv_magic_0_0= RULE_MAGIC )
@@ -403,85 +402,44 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
              
                 newLeafNode(this_EOL_1, grammarAccess.getHeaderAccess().getEOLTerminalRuleCall_1()); 
                 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:183:1: ( ( (lv_name_2_1= RULE_ID | lv_name_2_2= RULE_STRING ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:184:1: ( (lv_name_2_1= RULE_ID | lv_name_2_2= RULE_STRING ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:183:1: ( (lv_name_2_0= ruleId ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:184:1: (lv_name_2_0= ruleId )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:184:1: ( (lv_name_2_1= RULE_ID | lv_name_2_2= RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:185:1: (lv_name_2_1= RULE_ID | lv_name_2_2= RULE_STRING )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:184:1: (lv_name_2_0= ruleId )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:185:3: lv_name_2_0= ruleId
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:185:1: (lv_name_2_1= RULE_ID | lv_name_2_2= RULE_STRING )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+             
+            	        newCompositeNode(grammarAccess.getHeaderAccess().getNameIdParserRuleCall_2_0()); 
+            	    
+            pushFollow(FOLLOW_ruleId_in_ruleHeader323);
+            lv_name_2_0=ruleId();
 
-            if ( (LA2_0==RULE_ID) ) {
-                alt2=1;
-            }
-            else if ( (LA2_0==RULE_STRING) ) {
-                alt2=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
+            state._fsp--;
 
-                throw nvae;
-            }
-            switch (alt2) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:186:3: lv_name_2_1= RULE_ID
-                    {
-                    lv_name_2_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleHeader321); 
 
-                    			newLeafNode(lv_name_2_1, grammarAccess.getHeaderAccess().getNameIDTerminalRuleCall_2_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getHeaderRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_2_1, 
-                            		"ID");
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:201:8: lv_name_2_2= RULE_STRING
-                    {
-                    lv_name_2_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleHeader341); 
-
-                    			newLeafNode(lv_name_2_2, grammarAccess.getHeaderAccess().getNameSTRINGTerminalRuleCall_2_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getHeaderRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"name",
-                            		lv_name_2_2, 
-                            		"STRING");
-                    	    
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getHeaderRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"name",
+                    		lv_name_2_0, 
+                    		"Id");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
 
             }
 
-
-            }
-
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:219:2: ( (lv_numberOfSteps_3_0= RULE_INT ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:220:1: (lv_numberOfSteps_3_0= RULE_INT )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:201:2: ( (lv_numberOfSteps_3_0= RULE_INT ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:202:1: (lv_numberOfSteps_3_0= RULE_INT )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:220:1: (lv_numberOfSteps_3_0= RULE_INT )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:221:3: lv_numberOfSteps_3_0= RULE_INT
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:202:1: (lv_numberOfSteps_3_0= RULE_INT )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:203:3: lv_numberOfSteps_3_0= RULE_INT
             {
-            lv_numberOfSteps_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleHeader366); 
+            lv_numberOfSteps_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleHeader340); 
 
             			newLeafNode(lv_numberOfSteps_3_0, grammarAccess.getHeaderAccess().getNumberOfStepsINTTerminalRuleCall_3_0()); 
             		
@@ -501,13 +459,13 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:237:2: ( (lv_numberOfEvents_4_0= RULE_INT ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:238:1: (lv_numberOfEvents_4_0= RULE_INT )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:219:2: ( (lv_numberOfEvents_4_0= RULE_INT ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:220:1: (lv_numberOfEvents_4_0= RULE_INT )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:238:1: (lv_numberOfEvents_4_0= RULE_INT )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:239:3: lv_numberOfEvents_4_0= RULE_INT
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:220:1: (lv_numberOfEvents_4_0= RULE_INT )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:221:3: lv_numberOfEvents_4_0= RULE_INT
             {
-            lv_numberOfEvents_4_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleHeader388); 
+            lv_numberOfEvents_4_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleHeader362); 
 
             			newLeafNode(lv_numberOfEvents_4_0, grammarAccess.getHeaderAccess().getNumberOfEventsINTTerminalRuleCall_4_0()); 
             		
@@ -527,7 +485,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_EOL_5=(Token)match(input,RULE_EOL,FOLLOW_RULE_EOL_in_ruleHeader404); 
+            this_EOL_5=(Token)match(input,RULE_EOL,FOLLOW_RULE_EOL_in_ruleHeader378); 
              
                 newLeafNode(this_EOL_5, grammarAccess.getHeaderAccess().getEOLTerminalRuleCall_5()); 
                 
@@ -552,7 +510,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEvent"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:267:1: entryRuleEvent returns [EObject current=null] : iv_ruleEvent= ruleEvent EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:249:1: entryRuleEvent returns [EObject current=null] : iv_ruleEvent= ruleEvent EOF ;
     public final EObject entryRuleEvent() throws RecognitionException {
         EObject current = null;
 
@@ -560,17 +518,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:268:2: (iv_ruleEvent= ruleEvent EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:269:2: iv_ruleEvent= ruleEvent EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:250:2: (iv_ruleEvent= ruleEvent EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:251:2: iv_ruleEvent= ruleEvent EOF
             {
              newCompositeNode(grammarAccess.getEventRule()); 
-            pushFollow(FOLLOW_ruleEvent_in_entryRuleEvent439);
+            pushFollow(FOLLOW_ruleEvent_in_entryRuleEvent413);
             iv_ruleEvent=ruleEvent();
 
             state._fsp--;
 
              current =iv_ruleEvent; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEvent449); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEvent423); 
 
             }
 
@@ -588,7 +546,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEvent"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:276:1: ruleEvent returns [EObject current=null] : ( ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) ) ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL ) ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:258:1: ruleEvent returns [EObject current=null] : ( ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) ) ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL ) ) ;
     public final EObject ruleEvent() throws RecognitionException {
         EObject current = null;
 
@@ -615,81 +573,81 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:279:28: ( ( ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) ) ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:280:1: ( ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) ) ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:261:28: ( ( ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) ) ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:262:1: ( ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) ) ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:280:1: ( ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) ) ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:280:2: ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) ) ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:262:1: ( ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) ) ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:262:2: ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) ) ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:280:2: ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) )
-            int alt3=9;
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:262:2: ( ( (lv_an_0_0= ruleAn ) ) | ( (lv_cn_1_0= ruleCn ) ) | ( (lv_dn_2_0= ruleDn ) ) | ( (lv_ae_3_0= ruleAe ) ) | ( (lv_ce_4_0= ruleCe ) ) | ( (lv_de_5_0= ruleDe ) ) | ( (lv_cg_6_0= ruleCg ) ) | ( (lv_st_7_0= ruleSt ) ) | ( (lv_cl_8_0= RULE_CL ) ) )
+            int alt2=9;
             switch ( input.LA(1) ) {
-            case 14:
-                {
-                alt3=1;
-                }
-                break;
-            case 15:
-                {
-                alt3=2;
-                }
-                break;
             case 16:
                 {
-                alt3=3;
+                alt2=1;
                 }
                 break;
             case 17:
                 {
-                alt3=4;
+                alt2=2;
                 }
                 break;
             case 18:
                 {
-                alt3=5;
+                alt2=3;
                 }
                 break;
             case 19:
                 {
-                alt3=6;
+                alt2=4;
                 }
                 break;
             case 20:
                 {
-                alt3=7;
+                alt2=5;
                 }
                 break;
             case 21:
                 {
-                alt3=8;
+                alt2=6;
+                }
+                break;
+            case 22:
+                {
+                alt2=7;
+                }
+                break;
+            case 23:
+                {
+                alt2=8;
                 }
                 break;
             case RULE_CL:
                 {
-                alt3=9;
+                alt2=9;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt3) {
+            switch (alt2) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:280:3: ( (lv_an_0_0= ruleAn ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:262:3: ( (lv_an_0_0= ruleAn ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:280:3: ( (lv_an_0_0= ruleAn ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:281:1: (lv_an_0_0= ruleAn )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:262:3: ( (lv_an_0_0= ruleAn ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:263:1: (lv_an_0_0= ruleAn )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:281:1: (lv_an_0_0= ruleAn )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:282:3: lv_an_0_0= ruleAn
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:263:1: (lv_an_0_0= ruleAn )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:264:3: lv_an_0_0= ruleAn
                     {
                      
                     	        newCompositeNode(grammarAccess.getEventAccess().getAnAnParserRuleCall_0_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAn_in_ruleEvent496);
+                    pushFollow(FOLLOW_ruleAn_in_ruleEvent470);
                     lv_an_0_0=ruleAn();
 
                     state._fsp--;
@@ -715,18 +673,18 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:299:6: ( (lv_cn_1_0= ruleCn ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:281:6: ( (lv_cn_1_0= ruleCn ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:299:6: ( (lv_cn_1_0= ruleCn ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:300:1: (lv_cn_1_0= ruleCn )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:281:6: ( (lv_cn_1_0= ruleCn ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:282:1: (lv_cn_1_0= ruleCn )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:300:1: (lv_cn_1_0= ruleCn )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:301:3: lv_cn_1_0= ruleCn
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:282:1: (lv_cn_1_0= ruleCn )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:283:3: lv_cn_1_0= ruleCn
                     {
                      
                     	        newCompositeNode(grammarAccess.getEventAccess().getCnCnParserRuleCall_0_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleCn_in_ruleEvent523);
+                    pushFollow(FOLLOW_ruleCn_in_ruleEvent497);
                     lv_cn_1_0=ruleCn();
 
                     state._fsp--;
@@ -752,18 +710,18 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:318:6: ( (lv_dn_2_0= ruleDn ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:300:6: ( (lv_dn_2_0= ruleDn ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:318:6: ( (lv_dn_2_0= ruleDn ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:319:1: (lv_dn_2_0= ruleDn )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:300:6: ( (lv_dn_2_0= ruleDn ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:301:1: (lv_dn_2_0= ruleDn )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:319:1: (lv_dn_2_0= ruleDn )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:320:3: lv_dn_2_0= ruleDn
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:301:1: (lv_dn_2_0= ruleDn )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:302:3: lv_dn_2_0= ruleDn
                     {
                      
                     	        newCompositeNode(grammarAccess.getEventAccess().getDnDnParserRuleCall_0_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleDn_in_ruleEvent550);
+                    pushFollow(FOLLOW_ruleDn_in_ruleEvent524);
                     lv_dn_2_0=ruleDn();
 
                     state._fsp--;
@@ -789,18 +747,18 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:337:6: ( (lv_ae_3_0= ruleAe ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:319:6: ( (lv_ae_3_0= ruleAe ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:337:6: ( (lv_ae_3_0= ruleAe ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:338:1: (lv_ae_3_0= ruleAe )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:319:6: ( (lv_ae_3_0= ruleAe ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:320:1: (lv_ae_3_0= ruleAe )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:338:1: (lv_ae_3_0= ruleAe )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:339:3: lv_ae_3_0= ruleAe
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:320:1: (lv_ae_3_0= ruleAe )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:321:3: lv_ae_3_0= ruleAe
                     {
                      
                     	        newCompositeNode(grammarAccess.getEventAccess().getAeAeParserRuleCall_0_3_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAe_in_ruleEvent577);
+                    pushFollow(FOLLOW_ruleAe_in_ruleEvent551);
                     lv_ae_3_0=ruleAe();
 
                     state._fsp--;
@@ -826,18 +784,18 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:356:6: ( (lv_ce_4_0= ruleCe ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:338:6: ( (lv_ce_4_0= ruleCe ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:356:6: ( (lv_ce_4_0= ruleCe ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:357:1: (lv_ce_4_0= ruleCe )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:338:6: ( (lv_ce_4_0= ruleCe ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:339:1: (lv_ce_4_0= ruleCe )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:357:1: (lv_ce_4_0= ruleCe )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:358:3: lv_ce_4_0= ruleCe
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:339:1: (lv_ce_4_0= ruleCe )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:340:3: lv_ce_4_0= ruleCe
                     {
                      
                     	        newCompositeNode(grammarAccess.getEventAccess().getCeCeParserRuleCall_0_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleCe_in_ruleEvent604);
+                    pushFollow(FOLLOW_ruleCe_in_ruleEvent578);
                     lv_ce_4_0=ruleCe();
 
                     state._fsp--;
@@ -863,18 +821,18 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:375:6: ( (lv_de_5_0= ruleDe ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:357:6: ( (lv_de_5_0= ruleDe ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:375:6: ( (lv_de_5_0= ruleDe ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:376:1: (lv_de_5_0= ruleDe )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:357:6: ( (lv_de_5_0= ruleDe ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:358:1: (lv_de_5_0= ruleDe )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:376:1: (lv_de_5_0= ruleDe )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:377:3: lv_de_5_0= ruleDe
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:358:1: (lv_de_5_0= ruleDe )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:359:3: lv_de_5_0= ruleDe
                     {
                      
                     	        newCompositeNode(grammarAccess.getEventAccess().getDeDeParserRuleCall_0_5_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleDe_in_ruleEvent631);
+                    pushFollow(FOLLOW_ruleDe_in_ruleEvent605);
                     lv_de_5_0=ruleDe();
 
                     state._fsp--;
@@ -900,18 +858,18 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:394:6: ( (lv_cg_6_0= ruleCg ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:376:6: ( (lv_cg_6_0= ruleCg ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:394:6: ( (lv_cg_6_0= ruleCg ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:395:1: (lv_cg_6_0= ruleCg )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:376:6: ( (lv_cg_6_0= ruleCg ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:377:1: (lv_cg_6_0= ruleCg )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:395:1: (lv_cg_6_0= ruleCg )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:396:3: lv_cg_6_0= ruleCg
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:377:1: (lv_cg_6_0= ruleCg )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:378:3: lv_cg_6_0= ruleCg
                     {
                      
                     	        newCompositeNode(grammarAccess.getEventAccess().getCgCgParserRuleCall_0_6_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleCg_in_ruleEvent658);
+                    pushFollow(FOLLOW_ruleCg_in_ruleEvent632);
                     lv_cg_6_0=ruleCg();
 
                     state._fsp--;
@@ -937,18 +895,18 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:413:6: ( (lv_st_7_0= ruleSt ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:395:6: ( (lv_st_7_0= ruleSt ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:413:6: ( (lv_st_7_0= ruleSt ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:414:1: (lv_st_7_0= ruleSt )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:395:6: ( (lv_st_7_0= ruleSt ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:396:1: (lv_st_7_0= ruleSt )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:414:1: (lv_st_7_0= ruleSt )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:415:3: lv_st_7_0= ruleSt
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:396:1: (lv_st_7_0= ruleSt )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:397:3: lv_st_7_0= ruleSt
                     {
                      
                     	        newCompositeNode(grammarAccess.getEventAccess().getStStParserRuleCall_0_7_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSt_in_ruleEvent685);
+                    pushFollow(FOLLOW_ruleSt_in_ruleEvent659);
                     lv_st_7_0=ruleSt();
 
                     state._fsp--;
@@ -974,15 +932,15 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:432:6: ( (lv_cl_8_0= RULE_CL ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:414:6: ( (lv_cl_8_0= RULE_CL ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:432:6: ( (lv_cl_8_0= RULE_CL ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:433:1: (lv_cl_8_0= RULE_CL )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:414:6: ( (lv_cl_8_0= RULE_CL ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:415:1: (lv_cl_8_0= RULE_CL )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:433:1: (lv_cl_8_0= RULE_CL )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:434:3: lv_cl_8_0= RULE_CL
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:415:1: (lv_cl_8_0= RULE_CL )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:416:3: lv_cl_8_0= RULE_CL
                     {
-                    lv_cl_8_0=(Token)match(input,RULE_CL,FOLLOW_RULE_CL_in_ruleEvent708); 
+                    lv_cl_8_0=(Token)match(input,RULE_CL,FOLLOW_RULE_CL_in_ruleEvent682); 
 
                     			newLeafNode(lv_cl_8_0, grammarAccess.getEventAccess().getClClTerminalRuleCall_0_8_0()); 
                     		
@@ -1008,33 +966,33 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:450:3: ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:432:3: ( ( (lv_comment_9_0= RULE_COMMENT ) ) | this_EOL_10= RULE_EOL )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-            if ( (LA4_0==RULE_COMMENT) ) {
-                alt4=1;
+            if ( (LA3_0==RULE_COMMENT) ) {
+                alt3=1;
             }
-            else if ( (LA4_0==RULE_EOL) ) {
-                alt4=2;
+            else if ( (LA3_0==RULE_EOL) ) {
+                alt3=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
-            switch (alt4) {
+            switch (alt3) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:450:4: ( (lv_comment_9_0= RULE_COMMENT ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:432:4: ( (lv_comment_9_0= RULE_COMMENT ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:450:4: ( (lv_comment_9_0= RULE_COMMENT ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:451:1: (lv_comment_9_0= RULE_COMMENT )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:432:4: ( (lv_comment_9_0= RULE_COMMENT ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:433:1: (lv_comment_9_0= RULE_COMMENT )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:451:1: (lv_comment_9_0= RULE_COMMENT )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:452:3: lv_comment_9_0= RULE_COMMENT
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:433:1: (lv_comment_9_0= RULE_COMMENT )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:434:3: lv_comment_9_0= RULE_COMMENT
                     {
-                    lv_comment_9_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleEvent732); 
+                    lv_comment_9_0=(Token)match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_ruleEvent706); 
 
                     			newLeafNode(lv_comment_9_0, grammarAccess.getEventAccess().getCommentCOMMENTTerminalRuleCall_1_0_0()); 
                     		
@@ -1058,9 +1016,9 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:469:6: this_EOL_10= RULE_EOL
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:451:6: this_EOL_10= RULE_EOL
                     {
-                    this_EOL_10=(Token)match(input,RULE_EOL,FOLLOW_RULE_EOL_in_ruleEvent754); 
+                    this_EOL_10=(Token)match(input,RULE_EOL,FOLLOW_RULE_EOL_in_ruleEvent728); 
                      
                         newLeafNode(this_EOL_10, grammarAccess.getEventAccess().getEOLTerminalRuleCall_1_1()); 
                         
@@ -1091,7 +1049,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAn"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:481:1: entryRuleAn returns [EObject current=null] : iv_ruleAn= ruleAn EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:463:1: entryRuleAn returns [EObject current=null] : iv_ruleAn= ruleAn EOF ;
     public final EObject entryRuleAn() throws RecognitionException {
         EObject current = null;
 
@@ -1099,17 +1057,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:482:2: (iv_ruleAn= ruleAn EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:483:2: iv_ruleAn= ruleAn EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:464:2: (iv_ruleAn= ruleAn EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:465:2: iv_ruleAn= ruleAn EOF
             {
              newCompositeNode(grammarAccess.getAnRule()); 
-            pushFollow(FOLLOW_ruleAn_in_entryRuleAn790);
+            pushFollow(FOLLOW_ruleAn_in_entryRuleAn764);
             iv_ruleAn=ruleAn();
 
             state._fsp--;
 
              current =iv_ruleAn; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAn800); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAn774); 
 
             }
 
@@ -1127,111 +1085,70 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAn"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:490:1: ruleAn returns [EObject current=null] : (otherlv_0= 'an' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:472:1: ruleAn returns [EObject current=null] : (otherlv_0= 'an' ( (lv_idNode_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) ;
     public final EObject ruleAn() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_idNode_1_1=null;
-        Token lv_idNode_1_2=null;
+        AntlrDatatypeRuleToken lv_idNode_1_0 = null;
+
         EObject lv_attributes_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:493:28: ( (otherlv_0= 'an' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:494:1: (otherlv_0= 'an' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:475:28: ( (otherlv_0= 'an' ( (lv_idNode_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:476:1: (otherlv_0= 'an' ( (lv_idNode_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:494:1: (otherlv_0= 'an' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:494:3: otherlv_0= 'an' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:476:1: (otherlv_0= 'an' ( (lv_idNode_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:476:3: otherlv_0= 'an' ( (lv_idNode_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) )
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleAn837); 
+            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleAn811); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAnAccess().getAnKeyword_0());
                 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:498:1: ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:499:1: ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:480:1: ( (lv_idNode_1_0= ruleId ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:481:1: (lv_idNode_1_0= ruleId )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:499:1: ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:500:1: (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:481:1: (lv_idNode_1_0= ruleId )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:482:3: lv_idNode_1_0= ruleId
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:500:1: (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+             
+            	        newCompositeNode(grammarAccess.getAnAccess().getIdNodeIdParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleId_in_ruleAn832);
+            lv_idNode_1_0=ruleId();
 
-            if ( (LA5_0==RULE_ID) ) {
-                alt5=1;
-            }
-            else if ( (LA5_0==RULE_STRING) ) {
-                alt5=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+            state._fsp--;
 
-                throw nvae;
-            }
-            switch (alt5) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:501:3: lv_idNode_1_1= RULE_ID
-                    {
-                    lv_idNode_1_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAn856); 
 
-                    			newLeafNode(lv_idNode_1_1, grammarAccess.getAnAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAnRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode",
-                            		lv_idNode_1_1, 
-                            		"ID");
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:516:8: lv_idNode_1_2= RULE_STRING
-                    {
-                    lv_idNode_1_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAn876); 
-
-                    			newLeafNode(lv_idNode_1_2, grammarAccess.getAnAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAnRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode",
-                            		lv_idNode_1_2, 
-                            		"STRING");
-                    	    
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getAnRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"idNode",
+                    		lv_idNode_1_0, 
+                    		"Id");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
 
             }
 
-
-            }
-
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:534:2: ( (lv_attributes_2_0= ruleAttributes ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:535:1: (lv_attributes_2_0= ruleAttributes )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:498:2: ( (lv_attributes_2_0= ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:499:1: (lv_attributes_2_0= ruleAttributes )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:535:1: (lv_attributes_2_0= ruleAttributes )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:536:3: lv_attributes_2_0= ruleAttributes
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:499:1: (lv_attributes_2_0= ruleAttributes )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:500:3: lv_attributes_2_0= ruleAttributes
             {
              
             	        newCompositeNode(grammarAccess.getAnAccess().getAttributesAttributesParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleAttributes_in_ruleAn905);
+            pushFollow(FOLLOW_ruleAttributes_in_ruleAn853);
             lv_attributes_2_0=ruleAttributes();
 
             state._fsp--;
@@ -1274,7 +1191,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCn"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:560:1: entryRuleCn returns [EObject current=null] : iv_ruleCn= ruleCn EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:524:1: entryRuleCn returns [EObject current=null] : iv_ruleCn= ruleCn EOF ;
     public final EObject entryRuleCn() throws RecognitionException {
         EObject current = null;
 
@@ -1282,17 +1199,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:561:2: (iv_ruleCn= ruleCn EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:562:2: iv_ruleCn= ruleCn EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:525:2: (iv_ruleCn= ruleCn EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:526:2: iv_ruleCn= ruleCn EOF
             {
              newCompositeNode(grammarAccess.getCnRule()); 
-            pushFollow(FOLLOW_ruleCn_in_entryRuleCn941);
+            pushFollow(FOLLOW_ruleCn_in_entryRuleCn889);
             iv_ruleCn=ruleCn();
 
             state._fsp--;
 
              current =iv_ruleCn; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCn951); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCn899); 
 
             }
 
@@ -1310,111 +1227,70 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCn"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:569:1: ruleCn returns [EObject current=null] : (otherlv_0= 'cn' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:533:1: ruleCn returns [EObject current=null] : (otherlv_0= 'cn' ( (lv_idNode_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) ;
     public final EObject ruleCn() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_idNode_1_1=null;
-        Token lv_idNode_1_2=null;
+        AntlrDatatypeRuleToken lv_idNode_1_0 = null;
+
         EObject lv_attributes_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:572:28: ( (otherlv_0= 'cn' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:573:1: (otherlv_0= 'cn' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:536:28: ( (otherlv_0= 'cn' ( (lv_idNode_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:537:1: (otherlv_0= 'cn' ( (lv_idNode_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:573:1: (otherlv_0= 'cn' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:573:3: otherlv_0= 'cn' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:537:1: (otherlv_0= 'cn' ( (lv_idNode_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:537:3: otherlv_0= 'cn' ( (lv_idNode_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) )
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleCn988); 
+            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleCn936); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCnAccess().getCnKeyword_0());
                 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:577:1: ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:578:1: ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:541:1: ( (lv_idNode_1_0= ruleId ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:542:1: (lv_idNode_1_0= ruleId )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:578:1: ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:579:1: (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:542:1: (lv_idNode_1_0= ruleId )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:543:3: lv_idNode_1_0= ruleId
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:579:1: (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+             
+            	        newCompositeNode(grammarAccess.getCnAccess().getIdNodeIdParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleId_in_ruleCn957);
+            lv_idNode_1_0=ruleId();
 
-            if ( (LA6_0==RULE_ID) ) {
-                alt6=1;
-            }
-            else if ( (LA6_0==RULE_STRING) ) {
-                alt6=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+            state._fsp--;
 
-                throw nvae;
-            }
-            switch (alt6) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:580:3: lv_idNode_1_1= RULE_ID
-                    {
-                    lv_idNode_1_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCn1007); 
 
-                    			newLeafNode(lv_idNode_1_1, grammarAccess.getCnAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getCnRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode",
-                            		lv_idNode_1_1, 
-                            		"ID");
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:595:8: lv_idNode_1_2= RULE_STRING
-                    {
-                    lv_idNode_1_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleCn1027); 
-
-                    			newLeafNode(lv_idNode_1_2, grammarAccess.getCnAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getCnRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode",
-                            		lv_idNode_1_2, 
-                            		"STRING");
-                    	    
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getCnRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"idNode",
+                    		lv_idNode_1_0, 
+                    		"Id");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
 
             }
 
-
-            }
-
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:613:2: ( (lv_attributes_2_0= ruleAttributes ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:614:1: (lv_attributes_2_0= ruleAttributes )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:559:2: ( (lv_attributes_2_0= ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:560:1: (lv_attributes_2_0= ruleAttributes )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:614:1: (lv_attributes_2_0= ruleAttributes )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:615:3: lv_attributes_2_0= ruleAttributes
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:560:1: (lv_attributes_2_0= ruleAttributes )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:561:3: lv_attributes_2_0= ruleAttributes
             {
              
             	        newCompositeNode(grammarAccess.getCnAccess().getAttributesAttributesParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleAttributes_in_ruleCn1056);
+            pushFollow(FOLLOW_ruleAttributes_in_ruleCn978);
             lv_attributes_2_0=ruleAttributes();
 
             state._fsp--;
@@ -1457,7 +1333,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDn"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:639:1: entryRuleDn returns [EObject current=null] : iv_ruleDn= ruleDn EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:585:1: entryRuleDn returns [EObject current=null] : iv_ruleDn= ruleDn EOF ;
     public final EObject entryRuleDn() throws RecognitionException {
         EObject current = null;
 
@@ -1465,17 +1341,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:640:2: (iv_ruleDn= ruleDn EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:641:2: iv_ruleDn= ruleDn EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:586:2: (iv_ruleDn= ruleDn EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:587:2: iv_ruleDn= ruleDn EOF
             {
              newCompositeNode(grammarAccess.getDnRule()); 
-            pushFollow(FOLLOW_ruleDn_in_entryRuleDn1092);
+            pushFollow(FOLLOW_ruleDn_in_entryRuleDn1014);
             iv_ruleDn=ruleDn();
 
             state._fsp--;
 
              current =iv_ruleDn; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDn1102); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDn1024); 
 
             }
 
@@ -1493,93 +1369,52 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDn"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:648:1: ruleDn returns [EObject current=null] : (otherlv_0= 'dn' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:594:1: ruleDn returns [EObject current=null] : (otherlv_0= 'dn' ( (lv_idNode_1_0= ruleId ) ) ) ;
     public final EObject ruleDn() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_idNode_1_1=null;
-        Token lv_idNode_1_2=null;
+        AntlrDatatypeRuleToken lv_idNode_1_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:651:28: ( (otherlv_0= 'dn' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:652:1: (otherlv_0= 'dn' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:597:28: ( (otherlv_0= 'dn' ( (lv_idNode_1_0= ruleId ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:598:1: (otherlv_0= 'dn' ( (lv_idNode_1_0= ruleId ) ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:652:1: (otherlv_0= 'dn' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:652:3: otherlv_0= 'dn' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:598:1: (otherlv_0= 'dn' ( (lv_idNode_1_0= ruleId ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:598:3: otherlv_0= 'dn' ( (lv_idNode_1_0= ruleId ) )
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleDn1139); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleDn1061); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getDnAccess().getDnKeyword_0());
                 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:656:1: ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:657:1: ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:602:1: ( (lv_idNode_1_0= ruleId ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:603:1: (lv_idNode_1_0= ruleId )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:657:1: ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:658:1: (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:603:1: (lv_idNode_1_0= ruleId )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:604:3: lv_idNode_1_0= ruleId
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:658:1: (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+             
+            	        newCompositeNode(grammarAccess.getDnAccess().getIdNodeIdParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleId_in_ruleDn1082);
+            lv_idNode_1_0=ruleId();
 
-            if ( (LA7_0==RULE_ID) ) {
-                alt7=1;
-            }
-            else if ( (LA7_0==RULE_STRING) ) {
-                alt7=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+            state._fsp--;
 
-                throw nvae;
-            }
-            switch (alt7) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:659:3: lv_idNode_1_1= RULE_ID
-                    {
-                    lv_idNode_1_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDn1158); 
 
-                    			newLeafNode(lv_idNode_1_1, grammarAccess.getDnAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getDnRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode",
-                            		lv_idNode_1_1, 
-                            		"ID");
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:674:8: lv_idNode_1_2= RULE_STRING
-                    {
-                    lv_idNode_1_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleDn1178); 
-
-                    			newLeafNode(lv_idNode_1_2, grammarAccess.getDnAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getDnRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode",
-                            		lv_idNode_1_2, 
-                            		"STRING");
-                    	    
-
-                    }
-                    break;
-
-            }
-
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getDnRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"idNode",
+                    		lv_idNode_1_0, 
+                    		"Id");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
@@ -1607,7 +1442,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAe"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:700:1: entryRuleAe returns [EObject current=null] : iv_ruleAe= ruleAe EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:628:1: entryRuleAe returns [EObject current=null] : iv_ruleAe= ruleAe EOF ;
     public final EObject entryRuleAe() throws RecognitionException {
         EObject current = null;
 
@@ -1615,17 +1450,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:701:2: (iv_ruleAe= ruleAe EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:702:2: iv_ruleAe= ruleAe EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:629:2: (iv_ruleAe= ruleAe EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:630:2: iv_ruleAe= ruleAe EOF
             {
              newCompositeNode(grammarAccess.getAeRule()); 
-            pushFollow(FOLLOW_ruleAe_in_entryRuleAe1222);
+            pushFollow(FOLLOW_ruleAe_in_entryRuleAe1118);
             iv_ruleAe=ruleAe();
 
             state._fsp--;
 
              current =iv_ruleAe; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAe1232); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAe1128); 
 
             }
 
@@ -1643,193 +1478,111 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAe"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:709:1: ruleAe returns [EObject current=null] : (otherlv_0= 'ae' ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) ) ( ( (lv_idNode1_2_1= RULE_ID | lv_idNode1_2_2= RULE_STRING ) ) ) ( (lv_direction_3_0= RULE_DIRECTION ) )? ( ( (lv_idNode2_4_1= RULE_ID | lv_idNode2_4_2= RULE_STRING ) ) ) ( (lv_attributes_5_0= ruleAttributes ) ) ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:637:1: ruleAe returns [EObject current=null] : (otherlv_0= 'ae' ( (lv_idEdge_1_0= ruleId ) ) ( (lv_idNode1_2_0= ruleId ) ) ( (lv_direction_3_0= RULE_DIRECTION ) )? ( (lv_idNode2_4_0= ruleId ) ) ( (lv_attributes_5_0= ruleAttributes ) ) ) ;
     public final EObject ruleAe() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_idEdge_1_1=null;
-        Token lv_idEdge_1_2=null;
-        Token lv_idNode1_2_1=null;
-        Token lv_idNode1_2_2=null;
         Token lv_direction_3_0=null;
-        Token lv_idNode2_4_1=null;
-        Token lv_idNode2_4_2=null;
+        AntlrDatatypeRuleToken lv_idEdge_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_idNode1_2_0 = null;
+
+        AntlrDatatypeRuleToken lv_idNode2_4_0 = null;
+
         EObject lv_attributes_5_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:712:28: ( (otherlv_0= 'ae' ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) ) ( ( (lv_idNode1_2_1= RULE_ID | lv_idNode1_2_2= RULE_STRING ) ) ) ( (lv_direction_3_0= RULE_DIRECTION ) )? ( ( (lv_idNode2_4_1= RULE_ID | lv_idNode2_4_2= RULE_STRING ) ) ) ( (lv_attributes_5_0= ruleAttributes ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:713:1: (otherlv_0= 'ae' ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) ) ( ( (lv_idNode1_2_1= RULE_ID | lv_idNode1_2_2= RULE_STRING ) ) ) ( (lv_direction_3_0= RULE_DIRECTION ) )? ( ( (lv_idNode2_4_1= RULE_ID | lv_idNode2_4_2= RULE_STRING ) ) ) ( (lv_attributes_5_0= ruleAttributes ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:640:28: ( (otherlv_0= 'ae' ( (lv_idEdge_1_0= ruleId ) ) ( (lv_idNode1_2_0= ruleId ) ) ( (lv_direction_3_0= RULE_DIRECTION ) )? ( (lv_idNode2_4_0= ruleId ) ) ( (lv_attributes_5_0= ruleAttributes ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:641:1: (otherlv_0= 'ae' ( (lv_idEdge_1_0= ruleId ) ) ( (lv_idNode1_2_0= ruleId ) ) ( (lv_direction_3_0= RULE_DIRECTION ) )? ( (lv_idNode2_4_0= ruleId ) ) ( (lv_attributes_5_0= ruleAttributes ) ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:713:1: (otherlv_0= 'ae' ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) ) ( ( (lv_idNode1_2_1= RULE_ID | lv_idNode1_2_2= RULE_STRING ) ) ) ( (lv_direction_3_0= RULE_DIRECTION ) )? ( ( (lv_idNode2_4_1= RULE_ID | lv_idNode2_4_2= RULE_STRING ) ) ) ( (lv_attributes_5_0= ruleAttributes ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:713:3: otherlv_0= 'ae' ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) ) ( ( (lv_idNode1_2_1= RULE_ID | lv_idNode1_2_2= RULE_STRING ) ) ) ( (lv_direction_3_0= RULE_DIRECTION ) )? ( ( (lv_idNode2_4_1= RULE_ID | lv_idNode2_4_2= RULE_STRING ) ) ) ( (lv_attributes_5_0= ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:641:1: (otherlv_0= 'ae' ( (lv_idEdge_1_0= ruleId ) ) ( (lv_idNode1_2_0= ruleId ) ) ( (lv_direction_3_0= RULE_DIRECTION ) )? ( (lv_idNode2_4_0= ruleId ) ) ( (lv_attributes_5_0= ruleAttributes ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:641:3: otherlv_0= 'ae' ( (lv_idEdge_1_0= ruleId ) ) ( (lv_idNode1_2_0= ruleId ) ) ( (lv_direction_3_0= RULE_DIRECTION ) )? ( (lv_idNode2_4_0= ruleId ) ) ( (lv_attributes_5_0= ruleAttributes ) )
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleAe1269); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleAe1165); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAeAccess().getAeKeyword_0());
                 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:717:1: ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:718:1: ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:645:1: ( (lv_idEdge_1_0= ruleId ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:646:1: (lv_idEdge_1_0= ruleId )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:718:1: ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:719:1: (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:646:1: (lv_idEdge_1_0= ruleId )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:647:3: lv_idEdge_1_0= ruleId
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:719:1: (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING )
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+             
+            	        newCompositeNode(grammarAccess.getAeAccess().getIdEdgeIdParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleId_in_ruleAe1186);
+            lv_idEdge_1_0=ruleId();
 
-            if ( (LA8_0==RULE_ID) ) {
-                alt8=1;
-            }
-            else if ( (LA8_0==RULE_STRING) ) {
-                alt8=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+            state._fsp--;
 
-                throw nvae;
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getAeRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"idEdge",
+                    		lv_idEdge_1_0, 
+                    		"Id");
+            	        afterParserOrEnumRuleCall();
+            	    
+
             }
-            switch (alt8) {
+
+
+            }
+
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:663:2: ( (lv_idNode1_2_0= ruleId ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:664:1: (lv_idNode1_2_0= ruleId )
+            {
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:664:1: (lv_idNode1_2_0= ruleId )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:665:3: lv_idNode1_2_0= ruleId
+            {
+             
+            	        newCompositeNode(grammarAccess.getAeAccess().getIdNode1IdParserRuleCall_2_0()); 
+            	    
+            pushFollow(FOLLOW_ruleId_in_ruleAe1207);
+            lv_idNode1_2_0=ruleId();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getAeRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"idNode1",
+                    		lv_idNode1_2_0, 
+                    		"Id");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:681:2: ( (lv_direction_3_0= RULE_DIRECTION ) )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
+
+            if ( (LA4_0==RULE_DIRECTION) ) {
+                alt4=1;
+            }
+            switch (alt4) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:720:3: lv_idEdge_1_1= RULE_ID
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:682:1: (lv_direction_3_0= RULE_DIRECTION )
                     {
-                    lv_idEdge_1_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAe1288); 
-
-                    			newLeafNode(lv_idEdge_1_1, grammarAccess.getAeAccess().getIdEdgeIDTerminalRuleCall_1_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAeRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idEdge",
-                            		lv_idEdge_1_1, 
-                            		"ID");
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:735:8: lv_idEdge_1_2= RULE_STRING
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:682:1: (lv_direction_3_0= RULE_DIRECTION )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:683:3: lv_direction_3_0= RULE_DIRECTION
                     {
-                    lv_idEdge_1_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAe1308); 
-
-                    			newLeafNode(lv_idEdge_1_2, grammarAccess.getAeAccess().getIdEdgeSTRINGTerminalRuleCall_1_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAeRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idEdge",
-                            		lv_idEdge_1_2, 
-                            		"STRING");
-                    	    
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:753:2: ( ( (lv_idNode1_2_1= RULE_ID | lv_idNode1_2_2= RULE_STRING ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:754:1: ( (lv_idNode1_2_1= RULE_ID | lv_idNode1_2_2= RULE_STRING ) )
-            {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:754:1: ( (lv_idNode1_2_1= RULE_ID | lv_idNode1_2_2= RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:755:1: (lv_idNode1_2_1= RULE_ID | lv_idNode1_2_2= RULE_STRING )
-            {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:755:1: (lv_idNode1_2_1= RULE_ID | lv_idNode1_2_2= RULE_STRING )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==RULE_ID) ) {
-                alt9=1;
-            }
-            else if ( (LA9_0==RULE_STRING) ) {
-                alt9=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
-
-                throw nvae;
-            }
-            switch (alt9) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:756:3: lv_idNode1_2_1= RULE_ID
-                    {
-                    lv_idNode1_2_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAe1335); 
-
-                    			newLeafNode(lv_idNode1_2_1, grammarAccess.getAeAccess().getIdNode1IDTerminalRuleCall_2_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAeRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode1",
-                            		lv_idNode1_2_1, 
-                            		"ID");
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:771:8: lv_idNode1_2_2= RULE_STRING
-                    {
-                    lv_idNode1_2_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAe1355); 
-
-                    			newLeafNode(lv_idNode1_2_2, grammarAccess.getAeAccess().getIdNode1STRINGTerminalRuleCall_2_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAeRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode1",
-                            		lv_idNode1_2_2, 
-                            		"STRING");
-                    	    
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            }
-
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:789:2: ( (lv_direction_3_0= RULE_DIRECTION ) )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0==RULE_DIRECTION) ) {
-                alt10=1;
-            }
-            switch (alt10) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:790:1: (lv_direction_3_0= RULE_DIRECTION )
-                    {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:790:1: (lv_direction_3_0= RULE_DIRECTION )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:791:3: lv_direction_3_0= RULE_DIRECTION
-                    {
-                    lv_direction_3_0=(Token)match(input,RULE_DIRECTION,FOLLOW_RULE_DIRECTION_in_ruleAe1380); 
+                    lv_direction_3_0=(Token)match(input,RULE_DIRECTION,FOLLOW_RULE_DIRECTION_in_ruleAe1224); 
 
                     			newLeafNode(lv_direction_3_0, grammarAccess.getAeAccess().getDirectionDIRECTIONTerminalRuleCall_3_0()); 
                     		
@@ -1852,88 +1605,47 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:807:3: ( ( (lv_idNode2_4_1= RULE_ID | lv_idNode2_4_2= RULE_STRING ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:808:1: ( (lv_idNode2_4_1= RULE_ID | lv_idNode2_4_2= RULE_STRING ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:699:3: ( (lv_idNode2_4_0= ruleId ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:700:1: (lv_idNode2_4_0= ruleId )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:808:1: ( (lv_idNode2_4_1= RULE_ID | lv_idNode2_4_2= RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:809:1: (lv_idNode2_4_1= RULE_ID | lv_idNode2_4_2= RULE_STRING )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:700:1: (lv_idNode2_4_0= ruleId )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:701:3: lv_idNode2_4_0= ruleId
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:809:1: (lv_idNode2_4_1= RULE_ID | lv_idNode2_4_2= RULE_STRING )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+             
+            	        newCompositeNode(grammarAccess.getAeAccess().getIdNode2IdParserRuleCall_4_0()); 
+            	    
+            pushFollow(FOLLOW_ruleId_in_ruleAe1251);
+            lv_idNode2_4_0=ruleId();
 
-            if ( (LA11_0==RULE_ID) ) {
-                alt11=1;
-            }
-            else if ( (LA11_0==RULE_STRING) ) {
-                alt11=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+            state._fsp--;
 
-                throw nvae;
-            }
-            switch (alt11) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:810:3: lv_idNode2_4_1= RULE_ID
-                    {
-                    lv_idNode2_4_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAe1405); 
 
-                    			newLeafNode(lv_idNode2_4_1, grammarAccess.getAeAccess().getIdNode2IDTerminalRuleCall_4_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAeRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode2",
-                            		lv_idNode2_4_1, 
-                            		"ID");
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:825:8: lv_idNode2_4_2= RULE_STRING
-                    {
-                    lv_idNode2_4_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAe1425); 
-
-                    			newLeafNode(lv_idNode2_4_2, grammarAccess.getAeAccess().getIdNode2STRINGTerminalRuleCall_4_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAeRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode2",
-                            		lv_idNode2_4_2, 
-                            		"STRING");
-                    	    
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getAeRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"idNode2",
+                    		lv_idNode2_4_0, 
+                    		"Id");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
 
             }
 
-
-            }
-
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:843:2: ( (lv_attributes_5_0= ruleAttributes ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:844:1: (lv_attributes_5_0= ruleAttributes )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:717:2: ( (lv_attributes_5_0= ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:718:1: (lv_attributes_5_0= ruleAttributes )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:844:1: (lv_attributes_5_0= ruleAttributes )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:845:3: lv_attributes_5_0= ruleAttributes
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:718:1: (lv_attributes_5_0= ruleAttributes )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:719:3: lv_attributes_5_0= ruleAttributes
             {
              
             	        newCompositeNode(grammarAccess.getAeAccess().getAttributesAttributesParserRuleCall_5_0()); 
             	    
-            pushFollow(FOLLOW_ruleAttributes_in_ruleAe1454);
+            pushFollow(FOLLOW_ruleAttributes_in_ruleAe1272);
             lv_attributes_5_0=ruleAttributes();
 
             state._fsp--;
@@ -1976,7 +1688,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCe"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:869:1: entryRuleCe returns [EObject current=null] : iv_ruleCe= ruleCe EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:743:1: entryRuleCe returns [EObject current=null] : iv_ruleCe= ruleCe EOF ;
     public final EObject entryRuleCe() throws RecognitionException {
         EObject current = null;
 
@@ -1984,17 +1696,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:870:2: (iv_ruleCe= ruleCe EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:871:2: iv_ruleCe= ruleCe EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:744:2: (iv_ruleCe= ruleCe EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:745:2: iv_ruleCe= ruleCe EOF
             {
              newCompositeNode(grammarAccess.getCeRule()); 
-            pushFollow(FOLLOW_ruleCe_in_entryRuleCe1490);
+            pushFollow(FOLLOW_ruleCe_in_entryRuleCe1308);
             iv_ruleCe=ruleCe();
 
             state._fsp--;
 
              current =iv_ruleCe; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCe1500); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCe1318); 
 
             }
 
@@ -2012,111 +1724,70 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCe"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:878:1: ruleCe returns [EObject current=null] : (otherlv_0= 'ce' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:752:1: ruleCe returns [EObject current=null] : (otherlv_0= 'ce' ( (lv_idEdge_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) ;
     public final EObject ruleCe() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_idNode_1_1=null;
-        Token lv_idNode_1_2=null;
+        AntlrDatatypeRuleToken lv_idEdge_1_0 = null;
+
         EObject lv_attributes_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:881:28: ( (otherlv_0= 'ce' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:882:1: (otherlv_0= 'ce' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:755:28: ( (otherlv_0= 'ce' ( (lv_idEdge_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:756:1: (otherlv_0= 'ce' ( (lv_idEdge_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:882:1: (otherlv_0= 'ce' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:882:3: otherlv_0= 'ce' ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) ) ( (lv_attributes_2_0= ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:756:1: (otherlv_0= 'ce' ( (lv_idEdge_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:756:3: otherlv_0= 'ce' ( (lv_idEdge_1_0= ruleId ) ) ( (lv_attributes_2_0= ruleAttributes ) )
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleCe1537); 
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleCe1355); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCeAccess().getCeKeyword_0());
                 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:886:1: ( ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:887:1: ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:760:1: ( (lv_idEdge_1_0= ruleId ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:761:1: (lv_idEdge_1_0= ruleId )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:887:1: ( (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:888:1: (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:761:1: (lv_idEdge_1_0= ruleId )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:762:3: lv_idEdge_1_0= ruleId
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:888:1: (lv_idNode_1_1= RULE_ID | lv_idNode_1_2= RULE_STRING )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+             
+            	        newCompositeNode(grammarAccess.getCeAccess().getIdEdgeIdParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleId_in_ruleCe1376);
+            lv_idEdge_1_0=ruleId();
 
-            if ( (LA12_0==RULE_ID) ) {
-                alt12=1;
-            }
-            else if ( (LA12_0==RULE_STRING) ) {
-                alt12=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+            state._fsp--;
 
-                throw nvae;
-            }
-            switch (alt12) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:889:3: lv_idNode_1_1= RULE_ID
-                    {
-                    lv_idNode_1_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCe1556); 
 
-                    			newLeafNode(lv_idNode_1_1, grammarAccess.getCeAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getCeRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode",
-                            		lv_idNode_1_1, 
-                            		"ID");
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:904:8: lv_idNode_1_2= RULE_STRING
-                    {
-                    lv_idNode_1_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleCe1576); 
-
-                    			newLeafNode(lv_idNode_1_2, grammarAccess.getCeAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getCeRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idNode",
-                            		lv_idNode_1_2, 
-                            		"STRING");
-                    	    
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getCeRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"idEdge",
+                    		lv_idEdge_1_0, 
+                    		"Id");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
 
             }
 
-
-            }
-
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:922:2: ( (lv_attributes_2_0= ruleAttributes ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:923:1: (lv_attributes_2_0= ruleAttributes )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:778:2: ( (lv_attributes_2_0= ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:779:1: (lv_attributes_2_0= ruleAttributes )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:923:1: (lv_attributes_2_0= ruleAttributes )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:924:3: lv_attributes_2_0= ruleAttributes
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:779:1: (lv_attributes_2_0= ruleAttributes )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:780:3: lv_attributes_2_0= ruleAttributes
             {
              
             	        newCompositeNode(grammarAccess.getCeAccess().getAttributesAttributesParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleAttributes_in_ruleCe1605);
+            pushFollow(FOLLOW_ruleAttributes_in_ruleCe1397);
             lv_attributes_2_0=ruleAttributes();
 
             state._fsp--;
@@ -2159,7 +1830,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDe"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:948:1: entryRuleDe returns [EObject current=null] : iv_ruleDe= ruleDe EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:804:1: entryRuleDe returns [EObject current=null] : iv_ruleDe= ruleDe EOF ;
     public final EObject entryRuleDe() throws RecognitionException {
         EObject current = null;
 
@@ -2167,17 +1838,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:949:2: (iv_ruleDe= ruleDe EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:950:2: iv_ruleDe= ruleDe EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:805:2: (iv_ruleDe= ruleDe EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:806:2: iv_ruleDe= ruleDe EOF
             {
              newCompositeNode(grammarAccess.getDeRule()); 
-            pushFollow(FOLLOW_ruleDe_in_entryRuleDe1641);
+            pushFollow(FOLLOW_ruleDe_in_entryRuleDe1433);
             iv_ruleDe=ruleDe();
 
             state._fsp--;
 
              current =iv_ruleDe; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDe1651); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDe1443); 
 
             }
 
@@ -2195,93 +1866,52 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDe"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:957:1: ruleDe returns [EObject current=null] : (otherlv_0= 'de' ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) ) ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:813:1: ruleDe returns [EObject current=null] : (otherlv_0= 'de' ( (lv_idEdge_1_0= ruleId ) ) ) ;
     public final EObject ruleDe() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_idEdge_1_1=null;
-        Token lv_idEdge_1_2=null;
+        AntlrDatatypeRuleToken lv_idEdge_1_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:960:28: ( (otherlv_0= 'de' ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:961:1: (otherlv_0= 'de' ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:816:28: ( (otherlv_0= 'de' ( (lv_idEdge_1_0= ruleId ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:817:1: (otherlv_0= 'de' ( (lv_idEdge_1_0= ruleId ) ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:961:1: (otherlv_0= 'de' ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:961:3: otherlv_0= 'de' ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:817:1: (otherlv_0= 'de' ( (lv_idEdge_1_0= ruleId ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:817:3: otherlv_0= 'de' ( (lv_idEdge_1_0= ruleId ) )
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleDe1688); 
+            otherlv_0=(Token)match(input,21,FOLLOW_21_in_ruleDe1480); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getDeAccess().getDeKeyword_0());
                 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:965:1: ( ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:966:1: ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:821:1: ( (lv_idEdge_1_0= ruleId ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:822:1: (lv_idEdge_1_0= ruleId )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:966:1: ( (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:967:1: (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:822:1: (lv_idEdge_1_0= ruleId )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:823:3: lv_idEdge_1_0= ruleId
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:967:1: (lv_idEdge_1_1= RULE_ID | lv_idEdge_1_2= RULE_STRING )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+             
+            	        newCompositeNode(grammarAccess.getDeAccess().getIdEdgeIdParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleId_in_ruleDe1501);
+            lv_idEdge_1_0=ruleId();
 
-            if ( (LA13_0==RULE_ID) ) {
-                alt13=1;
-            }
-            else if ( (LA13_0==RULE_STRING) ) {
-                alt13=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+            state._fsp--;
 
-                throw nvae;
-            }
-            switch (alt13) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:968:3: lv_idEdge_1_1= RULE_ID
-                    {
-                    lv_idEdge_1_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleDe1707); 
 
-                    			newLeafNode(lv_idEdge_1_1, grammarAccess.getDeAccess().getIdEdgeIDTerminalRuleCall_1_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getDeRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idEdge",
-                            		lv_idEdge_1_1, 
-                            		"ID");
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:983:8: lv_idEdge_1_2= RULE_STRING
-                    {
-                    lv_idEdge_1_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleDe1727); 
-
-                    			newLeafNode(lv_idEdge_1_2, grammarAccess.getDeAccess().getIdEdgeSTRINGTerminalRuleCall_1_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getDeRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idEdge",
-                            		lv_idEdge_1_2, 
-                            		"STRING");
-                    	    
-
-                    }
-                    break;
-
-            }
-
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getDeRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"idEdge",
+                    		lv_idEdge_1_0, 
+                    		"Id");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
@@ -2309,7 +1939,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCg"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1009:1: entryRuleCg returns [EObject current=null] : iv_ruleCg= ruleCg EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:847:1: entryRuleCg returns [EObject current=null] : iv_ruleCg= ruleCg EOF ;
     public final EObject entryRuleCg() throws RecognitionException {
         EObject current = null;
 
@@ -2317,17 +1947,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1010:2: (iv_ruleCg= ruleCg EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1011:2: iv_ruleCg= ruleCg EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:848:2: (iv_ruleCg= ruleCg EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:849:2: iv_ruleCg= ruleCg EOF
             {
              newCompositeNode(grammarAccess.getCgRule()); 
-            pushFollow(FOLLOW_ruleCg_in_entryRuleCg1771);
+            pushFollow(FOLLOW_ruleCg_in_entryRuleCg1537);
             iv_ruleCg=ruleCg();
 
             state._fsp--;
 
              current =iv_ruleCg; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCg1781); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCg1547); 
 
             }
 
@@ -2345,7 +1975,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCg"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1018:1: ruleCg returns [EObject current=null] : (otherlv_0= 'cg' ( (lv_attributes_1_0= ruleAttributes ) ) ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:856:1: ruleCg returns [EObject current=null] : (otherlv_0= 'cg' ( (lv_attributes_1_0= ruleAttributes ) ) ) ;
     public final EObject ruleCg() throws RecognitionException {
         EObject current = null;
 
@@ -2356,26 +1986,26 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1021:28: ( (otherlv_0= 'cg' ( (lv_attributes_1_0= ruleAttributes ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1022:1: (otherlv_0= 'cg' ( (lv_attributes_1_0= ruleAttributes ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:859:28: ( (otherlv_0= 'cg' ( (lv_attributes_1_0= ruleAttributes ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:860:1: (otherlv_0= 'cg' ( (lv_attributes_1_0= ruleAttributes ) ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1022:1: (otherlv_0= 'cg' ( (lv_attributes_1_0= ruleAttributes ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1022:3: otherlv_0= 'cg' ( (lv_attributes_1_0= ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:860:1: (otherlv_0= 'cg' ( (lv_attributes_1_0= ruleAttributes ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:860:3: otherlv_0= 'cg' ( (lv_attributes_1_0= ruleAttributes ) )
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleCg1818); 
+            otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleCg1584); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getCgAccess().getCgKeyword_0());
                 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1026:1: ( (lv_attributes_1_0= ruleAttributes ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1027:1: (lv_attributes_1_0= ruleAttributes )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:864:1: ( (lv_attributes_1_0= ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:865:1: (lv_attributes_1_0= ruleAttributes )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1027:1: (lv_attributes_1_0= ruleAttributes )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1028:3: lv_attributes_1_0= ruleAttributes
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:865:1: (lv_attributes_1_0= ruleAttributes )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:866:3: lv_attributes_1_0= ruleAttributes
             {
              
             	        newCompositeNode(grammarAccess.getCgAccess().getAttributesAttributesParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleAttributes_in_ruleCg1839);
+            pushFollow(FOLLOW_ruleAttributes_in_ruleCg1605);
             lv_attributes_1_0=ruleAttributes();
 
             state._fsp--;
@@ -2418,7 +2048,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSt"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1052:1: entryRuleSt returns [EObject current=null] : iv_ruleSt= ruleSt EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:890:1: entryRuleSt returns [EObject current=null] : iv_ruleSt= ruleSt EOF ;
     public final EObject entryRuleSt() throws RecognitionException {
         EObject current = null;
 
@@ -2426,17 +2056,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1053:2: (iv_ruleSt= ruleSt EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1054:2: iv_ruleSt= ruleSt EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:891:2: (iv_ruleSt= ruleSt EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:892:2: iv_ruleSt= ruleSt EOF
             {
              newCompositeNode(grammarAccess.getStRule()); 
-            pushFollow(FOLLOW_ruleSt_in_entryRuleSt1875);
+            pushFollow(FOLLOW_ruleSt_in_entryRuleSt1641);
             iv_ruleSt=ruleSt();
 
             state._fsp--;
 
              current =iv_ruleSt; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSt1885); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSt1651); 
 
             }
 
@@ -2454,51 +2084,45 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSt"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1061:1: ruleSt returns [EObject current=null] : (otherlv_0= 'st' ( (lv_real_1_0= ruleReal ) ) ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:899:1: ruleSt returns [EObject current=null] : (otherlv_0= 'st' ( (lv_real_1_0= RULE_REAL ) ) ) ;
     public final EObject ruleSt() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        AntlrDatatypeRuleToken lv_real_1_0 = null;
-
+        Token lv_real_1_0=null;
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1064:28: ( (otherlv_0= 'st' ( (lv_real_1_0= ruleReal ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1065:1: (otherlv_0= 'st' ( (lv_real_1_0= ruleReal ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:902:28: ( (otherlv_0= 'st' ( (lv_real_1_0= RULE_REAL ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:903:1: (otherlv_0= 'st' ( (lv_real_1_0= RULE_REAL ) ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1065:1: (otherlv_0= 'st' ( (lv_real_1_0= ruleReal ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1065:3: otherlv_0= 'st' ( (lv_real_1_0= ruleReal ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:903:1: (otherlv_0= 'st' ( (lv_real_1_0= RULE_REAL ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:903:3: otherlv_0= 'st' ( (lv_real_1_0= RULE_REAL ) )
             {
-            otherlv_0=(Token)match(input,21,FOLLOW_21_in_ruleSt1922); 
+            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleSt1688); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStAccess().getStKeyword_0());
                 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1069:1: ( (lv_real_1_0= ruleReal ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1070:1: (lv_real_1_0= ruleReal )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:907:1: ( (lv_real_1_0= RULE_REAL ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:908:1: (lv_real_1_0= RULE_REAL )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1070:1: (lv_real_1_0= ruleReal )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1071:3: lv_real_1_0= ruleReal
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:908:1: (lv_real_1_0= RULE_REAL )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:909:3: lv_real_1_0= RULE_REAL
             {
-             
-            	        newCompositeNode(grammarAccess.getStAccess().getRealRealParserRuleCall_1_0()); 
-            	    
-            pushFollow(FOLLOW_ruleReal_in_ruleSt1943);
-            lv_real_1_0=ruleReal();
+            lv_real_1_0=(Token)match(input,RULE_REAL,FOLLOW_RULE_REAL_in_ruleSt1705); 
 
-            state._fsp--;
-
+            			newLeafNode(lv_real_1_0, grammarAccess.getStAccess().getRealREALTerminalRuleCall_1_0()); 
+            		
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getStRule());
+            	            current = createModelElement(grammarAccess.getStRule());
             	        }
-                   		set(
+                   		setWithLastConsumed(
                    			current, 
                    			"real",
                     		lv_real_1_0, 
-                    		"Real");
-            	        afterParserOrEnumRuleCall();
+                    		"REAL");
             	    
 
             }
@@ -2527,7 +2151,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttributes"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1095:1: entryRuleAttributes returns [EObject current=null] : iv_ruleAttributes= ruleAttributes EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:933:1: entryRuleAttributes returns [EObject current=null] : iv_ruleAttributes= ruleAttributes EOF ;
     public final EObject entryRuleAttributes() throws RecognitionException {
         EObject current = null;
 
@@ -2535,17 +2159,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1096:2: (iv_ruleAttributes= ruleAttributes EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1097:2: iv_ruleAttributes= ruleAttributes EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:934:2: (iv_ruleAttributes= ruleAttributes EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:935:2: iv_ruleAttributes= ruleAttributes EOF
             {
              newCompositeNode(grammarAccess.getAttributesRule()); 
-            pushFollow(FOLLOW_ruleAttributes_in_entryRuleAttributes1979);
+            pushFollow(FOLLOW_ruleAttributes_in_entryRuleAttributes1746);
             iv_ruleAttributes=ruleAttributes();
 
             state._fsp--;
 
              current =iv_ruleAttributes; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributes1989); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttributes1756); 
 
             }
 
@@ -2563,7 +2187,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributes"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1104:1: ruleAttributes returns [EObject current=null] : ( () ( (lv_attribute_1_0= ruleAttribute ) )* ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:942:1: ruleAttributes returns [EObject current=null] : ( () ( (lv_attribute_1_0= ruleAttribute ) )* ) ;
     public final EObject ruleAttributes() throws RecognitionException {
         EObject current = null;
 
@@ -2573,14 +2197,14 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1107:28: ( ( () ( (lv_attribute_1_0= ruleAttribute ) )* ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1108:1: ( () ( (lv_attribute_1_0= ruleAttribute ) )* )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:945:28: ( ( () ( (lv_attribute_1_0= ruleAttribute ) )* ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:946:1: ( () ( (lv_attribute_1_0= ruleAttribute ) )* )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1108:1: ( () ( (lv_attribute_1_0= ruleAttribute ) )* )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1108:2: () ( (lv_attribute_1_0= ruleAttribute ) )*
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:946:1: ( () ( (lv_attribute_1_0= ruleAttribute ) )* )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:946:2: () ( (lv_attribute_1_0= ruleAttribute ) )*
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1108:2: ()
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1109:5: 
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:946:2: ()
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:947:5: 
             {
 
                     current = forceCreateModelElement(
@@ -2590,28 +2214,28 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1114:2: ( (lv_attribute_1_0= ruleAttribute ) )*
-            loop14:
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:952:2: ( (lv_attribute_1_0= ruleAttribute ) )*
+            loop5:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt5=2;
+                int LA5_0 = input.LA(1);
 
-                if ( ((LA14_0>=RULE_ID && LA14_0<=RULE_STRING)||(LA14_0>=22 && LA14_0<=23)) ) {
-                    alt14=1;
+                if ( (LA5_0==RULE_INT||LA5_0==RULE_OPERATOR||(LA5_0>=RULE_STRING && LA5_0<=RULE_WORD)) ) {
+                    alt5=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt5) {
             	case 1 :
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1115:1: (lv_attribute_1_0= ruleAttribute )
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:953:1: (lv_attribute_1_0= ruleAttribute )
             	    {
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1115:1: (lv_attribute_1_0= ruleAttribute )
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1116:3: lv_attribute_1_0= ruleAttribute
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:953:1: (lv_attribute_1_0= ruleAttribute )
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:954:3: lv_attribute_1_0= ruleAttribute
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAttributesAccess().getAttributeAttributeParserRuleCall_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAttribute_in_ruleAttributes2044);
+            	    pushFollow(FOLLOW_ruleAttribute_in_ruleAttributes1811);
             	    lv_attribute_1_0=ruleAttribute();
 
             	    state._fsp--;
@@ -2635,7 +2259,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop5;
                 }
             } while (true);
 
@@ -2660,7 +2284,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttribute"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1140:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:978:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
     public final EObject entryRuleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -2668,17 +2292,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1141:2: (iv_ruleAttribute= ruleAttribute EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1142:2: iv_ruleAttribute= ruleAttribute EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:979:2: (iv_ruleAttribute= ruleAttribute EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:980:2: iv_ruleAttribute= ruleAttribute EOF
             {
              newCompositeNode(grammarAccess.getAttributeRule()); 
-            pushFollow(FOLLOW_ruleAttribute_in_entryRuleAttribute2081);
+            pushFollow(FOLLOW_ruleAttribute_in_entryRuleAttribute1848);
             iv_ruleAttribute=ruleAttribute();
 
             state._fsp--;
 
              current =iv_ruleAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttribute2091); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttribute1858); 
 
             }
 
@@ -2696,93 +2320,46 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1149:1: ruleAttribute returns [EObject current=null] : ( (otherlv_0= '+' | otherlv_1= '-' )? ( ( (lv_idAttribute_2_1= RULE_ID | lv_idAttribute_2_2= RULE_STRING ) ) ) ( ( (lv_assign_3_0= RULE_ASSIGN ) ) ( (lv_value_4_0= ruleValue ) ) (otherlv_5= ',' ( (lv_otherValues_6_0= ruleValue ) ) )* )? ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:987:1: ruleAttribute returns [EObject current=null] : ( ( (lv_operator_0_0= RULE_OPERATOR ) )? ( (lv_idAttribute_1_0= ruleId ) ) ( ( (lv_assign_2_0= RULE_ASSIGN ) ) ( (lv_value_3_0= ruleValue ) ) (otherlv_4= ',' ( (lv_otherValues_5_0= ruleValue ) ) )* )? ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token lv_idAttribute_2_1=null;
-        Token lv_idAttribute_2_2=null;
-        Token lv_assign_3_0=null;
-        Token otherlv_5=null;
-        EObject lv_value_4_0 = null;
+        Token lv_operator_0_0=null;
+        Token lv_assign_2_0=null;
+        Token otherlv_4=null;
+        AntlrDatatypeRuleToken lv_idAttribute_1_0 = null;
 
-        EObject lv_otherValues_6_0 = null;
+        EObject lv_value_3_0 = null;
+
+        EObject lv_otherValues_5_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1152:28: ( ( (otherlv_0= '+' | otherlv_1= '-' )? ( ( (lv_idAttribute_2_1= RULE_ID | lv_idAttribute_2_2= RULE_STRING ) ) ) ( ( (lv_assign_3_0= RULE_ASSIGN ) ) ( (lv_value_4_0= ruleValue ) ) (otherlv_5= ',' ( (lv_otherValues_6_0= ruleValue ) ) )* )? ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1153:1: ( (otherlv_0= '+' | otherlv_1= '-' )? ( ( (lv_idAttribute_2_1= RULE_ID | lv_idAttribute_2_2= RULE_STRING ) ) ) ( ( (lv_assign_3_0= RULE_ASSIGN ) ) ( (lv_value_4_0= ruleValue ) ) (otherlv_5= ',' ( (lv_otherValues_6_0= ruleValue ) ) )* )? )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:990:28: ( ( ( (lv_operator_0_0= RULE_OPERATOR ) )? ( (lv_idAttribute_1_0= ruleId ) ) ( ( (lv_assign_2_0= RULE_ASSIGN ) ) ( (lv_value_3_0= ruleValue ) ) (otherlv_4= ',' ( (lv_otherValues_5_0= ruleValue ) ) )* )? ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:991:1: ( ( (lv_operator_0_0= RULE_OPERATOR ) )? ( (lv_idAttribute_1_0= ruleId ) ) ( ( (lv_assign_2_0= RULE_ASSIGN ) ) ( (lv_value_3_0= ruleValue ) ) (otherlv_4= ',' ( (lv_otherValues_5_0= ruleValue ) ) )* )? )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1153:1: ( (otherlv_0= '+' | otherlv_1= '-' )? ( ( (lv_idAttribute_2_1= RULE_ID | lv_idAttribute_2_2= RULE_STRING ) ) ) ( ( (lv_assign_3_0= RULE_ASSIGN ) ) ( (lv_value_4_0= ruleValue ) ) (otherlv_5= ',' ( (lv_otherValues_6_0= ruleValue ) ) )* )? )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1153:2: (otherlv_0= '+' | otherlv_1= '-' )? ( ( (lv_idAttribute_2_1= RULE_ID | lv_idAttribute_2_2= RULE_STRING ) ) ) ( ( (lv_assign_3_0= RULE_ASSIGN ) ) ( (lv_value_4_0= ruleValue ) ) (otherlv_5= ',' ( (lv_otherValues_6_0= ruleValue ) ) )* )?
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:991:1: ( ( (lv_operator_0_0= RULE_OPERATOR ) )? ( (lv_idAttribute_1_0= ruleId ) ) ( ( (lv_assign_2_0= RULE_ASSIGN ) ) ( (lv_value_3_0= ruleValue ) ) (otherlv_4= ',' ( (lv_otherValues_5_0= ruleValue ) ) )* )? )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:991:2: ( (lv_operator_0_0= RULE_OPERATOR ) )? ( (lv_idAttribute_1_0= ruleId ) ) ( ( (lv_assign_2_0= RULE_ASSIGN ) ) ( (lv_value_3_0= ruleValue ) ) (otherlv_4= ',' ( (lv_otherValues_5_0= ruleValue ) ) )* )?
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1153:2: (otherlv_0= '+' | otherlv_1= '-' )?
-            int alt15=3;
-            int LA15_0 = input.LA(1);
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:991:2: ( (lv_operator_0_0= RULE_OPERATOR ) )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA15_0==22) ) {
-                alt15=1;
+            if ( (LA6_0==RULE_OPERATOR) ) {
+                alt6=1;
             }
-            else if ( (LA15_0==23) ) {
-                alt15=2;
-            }
-            switch (alt15) {
+            switch (alt6) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1153:4: otherlv_0= '+'
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:992:1: (lv_operator_0_0= RULE_OPERATOR )
                     {
-                    otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleAttribute2129); 
-
-                        	newLeafNode(otherlv_0, grammarAccess.getAttributeAccess().getPlusSignKeyword_0_0());
-                        
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1158:7: otherlv_1= '-'
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:992:1: (lv_operator_0_0= RULE_OPERATOR )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:993:3: lv_operator_0_0= RULE_OPERATOR
                     {
-                    otherlv_1=(Token)match(input,23,FOLLOW_23_in_ruleAttribute2147); 
+                    lv_operator_0_0=(Token)match(input,RULE_OPERATOR,FOLLOW_RULE_OPERATOR_in_ruleAttribute1900); 
 
-                        	newLeafNode(otherlv_1, grammarAccess.getAttributeAccess().getHyphenMinusKeyword_0_1());
-                        
-
-                    }
-                    break;
-
-            }
-
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1162:3: ( ( (lv_idAttribute_2_1= RULE_ID | lv_idAttribute_2_2= RULE_STRING ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1163:1: ( (lv_idAttribute_2_1= RULE_ID | lv_idAttribute_2_2= RULE_STRING ) )
-            {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1163:1: ( (lv_idAttribute_2_1= RULE_ID | lv_idAttribute_2_2= RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1164:1: (lv_idAttribute_2_1= RULE_ID | lv_idAttribute_2_2= RULE_STRING )
-            {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1164:1: (lv_idAttribute_2_1= RULE_ID | lv_idAttribute_2_2= RULE_STRING )
-            int alt16=2;
-            int LA16_0 = input.LA(1);
-
-            if ( (LA16_0==RULE_ID) ) {
-                alt16=1;
-            }
-            else if ( (LA16_0==RULE_STRING) ) {
-                alt16=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
-
-                throw nvae;
-            }
-            switch (alt16) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1165:3: lv_idAttribute_2_1= RULE_ID
-                    {
-                    lv_idAttribute_2_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAttribute2168); 
-
-                    			newLeafNode(lv_idAttribute_2_1, grammarAccess.getAttributeAccess().getIdAttributeIDTerminalRuleCall_1_0_0()); 
+                    			newLeafNode(lv_operator_0_0, grammarAccess.getAttributeAccess().getOperatorOPERATORTerminalRuleCall_0_0()); 
                     		
 
                     	        if (current==null) {
@@ -2790,62 +2367,70 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     	        }
                            		setWithLastConsumed(
                            			current, 
-                           			"idAttribute",
-                            		lv_idAttribute_2_1, 
-                            		"ID");
+                           			"operator",
+                            		lv_operator_0_0, 
+                            		"OPERATOR");
                     	    
 
                     }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1180:8: lv_idAttribute_2_2= RULE_STRING
-                    {
-                    lv_idAttribute_2_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleAttribute2188); 
 
-                    			newLeafNode(lv_idAttribute_2_2, grammarAccess.getAttributeAccess().getIdAttributeSTRINGTerminalRuleCall_1_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getAttributeRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"idAttribute",
-                            		lv_idAttribute_2_2, 
-                            		"STRING");
-                    	    
 
                     }
                     break;
 
             }
 
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1009:3: ( (lv_idAttribute_1_0= ruleId ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1010:1: (lv_idAttribute_1_0= ruleId )
+            {
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1010:1: (lv_idAttribute_1_0= ruleId )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1011:3: lv_idAttribute_1_0= ruleId
+            {
+             
+            	        newCompositeNode(grammarAccess.getAttributeAccess().getIdAttributeIdParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleId_in_ruleAttribute1927);
+            lv_idAttribute_1_0=ruleId();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getAttributeRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"idAttribute",
+                    		lv_idAttribute_1_0, 
+                    		"Id");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
 
             }
 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1198:2: ( ( (lv_assign_3_0= RULE_ASSIGN ) ) ( (lv_value_4_0= ruleValue ) ) (otherlv_5= ',' ( (lv_otherValues_6_0= ruleValue ) ) )* )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1027:2: ( ( (lv_assign_2_0= RULE_ASSIGN ) ) ( (lv_value_3_0= ruleValue ) ) (otherlv_4= ',' ( (lv_otherValues_5_0= ruleValue ) ) )* )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA18_0==RULE_ASSIGN) ) {
-                alt18=1;
+            if ( (LA8_0==RULE_ASSIGN) ) {
+                alt8=1;
             }
-            switch (alt18) {
+            switch (alt8) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1198:3: ( (lv_assign_3_0= RULE_ASSIGN ) ) ( (lv_value_4_0= ruleValue ) ) (otherlv_5= ',' ( (lv_otherValues_6_0= ruleValue ) ) )*
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1027:3: ( (lv_assign_2_0= RULE_ASSIGN ) ) ( (lv_value_3_0= ruleValue ) ) (otherlv_4= ',' ( (lv_otherValues_5_0= ruleValue ) ) )*
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1198:3: ( (lv_assign_3_0= RULE_ASSIGN ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1199:1: (lv_assign_3_0= RULE_ASSIGN )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1027:3: ( (lv_assign_2_0= RULE_ASSIGN ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1028:1: (lv_assign_2_0= RULE_ASSIGN )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1199:1: (lv_assign_3_0= RULE_ASSIGN )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1200:3: lv_assign_3_0= RULE_ASSIGN
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1028:1: (lv_assign_2_0= RULE_ASSIGN )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1029:3: lv_assign_2_0= RULE_ASSIGN
                     {
-                    lv_assign_3_0=(Token)match(input,RULE_ASSIGN,FOLLOW_RULE_ASSIGN_in_ruleAttribute2214); 
+                    lv_assign_2_0=(Token)match(input,RULE_ASSIGN,FOLLOW_RULE_ASSIGN_in_ruleAttribute1945); 
 
-                    			newLeafNode(lv_assign_3_0, grammarAccess.getAttributeAccess().getAssignASSIGNTerminalRuleCall_2_0_0()); 
+                    			newLeafNode(lv_assign_2_0, grammarAccess.getAttributeAccess().getAssignASSIGNTerminalRuleCall_2_0_0()); 
                     		
 
                     	        if (current==null) {
@@ -2854,7 +2439,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                            		setWithLastConsumed(
                            			current, 
                            			"assign",
-                            		lv_assign_3_0, 
+                            		lv_assign_2_0, 
                             		"ASSIGN");
                     	    
 
@@ -2863,17 +2448,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1216:2: ( (lv_value_4_0= ruleValue ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1217:1: (lv_value_4_0= ruleValue )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1045:2: ( (lv_value_3_0= ruleValue ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1046:1: (lv_value_3_0= ruleValue )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1217:1: (lv_value_4_0= ruleValue )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1218:3: lv_value_4_0= ruleValue
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1046:1: (lv_value_3_0= ruleValue )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1047:3: lv_value_3_0= ruleValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getAttributeAccess().getValueValueParserRuleCall_2_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValue_in_ruleAttribute2240);
-                    lv_value_4_0=ruleValue();
+                    pushFollow(FOLLOW_ruleValue_in_ruleAttribute1971);
+                    lv_value_3_0=ruleValue();
 
                     state._fsp--;
 
@@ -2884,7 +2469,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                            		set(
                            			current, 
                            			"value",
-                            		lv_value_4_0, 
+                            		lv_value_3_0, 
                             		"Value");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -2894,36 +2479,36 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1234:2: (otherlv_5= ',' ( (lv_otherValues_6_0= ruleValue ) ) )*
-                    loop17:
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1063:2: (otherlv_4= ',' ( (lv_otherValues_5_0= ruleValue ) ) )*
+                    loop7:
                     do {
-                        int alt17=2;
-                        int LA17_0 = input.LA(1);
+                        int alt7=2;
+                        int LA7_0 = input.LA(1);
 
-                        if ( (LA17_0==24) ) {
-                            alt17=1;
+                        if ( (LA7_0==24) ) {
+                            alt7=1;
                         }
 
 
-                        switch (alt17) {
+                        switch (alt7) {
                     	case 1 :
-                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1234:4: otherlv_5= ',' ( (lv_otherValues_6_0= ruleValue ) )
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1063:4: otherlv_4= ',' ( (lv_otherValues_5_0= ruleValue ) )
                     	    {
-                    	    otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleAttribute2253); 
+                    	    otherlv_4=(Token)match(input,24,FOLLOW_24_in_ruleAttribute1984); 
 
-                    	        	newLeafNode(otherlv_5, grammarAccess.getAttributeAccess().getCommaKeyword_2_2_0());
+                    	        	newLeafNode(otherlv_4, grammarAccess.getAttributeAccess().getCommaKeyword_2_2_0());
                     	        
-                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1238:1: ( (lv_otherValues_6_0= ruleValue ) )
-                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1239:1: (lv_otherValues_6_0= ruleValue )
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1067:1: ( (lv_otherValues_5_0= ruleValue ) )
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1068:1: (lv_otherValues_5_0= ruleValue )
                     	    {
-                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1239:1: (lv_otherValues_6_0= ruleValue )
-                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1240:3: lv_otherValues_6_0= ruleValue
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1068:1: (lv_otherValues_5_0= ruleValue )
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1069:3: lv_otherValues_5_0= ruleValue
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getAttributeAccess().getOtherValuesValueParserRuleCall_2_2_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleValue_in_ruleAttribute2274);
-                    	    lv_otherValues_6_0=ruleValue();
+                    	    pushFollow(FOLLOW_ruleValue_in_ruleAttribute2005);
+                    	    lv_otherValues_5_0=ruleValue();
 
                     	    state._fsp--;
 
@@ -2934,7 +2519,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     	           		add(
                     	           			current, 
                     	           			"otherValues",
-                    	            		lv_otherValues_6_0, 
+                    	            		lv_otherValues_5_0, 
                     	            		"Value");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
@@ -2949,7 +2534,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop17;
+                    	    break loop7;
                         }
                     } while (true);
 
@@ -2980,7 +2565,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleValue"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1264:1: entryRuleValue returns [EObject current=null] : iv_ruleValue= ruleValue EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1093:1: entryRuleValue returns [EObject current=null] : iv_ruleValue= ruleValue EOF ;
     public final EObject entryRuleValue() throws RecognitionException {
         EObject current = null;
 
@@ -2988,17 +2573,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1265:2: (iv_ruleValue= ruleValue EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1266:2: iv_ruleValue= ruleValue EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1094:2: (iv_ruleValue= ruleValue EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1095:2: iv_ruleValue= ruleValue EOF
             {
              newCompositeNode(grammarAccess.getValueRule()); 
-            pushFollow(FOLLOW_ruleValue_in_entryRuleValue2314);
+            pushFollow(FOLLOW_ruleValue_in_entryRuleValue2045);
             iv_ruleValue=ruleValue();
 
             state._fsp--;
 
              current =iv_ruleValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleValue2324); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleValue2055); 
 
             }
 
@@ -3016,65 +2601,70 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValue"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1273:1: ruleValue returns [EObject current=null] : ( ( (lv_string_0_0= RULE_STRING ) ) | ( (lv_real_1_0= ruleReal ) ) | ( (lv_array_2_0= ruleArray ) ) | ( (lv_map_3_0= ruleMap ) ) ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1102:1: ruleValue returns [EObject current=null] : ( ( (lv_string_0_0= RULE_STRING ) ) | ( (lv_real_1_0= RULE_REAL ) ) | ( (lv_int_2_0= RULE_INT ) ) | ( (lv_array_3_0= ruleArray ) ) | ( (lv_map_4_0= ruleMap ) ) ) ;
     public final EObject ruleValue() throws RecognitionException {
         EObject current = null;
 
         Token lv_string_0_0=null;
-        AntlrDatatypeRuleToken lv_real_1_0 = null;
+        Token lv_real_1_0=null;
+        Token lv_int_2_0=null;
+        EObject lv_array_3_0 = null;
 
-        EObject lv_array_2_0 = null;
-
-        EObject lv_map_3_0 = null;
+        EObject lv_map_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1276:28: ( ( ( (lv_string_0_0= RULE_STRING ) ) | ( (lv_real_1_0= ruleReal ) ) | ( (lv_array_2_0= ruleArray ) ) | ( (lv_map_3_0= ruleMap ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1277:1: ( ( (lv_string_0_0= RULE_STRING ) ) | ( (lv_real_1_0= ruleReal ) ) | ( (lv_array_2_0= ruleArray ) ) | ( (lv_map_3_0= ruleMap ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1105:28: ( ( ( (lv_string_0_0= RULE_STRING ) ) | ( (lv_real_1_0= RULE_REAL ) ) | ( (lv_int_2_0= RULE_INT ) ) | ( (lv_array_3_0= ruleArray ) ) | ( (lv_map_4_0= ruleMap ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1106:1: ( ( (lv_string_0_0= RULE_STRING ) ) | ( (lv_real_1_0= RULE_REAL ) ) | ( (lv_int_2_0= RULE_INT ) ) | ( (lv_array_3_0= ruleArray ) ) | ( (lv_map_4_0= ruleMap ) ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1277:1: ( ( (lv_string_0_0= RULE_STRING ) ) | ( (lv_real_1_0= ruleReal ) ) | ( (lv_array_2_0= ruleArray ) ) | ( (lv_map_3_0= ruleMap ) ) )
-            int alt19=4;
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1106:1: ( ( (lv_string_0_0= RULE_STRING ) ) | ( (lv_real_1_0= RULE_REAL ) ) | ( (lv_int_2_0= RULE_INT ) ) | ( (lv_array_3_0= ruleArray ) ) | ( (lv_map_4_0= ruleMap ) ) )
+            int alt9=5;
             switch ( input.LA(1) ) {
             case RULE_STRING:
                 {
-                alt19=1;
+                alt9=1;
+                }
+                break;
+            case RULE_REAL:
+                {
+                alt9=2;
                 }
                 break;
             case RULE_INT:
                 {
-                alt19=2;
+                alt9=3;
                 }
                 break;
             case 25:
                 {
-                alt19=3;
+                alt9=4;
                 }
                 break;
             case 27:
                 {
-                alt19=4;
+                alt9=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 19, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt19) {
+            switch (alt9) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1277:2: ( (lv_string_0_0= RULE_STRING ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1106:2: ( (lv_string_0_0= RULE_STRING ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1277:2: ( (lv_string_0_0= RULE_STRING ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1278:1: (lv_string_0_0= RULE_STRING )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1106:2: ( (lv_string_0_0= RULE_STRING ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1107:1: (lv_string_0_0= RULE_STRING )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1278:1: (lv_string_0_0= RULE_STRING )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1279:3: lv_string_0_0= RULE_STRING
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1107:1: (lv_string_0_0= RULE_STRING )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1108:3: lv_string_0_0= RULE_STRING
                     {
-                    lv_string_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleValue2366); 
+                    lv_string_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleValue2097); 
 
                     			newLeafNode(lv_string_0_0, grammarAccess.getValueAccess().getStringSTRINGTerminalRuleCall_0_0()); 
                     		
@@ -3098,32 +2688,27 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1296:6: ( (lv_real_1_0= ruleReal ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1125:6: ( (lv_real_1_0= RULE_REAL ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1296:6: ( (lv_real_1_0= ruleReal ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1297:1: (lv_real_1_0= ruleReal )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1125:6: ( (lv_real_1_0= RULE_REAL ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1126:1: (lv_real_1_0= RULE_REAL )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1297:1: (lv_real_1_0= ruleReal )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1298:3: lv_real_1_0= ruleReal
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1126:1: (lv_real_1_0= RULE_REAL )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1127:3: lv_real_1_0= RULE_REAL
                     {
-                     
-                    	        newCompositeNode(grammarAccess.getValueAccess().getRealRealParserRuleCall_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleReal_in_ruleValue2398);
-                    lv_real_1_0=ruleReal();
+                    lv_real_1_0=(Token)match(input,RULE_REAL,FOLLOW_RULE_REAL_in_ruleValue2125); 
 
-                    state._fsp--;
-
+                    			newLeafNode(lv_real_1_0, grammarAccess.getValueAccess().getRealREALTerminalRuleCall_1_0()); 
+                    		
 
                     	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getValueRule());
+                    	            current = createModelElement(grammarAccess.getValueRule());
                     	        }
-                           		set(
+                           		setWithLastConsumed(
                            			current, 
                            			"real",
                             		lv_real_1_0, 
-                            		"Real");
-                    	        afterParserOrEnumRuleCall();
+                            		"REAL");
                     	    
 
                     }
@@ -3135,19 +2720,51 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1315:6: ( (lv_array_2_0= ruleArray ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1144:6: ( (lv_int_2_0= RULE_INT ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1315:6: ( (lv_array_2_0= ruleArray ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1316:1: (lv_array_2_0= ruleArray )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1144:6: ( (lv_int_2_0= RULE_INT ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1145:1: (lv_int_2_0= RULE_INT )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1316:1: (lv_array_2_0= ruleArray )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1317:3: lv_array_2_0= ruleArray
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1145:1: (lv_int_2_0= RULE_INT )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1146:3: lv_int_2_0= RULE_INT
+                    {
+                    lv_int_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleValue2153); 
+
+                    			newLeafNode(lv_int_2_0, grammarAccess.getValueAccess().getIntINTTerminalRuleCall_2_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getValueRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"int",
+                            		lv_int_2_0, 
+                            		"INT");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1163:6: ( (lv_array_3_0= ruleArray ) )
+                    {
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1163:6: ( (lv_array_3_0= ruleArray ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1164:1: (lv_array_3_0= ruleArray )
+                    {
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1164:1: (lv_array_3_0= ruleArray )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1165:3: lv_array_3_0= ruleArray
                     {
                      
-                    	        newCompositeNode(grammarAccess.getValueAccess().getArrayArrayParserRuleCall_2_0()); 
+                    	        newCompositeNode(grammarAccess.getValueAccess().getArrayArrayParserRuleCall_3_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleArray_in_ruleValue2425);
-                    lv_array_2_0=ruleArray();
+                    pushFollow(FOLLOW_ruleArray_in_ruleValue2185);
+                    lv_array_3_0=ruleArray();
 
                     state._fsp--;
 
@@ -3158,7 +2775,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                            		set(
                            			current, 
                            			"array",
-                            		lv_array_2_0, 
+                            		lv_array_3_0, 
                             		"Array");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -3171,20 +2788,20 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 4 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1334:6: ( (lv_map_3_0= ruleMap ) )
+                case 5 :
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1182:6: ( (lv_map_4_0= ruleMap ) )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1334:6: ( (lv_map_3_0= ruleMap ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1335:1: (lv_map_3_0= ruleMap )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1182:6: ( (lv_map_4_0= ruleMap ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1183:1: (lv_map_4_0= ruleMap )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1335:1: (lv_map_3_0= ruleMap )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1336:3: lv_map_3_0= ruleMap
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1183:1: (lv_map_4_0= ruleMap )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1184:3: lv_map_4_0= ruleMap
                     {
                      
-                    	        newCompositeNode(grammarAccess.getValueAccess().getMapMapParserRuleCall_3_0()); 
+                    	        newCompositeNode(grammarAccess.getValueAccess().getMapMapParserRuleCall_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleMap_in_ruleValue2452);
-                    lv_map_3_0=ruleMap();
+                    pushFollow(FOLLOW_ruleMap_in_ruleValue2212);
+                    lv_map_4_0=ruleMap();
 
                     state._fsp--;
 
@@ -3195,7 +2812,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                            		set(
                            			current, 
                            			"map",
-                            		lv_map_3_0, 
+                            		lv_map_4_0, 
                             		"Map");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -3229,7 +2846,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArray"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1360:1: entryRuleArray returns [EObject current=null] : iv_ruleArray= ruleArray EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1208:1: entryRuleArray returns [EObject current=null] : iv_ruleArray= ruleArray EOF ;
     public final EObject entryRuleArray() throws RecognitionException {
         EObject current = null;
 
@@ -3237,17 +2854,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1361:2: (iv_ruleArray= ruleArray EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1362:2: iv_ruleArray= ruleArray EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1209:2: (iv_ruleArray= ruleArray EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1210:2: iv_ruleArray= ruleArray EOF
             {
              newCompositeNode(grammarAccess.getArrayRule()); 
-            pushFollow(FOLLOW_ruleArray_in_entryRuleArray2488);
+            pushFollow(FOLLOW_ruleArray_in_entryRuleArray2248);
             iv_ruleArray=ruleArray();
 
             state._fsp--;
 
              current =iv_ruleArray; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleArray2498); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleArray2258); 
 
             }
 
@@ -3265,7 +2882,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArray"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1369:1: ruleArray returns [EObject current=null] : ( () otherlv_1= '{' ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )? otherlv_5= '}' ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1217:1: ruleArray returns [EObject current=null] : ( () otherlv_1= '{' ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )? otherlv_5= '}' ) ;
     public final EObject ruleArray() throws RecognitionException {
         EObject current = null;
 
@@ -3280,14 +2897,14 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1372:28: ( ( () otherlv_1= '{' ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )? otherlv_5= '}' ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1373:1: ( () otherlv_1= '{' ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )? otherlv_5= '}' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1220:28: ( ( () otherlv_1= '{' ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )? otherlv_5= '}' ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1221:1: ( () otherlv_1= '{' ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )? otherlv_5= '}' )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1373:1: ( () otherlv_1= '{' ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )? otherlv_5= '}' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1373:2: () otherlv_1= '{' ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )? otherlv_5= '}'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1221:1: ( () otherlv_1= '{' ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )? otherlv_5= '}' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1221:2: () otherlv_1= '{' ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )? otherlv_5= '}'
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1373:2: ()
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1374:5: 
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1221:2: ()
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1222:5: 
             {
 
                     current = forceCreateModelElement(
@@ -3297,31 +2914,31 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,25,FOLLOW_25_in_ruleArray2544); 
+            otherlv_1=(Token)match(input,25,FOLLOW_25_in_ruleArray2304); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getArrayAccess().getLeftCurlyBracketKeyword_1());
                 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1383:1: ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1231:1: ( ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )* )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( ((LA21_0>=RULE_STRING && LA21_0<=RULE_INT)||LA21_0==25||LA21_0==27) ) {
-                alt21=1;
+            if ( (LA11_0==RULE_INT||LA11_0==RULE_REAL||LA11_0==RULE_STRING||LA11_0==25||LA11_0==27) ) {
+                alt11=1;
             }
-            switch (alt21) {
+            switch (alt11) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1383:2: ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )*
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1231:2: ( (lv_value_2_0= ruleValue ) ) (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )*
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1383:2: ( (lv_value_2_0= ruleValue ) )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1384:1: (lv_value_2_0= ruleValue )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1231:2: ( (lv_value_2_0= ruleValue ) )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1232:1: (lv_value_2_0= ruleValue )
                     {
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1384:1: (lv_value_2_0= ruleValue )
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1385:3: lv_value_2_0= ruleValue
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1232:1: (lv_value_2_0= ruleValue )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1233:3: lv_value_2_0= ruleValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getArrayAccess().getValueValueParserRuleCall_2_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleValue_in_ruleArray2566);
+                    pushFollow(FOLLOW_ruleValue_in_ruleArray2326);
                     lv_value_2_0=ruleValue();
 
                     state._fsp--;
@@ -3343,35 +2960,35 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1401:2: (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )*
-                    loop20:
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1249:2: (otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) ) )*
+                    loop10:
                     do {
-                        int alt20=2;
-                        int LA20_0 = input.LA(1);
+                        int alt10=2;
+                        int LA10_0 = input.LA(1);
 
-                        if ( (LA20_0==24) ) {
-                            alt20=1;
+                        if ( (LA10_0==24) ) {
+                            alt10=1;
                         }
 
 
-                        switch (alt20) {
+                        switch (alt10) {
                     	case 1 :
-                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1401:4: otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) )
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1249:4: otherlv_3= ',' ( (lv_otherValues_4_0= ruleValue ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,24,FOLLOW_24_in_ruleArray2579); 
+                    	    otherlv_3=(Token)match(input,24,FOLLOW_24_in_ruleArray2339); 
 
                     	        	newLeafNode(otherlv_3, grammarAccess.getArrayAccess().getCommaKeyword_2_1_0());
                     	        
-                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1405:1: ( (lv_otherValues_4_0= ruleValue ) )
-                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1406:1: (lv_otherValues_4_0= ruleValue )
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1253:1: ( (lv_otherValues_4_0= ruleValue ) )
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1254:1: (lv_otherValues_4_0= ruleValue )
                     	    {
-                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1406:1: (lv_otherValues_4_0= ruleValue )
-                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1407:3: lv_otherValues_4_0= ruleValue
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1254:1: (lv_otherValues_4_0= ruleValue )
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1255:3: lv_otherValues_4_0= ruleValue
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getArrayAccess().getOtherValuesValueParserRuleCall_2_1_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleValue_in_ruleArray2600);
+                    	    pushFollow(FOLLOW_ruleValue_in_ruleArray2360);
                     	    lv_otherValues_4_0=ruleValue();
 
                     	    state._fsp--;
@@ -3398,7 +3015,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop20;
+                    	    break loop10;
                         }
                     } while (true);
 
@@ -3408,7 +3025,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,26,FOLLOW_26_in_ruleArray2616); 
+            otherlv_5=(Token)match(input,26,FOLLOW_26_in_ruleArray2376); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getArrayAccess().getRightCurlyBracketKeyword_3());
                 
@@ -3433,7 +3050,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMap"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1435:1: entryRuleMap returns [EObject current=null] : iv_ruleMap= ruleMap EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1283:1: entryRuleMap returns [EObject current=null] : iv_ruleMap= ruleMap EOF ;
     public final EObject entryRuleMap() throws RecognitionException {
         EObject current = null;
 
@@ -3441,17 +3058,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1436:2: (iv_ruleMap= ruleMap EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1437:2: iv_ruleMap= ruleMap EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1284:2: (iv_ruleMap= ruleMap EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1285:2: iv_ruleMap= ruleMap EOF
             {
              newCompositeNode(grammarAccess.getMapRule()); 
-            pushFollow(FOLLOW_ruleMap_in_entryRuleMap2652);
+            pushFollow(FOLLOW_ruleMap_in_entryRuleMap2412);
             iv_ruleMap=ruleMap();
 
             state._fsp--;
 
              current =iv_ruleMap; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMap2662); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMap2422); 
 
             }
 
@@ -3469,7 +3086,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMap"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1444:1: ruleMap returns [EObject current=null] : (otherlv_0= '[' ( (lv_mapping_1_0= ruleMapping ) ) (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )* otherlv_4= ']' ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1292:1: ruleMap returns [EObject current=null] : (otherlv_0= '[' ( (lv_mapping_1_0= ruleMapping ) ) (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )* otherlv_4= ']' ) ;
     public final EObject ruleMap() throws RecognitionException {
         EObject current = null;
 
@@ -3484,26 +3101,26 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1447:28: ( (otherlv_0= '[' ( (lv_mapping_1_0= ruleMapping ) ) (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )* otherlv_4= ']' ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1448:1: (otherlv_0= '[' ( (lv_mapping_1_0= ruleMapping ) ) (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )* otherlv_4= ']' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1295:28: ( (otherlv_0= '[' ( (lv_mapping_1_0= ruleMapping ) ) (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )* otherlv_4= ']' ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1296:1: (otherlv_0= '[' ( (lv_mapping_1_0= ruleMapping ) ) (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )* otherlv_4= ']' )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1448:1: (otherlv_0= '[' ( (lv_mapping_1_0= ruleMapping ) ) (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )* otherlv_4= ']' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1448:3: otherlv_0= '[' ( (lv_mapping_1_0= ruleMapping ) ) (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )* otherlv_4= ']'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1296:1: (otherlv_0= '[' ( (lv_mapping_1_0= ruleMapping ) ) (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )* otherlv_4= ']' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1296:3: otherlv_0= '[' ( (lv_mapping_1_0= ruleMapping ) ) (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )* otherlv_4= ']'
             {
-            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleMap2699); 
+            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleMap2459); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getMapAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1452:1: ( (lv_mapping_1_0= ruleMapping ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1453:1: (lv_mapping_1_0= ruleMapping )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1300:1: ( (lv_mapping_1_0= ruleMapping ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1301:1: (lv_mapping_1_0= ruleMapping )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1453:1: (lv_mapping_1_0= ruleMapping )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1454:3: lv_mapping_1_0= ruleMapping
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1301:1: (lv_mapping_1_0= ruleMapping )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1302:3: lv_mapping_1_0= ruleMapping
             {
              
             	        newCompositeNode(grammarAccess.getMapAccess().getMappingMappingParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleMapping_in_ruleMap2720);
+            pushFollow(FOLLOW_ruleMapping_in_ruleMap2480);
             lv_mapping_1_0=ruleMapping();
 
             state._fsp--;
@@ -3525,35 +3142,35 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1470:2: (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )*
-            loop22:
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1318:2: (otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) ) )*
+            loop12:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( (LA22_0==24) ) {
-                    alt22=1;
+                if ( (LA12_0==24) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt12) {
             	case 1 :
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1470:4: otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) )
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1318:4: otherlv_2= ',' ( (lv_otherMapping_3_0= ruleMapping ) )
             	    {
-            	    otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleMap2733); 
+            	    otherlv_2=(Token)match(input,24,FOLLOW_24_in_ruleMap2493); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getMapAccess().getCommaKeyword_2_0());
             	        
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1474:1: ( (lv_otherMapping_3_0= ruleMapping ) )
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1475:1: (lv_otherMapping_3_0= ruleMapping )
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1322:1: ( (lv_otherMapping_3_0= ruleMapping ) )
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1323:1: (lv_otherMapping_3_0= ruleMapping )
             	    {
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1475:1: (lv_otherMapping_3_0= ruleMapping )
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1476:3: lv_otherMapping_3_0= ruleMapping
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1323:1: (lv_otherMapping_3_0= ruleMapping )
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1324:3: lv_otherMapping_3_0= ruleMapping
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getMapAccess().getOtherMappingMappingParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMapping_in_ruleMap2754);
+            	    pushFollow(FOLLOW_ruleMapping_in_ruleMap2514);
             	    lv_otherMapping_3_0=ruleMapping();
 
             	    state._fsp--;
@@ -3580,11 +3197,11 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop12;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,28,FOLLOW_28_in_ruleMap2768); 
+            otherlv_4=(Token)match(input,28,FOLLOW_28_in_ruleMap2528); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getMapAccess().getRightSquareBracketKeyword_3());
                 
@@ -3609,7 +3226,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMapping"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1504:1: entryRuleMapping returns [EObject current=null] : iv_ruleMapping= ruleMapping EOF ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1352:1: entryRuleMapping returns [EObject current=null] : iv_ruleMapping= ruleMapping EOF ;
     public final EObject entryRuleMapping() throws RecognitionException {
         EObject current = null;
 
@@ -3617,17 +3234,17 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1505:2: (iv_ruleMapping= ruleMapping EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1506:2: iv_ruleMapping= ruleMapping EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1353:2: (iv_ruleMapping= ruleMapping EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1354:2: iv_ruleMapping= ruleMapping EOF
             {
              newCompositeNode(grammarAccess.getMappingRule()); 
-            pushFollow(FOLLOW_ruleMapping_in_entryRuleMapping2804);
+            pushFollow(FOLLOW_ruleMapping_in_entryRuleMapping2564);
             iv_ruleMapping=ruleMapping();
 
             state._fsp--;
 
              current =iv_ruleMapping; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMapping2814); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMapping2574); 
 
             }
 
@@ -3645,104 +3262,63 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMapping"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1513:1: ruleMapping returns [EObject current=null] : ( ( ( (lv_id_0_1= RULE_ID | lv_id_0_2= RULE_STRING ) ) ) ( (lv_assign_1_0= RULE_ASSIGN ) ) ( (lv_value_2_0= ruleValue ) ) ) ;
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1361:1: ruleMapping returns [EObject current=null] : ( ( (lv_id_0_0= ruleId ) ) ( (lv_assign_1_0= RULE_ASSIGN ) ) ( (lv_value_2_0= ruleValue ) ) ) ;
     public final EObject ruleMapping() throws RecognitionException {
         EObject current = null;
 
-        Token lv_id_0_1=null;
-        Token lv_id_0_2=null;
         Token lv_assign_1_0=null;
+        AntlrDatatypeRuleToken lv_id_0_0 = null;
+
         EObject lv_value_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1516:28: ( ( ( ( (lv_id_0_1= RULE_ID | lv_id_0_2= RULE_STRING ) ) ) ( (lv_assign_1_0= RULE_ASSIGN ) ) ( (lv_value_2_0= ruleValue ) ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1517:1: ( ( ( (lv_id_0_1= RULE_ID | lv_id_0_2= RULE_STRING ) ) ) ( (lv_assign_1_0= RULE_ASSIGN ) ) ( (lv_value_2_0= ruleValue ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1364:28: ( ( ( (lv_id_0_0= ruleId ) ) ( (lv_assign_1_0= RULE_ASSIGN ) ) ( (lv_value_2_0= ruleValue ) ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1365:1: ( ( (lv_id_0_0= ruleId ) ) ( (lv_assign_1_0= RULE_ASSIGN ) ) ( (lv_value_2_0= ruleValue ) ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1517:1: ( ( ( (lv_id_0_1= RULE_ID | lv_id_0_2= RULE_STRING ) ) ) ( (lv_assign_1_0= RULE_ASSIGN ) ) ( (lv_value_2_0= ruleValue ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1517:2: ( ( (lv_id_0_1= RULE_ID | lv_id_0_2= RULE_STRING ) ) ) ( (lv_assign_1_0= RULE_ASSIGN ) ) ( (lv_value_2_0= ruleValue ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1365:1: ( ( (lv_id_0_0= ruleId ) ) ( (lv_assign_1_0= RULE_ASSIGN ) ) ( (lv_value_2_0= ruleValue ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1365:2: ( (lv_id_0_0= ruleId ) ) ( (lv_assign_1_0= RULE_ASSIGN ) ) ( (lv_value_2_0= ruleValue ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1517:2: ( ( (lv_id_0_1= RULE_ID | lv_id_0_2= RULE_STRING ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1518:1: ( (lv_id_0_1= RULE_ID | lv_id_0_2= RULE_STRING ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1365:2: ( (lv_id_0_0= ruleId ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1366:1: (lv_id_0_0= ruleId )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1518:1: ( (lv_id_0_1= RULE_ID | lv_id_0_2= RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1519:1: (lv_id_0_1= RULE_ID | lv_id_0_2= RULE_STRING )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1366:1: (lv_id_0_0= ruleId )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1367:3: lv_id_0_0= ruleId
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1519:1: (lv_id_0_1= RULE_ID | lv_id_0_2= RULE_STRING )
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+             
+            	        newCompositeNode(grammarAccess.getMappingAccess().getIdIdParserRuleCall_0_0()); 
+            	    
+            pushFollow(FOLLOW_ruleId_in_ruleMapping2620);
+            lv_id_0_0=ruleId();
 
-            if ( (LA23_0==RULE_ID) ) {
-                alt23=1;
-            }
-            else if ( (LA23_0==RULE_STRING) ) {
-                alt23=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 23, 0, input);
+            state._fsp--;
 
-                throw nvae;
-            }
-            switch (alt23) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1520:3: lv_id_0_1= RULE_ID
-                    {
-                    lv_id_0_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMapping2858); 
 
-                    			newLeafNode(lv_id_0_1, grammarAccess.getMappingAccess().getIdIDTerminalRuleCall_0_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getMappingRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"id",
-                            		lv_id_0_1, 
-                            		"ID");
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1535:8: lv_id_0_2= RULE_STRING
-                    {
-                    lv_id_0_2=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleMapping2878); 
-
-                    			newLeafNode(lv_id_0_2, grammarAccess.getMappingAccess().getIdSTRINGTerminalRuleCall_0_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getMappingRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"id",
-                            		lv_id_0_2, 
-                            		"STRING");
-                    	    
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getMappingRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"id",
+                    		lv_id_0_0, 
+                    		"Id");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
 
             }
 
-
-            }
-
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1553:2: ( (lv_assign_1_0= RULE_ASSIGN ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1554:1: (lv_assign_1_0= RULE_ASSIGN )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1383:2: ( (lv_assign_1_0= RULE_ASSIGN ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1384:1: (lv_assign_1_0= RULE_ASSIGN )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1554:1: (lv_assign_1_0= RULE_ASSIGN )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1555:3: lv_assign_1_0= RULE_ASSIGN
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1384:1: (lv_assign_1_0= RULE_ASSIGN )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1385:3: lv_assign_1_0= RULE_ASSIGN
             {
-            lv_assign_1_0=(Token)match(input,RULE_ASSIGN,FOLLOW_RULE_ASSIGN_in_ruleMapping2903); 
+            lv_assign_1_0=(Token)match(input,RULE_ASSIGN,FOLLOW_RULE_ASSIGN_in_ruleMapping2637); 
 
             			newLeafNode(lv_assign_1_0, grammarAccess.getMappingAccess().getAssignASSIGNTerminalRuleCall_1_0()); 
             		
@@ -3762,16 +3338,16 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1571:2: ( (lv_value_2_0= ruleValue ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1572:1: (lv_value_2_0= ruleValue )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1401:2: ( (lv_value_2_0= ruleValue ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1402:1: (lv_value_2_0= ruleValue )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1572:1: (lv_value_2_0= ruleValue )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1573:3: lv_value_2_0= ruleValue
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1402:1: (lv_value_2_0= ruleValue )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1403:3: lv_value_2_0= ruleValue
             {
              
             	        newCompositeNode(grammarAccess.getMappingAccess().getValueValueParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleValue_in_ruleMapping2929);
+            pushFollow(FOLLOW_ruleValue_in_ruleMapping2663);
             lv_value_2_0=ruleValue();
 
             state._fsp--;
@@ -3813,26 +3389,26 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleMapping"
 
 
-    // $ANTLR start "entryRuleReal"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1597:1: entryRuleReal returns [String current=null] : iv_ruleReal= ruleReal EOF ;
-    public final String entryRuleReal() throws RecognitionException {
+    // $ANTLR start "entryRuleId"
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1427:1: entryRuleId returns [String current=null] : iv_ruleId= ruleId EOF ;
+    public final String entryRuleId() throws RecognitionException {
         String current = null;
 
-        AntlrDatatypeRuleToken iv_ruleReal = null;
+        AntlrDatatypeRuleToken iv_ruleId = null;
 
 
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1598:2: (iv_ruleReal= ruleReal EOF )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1599:2: iv_ruleReal= ruleReal EOF
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1428:2: (iv_ruleId= ruleId EOF )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1429:2: iv_ruleId= ruleId EOF
             {
-             newCompositeNode(grammarAccess.getRealRule()); 
-            pushFollow(FOLLOW_ruleReal_in_entryRuleReal2966);
-            iv_ruleReal=ruleReal();
+             newCompositeNode(grammarAccess.getIdRule()); 
+            pushFollow(FOLLOW_ruleId_in_entryRuleId2700);
+            iv_ruleId=ruleId();
 
             state._fsp--;
 
-             current =iv_ruleReal.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReal2977); 
+             current =iv_ruleId.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleId2711); 
 
             }
 
@@ -3846,81 +3422,133 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleReal"
+    // $ANTLR end "entryRuleId"
 
 
-    // $ANTLR start "ruleReal"
-    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1606:1: ruleReal returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT (kw= '.' (kw= '0' )* this_INT_3= RULE_INT ) ) ;
-    public final AntlrDatatypeRuleToken ruleReal() throws RecognitionException {
+    // $ANTLR start "ruleId"
+    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1436:1: ruleId returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT | (this_WORD_2= RULE_WORD (kw= '.' this_WORD_4= RULE_WORD )* ) ) ;
+    public final AntlrDatatypeRuleToken ruleId() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        Token this_INT_0=null;
+        Token this_STRING_0=null;
+        Token this_INT_1=null;
+        Token this_WORD_2=null;
         Token kw=null;
-        Token this_INT_3=null;
+        Token this_WORD_4=null;
 
          enterRule(); 
             
         try {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1609:28: ( (this_INT_0= RULE_INT (kw= '.' (kw= '0' )* this_INT_3= RULE_INT ) ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1610:1: (this_INT_0= RULE_INT (kw= '.' (kw= '0' )* this_INT_3= RULE_INT ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1439:28: ( (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT | (this_WORD_2= RULE_WORD (kw= '.' this_WORD_4= RULE_WORD )* ) ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1440:1: (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT | (this_WORD_2= RULE_WORD (kw= '.' this_WORD_4= RULE_WORD )* ) )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1610:1: (this_INT_0= RULE_INT (kw= '.' (kw= '0' )* this_INT_3= RULE_INT ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1610:6: this_INT_0= RULE_INT (kw= '.' (kw= '0' )* this_INT_3= RULE_INT )
-            {
-            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleReal3017); 
-
-            		current.merge(this_INT_0);
-                
-             
-                newLeafNode(this_INT_0, grammarAccess.getRealAccess().getINTTerminalRuleCall_0()); 
-                
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1617:1: (kw= '.' (kw= '0' )* this_INT_3= RULE_INT )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1618:2: kw= '.' (kw= '0' )* this_INT_3= RULE_INT
-            {
-            kw=(Token)match(input,29,FOLLOW_29_in_ruleReal3036); 
-
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getRealAccess().getFullStopKeyword_1_0()); 
-                
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1623:1: (kw= '0' )*
-            loop24:
-            do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
-
-                if ( (LA24_0==30) ) {
-                    alt24=1;
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1440:1: (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT | (this_WORD_2= RULE_WORD (kw= '.' this_WORD_4= RULE_WORD )* ) )
+            int alt14=3;
+            switch ( input.LA(1) ) {
+            case RULE_STRING:
+                {
+                alt14=1;
                 }
-
-
-                switch (alt24) {
-            	case 1 :
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1624:2: kw= '0'
-            	    {
-            	    kw=(Token)match(input,30,FOLLOW_30_in_ruleReal3050); 
-
-            	            current.merge(kw);
-            	            newLeafNode(kw, grammarAccess.getRealAccess().getDigitZeroKeyword_1_1()); 
-            	        
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop24;
+                break;
+            case RULE_INT:
+                {
+                alt14=2;
                 }
-            } while (true);
+                break;
+            case RULE_WORD:
+                {
+                alt14=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 14, 0, input);
 
-            this_INT_3=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleReal3067); 
-
-            		current.merge(this_INT_3);
-                
-             
-                newLeafNode(this_INT_3, grammarAccess.getRealAccess().getINTTerminalRuleCall_1_2()); 
-                
-
+                throw nvae;
             }
 
+            switch (alt14) {
+                case 1 :
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1440:6: this_STRING_0= RULE_STRING
+                    {
+                    this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleId2751); 
+
+                    		current.merge(this_STRING_0);
+                        
+                     
+                        newLeafNode(this_STRING_0, grammarAccess.getIdAccess().getSTRINGTerminalRuleCall_0()); 
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1448:10: this_INT_1= RULE_INT
+                    {
+                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleId2777); 
+
+                    		current.merge(this_INT_1);
+                        
+                     
+                        newLeafNode(this_INT_1, grammarAccess.getIdAccess().getINTTerminalRuleCall_1()); 
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1456:6: (this_WORD_2= RULE_WORD (kw= '.' this_WORD_4= RULE_WORD )* )
+                    {
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1456:6: (this_WORD_2= RULE_WORD (kw= '.' this_WORD_4= RULE_WORD )* )
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1456:11: this_WORD_2= RULE_WORD (kw= '.' this_WORD_4= RULE_WORD )*
+                    {
+                    this_WORD_2=(Token)match(input,RULE_WORD,FOLLOW_RULE_WORD_in_ruleId2804); 
+
+                    		current.merge(this_WORD_2);
+                        
+                     
+                        newLeafNode(this_WORD_2, grammarAccess.getIdAccess().getWORDTerminalRuleCall_2_0()); 
+                        
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1463:1: (kw= '.' this_WORD_4= RULE_WORD )*
+                    loop13:
+                    do {
+                        int alt13=2;
+                        int LA13_0 = input.LA(1);
+
+                        if ( (LA13_0==29) ) {
+                            alt13=1;
+                        }
+
+
+                        switch (alt13) {
+                    	case 1 :
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1464:2: kw= '.' this_WORD_4= RULE_WORD
+                    	    {
+                    	    kw=(Token)match(input,29,FOLLOW_29_in_ruleId2823); 
+
+                    	            current.merge(kw);
+                    	            newLeafNode(kw, grammarAccess.getIdAccess().getFullStopKeyword_2_1_0()); 
+                    	        
+                    	    this_WORD_4=(Token)match(input,RULE_WORD,FOLLOW_RULE_WORD_in_ruleId2838); 
+
+                    	    		current.merge(this_WORD_4);
+                    	        
+                    	     
+                    	        newLeafNode(this_WORD_4, grammarAccess.getIdAccess().getWORDTerminalRuleCall_2_1_1()); 
+                    	        
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop13;
+                        }
+                    } while (true);
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -3938,7 +3566,7 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleReal"
+    // $ANTLR end "ruleId"
 
     // Delegated rules
 
@@ -3947,123 +3575,113 @@ public class InternalDGSParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleDgs_in_entryRuleDgs75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDgs85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHeader_in_ruleDgs131 = new BitSet(new long[]{0x00000000003FC432L});
-    public static final BitSet FOLLOW_ruleEvent_in_ruleDgs153 = new BitSet(new long[]{0x00000000003FC432L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleDgs176 = new BitSet(new long[]{0x00000000003FC432L});
-    public static final BitSet FOLLOW_RULE_EOL_in_ruleDgs198 = new BitSet(new long[]{0x00000000003FC432L});
+    public static final BitSet FOLLOW_ruleHeader_in_ruleDgs131 = new BitSet(new long[]{0x0000000000FF0132L});
+    public static final BitSet FOLLOW_ruleEvent_in_ruleDgs153 = new BitSet(new long[]{0x0000000000FF0132L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleDgs176 = new BitSet(new long[]{0x0000000000FF0132L});
+    public static final BitSet FOLLOW_RULE_EOL_in_ruleDgs198 = new BitSet(new long[]{0x0000000000FF0132L});
     public static final BitSet FOLLOW_ruleHeader_in_entryRuleHeader235 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleHeader245 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_MAGIC_in_ruleHeader287 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_EOL_in_ruleHeader303 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleHeader321 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleHeader341 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleHeader366 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleHeader388 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_EOL_in_ruleHeader404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent439 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEvent449 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAn_in_ruleEvent496 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleCn_in_ruleEvent523 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleDn_in_ruleEvent550 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleAe_in_ruleEvent577 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleCe_in_ruleEvent604 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleDe_in_ruleEvent631 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleCg_in_ruleEvent658 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleSt_in_ruleEvent685 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_CL_in_ruleEvent708 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleEvent732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EOL_in_ruleEvent754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAn_in_entryRuleAn790 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAn800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleAn837 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAn856 = new BitSet(new long[]{0x0000000000C00180L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleAn876 = new BitSet(new long[]{0x0000000000C00180L});
-    public static final BitSet FOLLOW_ruleAttributes_in_ruleAn905 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCn_in_entryRuleCn941 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCn951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleCn988 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCn1007 = new BitSet(new long[]{0x0000000000C00180L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleCn1027 = new BitSet(new long[]{0x0000000000C00180L});
-    public static final BitSet FOLLOW_ruleAttributes_in_ruleCn1056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDn_in_entryRuleDn1092 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDn1102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleDn1139 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDn1158 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleDn1178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAe_in_entryRuleAe1222 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAe1232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleAe1269 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAe1288 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleAe1308 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAe1335 = new BitSet(new long[]{0x0000000000000980L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleAe1355 = new BitSet(new long[]{0x0000000000000980L});
-    public static final BitSet FOLLOW_RULE_DIRECTION_in_ruleAe1380 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAe1405 = new BitSet(new long[]{0x0000000000C00180L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleAe1425 = new BitSet(new long[]{0x0000000000C00180L});
-    public static final BitSet FOLLOW_ruleAttributes_in_ruleAe1454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCe_in_entryRuleCe1490 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCe1500 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleCe1537 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCe1556 = new BitSet(new long[]{0x0000000000C00180L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleCe1576 = new BitSet(new long[]{0x0000000000C00180L});
-    public static final BitSet FOLLOW_ruleAttributes_in_ruleCe1605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDe_in_entryRuleDe1641 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDe1651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleDe1688 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleDe1707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleDe1727 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCg_in_entryRuleCg1771 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCg1781 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleCg1818 = new BitSet(new long[]{0x0000000000C00180L});
-    public static final BitSet FOLLOW_ruleAttributes_in_ruleCg1839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSt_in_entryRuleSt1875 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSt1885 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleSt1922 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_ruleReal_in_ruleSt1943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributes_in_entryRuleAttributes1979 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttributes1989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttribute_in_ruleAttributes2044 = new BitSet(new long[]{0x0000000000C00182L});
-    public static final BitSet FOLLOW_ruleAttribute_in_entryRuleAttribute2081 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttribute2091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleAttribute2129 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_23_in_ruleAttribute2147 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAttribute2168 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleAttribute2188 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_RULE_ASSIGN_in_ruleAttribute2214 = new BitSet(new long[]{0x000000000A000300L});
-    public static final BitSet FOLLOW_ruleValue_in_ruleAttribute2240 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_24_in_ruleAttribute2253 = new BitSet(new long[]{0x000000000A000300L});
-    public static final BitSet FOLLOW_ruleValue_in_ruleAttribute2274 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_ruleValue_in_entryRuleValue2314 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleValue2324 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleValue2366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReal_in_ruleValue2398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArray_in_ruleValue2425 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMap_in_ruleValue2452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArray_in_entryRuleArray2488 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleArray2498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleArray2544 = new BitSet(new long[]{0x000000000E000300L});
-    public static final BitSet FOLLOW_ruleValue_in_ruleArray2566 = new BitSet(new long[]{0x0000000005000000L});
-    public static final BitSet FOLLOW_24_in_ruleArray2579 = new BitSet(new long[]{0x000000000A000300L});
-    public static final BitSet FOLLOW_ruleValue_in_ruleArray2600 = new BitSet(new long[]{0x0000000005000000L});
-    public static final BitSet FOLLOW_26_in_ruleArray2616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMap_in_entryRuleMap2652 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMap2662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleMap2699 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_ruleMapping_in_ruleMap2720 = new BitSet(new long[]{0x0000000011000000L});
-    public static final BitSet FOLLOW_24_in_ruleMap2733 = new BitSet(new long[]{0x0000000000000180L});
-    public static final BitSet FOLLOW_ruleMapping_in_ruleMap2754 = new BitSet(new long[]{0x0000000011000000L});
-    public static final BitSet FOLLOW_28_in_ruleMap2768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMapping_in_entryRuleMapping2804 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMapping2814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMapping2858 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleMapping2878 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_RULE_ASSIGN_in_ruleMapping2903 = new BitSet(new long[]{0x000000000A000300L});
-    public static final BitSet FOLLOW_ruleValue_in_ruleMapping2929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReal_in_entryRuleReal2966 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReal2977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleReal3017 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleReal3036 = new BitSet(new long[]{0x0000000040000200L});
-    public static final BitSet FOLLOW_30_in_ruleReal3050 = new BitSet(new long[]{0x0000000040000200L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleReal3067 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EOL_in_ruleHeader303 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleId_in_ruleHeader323 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleHeader340 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleHeader362 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_EOL_in_ruleHeader378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent413 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEvent423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAn_in_ruleEvent470 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleCn_in_ruleEvent497 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleDn_in_ruleEvent524 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleAe_in_ruleEvent551 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleCe_in_ruleEvent578 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleDe_in_ruleEvent605 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleCg_in_ruleEvent632 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleSt_in_ruleEvent659 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_RULE_CL_in_ruleEvent682 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_ruleEvent706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EOL_in_ruleEvent728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAn_in_entryRuleAn764 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAn774 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleAn811 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleId_in_ruleAn832 = new BitSet(new long[]{0x0000000000006880L});
+    public static final BitSet FOLLOW_ruleAttributes_in_ruleAn853 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCn_in_entryRuleCn889 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCn899 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleCn936 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleId_in_ruleCn957 = new BitSet(new long[]{0x0000000000006880L});
+    public static final BitSet FOLLOW_ruleAttributes_in_ruleCn978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDn_in_entryRuleDn1014 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDn1024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleDn1061 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleId_in_ruleDn1082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAe_in_entryRuleAe1118 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAe1128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleAe1165 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleId_in_ruleAe1186 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleId_in_ruleAe1207 = new BitSet(new long[]{0x0000000000006280L});
+    public static final BitSet FOLLOW_RULE_DIRECTION_in_ruleAe1224 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleId_in_ruleAe1251 = new BitSet(new long[]{0x0000000000006880L});
+    public static final BitSet FOLLOW_ruleAttributes_in_ruleAe1272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCe_in_entryRuleCe1308 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCe1318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleCe1355 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleId_in_ruleCe1376 = new BitSet(new long[]{0x0000000000006880L});
+    public static final BitSet FOLLOW_ruleAttributes_in_ruleCe1397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDe_in_entryRuleDe1433 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDe1443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleDe1480 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleId_in_ruleDe1501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCg_in_entryRuleCg1537 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCg1547 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleCg1584 = new BitSet(new long[]{0x0000000000006880L});
+    public static final BitSet FOLLOW_ruleAttributes_in_ruleCg1605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSt_in_entryRuleSt1641 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSt1651 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleSt1688 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_RULE_REAL_in_ruleSt1705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributes_in_entryRuleAttributes1746 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttributes1756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttribute_in_ruleAttributes1811 = new BitSet(new long[]{0x0000000000006882L});
+    public static final BitSet FOLLOW_ruleAttribute_in_entryRuleAttribute1848 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttribute1858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_OPERATOR_in_ruleAttribute1900 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleId_in_ruleAttribute1927 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_RULE_ASSIGN_in_ruleAttribute1945 = new BitSet(new long[]{0x000000000A002480L});
+    public static final BitSet FOLLOW_ruleValue_in_ruleAttribute1971 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_24_in_ruleAttribute1984 = new BitSet(new long[]{0x000000000A002480L});
+    public static final BitSet FOLLOW_ruleValue_in_ruleAttribute2005 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_ruleValue_in_entryRuleValue2045 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleValue2055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleValue2097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_REAL_in_ruleValue2125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleValue2153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArray_in_ruleValue2185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMap_in_ruleValue2212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArray_in_entryRuleArray2248 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleArray2258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleArray2304 = new BitSet(new long[]{0x000000000E002480L});
+    public static final BitSet FOLLOW_ruleValue_in_ruleArray2326 = new BitSet(new long[]{0x0000000005000000L});
+    public static final BitSet FOLLOW_24_in_ruleArray2339 = new BitSet(new long[]{0x000000000A002480L});
+    public static final BitSet FOLLOW_ruleValue_in_ruleArray2360 = new BitSet(new long[]{0x0000000005000000L});
+    public static final BitSet FOLLOW_26_in_ruleArray2376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMap_in_entryRuleMap2412 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMap2422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleMap2459 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleMapping_in_ruleMap2480 = new BitSet(new long[]{0x0000000011000000L});
+    public static final BitSet FOLLOW_24_in_ruleMap2493 = new BitSet(new long[]{0x0000000000006080L});
+    public static final BitSet FOLLOW_ruleMapping_in_ruleMap2514 = new BitSet(new long[]{0x0000000011000000L});
+    public static final BitSet FOLLOW_28_in_ruleMap2528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMapping_in_entryRuleMapping2564 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMapping2574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_ruleMapping2620 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_RULE_ASSIGN_in_ruleMapping2637 = new BitSet(new long[]{0x000000000A002480L});
+    public static final BitSet FOLLOW_ruleValue_in_ruleMapping2663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_entryRuleId2700 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleId2711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleId2751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleId2777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WORD_in_ruleId2804 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_29_in_ruleId2823 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_RULE_WORD_in_ruleId2838 = new BitSet(new long[]{0x0000000020000002L});
 
 }

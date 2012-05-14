@@ -29,6 +29,7 @@ import org.graphstream.dGS.Value;
  * <ul>
  *   <li>{@link org.graphstream.dGS.impl.ValueImpl#getString <em>String</em>}</li>
  *   <li>{@link org.graphstream.dGS.impl.ValueImpl#getReal <em>Real</em>}</li>
+ *   <li>{@link org.graphstream.dGS.impl.ValueImpl#getInt <em>Int</em>}</li>
  *   <li>{@link org.graphstream.dGS.impl.ValueImpl#getArray <em>Array</em>}</li>
  *   <li>{@link org.graphstream.dGS.impl.ValueImpl#getMap <em>Map</em>}</li>
  * </ul>
@@ -77,6 +78,26 @@ public class ValueImpl extends MinimalEObjectImpl.Container implements Value
    * @ordered
    */
   protected double real = REAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getInt() <em>Int</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInt()
+   * @generated
+   * @ordered
+   */
+  protected static final int INT_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getInt() <em>Int</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInt()
+   * @generated
+   * @ordered
+   */
+  protected int int_ = INT_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getArray() <em>Array</em>}' containment reference.
@@ -163,6 +184,29 @@ public class ValueImpl extends MinimalEObjectImpl.Container implements Value
     real = newReal;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DGSPackage.VALUE__REAL, oldReal, real));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getInt()
+  {
+    return int_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInt(int newInt)
+  {
+    int oldInt = int_;
+    int_ = newInt;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DGSPackage.VALUE__INT, oldInt, int_));
   }
 
   /**
@@ -293,6 +337,8 @@ public class ValueImpl extends MinimalEObjectImpl.Container implements Value
         return getString();
       case DGSPackage.VALUE__REAL:
         return getReal();
+      case DGSPackage.VALUE__INT:
+        return getInt();
       case DGSPackage.VALUE__ARRAY:
         return getArray();
       case DGSPackage.VALUE__MAP:
@@ -316,6 +362,9 @@ public class ValueImpl extends MinimalEObjectImpl.Container implements Value
         return;
       case DGSPackage.VALUE__REAL:
         setReal((Double)newValue);
+        return;
+      case DGSPackage.VALUE__INT:
+        setInt((Integer)newValue);
         return;
       case DGSPackage.VALUE__ARRAY:
         setArray((Array)newValue);
@@ -343,6 +392,9 @@ public class ValueImpl extends MinimalEObjectImpl.Container implements Value
       case DGSPackage.VALUE__REAL:
         setReal(REAL_EDEFAULT);
         return;
+      case DGSPackage.VALUE__INT:
+        setInt(INT_EDEFAULT);
+        return;
       case DGSPackage.VALUE__ARRAY:
         setArray((Array)null);
         return;
@@ -367,6 +419,8 @@ public class ValueImpl extends MinimalEObjectImpl.Container implements Value
         return STRING_EDEFAULT == null ? string != null : !STRING_EDEFAULT.equals(string);
       case DGSPackage.VALUE__REAL:
         return real != REAL_EDEFAULT;
+      case DGSPackage.VALUE__INT:
+        return int_ != INT_EDEFAULT;
       case DGSPackage.VALUE__ARRAY:
         return array != null;
       case DGSPackage.VALUE__MAP:
@@ -390,6 +444,8 @@ public class ValueImpl extends MinimalEObjectImpl.Container implements Value
     result.append(string);
     result.append(", real: ");
     result.append(real);
+    result.append(", int: ");
+    result.append(int_);
     result.append(')');
     return result.toString();
   }

@@ -1,0 +1,107 @@
+DGS004
+null 0 0
+
+# ------------- Configuration --------------
+
+cg "ui.quality":"true" #ffff
+cg "ui.antialias":"true"
+
+# -------------- Ordinateurs ---------------
+
+an "A"
+cn "A" "ui.label":"A"
+cn "A" "ui.class":"ordinateur"
+
+an "B"
+cn "B" "ui.label":"B"
+cn "B" "ui.class":"ordinateur"
+
+an "C"
+cn "C" "ui.label":"C"
+cn "C" "ui.class":"ordinateur"
+
+an "D"
+cn "D" "ui.label":"D"
+cn "D" "ui.class":"ordinateur"
+
+an "E"
+cn "E" "ui.label":"E"
+cn "E" "ui.class":"ordinateur"
+
+an "F"
+cn "F" "ui.label":"F"
+cn "F" "ui.class":"ordinateur"
+
+an "G"
+cn "G" "ui.label":"G"
+cn "G" "ui.class":"ordinateur"
+
+# ------------- Commutateurs ----------------
+
+an "1"
+cn "1" "ui.label":"1"
+cn "1" "ui.class":"commutateur"
+
+an "2"
+cn "2" "ui.label":"2"
+cn "2" "ui.class":"commutateur"
+
+an "3"
+cn "3" "ui.label":"3"
+cn "3" "ui.class":"commutateur"
+
+an "4"
+cn "4" "ui.label":"4"
+cn "4" "ui.class":"commutateur"
+
+an "5"
+cn "5" "ui.label":"5"
+cn "5" "ui.class":"commutateur"
+
+an "6"
+cn "6" "ui.label":"6"
+cn "6" "ui.class":"commutateur"
+
+# ------- Liens Ordinateur-Commutateur --------
+
+ae "A1" "A" > "1"
+
+ae "B2" "B" < "2"
+
+ae "C2" "C" "2"
+
+ae "D3" "D" "3"
+
+ae "E4" "E" "4"
+
+ae "F4" "F" "4"
+
+ae "G6" "G" "6"
+
+# -------- Liens Commutateur-Commutateur ---------
+
+ae "12" "1" "2"
+ce "12" "ui.label":2.0 
+
+ae "15" "1" "5"
+ce "15" "ui.label":[test:"test",test2:3.0]
+
+ae "16" "1" "6"
+ce "16" "ui.label":{2.1,"test"}
+
+ae "23" "2" "3"
+ce "23" "ui.label":1
+
+ae "34" "3" "4"
+ce "34" "ui.label":1
+
+ae "35" "3" "5"
+ce "35" "ui.label":3
+
+ae "46" "4" "6"
+ce "46" "ui.label":1.1
+
+ae "56" "5" "6"
+ce "56" "ui.label":1
+
+

@@ -1,0 +1,31 @@
+DGS004
+null2 10 10
+
+#Commentaires
+
+an noeudSansAttribut
+an noeudSansAttribut
+an "noeudAvecAttribut" +test:1.0
+an "noeudAvecAttribut" test:1.0
+cn noeudExistePas
+cn "noeudAvecAttribut" test:2.0
+cn "noeudAvecAttribut" +test:3.0
+cn "noeudAvecAttribut" -test2
+cn "noeudAvecAttribut" -test
+cn "noeudAvecAttribut" -test
+
+ae areteSansAttribut noeudExistePas "noeudExistePas"
+ae areteSansAttribut noeudSansAttribut "noeudAvecAttribut"
+ae areteSansAttribut noeudSansAttribut "noeudAvecAttribut"
+ae "areteAvecAttribut" noeudSansAttribut "noeudAvecAttribut" -test:1.0
+ae "areteAvecAttribut" noeudSansAttribut "noeudAvecAttribut" test:1.0
+ce areteExistePas
+ce "areteAvecAttribut" test:2.0
+ce "areteAvecAttribut" +test:3.0
+ce "areteAvecAttribut" -test2
+ce "areteAvecAttribut" -test
+ce "areteAvecAttribut" -test
+
+cl
+
+cn noeudSansAttribut

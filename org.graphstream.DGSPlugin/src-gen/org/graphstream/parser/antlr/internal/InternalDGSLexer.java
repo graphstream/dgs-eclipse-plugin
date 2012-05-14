@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalDGSLexer extends Lexer {
-    public static final int RULE_ID=7;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -27,19 +26,19 @@ public class InternalDGSLexer extends Lexer {
     public static final int RULE_COMMENT=4;
     public static final int EOF=-1;
     public static final int RULE_ASSIGN=12;
-    public static final int T__30=30;
     public static final int T__19=19;
     public static final int RULE_MAGIC=6;
-    public static final int RULE_STRING=8;
+    public static final int RULE_STRING=13;
     public static final int T__16=16;
-    public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
-    public static final int RULE_CL=10;
-    public static final int T__14=14;
-    public static final int RULE_INT=9;
-    public static final int RULE_DIRECTION=11;
-    public static final int RULE_WS=13;
+    public static final int RULE_CL=8;
+    public static final int RULE_INT=7;
+    public static final int RULE_REAL=10;
+    public static final int RULE_DIRECTION=9;
+    public static final int RULE_OPERATOR=11;
+    public static final int RULE_WS=15;
+    public static final int RULE_WORD=14;
 
     // delegates
     // delegators
@@ -54,57 +53,15 @@ public class InternalDGSLexer extends Lexer {
     }
     public String getGrammarFileName() { return "../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g"; }
 
-    // $ANTLR start "T__14"
-    public final void mT__14() throws RecognitionException {
-        try {
-            int _type = T__14;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:11:7: ( 'an' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:11:9: 'an'
-            {
-            match("an"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__14"
-
-    // $ANTLR start "T__15"
-    public final void mT__15() throws RecognitionException {
-        try {
-            int _type = T__15;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:12:7: ( 'cn' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:12:9: 'cn'
-            {
-            match("cn"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__15"
-
     // $ANTLR start "T__16"
     public final void mT__16() throws RecognitionException {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:13:7: ( 'dn' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:13:9: 'dn'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:11:7: ( 'an' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:11:9: 'an'
             {
-            match("dn"); 
+            match("an"); 
 
 
             }
@@ -122,10 +79,10 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:14:7: ( 'ae' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:14:9: 'ae'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:12:7: ( 'cn' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:12:9: 'cn'
             {
-            match("ae"); 
+            match("cn"); 
 
 
             }
@@ -143,10 +100,10 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:15:7: ( 'ce' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:15:9: 'ce'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:13:7: ( 'dn' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:13:9: 'dn'
             {
-            match("ce"); 
+            match("dn"); 
 
 
             }
@@ -164,10 +121,10 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:16:7: ( 'de' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:16:9: 'de'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:14:7: ( 'ae' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:14:9: 'ae'
             {
-            match("de"); 
+            match("ae"); 
 
 
             }
@@ -185,10 +142,10 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:17:7: ( 'cg' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:17:9: 'cg'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:15:7: ( 'ce' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:15:9: 'ce'
             {
-            match("cg"); 
+            match("ce"); 
 
 
             }
@@ -206,10 +163,10 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:18:7: ( 'st' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:18:9: 'st'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:16:7: ( 'de' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:16:9: 'de'
             {
-            match("st"); 
+            match("de"); 
 
 
             }
@@ -227,10 +184,11 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:19:7: ( '+' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:19:9: '+'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:17:7: ( 'cg' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:17:9: 'cg'
             {
-            match('+'); 
+            match("cg"); 
+
 
             }
 
@@ -247,10 +205,11 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:20:7: ( '-' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:20:9: '-'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:18:7: ( 'st' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:18:9: 'st'
             {
-            match('-'); 
+            match("st"); 
+
 
             }
 
@@ -267,8 +226,8 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:21:7: ( ',' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:21:9: ','
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:19:7: ( ',' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:19:9: ','
             {
             match(','); 
 
@@ -287,8 +246,8 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:22:7: ( '{' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:22:9: '{'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:20:7: ( '{' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:20:9: '{'
             {
             match('{'); 
 
@@ -307,8 +266,8 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:23:7: ( '}' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:23:9: '}'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:21:7: ( '}' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:21:9: '}'
             {
             match('}'); 
 
@@ -327,8 +286,8 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:24:7: ( '[' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:24:9: '['
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:22:7: ( '[' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:22:9: '['
             {
             match('['); 
 
@@ -347,8 +306,8 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:25:7: ( ']' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:25:9: ']'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:23:7: ( ']' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:23:9: ']'
             {
             match(']'); 
 
@@ -367,8 +326,8 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:26:7: ( '.' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:26:9: '.'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:24:7: ( '.' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:24:9: '.'
             {
             match('.'); 
 
@@ -382,35 +341,15 @@ public class InternalDGSLexer extends Lexer {
     }
     // $ANTLR end "T__29"
 
-    // $ANTLR start "T__30"
-    public final void mT__30() throws RecognitionException {
-        try {
-            int _type = T__30;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:27:7: ( '0' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:27:9: '0'
-            {
-            match('0'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__30"
-
     // $ANTLR start "RULE_MAGIC"
     public final void mRULE_MAGIC() throws RecognitionException {
         try {
             int _type = RULE_MAGIC;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1643:12: ( ( 'DGS003' | 'DGS004' ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1643:14: ( 'DGS003' | 'DGS004' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1483:12: ( ( 'DGS003' | 'DGS004' ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1483:14: ( 'DGS003' | 'DGS004' )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1643:14: ( 'DGS003' | 'DGS004' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1483:14: ( 'DGS003' | 'DGS004' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -478,7 +417,7 @@ public class InternalDGSLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1643:15: 'DGS003'
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1483:15: 'DGS003'
                     {
                     match("DGS003"); 
 
@@ -486,7 +425,7 @@ public class InternalDGSLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1643:24: 'DGS004'
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1483:24: 'DGS004'
                     {
                     match("DGS004"); 
 
@@ -512,8 +451,8 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = RULE_CL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1645:9: ( 'cl' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1645:11: 'cl'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1485:9: ( 'cl' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1485:11: 'cl'
             {
             match("cl"); 
 
@@ -528,13 +467,41 @@ public class InternalDGSLexer extends Lexer {
     }
     // $ANTLR end "RULE_CL"
 
+    // $ANTLR start "RULE_OPERATOR"
+    public final void mRULE_OPERATOR() throws RecognitionException {
+        try {
+            int _type = RULE_OPERATOR;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1487:15: ( ( '+' | '-' ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1487:17: ( '+' | '-' )
+            {
+            if ( input.LA(1)=='+'||input.LA(1)=='-' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_OPERATOR"
+
     // $ANTLR start "RULE_DIRECTION"
     public final void mRULE_DIRECTION() throws RecognitionException {
         try {
             int _type = RULE_DIRECTION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1647:16: ( ( '<' | '>' ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1647:18: ( '<' | '>' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1489:16: ( ( '<' | '>' ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1489:18: ( '<' | '>' )
             {
             if ( input.LA(1)=='<'||input.LA(1)=='>' ) {
                 input.consume();
@@ -561,8 +528,8 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = RULE_ASSIGN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1649:13: ( ( '=' | ':' ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1649:15: ( '=' | ':' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1491:13: ( ( '=' | ':' ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1491:15: ( '=' | ':' )
             {
             if ( input.LA(1)==':'||input.LA(1)=='=' ) {
                 input.consume();
@@ -589,11 +556,11 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = RULE_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1651:14: ( '#' ( options {greedy=false; } : . )* RULE_EOL )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1651:16: '#' ( options {greedy=false; } : . )* RULE_EOL
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1493:14: ( '#' ( options {greedy=false; } : . )* RULE_EOL )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1493:16: '#' ( options {greedy=false; } : . )* RULE_EOL
             {
             match('#'); 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1651:20: ( options {greedy=false; } : . )*
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1493:20: ( options {greedy=false; } : . )*
             loop2:
             do {
                 int alt2=2;
@@ -612,7 +579,7 @@ public class InternalDGSLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1651:48: .
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1493:48: .
             	    {
             	    matchAny(); 
 
@@ -641,10 +608,10 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1653:10: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1653:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1495:10: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1495:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1653:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1495:12: ( '0' | '1' .. '9' ( '0' .. '9' )* )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -662,17 +629,17 @@ public class InternalDGSLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1653:13: '0'
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1495:13: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1653:17: '1' .. '9' ( '0' .. '9' )*
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1495:17: '1' .. '9' ( '0' .. '9' )*
                     {
                     matchRange('1','9'); 
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1653:26: ( '0' .. '9' )*
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1495:26: ( '0' .. '9' )*
                     loop3:
                     do {
                         int alt3=2;
@@ -685,7 +652,7 @@ public class InternalDGSLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1653:27: '0' .. '9'
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1495:27: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -714,32 +681,163 @@ public class InternalDGSLexer extends Lexer {
     }
     // $ANTLR end "RULE_INT"
 
+    // $ANTLR start "RULE_REAL"
+    public final void mRULE_REAL() throws RecognitionException {
+        try {
+            int _type = RULE_REAL;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1497:11: ( RULE_INT ( '.' ( '0' )* RULE_INT )? )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1497:13: RULE_INT ( '.' ( '0' )* RULE_INT )?
+            {
+            mRULE_INT(); 
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1497:22: ( '.' ( '0' )* RULE_INT )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0=='.') ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1497:23: '.' ( '0' )* RULE_INT
+                    {
+                    match('.'); 
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1497:27: ( '0' )*
+                    loop5:
+                    do {
+                        int alt5=2;
+                        int LA5_0 = input.LA(1);
+
+                        if ( (LA5_0=='0') ) {
+                            int LA5_1 = input.LA(2);
+
+                            if ( ((LA5_1>='0' && LA5_1<='9')) ) {
+                                alt5=1;
+                            }
+
+
+                        }
+
+
+                        switch (alt5) {
+                    	case 1 :
+                    	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1497:27: '0'
+                    	    {
+                    	    match('0'); 
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop5;
+                        }
+                    } while (true);
+
+                    mRULE_INT(); 
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_REAL"
+
+    // $ANTLR start "RULE_WORD"
+    public final void mRULE_WORD() throws RecognitionException {
+        try {
+            int _type = RULE_WORD;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1499:11: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '_' )* )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1499:13: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '_' )*
+            {
+            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1499:33: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '_' )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( (LA7_0=='-'||(LA7_0>='0' && LA7_0<='9')||(LA7_0>='A' && LA7_0<='Z')||LA7_0=='_'||(LA7_0>='a' && LA7_0<='z')) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:
+            	    {
+            	    if ( input.LA(1)=='-'||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	        input.consume();
+
+            	    }
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_WORD"
+
     // $ANTLR start "RULE_STRING"
     public final void mRULE_STRING() throws RecognitionException {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1655:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1655:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1501:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1501:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
             {
             match('\"'); 
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1655:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
-            loop5:
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1501:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+            loop8:
             do {
-                int alt5=3;
-                int LA5_0 = input.LA(1);
+                int alt8=3;
+                int LA8_0 = input.LA(1);
 
-                if ( (LA5_0=='\\') ) {
-                    alt5=1;
+                if ( (LA8_0=='\\') ) {
+                    alt8=1;
                 }
-                else if ( ((LA5_0>='\u0000' && LA5_0<='!')||(LA5_0>='#' && LA5_0<='[')||(LA5_0>=']' && LA5_0<='\uFFFF')) ) {
-                    alt5=2;
+                else if ( ((LA8_0>='\u0000' && LA8_0<='!')||(LA8_0>='#' && LA8_0<='[')||(LA8_0>=']' && LA8_0<='\uFFFF')) ) {
+                    alt8=2;
                 }
 
 
-                switch (alt5) {
+                switch (alt8) {
             	case 1 :
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1655:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1501:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
             	    {
             	    match('\\'); 
             	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -755,7 +853,7 @@ public class InternalDGSLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1655:65: ~ ( ( '\\\\' | '\"' ) )
+            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1501:65: ~ ( ( '\\\\' | '\"' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -771,7 +869,7 @@ public class InternalDGSLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop5;
+            	    break loop8;
                 }
             } while (true);
 
@@ -787,81 +885,24 @@ public class InternalDGSLexer extends Lexer {
     }
     // $ANTLR end "RULE_STRING"
 
-    // $ANTLR start "RULE_ID"
-    public final void mRULE_ID() throws RecognitionException {
-        try {
-            int _type = RULE_ID;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1657:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )+ )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1657:11: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )+
-            {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1657:11: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' )+
-            int cnt6=0;
-            loop6:
-            do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
-
-                if ( ((LA6_0>='0' && LA6_0<='9')||(LA6_0>='A' && LA6_0<='Z')||(LA6_0>='a' && LA6_0<='z')) ) {
-                    alt6=1;
-                }
-
-
-                switch (alt6) {
-            	case 1 :
-            	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:
-            	    {
-            	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
-            	        input.consume();
-
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt6 >= 1 ) break loop6;
-                        EarlyExitException eee =
-                            new EarlyExitException(6, input);
-                        throw eee;
-                }
-                cnt6++;
-            } while (true);
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_ID"
-
     // $ANTLR start "RULE_EOL"
     public final void mRULE_EOL() throws RecognitionException {
         try {
             int _type = RULE_EOL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1659:10: ( ( '\\r' )? '\\n' )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1659:12: ( '\\r' )? '\\n'
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1503:10: ( ( '\\r' )? '\\n' )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1503:12: ( '\\r' )? '\\n'
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1659:12: ( '\\r' )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1503:12: ( '\\r' )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA7_0=='\r') ) {
-                alt7=1;
+            if ( (LA9_0=='\r') ) {
+                alt9=1;
             }
-            switch (alt7) {
+            switch (alt9) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1659:12: '\\r'
+                    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1503:12: '\\r'
                     {
                     match('\r'); 
 
@@ -887,22 +928,22 @@ public class InternalDGSLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1661:9: ( ( ' ' | '\\t' )+ )
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1661:11: ( ' ' | '\\t' )+
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1505:9: ( ( ' ' | '\\t' )+ )
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1505:11: ( ' ' | '\\t' )+
             {
-            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1661:11: ( ' ' | '\\t' )+
-            int cnt8=0;
-            loop8:
+            // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1505:11: ( ' ' | '\\t' )+
+            int cnt10=0;
+            loop10:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA8_0=='\t'||LA8_0==' ') ) {
-                    alt8=1;
+                if ( (LA10_0=='\t'||LA10_0==' ') ) {
+                    alt10=1;
                 }
 
 
-                switch (alt8) {
+                switch (alt10) {
             	case 1 :
             	    // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:
             	    {
@@ -920,12 +961,12 @@ public class InternalDGSLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt8 >= 1 ) break loop8;
+            	    if ( cnt10 >= 1 ) break loop10;
                         EarlyExitException eee =
-                            new EarlyExitException(8, input);
+                            new EarlyExitException(10, input);
                         throw eee;
                 }
-                cnt8++;
+                cnt10++;
             } while (true);
 
 
@@ -940,194 +981,187 @@ public class InternalDGSLexer extends Lexer {
     // $ANTLR end "RULE_WS"
 
     public void mTokens() throws RecognitionException {
-        // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:8: ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_MAGIC | RULE_CL | RULE_DIRECTION | RULE_ASSIGN | RULE_COMMENT | RULE_INT | RULE_STRING | RULE_ID | RULE_EOL | RULE_WS )
-        int alt9=27;
-        alt9 = dfa9.predict(input);
-        switch (alt9) {
+        // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | RULE_MAGIC | RULE_CL | RULE_OPERATOR | RULE_DIRECTION | RULE_ASSIGN | RULE_COMMENT | RULE_INT | RULE_REAL | RULE_WORD | RULE_STRING | RULE_EOL | RULE_WS )
+        int alt11=26;
+        alt11 = dfa11.predict(input);
+        switch (alt11) {
             case 1 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:10: T__14
-                {
-                mT__14(); 
-
-                }
-                break;
-            case 2 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:16: T__15
-                {
-                mT__15(); 
-
-                }
-                break;
-            case 3 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:22: T__16
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:10: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
-            case 4 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:28: T__17
+            case 2 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:16: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
-            case 5 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:34: T__18
+            case 3 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:22: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
-            case 6 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:40: T__19
+            case 4 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:28: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
-            case 7 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:46: T__20
+            case 5 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:34: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
-            case 8 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:52: T__21
+            case 6 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:40: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
-            case 9 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:58: T__22
+            case 7 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:46: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
-            case 10 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:64: T__23
+            case 8 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:52: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
-            case 11 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:70: T__24
+            case 9 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:58: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
-            case 12 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:76: T__25
+            case 10 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:64: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
-            case 13 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:82: T__26
+            case 11 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:70: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
-            case 14 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:88: T__27
+            case 12 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:76: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
-            case 15 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:94: T__28
+            case 13 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:82: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
-            case 16 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:100: T__29
+            case 14 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:88: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
-            case 17 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:106: T__30
-                {
-                mT__30(); 
-
-                }
-                break;
-            case 18 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:112: RULE_MAGIC
+            case 15 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:94: RULE_MAGIC
                 {
                 mRULE_MAGIC(); 
 
                 }
                 break;
-            case 19 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:123: RULE_CL
+            case 16 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:105: RULE_CL
                 {
                 mRULE_CL(); 
 
                 }
                 break;
-            case 20 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:131: RULE_DIRECTION
+            case 17 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:113: RULE_OPERATOR
+                {
+                mRULE_OPERATOR(); 
+
+                }
+                break;
+            case 18 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:127: RULE_DIRECTION
                 {
                 mRULE_DIRECTION(); 
 
                 }
                 break;
-            case 21 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:146: RULE_ASSIGN
+            case 19 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:142: RULE_ASSIGN
                 {
                 mRULE_ASSIGN(); 
 
                 }
                 break;
-            case 22 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:158: RULE_COMMENT
+            case 20 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:154: RULE_COMMENT
                 {
                 mRULE_COMMENT(); 
 
                 }
                 break;
-            case 23 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:171: RULE_INT
+            case 21 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:167: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
+            case 22 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:176: RULE_REAL
+                {
+                mRULE_REAL(); 
+
+                }
+                break;
+            case 23 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:186: RULE_WORD
+                {
+                mRULE_WORD(); 
+
+                }
+                break;
             case 24 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:180: RULE_STRING
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:196: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 25 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:192: RULE_ID
-                {
-                mRULE_ID(); 
-
-                }
-                break;
-            case 26 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:200: RULE_EOL
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:208: RULE_EOL
                 {
                 mRULE_EOL(); 
 
                 }
                 break;
-            case 27 :
-                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:209: RULE_WS
+            case 26 :
+                // ../org.graphstream.DGSPlugin/src-gen/org/graphstream/parser/antlr/internal/InternalDGS.g:1:217: RULE_WS
                 {
                 mRULE_WS(); 
 
@@ -1139,113 +1173,123 @@ public class InternalDGSLexer extends Lexer {
     }
 
 
-    protected DFA9 dfa9 = new DFA9(this);
-    static final String DFA9_eotS =
-        "\1\uffff\4\24\10\uffff\1\40\1\24\3\uffff\1\42\4\uffff\1\44\1\45"+
-        "\1\46\1\47\1\50\1\51\1\52\1\53\1\54\1\uffff\1\24\1\uffff\1\42\11"+
-        "\uffff\3\24\2\62\1\uffff";
-    static final String DFA9_eofS =
-        "\63\uffff";
-    static final String DFA9_minS =
-        "\1\11\3\145\1\164\10\uffff\1\60\1\107\3\uffff\1\60\4\uffff\11\60"+
-        "\1\uffff\1\123\1\uffff\1\60\11\uffff\2\60\1\63\2\60\1\uffff";
-    static final String DFA9_maxS =
-        "\1\175\3\156\1\164\10\uffff\1\172\1\107\3\uffff\1\172\4\uffff\11"+
-        "\172\1\uffff\1\123\1\uffff\1\172\11\uffff\2\60\1\64\2\172\1\uffff";
-    static final String DFA9_acceptS =
-        "\5\uffff\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20\2\uffff\1\24\1"+
-        "\25\1\26\1\uffff\1\30\1\31\1\32\1\33\11\uffff\1\21\1\uffff\1\27"+
-        "\1\uffff\1\1\1\4\1\2\1\5\1\7\1\23\1\3\1\6\1\10\5\uffff\1\22";
-    static final String DFA9_specialS =
-        "\63\uffff}>";
-    static final String[] DFA9_transitionS = {
-            "\1\26\1\25\2\uffff\1\25\22\uffff\1\26\1\uffff\1\23\1\21\7\uffff"+
-            "\1\5\1\7\1\6\1\14\1\uffff\1\15\11\22\1\20\1\uffff\1\17\1\20"+
-            "\1\17\2\uffff\3\24\1\16\26\24\1\12\1\uffff\1\13\3\uffff\1\1"+
-            "\1\24\1\2\1\3\16\24\1\4\7\24\1\10\1\uffff\1\11",
-            "\1\30\10\uffff\1\27",
-            "\1\32\1\uffff\1\33\4\uffff\1\34\1\uffff\1\31",
-            "\1\36\10\uffff\1\35",
+    protected DFA11 dfa11 = new DFA11(this);
+    static final String DFA11_eotS =
+        "\1\uffff\4\22\6\uffff\1\22\4\uffff\2\40\4\uffff\1\43\1\44\1\45"+
+        "\1\46\1\47\1\50\1\51\1\52\1\53\1\22\2\uffff\1\40\11\uffff\3\22\2"+
+        "\61\1\uffff";
+    static final String DFA11_eofS =
+        "\62\uffff";
+    static final String DFA11_minS =
+        "\1\11\3\145\1\164\6\uffff\1\107\4\uffff\2\56\4\uffff\11\55\1\123"+
+        "\2\uffff\1\56\11\uffff\2\60\1\63\2\55\1\uffff";
+    static final String DFA11_maxS =
+        "\1\175\3\156\1\164\6\uffff\1\107\4\uffff\1\56\1\71\4\uffff\11\172"+
+        "\1\123\2\uffff\1\71\11\uffff\2\60\1\64\2\172\1\uffff";
+    static final String DFA11_acceptS =
+        "\5\uffff\1\11\1\12\1\13\1\14\1\15\1\16\1\uffff\1\21\1\22\1\23\1"+
+        "\24\2\uffff\1\27\1\30\1\31\1\32\12\uffff\1\25\1\26\1\uffff\1\1\1"+
+        "\4\1\2\1\5\1\7\1\20\1\3\1\6\1\10\5\uffff\1\17";
+    static final String DFA11_specialS =
+        "\62\uffff}>";
+    static final String[] DFA11_transitionS = {
+            "\1\25\1\24\2\uffff\1\24\22\uffff\1\25\1\uffff\1\23\1\17\7\uffff"+
+            "\1\14\1\5\1\14\1\12\1\uffff\1\20\11\21\1\16\1\uffff\1\15\1\16"+
+            "\1\15\2\uffff\3\22\1\13\26\22\1\10\1\uffff\1\11\3\uffff\1\1"+
+            "\1\22\1\2\1\3\16\22\1\4\7\22\1\6\1\uffff\1\7",
+            "\1\27\10\uffff\1\26",
+            "\1\31\1\uffff\1\32\4\uffff\1\33\1\uffff\1\30",
+            "\1\35\10\uffff\1\34",
+            "\1\36",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\37",
             "",
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
             "\1\41",
-            "",
-            "",
-            "",
-            "\12\43\7\uffff\32\24\6\uffff\32\24",
+            "\1\41\1\uffff\12\42",
             "",
             "",
             "",
             "",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
+            "\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
+            "\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
+            "\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
+            "\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
+            "\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
+            "\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
+            "\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
+            "\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
+            "\22",
+            "\1\54",
+            "",
+            "",
+            "\1\41\1\uffff\12\42",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "",
             "\1\55",
-            "",
-            "\12\43\7\uffff\32\24\6\uffff\32\24",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\56",
-            "\1\57",
-            "\1\60\1\61",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
-            "\12\24\7\uffff\32\24\6\uffff\32\24",
+            "\1\57\1\60",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
+            "\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
+            "\22",
             ""
     };
 
-    static final short[] DFA9_eot = DFA.unpackEncodedString(DFA9_eotS);
-    static final short[] DFA9_eof = DFA.unpackEncodedString(DFA9_eofS);
-    static final char[] DFA9_min = DFA.unpackEncodedStringToUnsignedChars(DFA9_minS);
-    static final char[] DFA9_max = DFA.unpackEncodedStringToUnsignedChars(DFA9_maxS);
-    static final short[] DFA9_accept = DFA.unpackEncodedString(DFA9_acceptS);
-    static final short[] DFA9_special = DFA.unpackEncodedString(DFA9_specialS);
-    static final short[][] DFA9_transition;
+    static final short[] DFA11_eot = DFA.unpackEncodedString(DFA11_eotS);
+    static final short[] DFA11_eof = DFA.unpackEncodedString(DFA11_eofS);
+    static final char[] DFA11_min = DFA.unpackEncodedStringToUnsignedChars(DFA11_minS);
+    static final char[] DFA11_max = DFA.unpackEncodedStringToUnsignedChars(DFA11_maxS);
+    static final short[] DFA11_accept = DFA.unpackEncodedString(DFA11_acceptS);
+    static final short[] DFA11_special = DFA.unpackEncodedString(DFA11_specialS);
+    static final short[][] DFA11_transition;
 
     static {
-        int numStates = DFA9_transitionS.length;
-        DFA9_transition = new short[numStates][];
+        int numStates = DFA11_transitionS.length;
+        DFA11_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA9_transition[i] = DFA.unpackEncodedString(DFA9_transitionS[i]);
+            DFA11_transition[i] = DFA.unpackEncodedString(DFA11_transitionS[i]);
         }
     }
 
-    class DFA9 extends DFA {
+    class DFA11 extends DFA {
 
-        public DFA9(BaseRecognizer recognizer) {
+        public DFA11(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 9;
-            this.eot = DFA9_eot;
-            this.eof = DFA9_eof;
-            this.min = DFA9_min;
-            this.max = DFA9_max;
-            this.accept = DFA9_accept;
-            this.special = DFA9_special;
-            this.transition = DFA9_transition;
+            this.decisionNumber = 11;
+            this.eot = DFA11_eot;
+            this.eof = DFA11_eof;
+            this.min = DFA11_min;
+            this.max = DFA11_max;
+            this.accept = DFA11_accept;
+            this.special = DFA11_special;
+            this.transition = DFA11_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_MAGIC | RULE_CL | RULE_DIRECTION | RULE_ASSIGN | RULE_COMMENT | RULE_INT | RULE_STRING | RULE_ID | RULE_EOL | RULE_WS );";
+            return "1:1: Tokens : ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | RULE_MAGIC | RULE_CL | RULE_OPERATOR | RULE_DIRECTION | RULE_ASSIGN | RULE_COMMENT | RULE_INT | RULE_REAL | RULE_WORD | RULE_STRING | RULE_EOL | RULE_WS );";
         }
     }
  

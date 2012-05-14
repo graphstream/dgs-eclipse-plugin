@@ -22,9 +22,8 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDGSParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_EOL", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_COMMENT", "RULE_MAGIC", "RULE_CL", "RULE_DIRECTION", "RULE_ASSIGN", "RULE_WS", "'+'", "'-'", "'an'", "'cn'", "'dn'", "'ae'", "'ce'", "'de'", "'cg'", "'st'", "','", "'{'", "'}'", "'['", "']'", "'.'", "'0'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_EOL", "RULE_STRING", "RULE_INT", "RULE_WORD", "RULE_COMMENT", "RULE_MAGIC", "RULE_CL", "RULE_DIRECTION", "RULE_REAL", "RULE_OPERATOR", "RULE_ASSIGN", "RULE_WS", "'an'", "'cn'", "'dn'", "'ae'", "'ce'", "'de'", "'cg'", "'st'", "','", "'{'", "'}'", "'['", "']'", "'.'"
     };
-    public static final int RULE_ID=5;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -38,20 +37,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
     public static final int RULE_EOL=4;
     public static final int RULE_COMMENT=8;
     public static final int EOF=-1;
-    public static final int RULE_ASSIGN=12;
-    public static final int T__30=30;
+    public static final int RULE_ASSIGN=14;
     public static final int T__19=19;
     public static final int RULE_MAGIC=9;
-    public static final int RULE_STRING=6;
+    public static final int RULE_STRING=5;
     public static final int T__16=16;
-    public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
     public static final int RULE_CL=10;
-    public static final int T__14=14;
-    public static final int RULE_INT=7;
+    public static final int RULE_INT=6;
+    public static final int RULE_REAL=12;
     public static final int RULE_DIRECTION=11;
-    public static final int RULE_WS=13;
+    public static final int RULE_OPERATOR=13;
+    public static final int RULE_WS=15;
+    public static final int RULE_WORD=7;
 
     // delegates
     // delegators
@@ -1399,21 +1398,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleMapping"
 
 
-    // $ANTLR start "entryRuleReal"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:536:1: entryRuleReal : ruleReal EOF ;
-    public final void entryRuleReal() throws RecognitionException {
+    // $ANTLR start "entryRuleId"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:536:1: entryRuleId : ruleId EOF ;
+    public final void entryRuleId() throws RecognitionException {
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:537:1: ( ruleReal EOF )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:538:1: ruleReal EOF
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:537:1: ( ruleId EOF )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:538:1: ruleId EOF
             {
-             before(grammarAccess.getRealRule()); 
-            pushFollow(FOLLOW_ruleReal_in_entryRuleReal1081);
-            ruleReal();
+             before(grammarAccess.getIdRule()); 
+            pushFollow(FOLLOW_ruleId_in_entryRuleId1081);
+            ruleId();
 
             state._fsp--;
 
-             after(grammarAccess.getRealRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReal1088); 
+             after(grammarAccess.getIdRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleId1088); 
 
             }
 
@@ -1426,35 +1425,35 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleReal"
+    // $ANTLR end "entryRuleId"
 
 
-    // $ANTLR start "ruleReal"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:545:1: ruleReal : ( ( rule__Real__Group__0 ) ) ;
-    public final void ruleReal() throws RecognitionException {
+    // $ANTLR start "ruleId"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:545:1: ruleId : ( ( rule__Id__Alternatives ) ) ;
+    public final void ruleId() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:549:2: ( ( ( rule__Real__Group__0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:550:1: ( ( rule__Real__Group__0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:549:2: ( ( ( rule__Id__Alternatives ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:550:1: ( ( rule__Id__Alternatives ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:550:1: ( ( rule__Real__Group__0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:551:1: ( rule__Real__Group__0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:550:1: ( ( rule__Id__Alternatives ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:551:1: ( rule__Id__Alternatives )
             {
-             before(grammarAccess.getRealAccess().getGroup()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:552:1: ( rule__Real__Group__0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:552:2: rule__Real__Group__0
+             before(grammarAccess.getIdAccess().getAlternatives()); 
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:552:1: ( rule__Id__Alternatives )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:552:2: rule__Id__Alternatives
             {
-            pushFollow(FOLLOW_rule__Real__Group__0_in_ruleReal1114);
-            rule__Real__Group__0();
+            pushFollow(FOLLOW_rule__Id__Alternatives_in_ruleId1114);
+            rule__Id__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRealAccess().getGroup()); 
+             after(grammarAccess.getIdAccess().getAlternatives()); 
 
             }
 
@@ -1473,7 +1472,7 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleReal"
+    // $ANTLR end "ruleId"
 
 
     // $ANTLR start "rule__Dgs__Alternatives_1"
@@ -1599,151 +1598,80 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Dgs__Alternatives_1"
 
 
-    // $ANTLR start "rule__Header__NameAlternatives_2_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:592:1: rule__Header__NameAlternatives_2_0 : ( ( RULE_ID ) | ( RULE_STRING ) );
-    public final void rule__Header__NameAlternatives_2_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:596:1: ( ( RULE_ID ) | ( RULE_STRING ) )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0==RULE_ID) ) {
-                alt2=1;
-            }
-            else if ( (LA2_0==RULE_STRING) ) {
-                alt2=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
-
-                throw nvae;
-            }
-            switch (alt2) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:597:1: ( RULE_ID )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:597:1: ( RULE_ID )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:598:1: RULE_ID
-                    {
-                     before(grammarAccess.getHeaderAccess().getNameIDTerminalRuleCall_2_0_0()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Header__NameAlternatives_2_01218); 
-                     after(grammarAccess.getHeaderAccess().getNameIDTerminalRuleCall_2_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:603:6: ( RULE_STRING )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:603:6: ( RULE_STRING )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:604:1: RULE_STRING
-                    {
-                     before(grammarAccess.getHeaderAccess().getNameSTRINGTerminalRuleCall_2_0_1()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Header__NameAlternatives_2_01235); 
-                     after(grammarAccess.getHeaderAccess().getNameSTRINGTerminalRuleCall_2_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Header__NameAlternatives_2_0"
-
-
     // $ANTLR start "rule__Event__Alternatives_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:614:1: rule__Event__Alternatives_0 : ( ( ( rule__Event__AnAssignment_0_0 ) ) | ( ( rule__Event__CnAssignment_0_1 ) ) | ( ( rule__Event__DnAssignment_0_2 ) ) | ( ( rule__Event__AeAssignment_0_3 ) ) | ( ( rule__Event__CeAssignment_0_4 ) ) | ( ( rule__Event__DeAssignment_0_5 ) ) | ( ( rule__Event__CgAssignment_0_6 ) ) | ( ( rule__Event__StAssignment_0_7 ) ) | ( ( rule__Event__ClAssignment_0_8 ) ) );
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:592:1: rule__Event__Alternatives_0 : ( ( ( rule__Event__AnAssignment_0_0 ) ) | ( ( rule__Event__CnAssignment_0_1 ) ) | ( ( rule__Event__DnAssignment_0_2 ) ) | ( ( rule__Event__AeAssignment_0_3 ) ) | ( ( rule__Event__CeAssignment_0_4 ) ) | ( ( rule__Event__DeAssignment_0_5 ) ) | ( ( rule__Event__CgAssignment_0_6 ) ) | ( ( rule__Event__StAssignment_0_7 ) ) | ( ( rule__Event__ClAssignment_0_8 ) ) );
     public final void rule__Event__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:618:1: ( ( ( rule__Event__AnAssignment_0_0 ) ) | ( ( rule__Event__CnAssignment_0_1 ) ) | ( ( rule__Event__DnAssignment_0_2 ) ) | ( ( rule__Event__AeAssignment_0_3 ) ) | ( ( rule__Event__CeAssignment_0_4 ) ) | ( ( rule__Event__DeAssignment_0_5 ) ) | ( ( rule__Event__CgAssignment_0_6 ) ) | ( ( rule__Event__StAssignment_0_7 ) ) | ( ( rule__Event__ClAssignment_0_8 ) ) )
-            int alt3=9;
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:596:1: ( ( ( rule__Event__AnAssignment_0_0 ) ) | ( ( rule__Event__CnAssignment_0_1 ) ) | ( ( rule__Event__DnAssignment_0_2 ) ) | ( ( rule__Event__AeAssignment_0_3 ) ) | ( ( rule__Event__CeAssignment_0_4 ) ) | ( ( rule__Event__DeAssignment_0_5 ) ) | ( ( rule__Event__CgAssignment_0_6 ) ) | ( ( rule__Event__StAssignment_0_7 ) ) | ( ( rule__Event__ClAssignment_0_8 ) ) )
+            int alt2=9;
             switch ( input.LA(1) ) {
             case 16:
                 {
-                alt3=1;
+                alt2=1;
                 }
                 break;
             case 17:
                 {
-                alt3=2;
+                alt2=2;
                 }
                 break;
             case 18:
                 {
-                alt3=3;
+                alt2=3;
                 }
                 break;
             case 19:
                 {
-                alt3=4;
+                alt2=4;
                 }
                 break;
             case 20:
                 {
-                alt3=5;
+                alt2=5;
                 }
                 break;
             case 21:
                 {
-                alt3=6;
+                alt2=6;
                 }
                 break;
             case 22:
                 {
-                alt3=7;
+                alt2=7;
                 }
                 break;
             case 23:
                 {
-                alt3=8;
+                alt2=8;
                 }
                 break;
             case RULE_CL:
                 {
-                alt3=9;
+                alt2=9;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt3) {
+            switch (alt2) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:619:1: ( ( rule__Event__AnAssignment_0_0 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:597:1: ( ( rule__Event__AnAssignment_0_0 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:619:1: ( ( rule__Event__AnAssignment_0_0 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:620:1: ( rule__Event__AnAssignment_0_0 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:597:1: ( ( rule__Event__AnAssignment_0_0 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:598:1: ( rule__Event__AnAssignment_0_0 )
                     {
                      before(grammarAccess.getEventAccess().getAnAssignment_0_0()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:621:1: ( rule__Event__AnAssignment_0_0 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:621:2: rule__Event__AnAssignment_0_0
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:599:1: ( rule__Event__AnAssignment_0_0 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:599:2: rule__Event__AnAssignment_0_0
                     {
-                    pushFollow(FOLLOW_rule__Event__AnAssignment_0_0_in_rule__Event__Alternatives_01267);
+                    pushFollow(FOLLOW_rule__Event__AnAssignment_0_0_in_rule__Event__Alternatives_01218);
                     rule__Event__AnAssignment_0_0();
 
                     state._fsp--;
@@ -1759,16 +1687,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:625:6: ( ( rule__Event__CnAssignment_0_1 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:603:6: ( ( rule__Event__CnAssignment_0_1 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:625:6: ( ( rule__Event__CnAssignment_0_1 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:626:1: ( rule__Event__CnAssignment_0_1 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:603:6: ( ( rule__Event__CnAssignment_0_1 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:604:1: ( rule__Event__CnAssignment_0_1 )
                     {
                      before(grammarAccess.getEventAccess().getCnAssignment_0_1()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:627:1: ( rule__Event__CnAssignment_0_1 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:627:2: rule__Event__CnAssignment_0_1
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:605:1: ( rule__Event__CnAssignment_0_1 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:605:2: rule__Event__CnAssignment_0_1
                     {
-                    pushFollow(FOLLOW_rule__Event__CnAssignment_0_1_in_rule__Event__Alternatives_01285);
+                    pushFollow(FOLLOW_rule__Event__CnAssignment_0_1_in_rule__Event__Alternatives_01236);
                     rule__Event__CnAssignment_0_1();
 
                     state._fsp--;
@@ -1784,16 +1712,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:631:6: ( ( rule__Event__DnAssignment_0_2 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:609:6: ( ( rule__Event__DnAssignment_0_2 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:631:6: ( ( rule__Event__DnAssignment_0_2 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:632:1: ( rule__Event__DnAssignment_0_2 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:609:6: ( ( rule__Event__DnAssignment_0_2 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:610:1: ( rule__Event__DnAssignment_0_2 )
                     {
                      before(grammarAccess.getEventAccess().getDnAssignment_0_2()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:633:1: ( rule__Event__DnAssignment_0_2 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:633:2: rule__Event__DnAssignment_0_2
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:611:1: ( rule__Event__DnAssignment_0_2 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:611:2: rule__Event__DnAssignment_0_2
                     {
-                    pushFollow(FOLLOW_rule__Event__DnAssignment_0_2_in_rule__Event__Alternatives_01303);
+                    pushFollow(FOLLOW_rule__Event__DnAssignment_0_2_in_rule__Event__Alternatives_01254);
                     rule__Event__DnAssignment_0_2();
 
                     state._fsp--;
@@ -1809,16 +1737,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:637:6: ( ( rule__Event__AeAssignment_0_3 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:615:6: ( ( rule__Event__AeAssignment_0_3 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:637:6: ( ( rule__Event__AeAssignment_0_3 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:638:1: ( rule__Event__AeAssignment_0_3 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:615:6: ( ( rule__Event__AeAssignment_0_3 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:616:1: ( rule__Event__AeAssignment_0_3 )
                     {
                      before(grammarAccess.getEventAccess().getAeAssignment_0_3()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:639:1: ( rule__Event__AeAssignment_0_3 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:639:2: rule__Event__AeAssignment_0_3
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:617:1: ( rule__Event__AeAssignment_0_3 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:617:2: rule__Event__AeAssignment_0_3
                     {
-                    pushFollow(FOLLOW_rule__Event__AeAssignment_0_3_in_rule__Event__Alternatives_01321);
+                    pushFollow(FOLLOW_rule__Event__AeAssignment_0_3_in_rule__Event__Alternatives_01272);
                     rule__Event__AeAssignment_0_3();
 
                     state._fsp--;
@@ -1834,16 +1762,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:643:6: ( ( rule__Event__CeAssignment_0_4 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:621:6: ( ( rule__Event__CeAssignment_0_4 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:643:6: ( ( rule__Event__CeAssignment_0_4 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:644:1: ( rule__Event__CeAssignment_0_4 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:621:6: ( ( rule__Event__CeAssignment_0_4 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:622:1: ( rule__Event__CeAssignment_0_4 )
                     {
                      before(grammarAccess.getEventAccess().getCeAssignment_0_4()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:645:1: ( rule__Event__CeAssignment_0_4 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:645:2: rule__Event__CeAssignment_0_4
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:623:1: ( rule__Event__CeAssignment_0_4 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:623:2: rule__Event__CeAssignment_0_4
                     {
-                    pushFollow(FOLLOW_rule__Event__CeAssignment_0_4_in_rule__Event__Alternatives_01339);
+                    pushFollow(FOLLOW_rule__Event__CeAssignment_0_4_in_rule__Event__Alternatives_01290);
                     rule__Event__CeAssignment_0_4();
 
                     state._fsp--;
@@ -1859,16 +1787,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:649:6: ( ( rule__Event__DeAssignment_0_5 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:627:6: ( ( rule__Event__DeAssignment_0_5 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:649:6: ( ( rule__Event__DeAssignment_0_5 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:650:1: ( rule__Event__DeAssignment_0_5 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:627:6: ( ( rule__Event__DeAssignment_0_5 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:628:1: ( rule__Event__DeAssignment_0_5 )
                     {
                      before(grammarAccess.getEventAccess().getDeAssignment_0_5()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:651:1: ( rule__Event__DeAssignment_0_5 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:651:2: rule__Event__DeAssignment_0_5
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:629:1: ( rule__Event__DeAssignment_0_5 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:629:2: rule__Event__DeAssignment_0_5
                     {
-                    pushFollow(FOLLOW_rule__Event__DeAssignment_0_5_in_rule__Event__Alternatives_01357);
+                    pushFollow(FOLLOW_rule__Event__DeAssignment_0_5_in_rule__Event__Alternatives_01308);
                     rule__Event__DeAssignment_0_5();
 
                     state._fsp--;
@@ -1884,16 +1812,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:655:6: ( ( rule__Event__CgAssignment_0_6 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:633:6: ( ( rule__Event__CgAssignment_0_6 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:655:6: ( ( rule__Event__CgAssignment_0_6 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:656:1: ( rule__Event__CgAssignment_0_6 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:633:6: ( ( rule__Event__CgAssignment_0_6 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:634:1: ( rule__Event__CgAssignment_0_6 )
                     {
                      before(grammarAccess.getEventAccess().getCgAssignment_0_6()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:657:1: ( rule__Event__CgAssignment_0_6 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:657:2: rule__Event__CgAssignment_0_6
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:635:1: ( rule__Event__CgAssignment_0_6 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:635:2: rule__Event__CgAssignment_0_6
                     {
-                    pushFollow(FOLLOW_rule__Event__CgAssignment_0_6_in_rule__Event__Alternatives_01375);
+                    pushFollow(FOLLOW_rule__Event__CgAssignment_0_6_in_rule__Event__Alternatives_01326);
                     rule__Event__CgAssignment_0_6();
 
                     state._fsp--;
@@ -1909,16 +1837,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 8 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:661:6: ( ( rule__Event__StAssignment_0_7 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:639:6: ( ( rule__Event__StAssignment_0_7 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:661:6: ( ( rule__Event__StAssignment_0_7 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:662:1: ( rule__Event__StAssignment_0_7 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:639:6: ( ( rule__Event__StAssignment_0_7 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:640:1: ( rule__Event__StAssignment_0_7 )
                     {
                      before(grammarAccess.getEventAccess().getStAssignment_0_7()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:663:1: ( rule__Event__StAssignment_0_7 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:663:2: rule__Event__StAssignment_0_7
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:641:1: ( rule__Event__StAssignment_0_7 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:641:2: rule__Event__StAssignment_0_7
                     {
-                    pushFollow(FOLLOW_rule__Event__StAssignment_0_7_in_rule__Event__Alternatives_01393);
+                    pushFollow(FOLLOW_rule__Event__StAssignment_0_7_in_rule__Event__Alternatives_01344);
                     rule__Event__StAssignment_0_7();
 
                     state._fsp--;
@@ -1934,16 +1862,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 9 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:667:6: ( ( rule__Event__ClAssignment_0_8 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:645:6: ( ( rule__Event__ClAssignment_0_8 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:667:6: ( ( rule__Event__ClAssignment_0_8 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:668:1: ( rule__Event__ClAssignment_0_8 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:645:6: ( ( rule__Event__ClAssignment_0_8 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:646:1: ( rule__Event__ClAssignment_0_8 )
                     {
                      before(grammarAccess.getEventAccess().getClAssignment_0_8()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:669:1: ( rule__Event__ClAssignment_0_8 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:669:2: rule__Event__ClAssignment_0_8
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:647:1: ( rule__Event__ClAssignment_0_8 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:647:2: rule__Event__ClAssignment_0_8
                     {
-                    pushFollow(FOLLOW_rule__Event__ClAssignment_0_8_in_rule__Event__Alternatives_01411);
+                    pushFollow(FOLLOW_rule__Event__ClAssignment_0_8_in_rule__Event__Alternatives_01362);
                     rule__Event__ClAssignment_0_8();
 
                     state._fsp--;
@@ -1976,40 +1904,40 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Alternatives_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:678:1: rule__Event__Alternatives_1 : ( ( ( rule__Event__CommentAssignment_1_0 ) ) | ( RULE_EOL ) );
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:656:1: rule__Event__Alternatives_1 : ( ( ( rule__Event__CommentAssignment_1_0 ) ) | ( RULE_EOL ) );
     public final void rule__Event__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:682:1: ( ( ( rule__Event__CommentAssignment_1_0 ) ) | ( RULE_EOL ) )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:660:1: ( ( ( rule__Event__CommentAssignment_1_0 ) ) | ( RULE_EOL ) )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-            if ( (LA4_0==RULE_COMMENT) ) {
-                alt4=1;
+            if ( (LA3_0==RULE_COMMENT) ) {
+                alt3=1;
             }
-            else if ( (LA4_0==RULE_EOL) ) {
-                alt4=2;
+            else if ( (LA3_0==RULE_EOL) ) {
+                alt3=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
-            switch (alt4) {
+            switch (alt3) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:683:1: ( ( rule__Event__CommentAssignment_1_0 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:661:1: ( ( rule__Event__CommentAssignment_1_0 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:683:1: ( ( rule__Event__CommentAssignment_1_0 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:684:1: ( rule__Event__CommentAssignment_1_0 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:661:1: ( ( rule__Event__CommentAssignment_1_0 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:662:1: ( rule__Event__CommentAssignment_1_0 )
                     {
                      before(grammarAccess.getEventAccess().getCommentAssignment_1_0()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:685:1: ( rule__Event__CommentAssignment_1_0 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:685:2: rule__Event__CommentAssignment_1_0
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:663:1: ( rule__Event__CommentAssignment_1_0 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:663:2: rule__Event__CommentAssignment_1_0
                     {
-                    pushFollow(FOLLOW_rule__Event__CommentAssignment_1_0_in_rule__Event__Alternatives_11444);
+                    pushFollow(FOLLOW_rule__Event__CommentAssignment_1_0_in_rule__Event__Alternatives_11395);
                     rule__Event__CommentAssignment_1_0();
 
                     state._fsp--;
@@ -2025,13 +1953,13 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:689:6: ( RULE_EOL )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:667:6: ( RULE_EOL )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:689:6: ( RULE_EOL )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:690:1: RULE_EOL
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:667:6: ( RULE_EOL )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:668:1: RULE_EOL
                     {
                      before(grammarAccess.getEventAccess().getEOLTerminalRuleCall_1_1()); 
-                    match(input,RULE_EOL,FOLLOW_RULE_EOL_in_rule__Event__Alternatives_11462); 
+                    match(input,RULE_EOL,FOLLOW_RULE_EOL_in_rule__Event__Alternatives_11413); 
                      after(grammarAccess.getEventAccess().getEOLTerminalRuleCall_1_1()); 
 
                     }
@@ -2056,765 +1984,60 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Event__Alternatives_1"
 
 
-    // $ANTLR start "rule__An__IdNodeAlternatives_1_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:700:1: rule__An__IdNodeAlternatives_1_0 : ( ( RULE_ID ) | ( RULE_STRING ) );
-    public final void rule__An__IdNodeAlternatives_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:704:1: ( ( RULE_ID ) | ( RULE_STRING ) )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
-
-            if ( (LA5_0==RULE_ID) ) {
-                alt5=1;
-            }
-            else if ( (LA5_0==RULE_STRING) ) {
-                alt5=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
-
-                throw nvae;
-            }
-            switch (alt5) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:705:1: ( RULE_ID )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:705:1: ( RULE_ID )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:706:1: RULE_ID
-                    {
-                     before(grammarAccess.getAnAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__An__IdNodeAlternatives_1_01494); 
-                     after(grammarAccess.getAnAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:711:6: ( RULE_STRING )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:711:6: ( RULE_STRING )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:712:1: RULE_STRING
-                    {
-                     before(grammarAccess.getAnAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__An__IdNodeAlternatives_1_01511); 
-                     after(grammarAccess.getAnAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__An__IdNodeAlternatives_1_0"
-
-
-    // $ANTLR start "rule__Cn__IdNodeAlternatives_1_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:722:1: rule__Cn__IdNodeAlternatives_1_0 : ( ( RULE_ID ) | ( RULE_STRING ) );
-    public final void rule__Cn__IdNodeAlternatives_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:726:1: ( ( RULE_ID ) | ( RULE_STRING ) )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
-
-            if ( (LA6_0==RULE_ID) ) {
-                alt6=1;
-            }
-            else if ( (LA6_0==RULE_STRING) ) {
-                alt6=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
-
-                throw nvae;
-            }
-            switch (alt6) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:727:1: ( RULE_ID )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:727:1: ( RULE_ID )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:728:1: RULE_ID
-                    {
-                     before(grammarAccess.getCnAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Cn__IdNodeAlternatives_1_01543); 
-                     after(grammarAccess.getCnAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:733:6: ( RULE_STRING )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:733:6: ( RULE_STRING )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:734:1: RULE_STRING
-                    {
-                     before(grammarAccess.getCnAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Cn__IdNodeAlternatives_1_01560); 
-                     after(grammarAccess.getCnAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Cn__IdNodeAlternatives_1_0"
-
-
-    // $ANTLR start "rule__Dn__IdNodeAlternatives_1_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:744:1: rule__Dn__IdNodeAlternatives_1_0 : ( ( RULE_ID ) | ( RULE_STRING ) );
-    public final void rule__Dn__IdNodeAlternatives_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:748:1: ( ( RULE_ID ) | ( RULE_STRING ) )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==RULE_ID) ) {
-                alt7=1;
-            }
-            else if ( (LA7_0==RULE_STRING) ) {
-                alt7=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
-
-                throw nvae;
-            }
-            switch (alt7) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:749:1: ( RULE_ID )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:749:1: ( RULE_ID )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:750:1: RULE_ID
-                    {
-                     before(grammarAccess.getDnAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Dn__IdNodeAlternatives_1_01592); 
-                     after(grammarAccess.getDnAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:755:6: ( RULE_STRING )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:755:6: ( RULE_STRING )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:756:1: RULE_STRING
-                    {
-                     before(grammarAccess.getDnAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Dn__IdNodeAlternatives_1_01609); 
-                     after(grammarAccess.getDnAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Dn__IdNodeAlternatives_1_0"
-
-
-    // $ANTLR start "rule__Ae__IdEdgeAlternatives_1_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:766:1: rule__Ae__IdEdgeAlternatives_1_0 : ( ( RULE_ID ) | ( RULE_STRING ) );
-    public final void rule__Ae__IdEdgeAlternatives_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:770:1: ( ( RULE_ID ) | ( RULE_STRING ) )
-            int alt8=2;
-            int LA8_0 = input.LA(1);
-
-            if ( (LA8_0==RULE_ID) ) {
-                alt8=1;
-            }
-            else if ( (LA8_0==RULE_STRING) ) {
-                alt8=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
-
-                throw nvae;
-            }
-            switch (alt8) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:771:1: ( RULE_ID )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:771:1: ( RULE_ID )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:772:1: RULE_ID
-                    {
-                     before(grammarAccess.getAeAccess().getIdEdgeIDTerminalRuleCall_1_0_0()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Ae__IdEdgeAlternatives_1_01641); 
-                     after(grammarAccess.getAeAccess().getIdEdgeIDTerminalRuleCall_1_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:777:6: ( RULE_STRING )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:777:6: ( RULE_STRING )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:778:1: RULE_STRING
-                    {
-                     before(grammarAccess.getAeAccess().getIdEdgeSTRINGTerminalRuleCall_1_0_1()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Ae__IdEdgeAlternatives_1_01658); 
-                     after(grammarAccess.getAeAccess().getIdEdgeSTRINGTerminalRuleCall_1_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Ae__IdEdgeAlternatives_1_0"
-
-
-    // $ANTLR start "rule__Ae__IdNode1Alternatives_2_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:788:1: rule__Ae__IdNode1Alternatives_2_0 : ( ( RULE_ID ) | ( RULE_STRING ) );
-    public final void rule__Ae__IdNode1Alternatives_2_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:792:1: ( ( RULE_ID ) | ( RULE_STRING ) )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==RULE_ID) ) {
-                alt9=1;
-            }
-            else if ( (LA9_0==RULE_STRING) ) {
-                alt9=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
-
-                throw nvae;
-            }
-            switch (alt9) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:793:1: ( RULE_ID )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:793:1: ( RULE_ID )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:794:1: RULE_ID
-                    {
-                     before(grammarAccess.getAeAccess().getIdNode1IDTerminalRuleCall_2_0_0()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Ae__IdNode1Alternatives_2_01690); 
-                     after(grammarAccess.getAeAccess().getIdNode1IDTerminalRuleCall_2_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:799:6: ( RULE_STRING )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:799:6: ( RULE_STRING )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:800:1: RULE_STRING
-                    {
-                     before(grammarAccess.getAeAccess().getIdNode1STRINGTerminalRuleCall_2_0_1()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Ae__IdNode1Alternatives_2_01707); 
-                     after(grammarAccess.getAeAccess().getIdNode1STRINGTerminalRuleCall_2_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Ae__IdNode1Alternatives_2_0"
-
-
-    // $ANTLR start "rule__Ae__IdNode2Alternatives_4_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:810:1: rule__Ae__IdNode2Alternatives_4_0 : ( ( RULE_ID ) | ( RULE_STRING ) );
-    public final void rule__Ae__IdNode2Alternatives_4_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:814:1: ( ( RULE_ID ) | ( RULE_STRING ) )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0==RULE_ID) ) {
-                alt10=1;
-            }
-            else if ( (LA10_0==RULE_STRING) ) {
-                alt10=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
-
-                throw nvae;
-            }
-            switch (alt10) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:815:1: ( RULE_ID )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:815:1: ( RULE_ID )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:816:1: RULE_ID
-                    {
-                     before(grammarAccess.getAeAccess().getIdNode2IDTerminalRuleCall_4_0_0()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Ae__IdNode2Alternatives_4_01739); 
-                     after(grammarAccess.getAeAccess().getIdNode2IDTerminalRuleCall_4_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:821:6: ( RULE_STRING )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:821:6: ( RULE_STRING )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:822:1: RULE_STRING
-                    {
-                     before(grammarAccess.getAeAccess().getIdNode2STRINGTerminalRuleCall_4_0_1()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Ae__IdNode2Alternatives_4_01756); 
-                     after(grammarAccess.getAeAccess().getIdNode2STRINGTerminalRuleCall_4_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Ae__IdNode2Alternatives_4_0"
-
-
-    // $ANTLR start "rule__Ce__IdNodeAlternatives_1_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:832:1: rule__Ce__IdNodeAlternatives_1_0 : ( ( RULE_ID ) | ( RULE_STRING ) );
-    public final void rule__Ce__IdNodeAlternatives_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:836:1: ( ( RULE_ID ) | ( RULE_STRING ) )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
-
-            if ( (LA11_0==RULE_ID) ) {
-                alt11=1;
-            }
-            else if ( (LA11_0==RULE_STRING) ) {
-                alt11=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
-
-                throw nvae;
-            }
-            switch (alt11) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:837:1: ( RULE_ID )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:837:1: ( RULE_ID )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:838:1: RULE_ID
-                    {
-                     before(grammarAccess.getCeAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Ce__IdNodeAlternatives_1_01788); 
-                     after(grammarAccess.getCeAccess().getIdNodeIDTerminalRuleCall_1_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:843:6: ( RULE_STRING )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:843:6: ( RULE_STRING )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:844:1: RULE_STRING
-                    {
-                     before(grammarAccess.getCeAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Ce__IdNodeAlternatives_1_01805); 
-                     after(grammarAccess.getCeAccess().getIdNodeSTRINGTerminalRuleCall_1_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Ce__IdNodeAlternatives_1_0"
-
-
-    // $ANTLR start "rule__De__IdEdgeAlternatives_1_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:854:1: rule__De__IdEdgeAlternatives_1_0 : ( ( RULE_ID ) | ( RULE_STRING ) );
-    public final void rule__De__IdEdgeAlternatives_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:858:1: ( ( RULE_ID ) | ( RULE_STRING ) )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0==RULE_ID) ) {
-                alt12=1;
-            }
-            else if ( (LA12_0==RULE_STRING) ) {
-                alt12=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
-
-                throw nvae;
-            }
-            switch (alt12) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:859:1: ( RULE_ID )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:859:1: ( RULE_ID )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:860:1: RULE_ID
-                    {
-                     before(grammarAccess.getDeAccess().getIdEdgeIDTerminalRuleCall_1_0_0()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__De__IdEdgeAlternatives_1_01837); 
-                     after(grammarAccess.getDeAccess().getIdEdgeIDTerminalRuleCall_1_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:865:6: ( RULE_STRING )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:865:6: ( RULE_STRING )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:866:1: RULE_STRING
-                    {
-                     before(grammarAccess.getDeAccess().getIdEdgeSTRINGTerminalRuleCall_1_0_1()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__De__IdEdgeAlternatives_1_01854); 
-                     after(grammarAccess.getDeAccess().getIdEdgeSTRINGTerminalRuleCall_1_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__De__IdEdgeAlternatives_1_0"
-
-
-    // $ANTLR start "rule__Attribute__Alternatives_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:876:1: rule__Attribute__Alternatives_0 : ( ( '+' ) | ( '-' ) );
-    public final void rule__Attribute__Alternatives_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:880:1: ( ( '+' ) | ( '-' ) )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
-
-            if ( (LA13_0==14) ) {
-                alt13=1;
-            }
-            else if ( (LA13_0==15) ) {
-                alt13=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
-
-                throw nvae;
-            }
-            switch (alt13) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:881:1: ( '+' )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:881:1: ( '+' )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:882:1: '+'
-                    {
-                     before(grammarAccess.getAttributeAccess().getPlusSignKeyword_0_0()); 
-                    match(input,14,FOLLOW_14_in_rule__Attribute__Alternatives_01887); 
-                     after(grammarAccess.getAttributeAccess().getPlusSignKeyword_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:889:6: ( '-' )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:889:6: ( '-' )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:890:1: '-'
-                    {
-                     before(grammarAccess.getAttributeAccess().getHyphenMinusKeyword_0_1()); 
-                    match(input,15,FOLLOW_15_in_rule__Attribute__Alternatives_01907); 
-                     after(grammarAccess.getAttributeAccess().getHyphenMinusKeyword_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Attribute__Alternatives_0"
-
-
-    // $ANTLR start "rule__Attribute__IdAttributeAlternatives_1_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:902:1: rule__Attribute__IdAttributeAlternatives_1_0 : ( ( RULE_ID ) | ( RULE_STRING ) );
-    public final void rule__Attribute__IdAttributeAlternatives_1_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:906:1: ( ( RULE_ID ) | ( RULE_STRING ) )
-            int alt14=2;
-            int LA14_0 = input.LA(1);
-
-            if ( (LA14_0==RULE_ID) ) {
-                alt14=1;
-            }
-            else if ( (LA14_0==RULE_STRING) ) {
-                alt14=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
-
-                throw nvae;
-            }
-            switch (alt14) {
-                case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:907:1: ( RULE_ID )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:907:1: ( RULE_ID )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:908:1: RULE_ID
-                    {
-                     before(grammarAccess.getAttributeAccess().getIdAttributeIDTerminalRuleCall_1_0_0()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Attribute__IdAttributeAlternatives_1_01941); 
-                     after(grammarAccess.getAttributeAccess().getIdAttributeIDTerminalRuleCall_1_0_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:913:6: ( RULE_STRING )
-                    {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:913:6: ( RULE_STRING )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:914:1: RULE_STRING
-                    {
-                     before(grammarAccess.getAttributeAccess().getIdAttributeSTRINGTerminalRuleCall_1_0_1()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Attribute__IdAttributeAlternatives_1_01958); 
-                     after(grammarAccess.getAttributeAccess().getIdAttributeSTRINGTerminalRuleCall_1_0_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Attribute__IdAttributeAlternatives_1_0"
-
-
     // $ANTLR start "rule__Value__Alternatives"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:924:1: rule__Value__Alternatives : ( ( ( rule__Value__StringAssignment_0 ) ) | ( ( rule__Value__RealAssignment_1 ) ) | ( ( rule__Value__ArrayAssignment_2 ) ) | ( ( rule__Value__MapAssignment_3 ) ) );
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:678:1: rule__Value__Alternatives : ( ( ( rule__Value__StringAssignment_0 ) ) | ( ( rule__Value__RealAssignment_1 ) ) | ( ( rule__Value__IntAssignment_2 ) ) | ( ( rule__Value__ArrayAssignment_3 ) ) | ( ( rule__Value__MapAssignment_4 ) ) );
     public final void rule__Value__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:928:1: ( ( ( rule__Value__StringAssignment_0 ) ) | ( ( rule__Value__RealAssignment_1 ) ) | ( ( rule__Value__ArrayAssignment_2 ) ) | ( ( rule__Value__MapAssignment_3 ) ) )
-            int alt15=4;
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:682:1: ( ( ( rule__Value__StringAssignment_0 ) ) | ( ( rule__Value__RealAssignment_1 ) ) | ( ( rule__Value__IntAssignment_2 ) ) | ( ( rule__Value__ArrayAssignment_3 ) ) | ( ( rule__Value__MapAssignment_4 ) ) )
+            int alt4=5;
             switch ( input.LA(1) ) {
             case RULE_STRING:
                 {
-                alt15=1;
+                alt4=1;
+                }
+                break;
+            case RULE_REAL:
+                {
+                alt4=2;
                 }
                 break;
             case RULE_INT:
                 {
-                alt15=2;
+                alt4=3;
                 }
                 break;
             case 25:
                 {
-                alt15=3;
+                alt4=4;
                 }
                 break;
             case 27:
                 {
-                alt15=4;
+                alt4=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt15) {
+            switch (alt4) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:929:1: ( ( rule__Value__StringAssignment_0 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:683:1: ( ( rule__Value__StringAssignment_0 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:929:1: ( ( rule__Value__StringAssignment_0 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:930:1: ( rule__Value__StringAssignment_0 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:683:1: ( ( rule__Value__StringAssignment_0 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:684:1: ( rule__Value__StringAssignment_0 )
                     {
                      before(grammarAccess.getValueAccess().getStringAssignment_0()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:931:1: ( rule__Value__StringAssignment_0 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:931:2: rule__Value__StringAssignment_0
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:685:1: ( rule__Value__StringAssignment_0 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:685:2: rule__Value__StringAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__Value__StringAssignment_0_in_rule__Value__Alternatives1990);
+                    pushFollow(FOLLOW_rule__Value__StringAssignment_0_in_rule__Value__Alternatives1445);
                     rule__Value__StringAssignment_0();
 
                     state._fsp--;
@@ -2830,16 +2053,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:935:6: ( ( rule__Value__RealAssignment_1 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:689:6: ( ( rule__Value__RealAssignment_1 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:935:6: ( ( rule__Value__RealAssignment_1 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:936:1: ( rule__Value__RealAssignment_1 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:689:6: ( ( rule__Value__RealAssignment_1 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:690:1: ( rule__Value__RealAssignment_1 )
                     {
                      before(grammarAccess.getValueAccess().getRealAssignment_1()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:937:1: ( rule__Value__RealAssignment_1 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:937:2: rule__Value__RealAssignment_1
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:691:1: ( rule__Value__RealAssignment_1 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:691:2: rule__Value__RealAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__Value__RealAssignment_1_in_rule__Value__Alternatives2008);
+                    pushFollow(FOLLOW_rule__Value__RealAssignment_1_in_rule__Value__Alternatives1463);
                     rule__Value__RealAssignment_1();
 
                     state._fsp--;
@@ -2855,24 +2078,24 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:941:6: ( ( rule__Value__ArrayAssignment_2 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:695:6: ( ( rule__Value__IntAssignment_2 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:941:6: ( ( rule__Value__ArrayAssignment_2 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:942:1: ( rule__Value__ArrayAssignment_2 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:695:6: ( ( rule__Value__IntAssignment_2 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:696:1: ( rule__Value__IntAssignment_2 )
                     {
-                     before(grammarAccess.getValueAccess().getArrayAssignment_2()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:943:1: ( rule__Value__ArrayAssignment_2 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:943:2: rule__Value__ArrayAssignment_2
+                     before(grammarAccess.getValueAccess().getIntAssignment_2()); 
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:697:1: ( rule__Value__IntAssignment_2 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:697:2: rule__Value__IntAssignment_2
                     {
-                    pushFollow(FOLLOW_rule__Value__ArrayAssignment_2_in_rule__Value__Alternatives2026);
-                    rule__Value__ArrayAssignment_2();
+                    pushFollow(FOLLOW_rule__Value__IntAssignment_2_in_rule__Value__Alternatives1481);
+                    rule__Value__IntAssignment_2();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getValueAccess().getArrayAssignment_2()); 
+                     after(grammarAccess.getValueAccess().getIntAssignment_2()); 
 
                     }
 
@@ -2880,24 +2103,49 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:947:6: ( ( rule__Value__MapAssignment_3 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:701:6: ( ( rule__Value__ArrayAssignment_3 ) )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:947:6: ( ( rule__Value__MapAssignment_3 ) )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:948:1: ( rule__Value__MapAssignment_3 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:701:6: ( ( rule__Value__ArrayAssignment_3 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:702:1: ( rule__Value__ArrayAssignment_3 )
                     {
-                     before(grammarAccess.getValueAccess().getMapAssignment_3()); 
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:949:1: ( rule__Value__MapAssignment_3 )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:949:2: rule__Value__MapAssignment_3
+                     before(grammarAccess.getValueAccess().getArrayAssignment_3()); 
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:703:1: ( rule__Value__ArrayAssignment_3 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:703:2: rule__Value__ArrayAssignment_3
                     {
-                    pushFollow(FOLLOW_rule__Value__MapAssignment_3_in_rule__Value__Alternatives2044);
-                    rule__Value__MapAssignment_3();
+                    pushFollow(FOLLOW_rule__Value__ArrayAssignment_3_in_rule__Value__Alternatives1499);
+                    rule__Value__ArrayAssignment_3();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getValueAccess().getMapAssignment_3()); 
+                     after(grammarAccess.getValueAccess().getArrayAssignment_3()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:707:6: ( ( rule__Value__MapAssignment_4 ) )
+                    {
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:707:6: ( ( rule__Value__MapAssignment_4 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:708:1: ( rule__Value__MapAssignment_4 )
+                    {
+                     before(grammarAccess.getValueAccess().getMapAssignment_4()); 
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:709:1: ( rule__Value__MapAssignment_4 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:709:2: rule__Value__MapAssignment_4
+                    {
+                    pushFollow(FOLLOW_rule__Value__MapAssignment_4_in_rule__Value__Alternatives1517);
+                    rule__Value__MapAssignment_4();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getValueAccess().getMapAssignment_4()); 
 
                     }
 
@@ -2921,39 +2169,48 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Value__Alternatives"
 
 
-    // $ANTLR start "rule__Mapping__IdAlternatives_0_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:958:1: rule__Mapping__IdAlternatives_0_0 : ( ( RULE_ID ) | ( RULE_STRING ) );
-    public final void rule__Mapping__IdAlternatives_0_0() throws RecognitionException {
+    // $ANTLR start "rule__Id__Alternatives"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:718:1: rule__Id__Alternatives : ( ( RULE_STRING ) | ( RULE_INT ) | ( ( rule__Id__Group_2__0 ) ) );
+    public final void rule__Id__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:962:1: ( ( RULE_ID ) | ( RULE_STRING ) )
-            int alt16=2;
-            int LA16_0 = input.LA(1);
-
-            if ( (LA16_0==RULE_ID) ) {
-                alt16=1;
-            }
-            else if ( (LA16_0==RULE_STRING) ) {
-                alt16=2;
-            }
-            else {
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:722:1: ( ( RULE_STRING ) | ( RULE_INT ) | ( ( rule__Id__Group_2__0 ) ) )
+            int alt5=3;
+            switch ( input.LA(1) ) {
+            case RULE_STRING:
+                {
+                alt5=1;
+                }
+                break;
+            case RULE_INT:
+                {
+                alt5=2;
+                }
+                break;
+            case RULE_WORD:
+                {
+                alt5=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
-            switch (alt16) {
+
+            switch (alt5) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:963:1: ( RULE_ID )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:723:1: ( RULE_STRING )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:963:1: ( RULE_ID )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:964:1: RULE_ID
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:723:1: ( RULE_STRING )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:724:1: RULE_STRING
                     {
-                     before(grammarAccess.getMappingAccess().getIdIDTerminalRuleCall_0_0_0()); 
-                    match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Mapping__IdAlternatives_0_02077); 
-                     after(grammarAccess.getMappingAccess().getIdIDTerminalRuleCall_0_0_0()); 
+                     before(grammarAccess.getIdAccess().getSTRINGTerminalRuleCall_0()); 
+                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Id__Alternatives1550); 
+                     after(grammarAccess.getIdAccess().getSTRINGTerminalRuleCall_0()); 
 
                     }
 
@@ -2961,14 +2218,39 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:969:6: ( RULE_STRING )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:729:6: ( RULE_INT )
                     {
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:969:6: ( RULE_STRING )
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:970:1: RULE_STRING
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:729:6: ( RULE_INT )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:730:1: RULE_INT
                     {
-                     before(grammarAccess.getMappingAccess().getIdSTRINGTerminalRuleCall_0_0_1()); 
-                    match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Mapping__IdAlternatives_0_02094); 
-                     after(grammarAccess.getMappingAccess().getIdSTRINGTerminalRuleCall_0_0_1()); 
+                     before(grammarAccess.getIdAccess().getINTTerminalRuleCall_1()); 
+                    match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Id__Alternatives1567); 
+                     after(grammarAccess.getIdAccess().getINTTerminalRuleCall_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:735:6: ( ( rule__Id__Group_2__0 ) )
+                    {
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:735:6: ( ( rule__Id__Group_2__0 ) )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:736:1: ( rule__Id__Group_2__0 )
+                    {
+                     before(grammarAccess.getIdAccess().getGroup_2()); 
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:737:1: ( rule__Id__Group_2__0 )
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:737:2: rule__Id__Group_2__0
+                    {
+                    pushFollow(FOLLOW_rule__Id__Group_2__0_in_rule__Id__Alternatives1584);
+                    rule__Id__Group_2__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getIdAccess().getGroup_2()); 
 
                     }
 
@@ -2989,25 +2271,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Mapping__IdAlternatives_0_0"
+    // $ANTLR end "rule__Id__Alternatives"
 
 
     // $ANTLR start "rule__Dgs__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:982:1: rule__Dgs__Group__0 : rule__Dgs__Group__0__Impl rule__Dgs__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:748:1: rule__Dgs__Group__0 : rule__Dgs__Group__0__Impl rule__Dgs__Group__1 ;
     public final void rule__Dgs__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:986:1: ( rule__Dgs__Group__0__Impl rule__Dgs__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:987:2: rule__Dgs__Group__0__Impl rule__Dgs__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:752:1: ( rule__Dgs__Group__0__Impl rule__Dgs__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:753:2: rule__Dgs__Group__0__Impl rule__Dgs__Group__1
             {
-            pushFollow(FOLLOW_rule__Dgs__Group__0__Impl_in_rule__Dgs__Group__02124);
+            pushFollow(FOLLOW_rule__Dgs__Group__0__Impl_in_rule__Dgs__Group__01615);
             rule__Dgs__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Dgs__Group__1_in_rule__Dgs__Group__02127);
+            pushFollow(FOLLOW_rule__Dgs__Group__1_in_rule__Dgs__Group__01618);
             rule__Dgs__Group__1();
 
             state._fsp--;
@@ -3031,23 +2313,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Dgs__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:994:1: rule__Dgs__Group__0__Impl : ( ( rule__Dgs__HeaderAssignment_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:760:1: rule__Dgs__Group__0__Impl : ( ( rule__Dgs__HeaderAssignment_0 ) ) ;
     public final void rule__Dgs__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:998:1: ( ( ( rule__Dgs__HeaderAssignment_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:999:1: ( ( rule__Dgs__HeaderAssignment_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:764:1: ( ( ( rule__Dgs__HeaderAssignment_0 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:765:1: ( ( rule__Dgs__HeaderAssignment_0 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:999:1: ( ( rule__Dgs__HeaderAssignment_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1000:1: ( rule__Dgs__HeaderAssignment_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:765:1: ( ( rule__Dgs__HeaderAssignment_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:766:1: ( rule__Dgs__HeaderAssignment_0 )
             {
              before(grammarAccess.getDgsAccess().getHeaderAssignment_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1001:1: ( rule__Dgs__HeaderAssignment_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1001:2: rule__Dgs__HeaderAssignment_0
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:767:1: ( rule__Dgs__HeaderAssignment_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:767:2: rule__Dgs__HeaderAssignment_0
             {
-            pushFollow(FOLLOW_rule__Dgs__HeaderAssignment_0_in_rule__Dgs__Group__0__Impl2154);
+            pushFollow(FOLLOW_rule__Dgs__HeaderAssignment_0_in_rule__Dgs__Group__0__Impl1645);
             rule__Dgs__HeaderAssignment_0();
 
             state._fsp--;
@@ -3078,16 +2360,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Dgs__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1011:1: rule__Dgs__Group__1 : rule__Dgs__Group__1__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:777:1: rule__Dgs__Group__1 : rule__Dgs__Group__1__Impl ;
     public final void rule__Dgs__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1015:1: ( rule__Dgs__Group__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1016:2: rule__Dgs__Group__1__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:781:1: ( rule__Dgs__Group__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:782:2: rule__Dgs__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Dgs__Group__1__Impl_in_rule__Dgs__Group__12184);
+            pushFollow(FOLLOW_rule__Dgs__Group__1__Impl_in_rule__Dgs__Group__11675);
             rule__Dgs__Group__1__Impl();
 
             state._fsp--;
@@ -3111,35 +2393,35 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Dgs__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1022:1: rule__Dgs__Group__1__Impl : ( ( rule__Dgs__Alternatives_1 )* ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:788:1: rule__Dgs__Group__1__Impl : ( ( rule__Dgs__Alternatives_1 )* ) ;
     public final void rule__Dgs__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1026:1: ( ( ( rule__Dgs__Alternatives_1 )* ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1027:1: ( ( rule__Dgs__Alternatives_1 )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:792:1: ( ( ( rule__Dgs__Alternatives_1 )* ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:793:1: ( ( rule__Dgs__Alternatives_1 )* )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1027:1: ( ( rule__Dgs__Alternatives_1 )* )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1028:1: ( rule__Dgs__Alternatives_1 )*
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:793:1: ( ( rule__Dgs__Alternatives_1 )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:794:1: ( rule__Dgs__Alternatives_1 )*
             {
              before(grammarAccess.getDgsAccess().getAlternatives_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1029:1: ( rule__Dgs__Alternatives_1 )*
-            loop17:
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:795:1: ( rule__Dgs__Alternatives_1 )*
+            loop6:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA17_0==RULE_EOL||LA17_0==RULE_COMMENT||LA17_0==RULE_CL||(LA17_0>=16 && LA17_0<=23)) ) {
-                    alt17=1;
+                if ( (LA6_0==RULE_EOL||LA6_0==RULE_COMMENT||LA6_0==RULE_CL||(LA6_0>=16 && LA6_0<=23)) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt6) {
             	case 1 :
-            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1029:2: rule__Dgs__Alternatives_1
+            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:795:2: rule__Dgs__Alternatives_1
             	    {
-            	    pushFollow(FOLLOW_rule__Dgs__Alternatives_1_in_rule__Dgs__Group__1__Impl2211);
+            	    pushFollow(FOLLOW_rule__Dgs__Alternatives_1_in_rule__Dgs__Group__1__Impl1702);
             	    rule__Dgs__Alternatives_1();
 
             	    state._fsp--;
@@ -3149,7 +2431,7 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop6;
                 }
             } while (true);
 
@@ -3176,21 +2458,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1043:1: rule__Header__Group__0 : rule__Header__Group__0__Impl rule__Header__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:809:1: rule__Header__Group__0 : rule__Header__Group__0__Impl rule__Header__Group__1 ;
     public final void rule__Header__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1047:1: ( rule__Header__Group__0__Impl rule__Header__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1048:2: rule__Header__Group__0__Impl rule__Header__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:813:1: ( rule__Header__Group__0__Impl rule__Header__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:814:2: rule__Header__Group__0__Impl rule__Header__Group__1
             {
-            pushFollow(FOLLOW_rule__Header__Group__0__Impl_in_rule__Header__Group__02246);
+            pushFollow(FOLLOW_rule__Header__Group__0__Impl_in_rule__Header__Group__01737);
             rule__Header__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Header__Group__1_in_rule__Header__Group__02249);
+            pushFollow(FOLLOW_rule__Header__Group__1_in_rule__Header__Group__01740);
             rule__Header__Group__1();
 
             state._fsp--;
@@ -3214,23 +2496,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1055:1: rule__Header__Group__0__Impl : ( ( rule__Header__MagicAssignment_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:821:1: rule__Header__Group__0__Impl : ( ( rule__Header__MagicAssignment_0 ) ) ;
     public final void rule__Header__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1059:1: ( ( ( rule__Header__MagicAssignment_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1060:1: ( ( rule__Header__MagicAssignment_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:825:1: ( ( ( rule__Header__MagicAssignment_0 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:826:1: ( ( rule__Header__MagicAssignment_0 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1060:1: ( ( rule__Header__MagicAssignment_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1061:1: ( rule__Header__MagicAssignment_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:826:1: ( ( rule__Header__MagicAssignment_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:827:1: ( rule__Header__MagicAssignment_0 )
             {
              before(grammarAccess.getHeaderAccess().getMagicAssignment_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1062:1: ( rule__Header__MagicAssignment_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1062:2: rule__Header__MagicAssignment_0
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:828:1: ( rule__Header__MagicAssignment_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:828:2: rule__Header__MagicAssignment_0
             {
-            pushFollow(FOLLOW_rule__Header__MagicAssignment_0_in_rule__Header__Group__0__Impl2276);
+            pushFollow(FOLLOW_rule__Header__MagicAssignment_0_in_rule__Header__Group__0__Impl1767);
             rule__Header__MagicAssignment_0();
 
             state._fsp--;
@@ -3261,21 +2543,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1072:1: rule__Header__Group__1 : rule__Header__Group__1__Impl rule__Header__Group__2 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:838:1: rule__Header__Group__1 : rule__Header__Group__1__Impl rule__Header__Group__2 ;
     public final void rule__Header__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1076:1: ( rule__Header__Group__1__Impl rule__Header__Group__2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1077:2: rule__Header__Group__1__Impl rule__Header__Group__2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:842:1: ( rule__Header__Group__1__Impl rule__Header__Group__2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:843:2: rule__Header__Group__1__Impl rule__Header__Group__2
             {
-            pushFollow(FOLLOW_rule__Header__Group__1__Impl_in_rule__Header__Group__12306);
+            pushFollow(FOLLOW_rule__Header__Group__1__Impl_in_rule__Header__Group__11797);
             rule__Header__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Header__Group__2_in_rule__Header__Group__12309);
+            pushFollow(FOLLOW_rule__Header__Group__2_in_rule__Header__Group__11800);
             rule__Header__Group__2();
 
             state._fsp--;
@@ -3299,20 +2581,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1084:1: rule__Header__Group__1__Impl : ( RULE_EOL ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:850:1: rule__Header__Group__1__Impl : ( RULE_EOL ) ;
     public final void rule__Header__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1088:1: ( ( RULE_EOL ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1089:1: ( RULE_EOL )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:854:1: ( ( RULE_EOL ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:855:1: ( RULE_EOL )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1089:1: ( RULE_EOL )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1090:1: RULE_EOL
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:855:1: ( RULE_EOL )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:856:1: RULE_EOL
             {
              before(grammarAccess.getHeaderAccess().getEOLTerminalRuleCall_1()); 
-            match(input,RULE_EOL,FOLLOW_RULE_EOL_in_rule__Header__Group__1__Impl2336); 
+            match(input,RULE_EOL,FOLLOW_RULE_EOL_in_rule__Header__Group__1__Impl1827); 
              after(grammarAccess.getHeaderAccess().getEOLTerminalRuleCall_1()); 
 
             }
@@ -3336,21 +2618,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1101:1: rule__Header__Group__2 : rule__Header__Group__2__Impl rule__Header__Group__3 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:867:1: rule__Header__Group__2 : rule__Header__Group__2__Impl rule__Header__Group__3 ;
     public final void rule__Header__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1105:1: ( rule__Header__Group__2__Impl rule__Header__Group__3 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1106:2: rule__Header__Group__2__Impl rule__Header__Group__3
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:871:1: ( rule__Header__Group__2__Impl rule__Header__Group__3 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:872:2: rule__Header__Group__2__Impl rule__Header__Group__3
             {
-            pushFollow(FOLLOW_rule__Header__Group__2__Impl_in_rule__Header__Group__22365);
+            pushFollow(FOLLOW_rule__Header__Group__2__Impl_in_rule__Header__Group__21856);
             rule__Header__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Header__Group__3_in_rule__Header__Group__22368);
+            pushFollow(FOLLOW_rule__Header__Group__3_in_rule__Header__Group__21859);
             rule__Header__Group__3();
 
             state._fsp--;
@@ -3374,23 +2656,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__2__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1113:1: rule__Header__Group__2__Impl : ( ( rule__Header__NameAssignment_2 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:879:1: rule__Header__Group__2__Impl : ( ( rule__Header__NameAssignment_2 ) ) ;
     public final void rule__Header__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1117:1: ( ( ( rule__Header__NameAssignment_2 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1118:1: ( ( rule__Header__NameAssignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:883:1: ( ( ( rule__Header__NameAssignment_2 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:884:1: ( ( rule__Header__NameAssignment_2 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1118:1: ( ( rule__Header__NameAssignment_2 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1119:1: ( rule__Header__NameAssignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:884:1: ( ( rule__Header__NameAssignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:885:1: ( rule__Header__NameAssignment_2 )
             {
              before(grammarAccess.getHeaderAccess().getNameAssignment_2()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1120:1: ( rule__Header__NameAssignment_2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1120:2: rule__Header__NameAssignment_2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:886:1: ( rule__Header__NameAssignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:886:2: rule__Header__NameAssignment_2
             {
-            pushFollow(FOLLOW_rule__Header__NameAssignment_2_in_rule__Header__Group__2__Impl2395);
+            pushFollow(FOLLOW_rule__Header__NameAssignment_2_in_rule__Header__Group__2__Impl1886);
             rule__Header__NameAssignment_2();
 
             state._fsp--;
@@ -3421,21 +2703,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__3"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1130:1: rule__Header__Group__3 : rule__Header__Group__3__Impl rule__Header__Group__4 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:896:1: rule__Header__Group__3 : rule__Header__Group__3__Impl rule__Header__Group__4 ;
     public final void rule__Header__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1134:1: ( rule__Header__Group__3__Impl rule__Header__Group__4 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1135:2: rule__Header__Group__3__Impl rule__Header__Group__4
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:900:1: ( rule__Header__Group__3__Impl rule__Header__Group__4 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:901:2: rule__Header__Group__3__Impl rule__Header__Group__4
             {
-            pushFollow(FOLLOW_rule__Header__Group__3__Impl_in_rule__Header__Group__32425);
+            pushFollow(FOLLOW_rule__Header__Group__3__Impl_in_rule__Header__Group__31916);
             rule__Header__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Header__Group__4_in_rule__Header__Group__32428);
+            pushFollow(FOLLOW_rule__Header__Group__4_in_rule__Header__Group__31919);
             rule__Header__Group__4();
 
             state._fsp--;
@@ -3459,23 +2741,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__3__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1142:1: rule__Header__Group__3__Impl : ( ( rule__Header__NumberOfStepsAssignment_3 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:908:1: rule__Header__Group__3__Impl : ( ( rule__Header__NumberOfStepsAssignment_3 ) ) ;
     public final void rule__Header__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1146:1: ( ( ( rule__Header__NumberOfStepsAssignment_3 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1147:1: ( ( rule__Header__NumberOfStepsAssignment_3 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:912:1: ( ( ( rule__Header__NumberOfStepsAssignment_3 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:913:1: ( ( rule__Header__NumberOfStepsAssignment_3 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1147:1: ( ( rule__Header__NumberOfStepsAssignment_3 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1148:1: ( rule__Header__NumberOfStepsAssignment_3 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:913:1: ( ( rule__Header__NumberOfStepsAssignment_3 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:914:1: ( rule__Header__NumberOfStepsAssignment_3 )
             {
              before(grammarAccess.getHeaderAccess().getNumberOfStepsAssignment_3()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1149:1: ( rule__Header__NumberOfStepsAssignment_3 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1149:2: rule__Header__NumberOfStepsAssignment_3
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:915:1: ( rule__Header__NumberOfStepsAssignment_3 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:915:2: rule__Header__NumberOfStepsAssignment_3
             {
-            pushFollow(FOLLOW_rule__Header__NumberOfStepsAssignment_3_in_rule__Header__Group__3__Impl2455);
+            pushFollow(FOLLOW_rule__Header__NumberOfStepsAssignment_3_in_rule__Header__Group__3__Impl1946);
             rule__Header__NumberOfStepsAssignment_3();
 
             state._fsp--;
@@ -3506,21 +2788,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__4"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1159:1: rule__Header__Group__4 : rule__Header__Group__4__Impl rule__Header__Group__5 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:925:1: rule__Header__Group__4 : rule__Header__Group__4__Impl rule__Header__Group__5 ;
     public final void rule__Header__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1163:1: ( rule__Header__Group__4__Impl rule__Header__Group__5 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1164:2: rule__Header__Group__4__Impl rule__Header__Group__5
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:929:1: ( rule__Header__Group__4__Impl rule__Header__Group__5 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:930:2: rule__Header__Group__4__Impl rule__Header__Group__5
             {
-            pushFollow(FOLLOW_rule__Header__Group__4__Impl_in_rule__Header__Group__42485);
+            pushFollow(FOLLOW_rule__Header__Group__4__Impl_in_rule__Header__Group__41976);
             rule__Header__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Header__Group__5_in_rule__Header__Group__42488);
+            pushFollow(FOLLOW_rule__Header__Group__5_in_rule__Header__Group__41979);
             rule__Header__Group__5();
 
             state._fsp--;
@@ -3544,23 +2826,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__4__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1171:1: rule__Header__Group__4__Impl : ( ( rule__Header__NumberOfEventsAssignment_4 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:937:1: rule__Header__Group__4__Impl : ( ( rule__Header__NumberOfEventsAssignment_4 ) ) ;
     public final void rule__Header__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1175:1: ( ( ( rule__Header__NumberOfEventsAssignment_4 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1176:1: ( ( rule__Header__NumberOfEventsAssignment_4 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:941:1: ( ( ( rule__Header__NumberOfEventsAssignment_4 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:942:1: ( ( rule__Header__NumberOfEventsAssignment_4 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1176:1: ( ( rule__Header__NumberOfEventsAssignment_4 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1177:1: ( rule__Header__NumberOfEventsAssignment_4 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:942:1: ( ( rule__Header__NumberOfEventsAssignment_4 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:943:1: ( rule__Header__NumberOfEventsAssignment_4 )
             {
              before(grammarAccess.getHeaderAccess().getNumberOfEventsAssignment_4()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1178:1: ( rule__Header__NumberOfEventsAssignment_4 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1178:2: rule__Header__NumberOfEventsAssignment_4
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:944:1: ( rule__Header__NumberOfEventsAssignment_4 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:944:2: rule__Header__NumberOfEventsAssignment_4
             {
-            pushFollow(FOLLOW_rule__Header__NumberOfEventsAssignment_4_in_rule__Header__Group__4__Impl2515);
+            pushFollow(FOLLOW_rule__Header__NumberOfEventsAssignment_4_in_rule__Header__Group__4__Impl2006);
             rule__Header__NumberOfEventsAssignment_4();
 
             state._fsp--;
@@ -3591,16 +2873,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__5"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1188:1: rule__Header__Group__5 : rule__Header__Group__5__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:954:1: rule__Header__Group__5 : rule__Header__Group__5__Impl ;
     public final void rule__Header__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1192:1: ( rule__Header__Group__5__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1193:2: rule__Header__Group__5__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:958:1: ( rule__Header__Group__5__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:959:2: rule__Header__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__Header__Group__5__Impl_in_rule__Header__Group__52545);
+            pushFollow(FOLLOW_rule__Header__Group__5__Impl_in_rule__Header__Group__52036);
             rule__Header__Group__5__Impl();
 
             state._fsp--;
@@ -3624,20 +2906,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__Group__5__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1199:1: rule__Header__Group__5__Impl : ( RULE_EOL ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:965:1: rule__Header__Group__5__Impl : ( RULE_EOL ) ;
     public final void rule__Header__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1203:1: ( ( RULE_EOL ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1204:1: ( RULE_EOL )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:969:1: ( ( RULE_EOL ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:970:1: ( RULE_EOL )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1204:1: ( RULE_EOL )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1205:1: RULE_EOL
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:970:1: ( RULE_EOL )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:971:1: RULE_EOL
             {
              before(grammarAccess.getHeaderAccess().getEOLTerminalRuleCall_5()); 
-            match(input,RULE_EOL,FOLLOW_RULE_EOL_in_rule__Header__Group__5__Impl2572); 
+            match(input,RULE_EOL,FOLLOW_RULE_EOL_in_rule__Header__Group__5__Impl2063); 
              after(grammarAccess.getHeaderAccess().getEOLTerminalRuleCall_5()); 
 
             }
@@ -3661,21 +2943,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1228:1: rule__Event__Group__0 : rule__Event__Group__0__Impl rule__Event__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:994:1: rule__Event__Group__0 : rule__Event__Group__0__Impl rule__Event__Group__1 ;
     public final void rule__Event__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1232:1: ( rule__Event__Group__0__Impl rule__Event__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1233:2: rule__Event__Group__0__Impl rule__Event__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:998:1: ( rule__Event__Group__0__Impl rule__Event__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:999:2: rule__Event__Group__0__Impl rule__Event__Group__1
             {
-            pushFollow(FOLLOW_rule__Event__Group__0__Impl_in_rule__Event__Group__02613);
+            pushFollow(FOLLOW_rule__Event__Group__0__Impl_in_rule__Event__Group__02104);
             rule__Event__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Event__Group__1_in_rule__Event__Group__02616);
+            pushFollow(FOLLOW_rule__Event__Group__1_in_rule__Event__Group__02107);
             rule__Event__Group__1();
 
             state._fsp--;
@@ -3699,23 +2981,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1240:1: rule__Event__Group__0__Impl : ( ( rule__Event__Alternatives_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1006:1: rule__Event__Group__0__Impl : ( ( rule__Event__Alternatives_0 ) ) ;
     public final void rule__Event__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1244:1: ( ( ( rule__Event__Alternatives_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1245:1: ( ( rule__Event__Alternatives_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1010:1: ( ( ( rule__Event__Alternatives_0 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1011:1: ( ( rule__Event__Alternatives_0 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1245:1: ( ( rule__Event__Alternatives_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1246:1: ( rule__Event__Alternatives_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1011:1: ( ( rule__Event__Alternatives_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1012:1: ( rule__Event__Alternatives_0 )
             {
              before(grammarAccess.getEventAccess().getAlternatives_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1247:1: ( rule__Event__Alternatives_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1247:2: rule__Event__Alternatives_0
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1013:1: ( rule__Event__Alternatives_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1013:2: rule__Event__Alternatives_0
             {
-            pushFollow(FOLLOW_rule__Event__Alternatives_0_in_rule__Event__Group__0__Impl2643);
+            pushFollow(FOLLOW_rule__Event__Alternatives_0_in_rule__Event__Group__0__Impl2134);
             rule__Event__Alternatives_0();
 
             state._fsp--;
@@ -3746,16 +3028,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1257:1: rule__Event__Group__1 : rule__Event__Group__1__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1023:1: rule__Event__Group__1 : rule__Event__Group__1__Impl ;
     public final void rule__Event__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1261:1: ( rule__Event__Group__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1262:2: rule__Event__Group__1__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1027:1: ( rule__Event__Group__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1028:2: rule__Event__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Event__Group__1__Impl_in_rule__Event__Group__12673);
+            pushFollow(FOLLOW_rule__Event__Group__1__Impl_in_rule__Event__Group__12164);
             rule__Event__Group__1__Impl();
 
             state._fsp--;
@@ -3779,23 +3061,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1268:1: rule__Event__Group__1__Impl : ( ( rule__Event__Alternatives_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1034:1: rule__Event__Group__1__Impl : ( ( rule__Event__Alternatives_1 ) ) ;
     public final void rule__Event__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1272:1: ( ( ( rule__Event__Alternatives_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1273:1: ( ( rule__Event__Alternatives_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1038:1: ( ( ( rule__Event__Alternatives_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1039:1: ( ( rule__Event__Alternatives_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1273:1: ( ( rule__Event__Alternatives_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1274:1: ( rule__Event__Alternatives_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1039:1: ( ( rule__Event__Alternatives_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1040:1: ( rule__Event__Alternatives_1 )
             {
              before(grammarAccess.getEventAccess().getAlternatives_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1275:1: ( rule__Event__Alternatives_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1275:2: rule__Event__Alternatives_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1041:1: ( rule__Event__Alternatives_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1041:2: rule__Event__Alternatives_1
             {
-            pushFollow(FOLLOW_rule__Event__Alternatives_1_in_rule__Event__Group__1__Impl2700);
+            pushFollow(FOLLOW_rule__Event__Alternatives_1_in_rule__Event__Group__1__Impl2191);
             rule__Event__Alternatives_1();
 
             state._fsp--;
@@ -3826,21 +3108,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__An__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1289:1: rule__An__Group__0 : rule__An__Group__0__Impl rule__An__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1055:1: rule__An__Group__0 : rule__An__Group__0__Impl rule__An__Group__1 ;
     public final void rule__An__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1293:1: ( rule__An__Group__0__Impl rule__An__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1294:2: rule__An__Group__0__Impl rule__An__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1059:1: ( rule__An__Group__0__Impl rule__An__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1060:2: rule__An__Group__0__Impl rule__An__Group__1
             {
-            pushFollow(FOLLOW_rule__An__Group__0__Impl_in_rule__An__Group__02734);
+            pushFollow(FOLLOW_rule__An__Group__0__Impl_in_rule__An__Group__02225);
             rule__An__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__An__Group__1_in_rule__An__Group__02737);
+            pushFollow(FOLLOW_rule__An__Group__1_in_rule__An__Group__02228);
             rule__An__Group__1();
 
             state._fsp--;
@@ -3864,20 +3146,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__An__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1301:1: rule__An__Group__0__Impl : ( 'an' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1067:1: rule__An__Group__0__Impl : ( 'an' ) ;
     public final void rule__An__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1305:1: ( ( 'an' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1306:1: ( 'an' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1071:1: ( ( 'an' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1072:1: ( 'an' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1306:1: ( 'an' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1307:1: 'an'
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1072:1: ( 'an' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1073:1: 'an'
             {
              before(grammarAccess.getAnAccess().getAnKeyword_0()); 
-            match(input,16,FOLLOW_16_in_rule__An__Group__0__Impl2765); 
+            match(input,16,FOLLOW_16_in_rule__An__Group__0__Impl2256); 
              after(grammarAccess.getAnAccess().getAnKeyword_0()); 
 
             }
@@ -3901,21 +3183,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__An__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1320:1: rule__An__Group__1 : rule__An__Group__1__Impl rule__An__Group__2 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1086:1: rule__An__Group__1 : rule__An__Group__1__Impl rule__An__Group__2 ;
     public final void rule__An__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1324:1: ( rule__An__Group__1__Impl rule__An__Group__2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1325:2: rule__An__Group__1__Impl rule__An__Group__2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1090:1: ( rule__An__Group__1__Impl rule__An__Group__2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1091:2: rule__An__Group__1__Impl rule__An__Group__2
             {
-            pushFollow(FOLLOW_rule__An__Group__1__Impl_in_rule__An__Group__12796);
+            pushFollow(FOLLOW_rule__An__Group__1__Impl_in_rule__An__Group__12287);
             rule__An__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__An__Group__2_in_rule__An__Group__12799);
+            pushFollow(FOLLOW_rule__An__Group__2_in_rule__An__Group__12290);
             rule__An__Group__2();
 
             state._fsp--;
@@ -3939,23 +3221,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__An__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1332:1: rule__An__Group__1__Impl : ( ( rule__An__IdNodeAssignment_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1098:1: rule__An__Group__1__Impl : ( ( rule__An__IdNodeAssignment_1 ) ) ;
     public final void rule__An__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1336:1: ( ( ( rule__An__IdNodeAssignment_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1337:1: ( ( rule__An__IdNodeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1102:1: ( ( ( rule__An__IdNodeAssignment_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1103:1: ( ( rule__An__IdNodeAssignment_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1337:1: ( ( rule__An__IdNodeAssignment_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1338:1: ( rule__An__IdNodeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1103:1: ( ( rule__An__IdNodeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1104:1: ( rule__An__IdNodeAssignment_1 )
             {
              before(grammarAccess.getAnAccess().getIdNodeAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1339:1: ( rule__An__IdNodeAssignment_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1339:2: rule__An__IdNodeAssignment_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1105:1: ( rule__An__IdNodeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1105:2: rule__An__IdNodeAssignment_1
             {
-            pushFollow(FOLLOW_rule__An__IdNodeAssignment_1_in_rule__An__Group__1__Impl2826);
+            pushFollow(FOLLOW_rule__An__IdNodeAssignment_1_in_rule__An__Group__1__Impl2317);
             rule__An__IdNodeAssignment_1();
 
             state._fsp--;
@@ -3986,16 +3268,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__An__Group__2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1349:1: rule__An__Group__2 : rule__An__Group__2__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1115:1: rule__An__Group__2 : rule__An__Group__2__Impl ;
     public final void rule__An__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1353:1: ( rule__An__Group__2__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1354:2: rule__An__Group__2__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1119:1: ( rule__An__Group__2__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1120:2: rule__An__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__An__Group__2__Impl_in_rule__An__Group__22856);
+            pushFollow(FOLLOW_rule__An__Group__2__Impl_in_rule__An__Group__22347);
             rule__An__Group__2__Impl();
 
             state._fsp--;
@@ -4019,23 +3301,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__An__Group__2__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1360:1: rule__An__Group__2__Impl : ( ( rule__An__AttributesAssignment_2 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1126:1: rule__An__Group__2__Impl : ( ( rule__An__AttributesAssignment_2 ) ) ;
     public final void rule__An__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1364:1: ( ( ( rule__An__AttributesAssignment_2 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1365:1: ( ( rule__An__AttributesAssignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1130:1: ( ( ( rule__An__AttributesAssignment_2 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1131:1: ( ( rule__An__AttributesAssignment_2 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1365:1: ( ( rule__An__AttributesAssignment_2 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1366:1: ( rule__An__AttributesAssignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1131:1: ( ( rule__An__AttributesAssignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1132:1: ( rule__An__AttributesAssignment_2 )
             {
              before(grammarAccess.getAnAccess().getAttributesAssignment_2()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1367:1: ( rule__An__AttributesAssignment_2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1367:2: rule__An__AttributesAssignment_2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1133:1: ( rule__An__AttributesAssignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1133:2: rule__An__AttributesAssignment_2
             {
-            pushFollow(FOLLOW_rule__An__AttributesAssignment_2_in_rule__An__Group__2__Impl2883);
+            pushFollow(FOLLOW_rule__An__AttributesAssignment_2_in_rule__An__Group__2__Impl2374);
             rule__An__AttributesAssignment_2();
 
             state._fsp--;
@@ -4066,21 +3348,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cn__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1383:1: rule__Cn__Group__0 : rule__Cn__Group__0__Impl rule__Cn__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1149:1: rule__Cn__Group__0 : rule__Cn__Group__0__Impl rule__Cn__Group__1 ;
     public final void rule__Cn__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1387:1: ( rule__Cn__Group__0__Impl rule__Cn__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1388:2: rule__Cn__Group__0__Impl rule__Cn__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1153:1: ( rule__Cn__Group__0__Impl rule__Cn__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1154:2: rule__Cn__Group__0__Impl rule__Cn__Group__1
             {
-            pushFollow(FOLLOW_rule__Cn__Group__0__Impl_in_rule__Cn__Group__02919);
+            pushFollow(FOLLOW_rule__Cn__Group__0__Impl_in_rule__Cn__Group__02410);
             rule__Cn__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Cn__Group__1_in_rule__Cn__Group__02922);
+            pushFollow(FOLLOW_rule__Cn__Group__1_in_rule__Cn__Group__02413);
             rule__Cn__Group__1();
 
             state._fsp--;
@@ -4104,20 +3386,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cn__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1395:1: rule__Cn__Group__0__Impl : ( 'cn' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1161:1: rule__Cn__Group__0__Impl : ( 'cn' ) ;
     public final void rule__Cn__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1399:1: ( ( 'cn' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1400:1: ( 'cn' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1165:1: ( ( 'cn' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1166:1: ( 'cn' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1400:1: ( 'cn' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1401:1: 'cn'
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1166:1: ( 'cn' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1167:1: 'cn'
             {
              before(grammarAccess.getCnAccess().getCnKeyword_0()); 
-            match(input,17,FOLLOW_17_in_rule__Cn__Group__0__Impl2950); 
+            match(input,17,FOLLOW_17_in_rule__Cn__Group__0__Impl2441); 
              after(grammarAccess.getCnAccess().getCnKeyword_0()); 
 
             }
@@ -4141,21 +3423,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cn__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1414:1: rule__Cn__Group__1 : rule__Cn__Group__1__Impl rule__Cn__Group__2 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1180:1: rule__Cn__Group__1 : rule__Cn__Group__1__Impl rule__Cn__Group__2 ;
     public final void rule__Cn__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1418:1: ( rule__Cn__Group__1__Impl rule__Cn__Group__2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1419:2: rule__Cn__Group__1__Impl rule__Cn__Group__2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1184:1: ( rule__Cn__Group__1__Impl rule__Cn__Group__2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1185:2: rule__Cn__Group__1__Impl rule__Cn__Group__2
             {
-            pushFollow(FOLLOW_rule__Cn__Group__1__Impl_in_rule__Cn__Group__12981);
+            pushFollow(FOLLOW_rule__Cn__Group__1__Impl_in_rule__Cn__Group__12472);
             rule__Cn__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Cn__Group__2_in_rule__Cn__Group__12984);
+            pushFollow(FOLLOW_rule__Cn__Group__2_in_rule__Cn__Group__12475);
             rule__Cn__Group__2();
 
             state._fsp--;
@@ -4179,23 +3461,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cn__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1426:1: rule__Cn__Group__1__Impl : ( ( rule__Cn__IdNodeAssignment_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1192:1: rule__Cn__Group__1__Impl : ( ( rule__Cn__IdNodeAssignment_1 ) ) ;
     public final void rule__Cn__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1430:1: ( ( ( rule__Cn__IdNodeAssignment_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1431:1: ( ( rule__Cn__IdNodeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1196:1: ( ( ( rule__Cn__IdNodeAssignment_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1197:1: ( ( rule__Cn__IdNodeAssignment_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1431:1: ( ( rule__Cn__IdNodeAssignment_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1432:1: ( rule__Cn__IdNodeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1197:1: ( ( rule__Cn__IdNodeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1198:1: ( rule__Cn__IdNodeAssignment_1 )
             {
              before(grammarAccess.getCnAccess().getIdNodeAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1433:1: ( rule__Cn__IdNodeAssignment_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1433:2: rule__Cn__IdNodeAssignment_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1199:1: ( rule__Cn__IdNodeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1199:2: rule__Cn__IdNodeAssignment_1
             {
-            pushFollow(FOLLOW_rule__Cn__IdNodeAssignment_1_in_rule__Cn__Group__1__Impl3011);
+            pushFollow(FOLLOW_rule__Cn__IdNodeAssignment_1_in_rule__Cn__Group__1__Impl2502);
             rule__Cn__IdNodeAssignment_1();
 
             state._fsp--;
@@ -4226,16 +3508,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cn__Group__2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1443:1: rule__Cn__Group__2 : rule__Cn__Group__2__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1209:1: rule__Cn__Group__2 : rule__Cn__Group__2__Impl ;
     public final void rule__Cn__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1447:1: ( rule__Cn__Group__2__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1448:2: rule__Cn__Group__2__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1213:1: ( rule__Cn__Group__2__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1214:2: rule__Cn__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Cn__Group__2__Impl_in_rule__Cn__Group__23041);
+            pushFollow(FOLLOW_rule__Cn__Group__2__Impl_in_rule__Cn__Group__22532);
             rule__Cn__Group__2__Impl();
 
             state._fsp--;
@@ -4259,23 +3541,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cn__Group__2__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1454:1: rule__Cn__Group__2__Impl : ( ( rule__Cn__AttributesAssignment_2 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1220:1: rule__Cn__Group__2__Impl : ( ( rule__Cn__AttributesAssignment_2 ) ) ;
     public final void rule__Cn__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1458:1: ( ( ( rule__Cn__AttributesAssignment_2 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1459:1: ( ( rule__Cn__AttributesAssignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1224:1: ( ( ( rule__Cn__AttributesAssignment_2 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1225:1: ( ( rule__Cn__AttributesAssignment_2 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1459:1: ( ( rule__Cn__AttributesAssignment_2 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1460:1: ( rule__Cn__AttributesAssignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1225:1: ( ( rule__Cn__AttributesAssignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1226:1: ( rule__Cn__AttributesAssignment_2 )
             {
              before(grammarAccess.getCnAccess().getAttributesAssignment_2()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1461:1: ( rule__Cn__AttributesAssignment_2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1461:2: rule__Cn__AttributesAssignment_2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1227:1: ( rule__Cn__AttributesAssignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1227:2: rule__Cn__AttributesAssignment_2
             {
-            pushFollow(FOLLOW_rule__Cn__AttributesAssignment_2_in_rule__Cn__Group__2__Impl3068);
+            pushFollow(FOLLOW_rule__Cn__AttributesAssignment_2_in_rule__Cn__Group__2__Impl2559);
             rule__Cn__AttributesAssignment_2();
 
             state._fsp--;
@@ -4306,21 +3588,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Dn__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1477:1: rule__Dn__Group__0 : rule__Dn__Group__0__Impl rule__Dn__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1243:1: rule__Dn__Group__0 : rule__Dn__Group__0__Impl rule__Dn__Group__1 ;
     public final void rule__Dn__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1481:1: ( rule__Dn__Group__0__Impl rule__Dn__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1482:2: rule__Dn__Group__0__Impl rule__Dn__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1247:1: ( rule__Dn__Group__0__Impl rule__Dn__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1248:2: rule__Dn__Group__0__Impl rule__Dn__Group__1
             {
-            pushFollow(FOLLOW_rule__Dn__Group__0__Impl_in_rule__Dn__Group__03104);
+            pushFollow(FOLLOW_rule__Dn__Group__0__Impl_in_rule__Dn__Group__02595);
             rule__Dn__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Dn__Group__1_in_rule__Dn__Group__03107);
+            pushFollow(FOLLOW_rule__Dn__Group__1_in_rule__Dn__Group__02598);
             rule__Dn__Group__1();
 
             state._fsp--;
@@ -4344,20 +3626,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Dn__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1489:1: rule__Dn__Group__0__Impl : ( 'dn' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1255:1: rule__Dn__Group__0__Impl : ( 'dn' ) ;
     public final void rule__Dn__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1493:1: ( ( 'dn' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1494:1: ( 'dn' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1259:1: ( ( 'dn' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1260:1: ( 'dn' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1494:1: ( 'dn' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1495:1: 'dn'
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1260:1: ( 'dn' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1261:1: 'dn'
             {
              before(grammarAccess.getDnAccess().getDnKeyword_0()); 
-            match(input,18,FOLLOW_18_in_rule__Dn__Group__0__Impl3135); 
+            match(input,18,FOLLOW_18_in_rule__Dn__Group__0__Impl2626); 
              after(grammarAccess.getDnAccess().getDnKeyword_0()); 
 
             }
@@ -4381,16 +3663,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Dn__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1508:1: rule__Dn__Group__1 : rule__Dn__Group__1__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1274:1: rule__Dn__Group__1 : rule__Dn__Group__1__Impl ;
     public final void rule__Dn__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1512:1: ( rule__Dn__Group__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1513:2: rule__Dn__Group__1__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1278:1: ( rule__Dn__Group__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1279:2: rule__Dn__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Dn__Group__1__Impl_in_rule__Dn__Group__13166);
+            pushFollow(FOLLOW_rule__Dn__Group__1__Impl_in_rule__Dn__Group__12657);
             rule__Dn__Group__1__Impl();
 
             state._fsp--;
@@ -4414,23 +3696,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Dn__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1519:1: rule__Dn__Group__1__Impl : ( ( rule__Dn__IdNodeAssignment_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1285:1: rule__Dn__Group__1__Impl : ( ( rule__Dn__IdNodeAssignment_1 ) ) ;
     public final void rule__Dn__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1523:1: ( ( ( rule__Dn__IdNodeAssignment_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1524:1: ( ( rule__Dn__IdNodeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1289:1: ( ( ( rule__Dn__IdNodeAssignment_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1290:1: ( ( rule__Dn__IdNodeAssignment_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1524:1: ( ( rule__Dn__IdNodeAssignment_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1525:1: ( rule__Dn__IdNodeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1290:1: ( ( rule__Dn__IdNodeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1291:1: ( rule__Dn__IdNodeAssignment_1 )
             {
              before(grammarAccess.getDnAccess().getIdNodeAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1526:1: ( rule__Dn__IdNodeAssignment_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1526:2: rule__Dn__IdNodeAssignment_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1292:1: ( rule__Dn__IdNodeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1292:2: rule__Dn__IdNodeAssignment_1
             {
-            pushFollow(FOLLOW_rule__Dn__IdNodeAssignment_1_in_rule__Dn__Group__1__Impl3193);
+            pushFollow(FOLLOW_rule__Dn__IdNodeAssignment_1_in_rule__Dn__Group__1__Impl2684);
             rule__Dn__IdNodeAssignment_1();
 
             state._fsp--;
@@ -4461,21 +3743,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1540:1: rule__Ae__Group__0 : rule__Ae__Group__0__Impl rule__Ae__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1306:1: rule__Ae__Group__0 : rule__Ae__Group__0__Impl rule__Ae__Group__1 ;
     public final void rule__Ae__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1544:1: ( rule__Ae__Group__0__Impl rule__Ae__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1545:2: rule__Ae__Group__0__Impl rule__Ae__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1310:1: ( rule__Ae__Group__0__Impl rule__Ae__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1311:2: rule__Ae__Group__0__Impl rule__Ae__Group__1
             {
-            pushFollow(FOLLOW_rule__Ae__Group__0__Impl_in_rule__Ae__Group__03227);
+            pushFollow(FOLLOW_rule__Ae__Group__0__Impl_in_rule__Ae__Group__02718);
             rule__Ae__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Ae__Group__1_in_rule__Ae__Group__03230);
+            pushFollow(FOLLOW_rule__Ae__Group__1_in_rule__Ae__Group__02721);
             rule__Ae__Group__1();
 
             state._fsp--;
@@ -4499,20 +3781,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1552:1: rule__Ae__Group__0__Impl : ( 'ae' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1318:1: rule__Ae__Group__0__Impl : ( 'ae' ) ;
     public final void rule__Ae__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1556:1: ( ( 'ae' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1557:1: ( 'ae' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1322:1: ( ( 'ae' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1323:1: ( 'ae' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1557:1: ( 'ae' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1558:1: 'ae'
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1323:1: ( 'ae' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1324:1: 'ae'
             {
              before(grammarAccess.getAeAccess().getAeKeyword_0()); 
-            match(input,19,FOLLOW_19_in_rule__Ae__Group__0__Impl3258); 
+            match(input,19,FOLLOW_19_in_rule__Ae__Group__0__Impl2749); 
              after(grammarAccess.getAeAccess().getAeKeyword_0()); 
 
             }
@@ -4536,21 +3818,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1571:1: rule__Ae__Group__1 : rule__Ae__Group__1__Impl rule__Ae__Group__2 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1337:1: rule__Ae__Group__1 : rule__Ae__Group__1__Impl rule__Ae__Group__2 ;
     public final void rule__Ae__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1575:1: ( rule__Ae__Group__1__Impl rule__Ae__Group__2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1576:2: rule__Ae__Group__1__Impl rule__Ae__Group__2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1341:1: ( rule__Ae__Group__1__Impl rule__Ae__Group__2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1342:2: rule__Ae__Group__1__Impl rule__Ae__Group__2
             {
-            pushFollow(FOLLOW_rule__Ae__Group__1__Impl_in_rule__Ae__Group__13289);
+            pushFollow(FOLLOW_rule__Ae__Group__1__Impl_in_rule__Ae__Group__12780);
             rule__Ae__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Ae__Group__2_in_rule__Ae__Group__13292);
+            pushFollow(FOLLOW_rule__Ae__Group__2_in_rule__Ae__Group__12783);
             rule__Ae__Group__2();
 
             state._fsp--;
@@ -4574,23 +3856,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1583:1: rule__Ae__Group__1__Impl : ( ( rule__Ae__IdEdgeAssignment_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1349:1: rule__Ae__Group__1__Impl : ( ( rule__Ae__IdEdgeAssignment_1 ) ) ;
     public final void rule__Ae__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1587:1: ( ( ( rule__Ae__IdEdgeAssignment_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1588:1: ( ( rule__Ae__IdEdgeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1353:1: ( ( ( rule__Ae__IdEdgeAssignment_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1354:1: ( ( rule__Ae__IdEdgeAssignment_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1588:1: ( ( rule__Ae__IdEdgeAssignment_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1589:1: ( rule__Ae__IdEdgeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1354:1: ( ( rule__Ae__IdEdgeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1355:1: ( rule__Ae__IdEdgeAssignment_1 )
             {
              before(grammarAccess.getAeAccess().getIdEdgeAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1590:1: ( rule__Ae__IdEdgeAssignment_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1590:2: rule__Ae__IdEdgeAssignment_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1356:1: ( rule__Ae__IdEdgeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1356:2: rule__Ae__IdEdgeAssignment_1
             {
-            pushFollow(FOLLOW_rule__Ae__IdEdgeAssignment_1_in_rule__Ae__Group__1__Impl3319);
+            pushFollow(FOLLOW_rule__Ae__IdEdgeAssignment_1_in_rule__Ae__Group__1__Impl2810);
             rule__Ae__IdEdgeAssignment_1();
 
             state._fsp--;
@@ -4621,21 +3903,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1600:1: rule__Ae__Group__2 : rule__Ae__Group__2__Impl rule__Ae__Group__3 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1366:1: rule__Ae__Group__2 : rule__Ae__Group__2__Impl rule__Ae__Group__3 ;
     public final void rule__Ae__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1604:1: ( rule__Ae__Group__2__Impl rule__Ae__Group__3 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1605:2: rule__Ae__Group__2__Impl rule__Ae__Group__3
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1370:1: ( rule__Ae__Group__2__Impl rule__Ae__Group__3 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1371:2: rule__Ae__Group__2__Impl rule__Ae__Group__3
             {
-            pushFollow(FOLLOW_rule__Ae__Group__2__Impl_in_rule__Ae__Group__23349);
+            pushFollow(FOLLOW_rule__Ae__Group__2__Impl_in_rule__Ae__Group__22840);
             rule__Ae__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Ae__Group__3_in_rule__Ae__Group__23352);
+            pushFollow(FOLLOW_rule__Ae__Group__3_in_rule__Ae__Group__22843);
             rule__Ae__Group__3();
 
             state._fsp--;
@@ -4659,23 +3941,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__2__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1612:1: rule__Ae__Group__2__Impl : ( ( rule__Ae__IdNode1Assignment_2 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1378:1: rule__Ae__Group__2__Impl : ( ( rule__Ae__IdNode1Assignment_2 ) ) ;
     public final void rule__Ae__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1616:1: ( ( ( rule__Ae__IdNode1Assignment_2 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1617:1: ( ( rule__Ae__IdNode1Assignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1382:1: ( ( ( rule__Ae__IdNode1Assignment_2 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1383:1: ( ( rule__Ae__IdNode1Assignment_2 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1617:1: ( ( rule__Ae__IdNode1Assignment_2 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1618:1: ( rule__Ae__IdNode1Assignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1383:1: ( ( rule__Ae__IdNode1Assignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1384:1: ( rule__Ae__IdNode1Assignment_2 )
             {
              before(grammarAccess.getAeAccess().getIdNode1Assignment_2()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1619:1: ( rule__Ae__IdNode1Assignment_2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1619:2: rule__Ae__IdNode1Assignment_2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1385:1: ( rule__Ae__IdNode1Assignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1385:2: rule__Ae__IdNode1Assignment_2
             {
-            pushFollow(FOLLOW_rule__Ae__IdNode1Assignment_2_in_rule__Ae__Group__2__Impl3379);
+            pushFollow(FOLLOW_rule__Ae__IdNode1Assignment_2_in_rule__Ae__Group__2__Impl2870);
             rule__Ae__IdNode1Assignment_2();
 
             state._fsp--;
@@ -4706,21 +3988,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__3"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1629:1: rule__Ae__Group__3 : rule__Ae__Group__3__Impl rule__Ae__Group__4 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1395:1: rule__Ae__Group__3 : rule__Ae__Group__3__Impl rule__Ae__Group__4 ;
     public final void rule__Ae__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1633:1: ( rule__Ae__Group__3__Impl rule__Ae__Group__4 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1634:2: rule__Ae__Group__3__Impl rule__Ae__Group__4
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1399:1: ( rule__Ae__Group__3__Impl rule__Ae__Group__4 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1400:2: rule__Ae__Group__3__Impl rule__Ae__Group__4
             {
-            pushFollow(FOLLOW_rule__Ae__Group__3__Impl_in_rule__Ae__Group__33409);
+            pushFollow(FOLLOW_rule__Ae__Group__3__Impl_in_rule__Ae__Group__32900);
             rule__Ae__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Ae__Group__4_in_rule__Ae__Group__33412);
+            pushFollow(FOLLOW_rule__Ae__Group__4_in_rule__Ae__Group__32903);
             rule__Ae__Group__4();
 
             state._fsp--;
@@ -4744,31 +4026,31 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__3__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1641:1: rule__Ae__Group__3__Impl : ( ( rule__Ae__DirectionAssignment_3 )? ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1407:1: rule__Ae__Group__3__Impl : ( ( rule__Ae__DirectionAssignment_3 )? ) ;
     public final void rule__Ae__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1645:1: ( ( ( rule__Ae__DirectionAssignment_3 )? ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1646:1: ( ( rule__Ae__DirectionAssignment_3 )? )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1411:1: ( ( ( rule__Ae__DirectionAssignment_3 )? ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1412:1: ( ( rule__Ae__DirectionAssignment_3 )? )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1646:1: ( ( rule__Ae__DirectionAssignment_3 )? )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1647:1: ( rule__Ae__DirectionAssignment_3 )?
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1412:1: ( ( rule__Ae__DirectionAssignment_3 )? )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1413:1: ( rule__Ae__DirectionAssignment_3 )?
             {
              before(grammarAccess.getAeAccess().getDirectionAssignment_3()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1648:1: ( rule__Ae__DirectionAssignment_3 )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1414:1: ( rule__Ae__DirectionAssignment_3 )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA18_0==RULE_DIRECTION) ) {
-                alt18=1;
+            if ( (LA7_0==RULE_DIRECTION) ) {
+                alt7=1;
             }
-            switch (alt18) {
+            switch (alt7) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1648:2: rule__Ae__DirectionAssignment_3
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1414:2: rule__Ae__DirectionAssignment_3
                     {
-                    pushFollow(FOLLOW_rule__Ae__DirectionAssignment_3_in_rule__Ae__Group__3__Impl3439);
+                    pushFollow(FOLLOW_rule__Ae__DirectionAssignment_3_in_rule__Ae__Group__3__Impl2930);
                     rule__Ae__DirectionAssignment_3();
 
                     state._fsp--;
@@ -4802,21 +4084,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__4"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1658:1: rule__Ae__Group__4 : rule__Ae__Group__4__Impl rule__Ae__Group__5 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1424:1: rule__Ae__Group__4 : rule__Ae__Group__4__Impl rule__Ae__Group__5 ;
     public final void rule__Ae__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1662:1: ( rule__Ae__Group__4__Impl rule__Ae__Group__5 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1663:2: rule__Ae__Group__4__Impl rule__Ae__Group__5
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1428:1: ( rule__Ae__Group__4__Impl rule__Ae__Group__5 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1429:2: rule__Ae__Group__4__Impl rule__Ae__Group__5
             {
-            pushFollow(FOLLOW_rule__Ae__Group__4__Impl_in_rule__Ae__Group__43470);
+            pushFollow(FOLLOW_rule__Ae__Group__4__Impl_in_rule__Ae__Group__42961);
             rule__Ae__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Ae__Group__5_in_rule__Ae__Group__43473);
+            pushFollow(FOLLOW_rule__Ae__Group__5_in_rule__Ae__Group__42964);
             rule__Ae__Group__5();
 
             state._fsp--;
@@ -4840,23 +4122,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__4__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1670:1: rule__Ae__Group__4__Impl : ( ( rule__Ae__IdNode2Assignment_4 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1436:1: rule__Ae__Group__4__Impl : ( ( rule__Ae__IdNode2Assignment_4 ) ) ;
     public final void rule__Ae__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1674:1: ( ( ( rule__Ae__IdNode2Assignment_4 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1675:1: ( ( rule__Ae__IdNode2Assignment_4 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1440:1: ( ( ( rule__Ae__IdNode2Assignment_4 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1441:1: ( ( rule__Ae__IdNode2Assignment_4 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1675:1: ( ( rule__Ae__IdNode2Assignment_4 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1676:1: ( rule__Ae__IdNode2Assignment_4 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1441:1: ( ( rule__Ae__IdNode2Assignment_4 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1442:1: ( rule__Ae__IdNode2Assignment_4 )
             {
              before(grammarAccess.getAeAccess().getIdNode2Assignment_4()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1677:1: ( rule__Ae__IdNode2Assignment_4 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1677:2: rule__Ae__IdNode2Assignment_4
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1443:1: ( rule__Ae__IdNode2Assignment_4 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1443:2: rule__Ae__IdNode2Assignment_4
             {
-            pushFollow(FOLLOW_rule__Ae__IdNode2Assignment_4_in_rule__Ae__Group__4__Impl3500);
+            pushFollow(FOLLOW_rule__Ae__IdNode2Assignment_4_in_rule__Ae__Group__4__Impl2991);
             rule__Ae__IdNode2Assignment_4();
 
             state._fsp--;
@@ -4887,16 +4169,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__5"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1687:1: rule__Ae__Group__5 : rule__Ae__Group__5__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1453:1: rule__Ae__Group__5 : rule__Ae__Group__5__Impl ;
     public final void rule__Ae__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1691:1: ( rule__Ae__Group__5__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1692:2: rule__Ae__Group__5__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1457:1: ( rule__Ae__Group__5__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1458:2: rule__Ae__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__Ae__Group__5__Impl_in_rule__Ae__Group__53530);
+            pushFollow(FOLLOW_rule__Ae__Group__5__Impl_in_rule__Ae__Group__53021);
             rule__Ae__Group__5__Impl();
 
             state._fsp--;
@@ -4920,23 +4202,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__Group__5__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1698:1: rule__Ae__Group__5__Impl : ( ( rule__Ae__AttributesAssignment_5 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1464:1: rule__Ae__Group__5__Impl : ( ( rule__Ae__AttributesAssignment_5 ) ) ;
     public final void rule__Ae__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1702:1: ( ( ( rule__Ae__AttributesAssignment_5 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1703:1: ( ( rule__Ae__AttributesAssignment_5 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1468:1: ( ( ( rule__Ae__AttributesAssignment_5 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1469:1: ( ( rule__Ae__AttributesAssignment_5 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1703:1: ( ( rule__Ae__AttributesAssignment_5 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1704:1: ( rule__Ae__AttributesAssignment_5 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1469:1: ( ( rule__Ae__AttributesAssignment_5 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1470:1: ( rule__Ae__AttributesAssignment_5 )
             {
              before(grammarAccess.getAeAccess().getAttributesAssignment_5()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1705:1: ( rule__Ae__AttributesAssignment_5 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1705:2: rule__Ae__AttributesAssignment_5
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1471:1: ( rule__Ae__AttributesAssignment_5 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1471:2: rule__Ae__AttributesAssignment_5
             {
-            pushFollow(FOLLOW_rule__Ae__AttributesAssignment_5_in_rule__Ae__Group__5__Impl3557);
+            pushFollow(FOLLOW_rule__Ae__AttributesAssignment_5_in_rule__Ae__Group__5__Impl3048);
             rule__Ae__AttributesAssignment_5();
 
             state._fsp--;
@@ -4967,21 +4249,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ce__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1727:1: rule__Ce__Group__0 : rule__Ce__Group__0__Impl rule__Ce__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1493:1: rule__Ce__Group__0 : rule__Ce__Group__0__Impl rule__Ce__Group__1 ;
     public final void rule__Ce__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1731:1: ( rule__Ce__Group__0__Impl rule__Ce__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1732:2: rule__Ce__Group__0__Impl rule__Ce__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1497:1: ( rule__Ce__Group__0__Impl rule__Ce__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1498:2: rule__Ce__Group__0__Impl rule__Ce__Group__1
             {
-            pushFollow(FOLLOW_rule__Ce__Group__0__Impl_in_rule__Ce__Group__03599);
+            pushFollow(FOLLOW_rule__Ce__Group__0__Impl_in_rule__Ce__Group__03090);
             rule__Ce__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Ce__Group__1_in_rule__Ce__Group__03602);
+            pushFollow(FOLLOW_rule__Ce__Group__1_in_rule__Ce__Group__03093);
             rule__Ce__Group__1();
 
             state._fsp--;
@@ -5005,20 +4287,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ce__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1739:1: rule__Ce__Group__0__Impl : ( 'ce' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1505:1: rule__Ce__Group__0__Impl : ( 'ce' ) ;
     public final void rule__Ce__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1743:1: ( ( 'ce' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1744:1: ( 'ce' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1509:1: ( ( 'ce' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1510:1: ( 'ce' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1744:1: ( 'ce' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1745:1: 'ce'
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1510:1: ( 'ce' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1511:1: 'ce'
             {
              before(grammarAccess.getCeAccess().getCeKeyword_0()); 
-            match(input,20,FOLLOW_20_in_rule__Ce__Group__0__Impl3630); 
+            match(input,20,FOLLOW_20_in_rule__Ce__Group__0__Impl3121); 
              after(grammarAccess.getCeAccess().getCeKeyword_0()); 
 
             }
@@ -5042,21 +4324,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ce__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1758:1: rule__Ce__Group__1 : rule__Ce__Group__1__Impl rule__Ce__Group__2 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1524:1: rule__Ce__Group__1 : rule__Ce__Group__1__Impl rule__Ce__Group__2 ;
     public final void rule__Ce__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1762:1: ( rule__Ce__Group__1__Impl rule__Ce__Group__2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1763:2: rule__Ce__Group__1__Impl rule__Ce__Group__2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1528:1: ( rule__Ce__Group__1__Impl rule__Ce__Group__2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1529:2: rule__Ce__Group__1__Impl rule__Ce__Group__2
             {
-            pushFollow(FOLLOW_rule__Ce__Group__1__Impl_in_rule__Ce__Group__13661);
+            pushFollow(FOLLOW_rule__Ce__Group__1__Impl_in_rule__Ce__Group__13152);
             rule__Ce__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Ce__Group__2_in_rule__Ce__Group__13664);
+            pushFollow(FOLLOW_rule__Ce__Group__2_in_rule__Ce__Group__13155);
             rule__Ce__Group__2();
 
             state._fsp--;
@@ -5080,31 +4362,31 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ce__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1770:1: rule__Ce__Group__1__Impl : ( ( rule__Ce__IdNodeAssignment_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1536:1: rule__Ce__Group__1__Impl : ( ( rule__Ce__IdEdgeAssignment_1 ) ) ;
     public final void rule__Ce__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1774:1: ( ( ( rule__Ce__IdNodeAssignment_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1775:1: ( ( rule__Ce__IdNodeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1540:1: ( ( ( rule__Ce__IdEdgeAssignment_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1541:1: ( ( rule__Ce__IdEdgeAssignment_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1775:1: ( ( rule__Ce__IdNodeAssignment_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1776:1: ( rule__Ce__IdNodeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1541:1: ( ( rule__Ce__IdEdgeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1542:1: ( rule__Ce__IdEdgeAssignment_1 )
             {
-             before(grammarAccess.getCeAccess().getIdNodeAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1777:1: ( rule__Ce__IdNodeAssignment_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1777:2: rule__Ce__IdNodeAssignment_1
+             before(grammarAccess.getCeAccess().getIdEdgeAssignment_1()); 
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1543:1: ( rule__Ce__IdEdgeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1543:2: rule__Ce__IdEdgeAssignment_1
             {
-            pushFollow(FOLLOW_rule__Ce__IdNodeAssignment_1_in_rule__Ce__Group__1__Impl3691);
-            rule__Ce__IdNodeAssignment_1();
+            pushFollow(FOLLOW_rule__Ce__IdEdgeAssignment_1_in_rule__Ce__Group__1__Impl3182);
+            rule__Ce__IdEdgeAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getCeAccess().getIdNodeAssignment_1()); 
+             after(grammarAccess.getCeAccess().getIdEdgeAssignment_1()); 
 
             }
 
@@ -5127,16 +4409,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ce__Group__2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1787:1: rule__Ce__Group__2 : rule__Ce__Group__2__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1553:1: rule__Ce__Group__2 : rule__Ce__Group__2__Impl ;
     public final void rule__Ce__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1791:1: ( rule__Ce__Group__2__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1792:2: rule__Ce__Group__2__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1557:1: ( rule__Ce__Group__2__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1558:2: rule__Ce__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Ce__Group__2__Impl_in_rule__Ce__Group__23721);
+            pushFollow(FOLLOW_rule__Ce__Group__2__Impl_in_rule__Ce__Group__23212);
             rule__Ce__Group__2__Impl();
 
             state._fsp--;
@@ -5160,23 +4442,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ce__Group__2__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1798:1: rule__Ce__Group__2__Impl : ( ( rule__Ce__AttributesAssignment_2 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1564:1: rule__Ce__Group__2__Impl : ( ( rule__Ce__AttributesAssignment_2 ) ) ;
     public final void rule__Ce__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1802:1: ( ( ( rule__Ce__AttributesAssignment_2 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1803:1: ( ( rule__Ce__AttributesAssignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1568:1: ( ( ( rule__Ce__AttributesAssignment_2 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1569:1: ( ( rule__Ce__AttributesAssignment_2 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1803:1: ( ( rule__Ce__AttributesAssignment_2 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1804:1: ( rule__Ce__AttributesAssignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1569:1: ( ( rule__Ce__AttributesAssignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1570:1: ( rule__Ce__AttributesAssignment_2 )
             {
              before(grammarAccess.getCeAccess().getAttributesAssignment_2()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1805:1: ( rule__Ce__AttributesAssignment_2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1805:2: rule__Ce__AttributesAssignment_2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1571:1: ( rule__Ce__AttributesAssignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1571:2: rule__Ce__AttributesAssignment_2
             {
-            pushFollow(FOLLOW_rule__Ce__AttributesAssignment_2_in_rule__Ce__Group__2__Impl3748);
+            pushFollow(FOLLOW_rule__Ce__AttributesAssignment_2_in_rule__Ce__Group__2__Impl3239);
             rule__Ce__AttributesAssignment_2();
 
             state._fsp--;
@@ -5207,21 +4489,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__De__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1821:1: rule__De__Group__0 : rule__De__Group__0__Impl rule__De__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1587:1: rule__De__Group__0 : rule__De__Group__0__Impl rule__De__Group__1 ;
     public final void rule__De__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1825:1: ( rule__De__Group__0__Impl rule__De__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1826:2: rule__De__Group__0__Impl rule__De__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1591:1: ( rule__De__Group__0__Impl rule__De__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1592:2: rule__De__Group__0__Impl rule__De__Group__1
             {
-            pushFollow(FOLLOW_rule__De__Group__0__Impl_in_rule__De__Group__03784);
+            pushFollow(FOLLOW_rule__De__Group__0__Impl_in_rule__De__Group__03275);
             rule__De__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__De__Group__1_in_rule__De__Group__03787);
+            pushFollow(FOLLOW_rule__De__Group__1_in_rule__De__Group__03278);
             rule__De__Group__1();
 
             state._fsp--;
@@ -5245,20 +4527,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__De__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1833:1: rule__De__Group__0__Impl : ( 'de' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1599:1: rule__De__Group__0__Impl : ( 'de' ) ;
     public final void rule__De__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1837:1: ( ( 'de' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1838:1: ( 'de' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1603:1: ( ( 'de' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1604:1: ( 'de' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1838:1: ( 'de' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1839:1: 'de'
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1604:1: ( 'de' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1605:1: 'de'
             {
              before(grammarAccess.getDeAccess().getDeKeyword_0()); 
-            match(input,21,FOLLOW_21_in_rule__De__Group__0__Impl3815); 
+            match(input,21,FOLLOW_21_in_rule__De__Group__0__Impl3306); 
              after(grammarAccess.getDeAccess().getDeKeyword_0()); 
 
             }
@@ -5282,16 +4564,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__De__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1852:1: rule__De__Group__1 : rule__De__Group__1__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1618:1: rule__De__Group__1 : rule__De__Group__1__Impl ;
     public final void rule__De__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1856:1: ( rule__De__Group__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1857:2: rule__De__Group__1__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1622:1: ( rule__De__Group__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1623:2: rule__De__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__De__Group__1__Impl_in_rule__De__Group__13846);
+            pushFollow(FOLLOW_rule__De__Group__1__Impl_in_rule__De__Group__13337);
             rule__De__Group__1__Impl();
 
             state._fsp--;
@@ -5315,23 +4597,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__De__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1863:1: rule__De__Group__1__Impl : ( ( rule__De__IdEdgeAssignment_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1629:1: rule__De__Group__1__Impl : ( ( rule__De__IdEdgeAssignment_1 ) ) ;
     public final void rule__De__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1867:1: ( ( ( rule__De__IdEdgeAssignment_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1868:1: ( ( rule__De__IdEdgeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1633:1: ( ( ( rule__De__IdEdgeAssignment_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1634:1: ( ( rule__De__IdEdgeAssignment_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1868:1: ( ( rule__De__IdEdgeAssignment_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1869:1: ( rule__De__IdEdgeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1634:1: ( ( rule__De__IdEdgeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1635:1: ( rule__De__IdEdgeAssignment_1 )
             {
              before(grammarAccess.getDeAccess().getIdEdgeAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1870:1: ( rule__De__IdEdgeAssignment_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1870:2: rule__De__IdEdgeAssignment_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1636:1: ( rule__De__IdEdgeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1636:2: rule__De__IdEdgeAssignment_1
             {
-            pushFollow(FOLLOW_rule__De__IdEdgeAssignment_1_in_rule__De__Group__1__Impl3873);
+            pushFollow(FOLLOW_rule__De__IdEdgeAssignment_1_in_rule__De__Group__1__Impl3364);
             rule__De__IdEdgeAssignment_1();
 
             state._fsp--;
@@ -5362,21 +4644,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cg__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1884:1: rule__Cg__Group__0 : rule__Cg__Group__0__Impl rule__Cg__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1650:1: rule__Cg__Group__0 : rule__Cg__Group__0__Impl rule__Cg__Group__1 ;
     public final void rule__Cg__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1888:1: ( rule__Cg__Group__0__Impl rule__Cg__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1889:2: rule__Cg__Group__0__Impl rule__Cg__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1654:1: ( rule__Cg__Group__0__Impl rule__Cg__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1655:2: rule__Cg__Group__0__Impl rule__Cg__Group__1
             {
-            pushFollow(FOLLOW_rule__Cg__Group__0__Impl_in_rule__Cg__Group__03907);
+            pushFollow(FOLLOW_rule__Cg__Group__0__Impl_in_rule__Cg__Group__03398);
             rule__Cg__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Cg__Group__1_in_rule__Cg__Group__03910);
+            pushFollow(FOLLOW_rule__Cg__Group__1_in_rule__Cg__Group__03401);
             rule__Cg__Group__1();
 
             state._fsp--;
@@ -5400,20 +4682,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cg__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1896:1: rule__Cg__Group__0__Impl : ( 'cg' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1662:1: rule__Cg__Group__0__Impl : ( 'cg' ) ;
     public final void rule__Cg__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1900:1: ( ( 'cg' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1901:1: ( 'cg' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1666:1: ( ( 'cg' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1667:1: ( 'cg' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1901:1: ( 'cg' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1902:1: 'cg'
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1667:1: ( 'cg' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1668:1: 'cg'
             {
              before(grammarAccess.getCgAccess().getCgKeyword_0()); 
-            match(input,22,FOLLOW_22_in_rule__Cg__Group__0__Impl3938); 
+            match(input,22,FOLLOW_22_in_rule__Cg__Group__0__Impl3429); 
              after(grammarAccess.getCgAccess().getCgKeyword_0()); 
 
             }
@@ -5437,16 +4719,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cg__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1915:1: rule__Cg__Group__1 : rule__Cg__Group__1__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1681:1: rule__Cg__Group__1 : rule__Cg__Group__1__Impl ;
     public final void rule__Cg__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1919:1: ( rule__Cg__Group__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1920:2: rule__Cg__Group__1__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1685:1: ( rule__Cg__Group__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1686:2: rule__Cg__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Cg__Group__1__Impl_in_rule__Cg__Group__13969);
+            pushFollow(FOLLOW_rule__Cg__Group__1__Impl_in_rule__Cg__Group__13460);
             rule__Cg__Group__1__Impl();
 
             state._fsp--;
@@ -5470,23 +4752,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cg__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1926:1: rule__Cg__Group__1__Impl : ( ( rule__Cg__AttributesAssignment_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1692:1: rule__Cg__Group__1__Impl : ( ( rule__Cg__AttributesAssignment_1 ) ) ;
     public final void rule__Cg__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1930:1: ( ( ( rule__Cg__AttributesAssignment_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1931:1: ( ( rule__Cg__AttributesAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1696:1: ( ( ( rule__Cg__AttributesAssignment_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1697:1: ( ( rule__Cg__AttributesAssignment_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1931:1: ( ( rule__Cg__AttributesAssignment_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1932:1: ( rule__Cg__AttributesAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1697:1: ( ( rule__Cg__AttributesAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1698:1: ( rule__Cg__AttributesAssignment_1 )
             {
              before(grammarAccess.getCgAccess().getAttributesAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1933:1: ( rule__Cg__AttributesAssignment_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1933:2: rule__Cg__AttributesAssignment_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1699:1: ( rule__Cg__AttributesAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1699:2: rule__Cg__AttributesAssignment_1
             {
-            pushFollow(FOLLOW_rule__Cg__AttributesAssignment_1_in_rule__Cg__Group__1__Impl3996);
+            pushFollow(FOLLOW_rule__Cg__AttributesAssignment_1_in_rule__Cg__Group__1__Impl3487);
             rule__Cg__AttributesAssignment_1();
 
             state._fsp--;
@@ -5517,21 +4799,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__St__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1947:1: rule__St__Group__0 : rule__St__Group__0__Impl rule__St__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1713:1: rule__St__Group__0 : rule__St__Group__0__Impl rule__St__Group__1 ;
     public final void rule__St__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1951:1: ( rule__St__Group__0__Impl rule__St__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1952:2: rule__St__Group__0__Impl rule__St__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1717:1: ( rule__St__Group__0__Impl rule__St__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1718:2: rule__St__Group__0__Impl rule__St__Group__1
             {
-            pushFollow(FOLLOW_rule__St__Group__0__Impl_in_rule__St__Group__04030);
+            pushFollow(FOLLOW_rule__St__Group__0__Impl_in_rule__St__Group__03521);
             rule__St__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__St__Group__1_in_rule__St__Group__04033);
+            pushFollow(FOLLOW_rule__St__Group__1_in_rule__St__Group__03524);
             rule__St__Group__1();
 
             state._fsp--;
@@ -5555,20 +4837,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__St__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1959:1: rule__St__Group__0__Impl : ( 'st' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1725:1: rule__St__Group__0__Impl : ( 'st' ) ;
     public final void rule__St__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1963:1: ( ( 'st' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1964:1: ( 'st' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1729:1: ( ( 'st' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1730:1: ( 'st' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1964:1: ( 'st' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1965:1: 'st'
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1730:1: ( 'st' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1731:1: 'st'
             {
              before(grammarAccess.getStAccess().getStKeyword_0()); 
-            match(input,23,FOLLOW_23_in_rule__St__Group__0__Impl4061); 
+            match(input,23,FOLLOW_23_in_rule__St__Group__0__Impl3552); 
              after(grammarAccess.getStAccess().getStKeyword_0()); 
 
             }
@@ -5592,16 +4874,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__St__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1978:1: rule__St__Group__1 : rule__St__Group__1__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1744:1: rule__St__Group__1 : rule__St__Group__1__Impl ;
     public final void rule__St__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1982:1: ( rule__St__Group__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1983:2: rule__St__Group__1__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1748:1: ( rule__St__Group__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1749:2: rule__St__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__St__Group__1__Impl_in_rule__St__Group__14092);
+            pushFollow(FOLLOW_rule__St__Group__1__Impl_in_rule__St__Group__13583);
             rule__St__Group__1__Impl();
 
             state._fsp--;
@@ -5625,23 +4907,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__St__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1989:1: rule__St__Group__1__Impl : ( ( rule__St__RealAssignment_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1755:1: rule__St__Group__1__Impl : ( ( rule__St__RealAssignment_1 ) ) ;
     public final void rule__St__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1993:1: ( ( ( rule__St__RealAssignment_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1994:1: ( ( rule__St__RealAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1759:1: ( ( ( rule__St__RealAssignment_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1760:1: ( ( rule__St__RealAssignment_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1994:1: ( ( rule__St__RealAssignment_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1995:1: ( rule__St__RealAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1760:1: ( ( rule__St__RealAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1761:1: ( rule__St__RealAssignment_1 )
             {
              before(grammarAccess.getStAccess().getRealAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1996:1: ( rule__St__RealAssignment_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1996:2: rule__St__RealAssignment_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1762:1: ( rule__St__RealAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1762:2: rule__St__RealAssignment_1
             {
-            pushFollow(FOLLOW_rule__St__RealAssignment_1_in_rule__St__Group__1__Impl4119);
+            pushFollow(FOLLOW_rule__St__RealAssignment_1_in_rule__St__Group__1__Impl3610);
             rule__St__RealAssignment_1();
 
             state._fsp--;
@@ -5672,21 +4954,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attributes__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2010:1: rule__Attributes__Group__0 : rule__Attributes__Group__0__Impl rule__Attributes__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1776:1: rule__Attributes__Group__0 : rule__Attributes__Group__0__Impl rule__Attributes__Group__1 ;
     public final void rule__Attributes__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2014:1: ( rule__Attributes__Group__0__Impl rule__Attributes__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2015:2: rule__Attributes__Group__0__Impl rule__Attributes__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1780:1: ( rule__Attributes__Group__0__Impl rule__Attributes__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1781:2: rule__Attributes__Group__0__Impl rule__Attributes__Group__1
             {
-            pushFollow(FOLLOW_rule__Attributes__Group__0__Impl_in_rule__Attributes__Group__04153);
+            pushFollow(FOLLOW_rule__Attributes__Group__0__Impl_in_rule__Attributes__Group__03644);
             rule__Attributes__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Attributes__Group__1_in_rule__Attributes__Group__04156);
+            pushFollow(FOLLOW_rule__Attributes__Group__1_in_rule__Attributes__Group__03647);
             rule__Attributes__Group__1();
 
             state._fsp--;
@@ -5710,21 +4992,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attributes__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2022:1: rule__Attributes__Group__0__Impl : ( () ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1788:1: rule__Attributes__Group__0__Impl : ( () ) ;
     public final void rule__Attributes__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2026:1: ( ( () ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2027:1: ( () )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1792:1: ( ( () ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1793:1: ( () )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2027:1: ( () )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2028:1: ()
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1793:1: ( () )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1794:1: ()
             {
              before(grammarAccess.getAttributesAccess().getAttributesAction_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2029:1: ()
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2031:1: 
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1795:1: ()
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1797:1: 
             {
             }
 
@@ -5747,16 +5029,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attributes__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2041:1: rule__Attributes__Group__1 : rule__Attributes__Group__1__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1807:1: rule__Attributes__Group__1 : rule__Attributes__Group__1__Impl ;
     public final void rule__Attributes__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2045:1: ( rule__Attributes__Group__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2046:2: rule__Attributes__Group__1__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1811:1: ( rule__Attributes__Group__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1812:2: rule__Attributes__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Attributes__Group__1__Impl_in_rule__Attributes__Group__14214);
+            pushFollow(FOLLOW_rule__Attributes__Group__1__Impl_in_rule__Attributes__Group__13705);
             rule__Attributes__Group__1__Impl();
 
             state._fsp--;
@@ -5780,35 +5062,35 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attributes__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2052:1: rule__Attributes__Group__1__Impl : ( ( rule__Attributes__AttributeAssignment_1 )* ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1818:1: rule__Attributes__Group__1__Impl : ( ( rule__Attributes__AttributeAssignment_1 )* ) ;
     public final void rule__Attributes__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2056:1: ( ( ( rule__Attributes__AttributeAssignment_1 )* ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2057:1: ( ( rule__Attributes__AttributeAssignment_1 )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1822:1: ( ( ( rule__Attributes__AttributeAssignment_1 )* ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1823:1: ( ( rule__Attributes__AttributeAssignment_1 )* )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2057:1: ( ( rule__Attributes__AttributeAssignment_1 )* )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2058:1: ( rule__Attributes__AttributeAssignment_1 )*
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1823:1: ( ( rule__Attributes__AttributeAssignment_1 )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1824:1: ( rule__Attributes__AttributeAssignment_1 )*
             {
              before(grammarAccess.getAttributesAccess().getAttributeAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2059:1: ( rule__Attributes__AttributeAssignment_1 )*
-            loop19:
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1825:1: ( rule__Attributes__AttributeAssignment_1 )*
+            loop8:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( ((LA19_0>=RULE_ID && LA19_0<=RULE_STRING)||(LA19_0>=14 && LA19_0<=15)) ) {
-                    alt19=1;
+                if ( ((LA8_0>=RULE_STRING && LA8_0<=RULE_WORD)||LA8_0==RULE_OPERATOR) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt8) {
             	case 1 :
-            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2059:2: rule__Attributes__AttributeAssignment_1
+            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1825:2: rule__Attributes__AttributeAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Attributes__AttributeAssignment_1_in_rule__Attributes__Group__1__Impl4241);
+            	    pushFollow(FOLLOW_rule__Attributes__AttributeAssignment_1_in_rule__Attributes__Group__1__Impl3732);
             	    rule__Attributes__AttributeAssignment_1();
 
             	    state._fsp--;
@@ -5818,7 +5100,7 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop8;
                 }
             } while (true);
 
@@ -5845,21 +5127,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2073:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1839:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
     public final void rule__Attribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2077:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2078:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1843:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1844:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
             {
-            pushFollow(FOLLOW_rule__Attribute__Group__0__Impl_in_rule__Attribute__Group__04276);
+            pushFollow(FOLLOW_rule__Attribute__Group__0__Impl_in_rule__Attribute__Group__03767);
             rule__Attribute__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Attribute__Group__1_in_rule__Attribute__Group__04279);
+            pushFollow(FOLLOW_rule__Attribute__Group__1_in_rule__Attribute__Group__03770);
             rule__Attribute__Group__1();
 
             state._fsp--;
@@ -5883,32 +5165,32 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2085:1: rule__Attribute__Group__0__Impl : ( ( rule__Attribute__Alternatives_0 )? ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1851:1: rule__Attribute__Group__0__Impl : ( ( rule__Attribute__OperatorAssignment_0 )? ) ;
     public final void rule__Attribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2089:1: ( ( ( rule__Attribute__Alternatives_0 )? ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2090:1: ( ( rule__Attribute__Alternatives_0 )? )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1855:1: ( ( ( rule__Attribute__OperatorAssignment_0 )? ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1856:1: ( ( rule__Attribute__OperatorAssignment_0 )? )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2090:1: ( ( rule__Attribute__Alternatives_0 )? )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2091:1: ( rule__Attribute__Alternatives_0 )?
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1856:1: ( ( rule__Attribute__OperatorAssignment_0 )? )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1857:1: ( rule__Attribute__OperatorAssignment_0 )?
             {
-             before(grammarAccess.getAttributeAccess().getAlternatives_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2092:1: ( rule__Attribute__Alternatives_0 )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+             before(grammarAccess.getAttributeAccess().getOperatorAssignment_0()); 
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1858:1: ( rule__Attribute__OperatorAssignment_0 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( ((LA20_0>=14 && LA20_0<=15)) ) {
-                alt20=1;
+            if ( (LA9_0==RULE_OPERATOR) ) {
+                alt9=1;
             }
-            switch (alt20) {
+            switch (alt9) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2092:2: rule__Attribute__Alternatives_0
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1858:2: rule__Attribute__OperatorAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__Attribute__Alternatives_0_in_rule__Attribute__Group__0__Impl4306);
-                    rule__Attribute__Alternatives_0();
+                    pushFollow(FOLLOW_rule__Attribute__OperatorAssignment_0_in_rule__Attribute__Group__0__Impl3797);
+                    rule__Attribute__OperatorAssignment_0();
 
                     state._fsp--;
 
@@ -5918,7 +5200,7 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getAttributeAccess().getAlternatives_0()); 
+             after(grammarAccess.getAttributeAccess().getOperatorAssignment_0()); 
 
             }
 
@@ -5941,21 +5223,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2102:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl rule__Attribute__Group__2 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1868:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl rule__Attribute__Group__2 ;
     public final void rule__Attribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2106:1: ( rule__Attribute__Group__1__Impl rule__Attribute__Group__2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2107:2: rule__Attribute__Group__1__Impl rule__Attribute__Group__2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1872:1: ( rule__Attribute__Group__1__Impl rule__Attribute__Group__2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1873:2: rule__Attribute__Group__1__Impl rule__Attribute__Group__2
             {
-            pushFollow(FOLLOW_rule__Attribute__Group__1__Impl_in_rule__Attribute__Group__14337);
+            pushFollow(FOLLOW_rule__Attribute__Group__1__Impl_in_rule__Attribute__Group__13828);
             rule__Attribute__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Attribute__Group__2_in_rule__Attribute__Group__14340);
+            pushFollow(FOLLOW_rule__Attribute__Group__2_in_rule__Attribute__Group__13831);
             rule__Attribute__Group__2();
 
             state._fsp--;
@@ -5979,23 +5261,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2114:1: rule__Attribute__Group__1__Impl : ( ( rule__Attribute__IdAttributeAssignment_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1880:1: rule__Attribute__Group__1__Impl : ( ( rule__Attribute__IdAttributeAssignment_1 ) ) ;
     public final void rule__Attribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2118:1: ( ( ( rule__Attribute__IdAttributeAssignment_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2119:1: ( ( rule__Attribute__IdAttributeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1884:1: ( ( ( rule__Attribute__IdAttributeAssignment_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1885:1: ( ( rule__Attribute__IdAttributeAssignment_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2119:1: ( ( rule__Attribute__IdAttributeAssignment_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2120:1: ( rule__Attribute__IdAttributeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1885:1: ( ( rule__Attribute__IdAttributeAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1886:1: ( rule__Attribute__IdAttributeAssignment_1 )
             {
              before(grammarAccess.getAttributeAccess().getIdAttributeAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2121:1: ( rule__Attribute__IdAttributeAssignment_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2121:2: rule__Attribute__IdAttributeAssignment_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1887:1: ( rule__Attribute__IdAttributeAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1887:2: rule__Attribute__IdAttributeAssignment_1
             {
-            pushFollow(FOLLOW_rule__Attribute__IdAttributeAssignment_1_in_rule__Attribute__Group__1__Impl4367);
+            pushFollow(FOLLOW_rule__Attribute__IdAttributeAssignment_1_in_rule__Attribute__Group__1__Impl3858);
             rule__Attribute__IdAttributeAssignment_1();
 
             state._fsp--;
@@ -6026,16 +5308,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group__2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2131:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1897:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl ;
     public final void rule__Attribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2135:1: ( rule__Attribute__Group__2__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2136:2: rule__Attribute__Group__2__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1901:1: ( rule__Attribute__Group__2__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1902:2: rule__Attribute__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Attribute__Group__2__Impl_in_rule__Attribute__Group__24397);
+            pushFollow(FOLLOW_rule__Attribute__Group__2__Impl_in_rule__Attribute__Group__23888);
             rule__Attribute__Group__2__Impl();
 
             state._fsp--;
@@ -6059,31 +5341,31 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group__2__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2142:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__Group_2__0 )? ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1908:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__Group_2__0 )? ) ;
     public final void rule__Attribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2146:1: ( ( ( rule__Attribute__Group_2__0 )? ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2147:1: ( ( rule__Attribute__Group_2__0 )? )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1912:1: ( ( ( rule__Attribute__Group_2__0 )? ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1913:1: ( ( rule__Attribute__Group_2__0 )? )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2147:1: ( ( rule__Attribute__Group_2__0 )? )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2148:1: ( rule__Attribute__Group_2__0 )?
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1913:1: ( ( rule__Attribute__Group_2__0 )? )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1914:1: ( rule__Attribute__Group_2__0 )?
             {
              before(grammarAccess.getAttributeAccess().getGroup_2()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2149:1: ( rule__Attribute__Group_2__0 )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1915:1: ( rule__Attribute__Group_2__0 )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA21_0==RULE_ASSIGN) ) {
-                alt21=1;
+            if ( (LA10_0==RULE_ASSIGN) ) {
+                alt10=1;
             }
-            switch (alt21) {
+            switch (alt10) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2149:2: rule__Attribute__Group_2__0
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1915:2: rule__Attribute__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__Attribute__Group_2__0_in_rule__Attribute__Group__2__Impl4424);
+                    pushFollow(FOLLOW_rule__Attribute__Group_2__0_in_rule__Attribute__Group__2__Impl3915);
                     rule__Attribute__Group_2__0();
 
                     state._fsp--;
@@ -6117,21 +5399,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_2__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2165:1: rule__Attribute__Group_2__0 : rule__Attribute__Group_2__0__Impl rule__Attribute__Group_2__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1931:1: rule__Attribute__Group_2__0 : rule__Attribute__Group_2__0__Impl rule__Attribute__Group_2__1 ;
     public final void rule__Attribute__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2169:1: ( rule__Attribute__Group_2__0__Impl rule__Attribute__Group_2__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2170:2: rule__Attribute__Group_2__0__Impl rule__Attribute__Group_2__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1935:1: ( rule__Attribute__Group_2__0__Impl rule__Attribute__Group_2__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1936:2: rule__Attribute__Group_2__0__Impl rule__Attribute__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Attribute__Group_2__0__Impl_in_rule__Attribute__Group_2__04461);
+            pushFollow(FOLLOW_rule__Attribute__Group_2__0__Impl_in_rule__Attribute__Group_2__03952);
             rule__Attribute__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Attribute__Group_2__1_in_rule__Attribute__Group_2__04464);
+            pushFollow(FOLLOW_rule__Attribute__Group_2__1_in_rule__Attribute__Group_2__03955);
             rule__Attribute__Group_2__1();
 
             state._fsp--;
@@ -6155,23 +5437,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_2__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2177:1: rule__Attribute__Group_2__0__Impl : ( ( rule__Attribute__AssignAssignment_2_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1943:1: rule__Attribute__Group_2__0__Impl : ( ( rule__Attribute__AssignAssignment_2_0 ) ) ;
     public final void rule__Attribute__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2181:1: ( ( ( rule__Attribute__AssignAssignment_2_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2182:1: ( ( rule__Attribute__AssignAssignment_2_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1947:1: ( ( ( rule__Attribute__AssignAssignment_2_0 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1948:1: ( ( rule__Attribute__AssignAssignment_2_0 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2182:1: ( ( rule__Attribute__AssignAssignment_2_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2183:1: ( rule__Attribute__AssignAssignment_2_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1948:1: ( ( rule__Attribute__AssignAssignment_2_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1949:1: ( rule__Attribute__AssignAssignment_2_0 )
             {
              before(grammarAccess.getAttributeAccess().getAssignAssignment_2_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2184:1: ( rule__Attribute__AssignAssignment_2_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2184:2: rule__Attribute__AssignAssignment_2_0
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1950:1: ( rule__Attribute__AssignAssignment_2_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1950:2: rule__Attribute__AssignAssignment_2_0
             {
-            pushFollow(FOLLOW_rule__Attribute__AssignAssignment_2_0_in_rule__Attribute__Group_2__0__Impl4491);
+            pushFollow(FOLLOW_rule__Attribute__AssignAssignment_2_0_in_rule__Attribute__Group_2__0__Impl3982);
             rule__Attribute__AssignAssignment_2_0();
 
             state._fsp--;
@@ -6202,21 +5484,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_2__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2194:1: rule__Attribute__Group_2__1 : rule__Attribute__Group_2__1__Impl rule__Attribute__Group_2__2 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1960:1: rule__Attribute__Group_2__1 : rule__Attribute__Group_2__1__Impl rule__Attribute__Group_2__2 ;
     public final void rule__Attribute__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2198:1: ( rule__Attribute__Group_2__1__Impl rule__Attribute__Group_2__2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2199:2: rule__Attribute__Group_2__1__Impl rule__Attribute__Group_2__2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1964:1: ( rule__Attribute__Group_2__1__Impl rule__Attribute__Group_2__2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1965:2: rule__Attribute__Group_2__1__Impl rule__Attribute__Group_2__2
             {
-            pushFollow(FOLLOW_rule__Attribute__Group_2__1__Impl_in_rule__Attribute__Group_2__14521);
+            pushFollow(FOLLOW_rule__Attribute__Group_2__1__Impl_in_rule__Attribute__Group_2__14012);
             rule__Attribute__Group_2__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Attribute__Group_2__2_in_rule__Attribute__Group_2__14524);
+            pushFollow(FOLLOW_rule__Attribute__Group_2__2_in_rule__Attribute__Group_2__14015);
             rule__Attribute__Group_2__2();
 
             state._fsp--;
@@ -6240,23 +5522,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_2__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2206:1: rule__Attribute__Group_2__1__Impl : ( ( rule__Attribute__ValueAssignment_2_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1972:1: rule__Attribute__Group_2__1__Impl : ( ( rule__Attribute__ValueAssignment_2_1 ) ) ;
     public final void rule__Attribute__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2210:1: ( ( ( rule__Attribute__ValueAssignment_2_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2211:1: ( ( rule__Attribute__ValueAssignment_2_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1976:1: ( ( ( rule__Attribute__ValueAssignment_2_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1977:1: ( ( rule__Attribute__ValueAssignment_2_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2211:1: ( ( rule__Attribute__ValueAssignment_2_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2212:1: ( rule__Attribute__ValueAssignment_2_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1977:1: ( ( rule__Attribute__ValueAssignment_2_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1978:1: ( rule__Attribute__ValueAssignment_2_1 )
             {
              before(grammarAccess.getAttributeAccess().getValueAssignment_2_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2213:1: ( rule__Attribute__ValueAssignment_2_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2213:2: rule__Attribute__ValueAssignment_2_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1979:1: ( rule__Attribute__ValueAssignment_2_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1979:2: rule__Attribute__ValueAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__Attribute__ValueAssignment_2_1_in_rule__Attribute__Group_2__1__Impl4551);
+            pushFollow(FOLLOW_rule__Attribute__ValueAssignment_2_1_in_rule__Attribute__Group_2__1__Impl4042);
             rule__Attribute__ValueAssignment_2_1();
 
             state._fsp--;
@@ -6287,16 +5569,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_2__2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2223:1: rule__Attribute__Group_2__2 : rule__Attribute__Group_2__2__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1989:1: rule__Attribute__Group_2__2 : rule__Attribute__Group_2__2__Impl ;
     public final void rule__Attribute__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2227:1: ( rule__Attribute__Group_2__2__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2228:2: rule__Attribute__Group_2__2__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1993:1: ( rule__Attribute__Group_2__2__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:1994:2: rule__Attribute__Group_2__2__Impl
             {
-            pushFollow(FOLLOW_rule__Attribute__Group_2__2__Impl_in_rule__Attribute__Group_2__24581);
+            pushFollow(FOLLOW_rule__Attribute__Group_2__2__Impl_in_rule__Attribute__Group_2__24072);
             rule__Attribute__Group_2__2__Impl();
 
             state._fsp--;
@@ -6320,35 +5602,35 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_2__2__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2234:1: rule__Attribute__Group_2__2__Impl : ( ( rule__Attribute__Group_2_2__0 )* ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2000:1: rule__Attribute__Group_2__2__Impl : ( ( rule__Attribute__Group_2_2__0 )* ) ;
     public final void rule__Attribute__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2238:1: ( ( ( rule__Attribute__Group_2_2__0 )* ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2239:1: ( ( rule__Attribute__Group_2_2__0 )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2004:1: ( ( ( rule__Attribute__Group_2_2__0 )* ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2005:1: ( ( rule__Attribute__Group_2_2__0 )* )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2239:1: ( ( rule__Attribute__Group_2_2__0 )* )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2240:1: ( rule__Attribute__Group_2_2__0 )*
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2005:1: ( ( rule__Attribute__Group_2_2__0 )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2006:1: ( rule__Attribute__Group_2_2__0 )*
             {
              before(grammarAccess.getAttributeAccess().getGroup_2_2()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2241:1: ( rule__Attribute__Group_2_2__0 )*
-            loop22:
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2007:1: ( rule__Attribute__Group_2_2__0 )*
+            loop11:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA22_0==24) ) {
-                    alt22=1;
+                if ( (LA11_0==24) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt11) {
             	case 1 :
-            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2241:2: rule__Attribute__Group_2_2__0
+            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2007:2: rule__Attribute__Group_2_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__Attribute__Group_2_2__0_in_rule__Attribute__Group_2__2__Impl4608);
+            	    pushFollow(FOLLOW_rule__Attribute__Group_2_2__0_in_rule__Attribute__Group_2__2__Impl4099);
             	    rule__Attribute__Group_2_2__0();
 
             	    state._fsp--;
@@ -6358,7 +5640,7 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop11;
                 }
             } while (true);
 
@@ -6385,21 +5667,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_2_2__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2257:1: rule__Attribute__Group_2_2__0 : rule__Attribute__Group_2_2__0__Impl rule__Attribute__Group_2_2__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2023:1: rule__Attribute__Group_2_2__0 : rule__Attribute__Group_2_2__0__Impl rule__Attribute__Group_2_2__1 ;
     public final void rule__Attribute__Group_2_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2261:1: ( rule__Attribute__Group_2_2__0__Impl rule__Attribute__Group_2_2__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2262:2: rule__Attribute__Group_2_2__0__Impl rule__Attribute__Group_2_2__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2027:1: ( rule__Attribute__Group_2_2__0__Impl rule__Attribute__Group_2_2__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2028:2: rule__Attribute__Group_2_2__0__Impl rule__Attribute__Group_2_2__1
             {
-            pushFollow(FOLLOW_rule__Attribute__Group_2_2__0__Impl_in_rule__Attribute__Group_2_2__04645);
+            pushFollow(FOLLOW_rule__Attribute__Group_2_2__0__Impl_in_rule__Attribute__Group_2_2__04136);
             rule__Attribute__Group_2_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Attribute__Group_2_2__1_in_rule__Attribute__Group_2_2__04648);
+            pushFollow(FOLLOW_rule__Attribute__Group_2_2__1_in_rule__Attribute__Group_2_2__04139);
             rule__Attribute__Group_2_2__1();
 
             state._fsp--;
@@ -6423,20 +5705,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_2_2__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2269:1: rule__Attribute__Group_2_2__0__Impl : ( ',' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2035:1: rule__Attribute__Group_2_2__0__Impl : ( ',' ) ;
     public final void rule__Attribute__Group_2_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2273:1: ( ( ',' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2274:1: ( ',' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2039:1: ( ( ',' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2040:1: ( ',' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2274:1: ( ',' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2275:1: ','
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2040:1: ( ',' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2041:1: ','
             {
              before(grammarAccess.getAttributeAccess().getCommaKeyword_2_2_0()); 
-            match(input,24,FOLLOW_24_in_rule__Attribute__Group_2_2__0__Impl4676); 
+            match(input,24,FOLLOW_24_in_rule__Attribute__Group_2_2__0__Impl4167); 
              after(grammarAccess.getAttributeAccess().getCommaKeyword_2_2_0()); 
 
             }
@@ -6460,16 +5742,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_2_2__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2288:1: rule__Attribute__Group_2_2__1 : rule__Attribute__Group_2_2__1__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2054:1: rule__Attribute__Group_2_2__1 : rule__Attribute__Group_2_2__1__Impl ;
     public final void rule__Attribute__Group_2_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2292:1: ( rule__Attribute__Group_2_2__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2293:2: rule__Attribute__Group_2_2__1__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2058:1: ( rule__Attribute__Group_2_2__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2059:2: rule__Attribute__Group_2_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Attribute__Group_2_2__1__Impl_in_rule__Attribute__Group_2_2__14707);
+            pushFollow(FOLLOW_rule__Attribute__Group_2_2__1__Impl_in_rule__Attribute__Group_2_2__14198);
             rule__Attribute__Group_2_2__1__Impl();
 
             state._fsp--;
@@ -6493,23 +5775,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__Group_2_2__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2299:1: rule__Attribute__Group_2_2__1__Impl : ( ( rule__Attribute__OtherValuesAssignment_2_2_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2065:1: rule__Attribute__Group_2_2__1__Impl : ( ( rule__Attribute__OtherValuesAssignment_2_2_1 ) ) ;
     public final void rule__Attribute__Group_2_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2303:1: ( ( ( rule__Attribute__OtherValuesAssignment_2_2_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2304:1: ( ( rule__Attribute__OtherValuesAssignment_2_2_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2069:1: ( ( ( rule__Attribute__OtherValuesAssignment_2_2_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2070:1: ( ( rule__Attribute__OtherValuesAssignment_2_2_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2304:1: ( ( rule__Attribute__OtherValuesAssignment_2_2_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2305:1: ( rule__Attribute__OtherValuesAssignment_2_2_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2070:1: ( ( rule__Attribute__OtherValuesAssignment_2_2_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2071:1: ( rule__Attribute__OtherValuesAssignment_2_2_1 )
             {
              before(grammarAccess.getAttributeAccess().getOtherValuesAssignment_2_2_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2306:1: ( rule__Attribute__OtherValuesAssignment_2_2_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2306:2: rule__Attribute__OtherValuesAssignment_2_2_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2072:1: ( rule__Attribute__OtherValuesAssignment_2_2_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2072:2: rule__Attribute__OtherValuesAssignment_2_2_1
             {
-            pushFollow(FOLLOW_rule__Attribute__OtherValuesAssignment_2_2_1_in_rule__Attribute__Group_2_2__1__Impl4734);
+            pushFollow(FOLLOW_rule__Attribute__OtherValuesAssignment_2_2_1_in_rule__Attribute__Group_2_2__1__Impl4225);
             rule__Attribute__OtherValuesAssignment_2_2_1();
 
             state._fsp--;
@@ -6540,21 +5822,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2320:1: rule__Array__Group__0 : rule__Array__Group__0__Impl rule__Array__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2086:1: rule__Array__Group__0 : rule__Array__Group__0__Impl rule__Array__Group__1 ;
     public final void rule__Array__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2324:1: ( rule__Array__Group__0__Impl rule__Array__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2325:2: rule__Array__Group__0__Impl rule__Array__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2090:1: ( rule__Array__Group__0__Impl rule__Array__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2091:2: rule__Array__Group__0__Impl rule__Array__Group__1
             {
-            pushFollow(FOLLOW_rule__Array__Group__0__Impl_in_rule__Array__Group__04768);
+            pushFollow(FOLLOW_rule__Array__Group__0__Impl_in_rule__Array__Group__04259);
             rule__Array__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Array__Group__1_in_rule__Array__Group__04771);
+            pushFollow(FOLLOW_rule__Array__Group__1_in_rule__Array__Group__04262);
             rule__Array__Group__1();
 
             state._fsp--;
@@ -6578,21 +5860,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2332:1: rule__Array__Group__0__Impl : ( () ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2098:1: rule__Array__Group__0__Impl : ( () ) ;
     public final void rule__Array__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2336:1: ( ( () ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2337:1: ( () )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2102:1: ( ( () ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2103:1: ( () )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2337:1: ( () )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2338:1: ()
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2103:1: ( () )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2104:1: ()
             {
              before(grammarAccess.getArrayAccess().getArrayAction_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2339:1: ()
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2341:1: 
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2105:1: ()
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2107:1: 
             {
             }
 
@@ -6615,21 +5897,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2351:1: rule__Array__Group__1 : rule__Array__Group__1__Impl rule__Array__Group__2 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2117:1: rule__Array__Group__1 : rule__Array__Group__1__Impl rule__Array__Group__2 ;
     public final void rule__Array__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2355:1: ( rule__Array__Group__1__Impl rule__Array__Group__2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2356:2: rule__Array__Group__1__Impl rule__Array__Group__2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2121:1: ( rule__Array__Group__1__Impl rule__Array__Group__2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2122:2: rule__Array__Group__1__Impl rule__Array__Group__2
             {
-            pushFollow(FOLLOW_rule__Array__Group__1__Impl_in_rule__Array__Group__14829);
+            pushFollow(FOLLOW_rule__Array__Group__1__Impl_in_rule__Array__Group__14320);
             rule__Array__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Array__Group__2_in_rule__Array__Group__14832);
+            pushFollow(FOLLOW_rule__Array__Group__2_in_rule__Array__Group__14323);
             rule__Array__Group__2();
 
             state._fsp--;
@@ -6653,20 +5935,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2363:1: rule__Array__Group__1__Impl : ( '{' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2129:1: rule__Array__Group__1__Impl : ( '{' ) ;
     public final void rule__Array__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2367:1: ( ( '{' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2368:1: ( '{' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2133:1: ( ( '{' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2134:1: ( '{' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2368:1: ( '{' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2369:1: '{'
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2134:1: ( '{' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2135:1: '{'
             {
              before(grammarAccess.getArrayAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,25,FOLLOW_25_in_rule__Array__Group__1__Impl4860); 
+            match(input,25,FOLLOW_25_in_rule__Array__Group__1__Impl4351); 
              after(grammarAccess.getArrayAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -6690,21 +5972,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group__2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2382:1: rule__Array__Group__2 : rule__Array__Group__2__Impl rule__Array__Group__3 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2148:1: rule__Array__Group__2 : rule__Array__Group__2__Impl rule__Array__Group__3 ;
     public final void rule__Array__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2386:1: ( rule__Array__Group__2__Impl rule__Array__Group__3 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2387:2: rule__Array__Group__2__Impl rule__Array__Group__3
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2152:1: ( rule__Array__Group__2__Impl rule__Array__Group__3 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2153:2: rule__Array__Group__2__Impl rule__Array__Group__3
             {
-            pushFollow(FOLLOW_rule__Array__Group__2__Impl_in_rule__Array__Group__24891);
+            pushFollow(FOLLOW_rule__Array__Group__2__Impl_in_rule__Array__Group__24382);
             rule__Array__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Array__Group__3_in_rule__Array__Group__24894);
+            pushFollow(FOLLOW_rule__Array__Group__3_in_rule__Array__Group__24385);
             rule__Array__Group__3();
 
             state._fsp--;
@@ -6728,31 +6010,31 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group__2__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2394:1: rule__Array__Group__2__Impl : ( ( rule__Array__Group_2__0 )? ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2160:1: rule__Array__Group__2__Impl : ( ( rule__Array__Group_2__0 )? ) ;
     public final void rule__Array__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2398:1: ( ( ( rule__Array__Group_2__0 )? ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2399:1: ( ( rule__Array__Group_2__0 )? )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2164:1: ( ( ( rule__Array__Group_2__0 )? ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2165:1: ( ( rule__Array__Group_2__0 )? )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2399:1: ( ( rule__Array__Group_2__0 )? )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2400:1: ( rule__Array__Group_2__0 )?
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2165:1: ( ( rule__Array__Group_2__0 )? )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2166:1: ( rule__Array__Group_2__0 )?
             {
              before(grammarAccess.getArrayAccess().getGroup_2()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2401:1: ( rule__Array__Group_2__0 )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2167:1: ( rule__Array__Group_2__0 )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( ((LA23_0>=RULE_STRING && LA23_0<=RULE_INT)||LA23_0==25||LA23_0==27) ) {
-                alt23=1;
+            if ( ((LA12_0>=RULE_STRING && LA12_0<=RULE_INT)||LA12_0==RULE_REAL||LA12_0==25||LA12_0==27) ) {
+                alt12=1;
             }
-            switch (alt23) {
+            switch (alt12) {
                 case 1 :
-                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2401:2: rule__Array__Group_2__0
+                    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2167:2: rule__Array__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__Array__Group_2__0_in_rule__Array__Group__2__Impl4921);
+                    pushFollow(FOLLOW_rule__Array__Group_2__0_in_rule__Array__Group__2__Impl4412);
                     rule__Array__Group_2__0();
 
                     state._fsp--;
@@ -6786,16 +6068,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group__3"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2411:1: rule__Array__Group__3 : rule__Array__Group__3__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2177:1: rule__Array__Group__3 : rule__Array__Group__3__Impl ;
     public final void rule__Array__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2415:1: ( rule__Array__Group__3__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2416:2: rule__Array__Group__3__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2181:1: ( rule__Array__Group__3__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2182:2: rule__Array__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Array__Group__3__Impl_in_rule__Array__Group__34952);
+            pushFollow(FOLLOW_rule__Array__Group__3__Impl_in_rule__Array__Group__34443);
             rule__Array__Group__3__Impl();
 
             state._fsp--;
@@ -6819,20 +6101,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group__3__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2422:1: rule__Array__Group__3__Impl : ( '}' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2188:1: rule__Array__Group__3__Impl : ( '}' ) ;
     public final void rule__Array__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2426:1: ( ( '}' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2427:1: ( '}' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2192:1: ( ( '}' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2193:1: ( '}' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2427:1: ( '}' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2428:1: '}'
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2193:1: ( '}' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2194:1: '}'
             {
              before(grammarAccess.getArrayAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,26,FOLLOW_26_in_rule__Array__Group__3__Impl4980); 
+            match(input,26,FOLLOW_26_in_rule__Array__Group__3__Impl4471); 
              after(grammarAccess.getArrayAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -6856,21 +6138,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group_2__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2449:1: rule__Array__Group_2__0 : rule__Array__Group_2__0__Impl rule__Array__Group_2__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2215:1: rule__Array__Group_2__0 : rule__Array__Group_2__0__Impl rule__Array__Group_2__1 ;
     public final void rule__Array__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2453:1: ( rule__Array__Group_2__0__Impl rule__Array__Group_2__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2454:2: rule__Array__Group_2__0__Impl rule__Array__Group_2__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2219:1: ( rule__Array__Group_2__0__Impl rule__Array__Group_2__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2220:2: rule__Array__Group_2__0__Impl rule__Array__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Array__Group_2__0__Impl_in_rule__Array__Group_2__05019);
+            pushFollow(FOLLOW_rule__Array__Group_2__0__Impl_in_rule__Array__Group_2__04510);
             rule__Array__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Array__Group_2__1_in_rule__Array__Group_2__05022);
+            pushFollow(FOLLOW_rule__Array__Group_2__1_in_rule__Array__Group_2__04513);
             rule__Array__Group_2__1();
 
             state._fsp--;
@@ -6894,23 +6176,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group_2__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2461:1: rule__Array__Group_2__0__Impl : ( ( rule__Array__ValueAssignment_2_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2227:1: rule__Array__Group_2__0__Impl : ( ( rule__Array__ValueAssignment_2_0 ) ) ;
     public final void rule__Array__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2465:1: ( ( ( rule__Array__ValueAssignment_2_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2466:1: ( ( rule__Array__ValueAssignment_2_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2231:1: ( ( ( rule__Array__ValueAssignment_2_0 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2232:1: ( ( rule__Array__ValueAssignment_2_0 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2466:1: ( ( rule__Array__ValueAssignment_2_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2467:1: ( rule__Array__ValueAssignment_2_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2232:1: ( ( rule__Array__ValueAssignment_2_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2233:1: ( rule__Array__ValueAssignment_2_0 )
             {
              before(grammarAccess.getArrayAccess().getValueAssignment_2_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2468:1: ( rule__Array__ValueAssignment_2_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2468:2: rule__Array__ValueAssignment_2_0
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2234:1: ( rule__Array__ValueAssignment_2_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2234:2: rule__Array__ValueAssignment_2_0
             {
-            pushFollow(FOLLOW_rule__Array__ValueAssignment_2_0_in_rule__Array__Group_2__0__Impl5049);
+            pushFollow(FOLLOW_rule__Array__ValueAssignment_2_0_in_rule__Array__Group_2__0__Impl4540);
             rule__Array__ValueAssignment_2_0();
 
             state._fsp--;
@@ -6941,16 +6223,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group_2__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2478:1: rule__Array__Group_2__1 : rule__Array__Group_2__1__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2244:1: rule__Array__Group_2__1 : rule__Array__Group_2__1__Impl ;
     public final void rule__Array__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2482:1: ( rule__Array__Group_2__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2483:2: rule__Array__Group_2__1__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2248:1: ( rule__Array__Group_2__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2249:2: rule__Array__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Array__Group_2__1__Impl_in_rule__Array__Group_2__15079);
+            pushFollow(FOLLOW_rule__Array__Group_2__1__Impl_in_rule__Array__Group_2__14570);
             rule__Array__Group_2__1__Impl();
 
             state._fsp--;
@@ -6974,35 +6256,35 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group_2__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2489:1: rule__Array__Group_2__1__Impl : ( ( rule__Array__Group_2_1__0 )* ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2255:1: rule__Array__Group_2__1__Impl : ( ( rule__Array__Group_2_1__0 )* ) ;
     public final void rule__Array__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2493:1: ( ( ( rule__Array__Group_2_1__0 )* ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2494:1: ( ( rule__Array__Group_2_1__0 )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2259:1: ( ( ( rule__Array__Group_2_1__0 )* ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2260:1: ( ( rule__Array__Group_2_1__0 )* )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2494:1: ( ( rule__Array__Group_2_1__0 )* )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2495:1: ( rule__Array__Group_2_1__0 )*
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2260:1: ( ( rule__Array__Group_2_1__0 )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2261:1: ( rule__Array__Group_2_1__0 )*
             {
              before(grammarAccess.getArrayAccess().getGroup_2_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2496:1: ( rule__Array__Group_2_1__0 )*
-            loop24:
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2262:1: ( rule__Array__Group_2_1__0 )*
+            loop13:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA24_0==24) ) {
-                    alt24=1;
+                if ( (LA13_0==24) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt13) {
             	case 1 :
-            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2496:2: rule__Array__Group_2_1__0
+            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2262:2: rule__Array__Group_2_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Array__Group_2_1__0_in_rule__Array__Group_2__1__Impl5106);
+            	    pushFollow(FOLLOW_rule__Array__Group_2_1__0_in_rule__Array__Group_2__1__Impl4597);
             	    rule__Array__Group_2_1__0();
 
             	    state._fsp--;
@@ -7012,7 +6294,7 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop13;
                 }
             } while (true);
 
@@ -7039,21 +6321,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group_2_1__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2510:1: rule__Array__Group_2_1__0 : rule__Array__Group_2_1__0__Impl rule__Array__Group_2_1__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2276:1: rule__Array__Group_2_1__0 : rule__Array__Group_2_1__0__Impl rule__Array__Group_2_1__1 ;
     public final void rule__Array__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2514:1: ( rule__Array__Group_2_1__0__Impl rule__Array__Group_2_1__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2515:2: rule__Array__Group_2_1__0__Impl rule__Array__Group_2_1__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2280:1: ( rule__Array__Group_2_1__0__Impl rule__Array__Group_2_1__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2281:2: rule__Array__Group_2_1__0__Impl rule__Array__Group_2_1__1
             {
-            pushFollow(FOLLOW_rule__Array__Group_2_1__0__Impl_in_rule__Array__Group_2_1__05141);
+            pushFollow(FOLLOW_rule__Array__Group_2_1__0__Impl_in_rule__Array__Group_2_1__04632);
             rule__Array__Group_2_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Array__Group_2_1__1_in_rule__Array__Group_2_1__05144);
+            pushFollow(FOLLOW_rule__Array__Group_2_1__1_in_rule__Array__Group_2_1__04635);
             rule__Array__Group_2_1__1();
 
             state._fsp--;
@@ -7077,20 +6359,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group_2_1__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2522:1: rule__Array__Group_2_1__0__Impl : ( ',' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2288:1: rule__Array__Group_2_1__0__Impl : ( ',' ) ;
     public final void rule__Array__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2526:1: ( ( ',' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2527:1: ( ',' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2292:1: ( ( ',' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2293:1: ( ',' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2527:1: ( ',' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2528:1: ','
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2293:1: ( ',' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2294:1: ','
             {
              before(grammarAccess.getArrayAccess().getCommaKeyword_2_1_0()); 
-            match(input,24,FOLLOW_24_in_rule__Array__Group_2_1__0__Impl5172); 
+            match(input,24,FOLLOW_24_in_rule__Array__Group_2_1__0__Impl4663); 
              after(grammarAccess.getArrayAccess().getCommaKeyword_2_1_0()); 
 
             }
@@ -7114,16 +6396,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group_2_1__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2541:1: rule__Array__Group_2_1__1 : rule__Array__Group_2_1__1__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2307:1: rule__Array__Group_2_1__1 : rule__Array__Group_2_1__1__Impl ;
     public final void rule__Array__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2545:1: ( rule__Array__Group_2_1__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2546:2: rule__Array__Group_2_1__1__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2311:1: ( rule__Array__Group_2_1__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2312:2: rule__Array__Group_2_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Array__Group_2_1__1__Impl_in_rule__Array__Group_2_1__15203);
+            pushFollow(FOLLOW_rule__Array__Group_2_1__1__Impl_in_rule__Array__Group_2_1__14694);
             rule__Array__Group_2_1__1__Impl();
 
             state._fsp--;
@@ -7147,23 +6429,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__Group_2_1__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2552:1: rule__Array__Group_2_1__1__Impl : ( ( rule__Array__OtherValuesAssignment_2_1_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2318:1: rule__Array__Group_2_1__1__Impl : ( ( rule__Array__OtherValuesAssignment_2_1_1 ) ) ;
     public final void rule__Array__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2556:1: ( ( ( rule__Array__OtherValuesAssignment_2_1_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2557:1: ( ( rule__Array__OtherValuesAssignment_2_1_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2322:1: ( ( ( rule__Array__OtherValuesAssignment_2_1_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2323:1: ( ( rule__Array__OtherValuesAssignment_2_1_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2557:1: ( ( rule__Array__OtherValuesAssignment_2_1_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2558:1: ( rule__Array__OtherValuesAssignment_2_1_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2323:1: ( ( rule__Array__OtherValuesAssignment_2_1_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2324:1: ( rule__Array__OtherValuesAssignment_2_1_1 )
             {
              before(grammarAccess.getArrayAccess().getOtherValuesAssignment_2_1_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2559:1: ( rule__Array__OtherValuesAssignment_2_1_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2559:2: rule__Array__OtherValuesAssignment_2_1_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2325:1: ( rule__Array__OtherValuesAssignment_2_1_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2325:2: rule__Array__OtherValuesAssignment_2_1_1
             {
-            pushFollow(FOLLOW_rule__Array__OtherValuesAssignment_2_1_1_in_rule__Array__Group_2_1__1__Impl5230);
+            pushFollow(FOLLOW_rule__Array__OtherValuesAssignment_2_1_1_in_rule__Array__Group_2_1__1__Impl4721);
             rule__Array__OtherValuesAssignment_2_1_1();
 
             state._fsp--;
@@ -7194,21 +6476,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2573:1: rule__Map__Group__0 : rule__Map__Group__0__Impl rule__Map__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2339:1: rule__Map__Group__0 : rule__Map__Group__0__Impl rule__Map__Group__1 ;
     public final void rule__Map__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2577:1: ( rule__Map__Group__0__Impl rule__Map__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2578:2: rule__Map__Group__0__Impl rule__Map__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2343:1: ( rule__Map__Group__0__Impl rule__Map__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2344:2: rule__Map__Group__0__Impl rule__Map__Group__1
             {
-            pushFollow(FOLLOW_rule__Map__Group__0__Impl_in_rule__Map__Group__05264);
+            pushFollow(FOLLOW_rule__Map__Group__0__Impl_in_rule__Map__Group__04755);
             rule__Map__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Map__Group__1_in_rule__Map__Group__05267);
+            pushFollow(FOLLOW_rule__Map__Group__1_in_rule__Map__Group__04758);
             rule__Map__Group__1();
 
             state._fsp--;
@@ -7232,20 +6514,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2585:1: rule__Map__Group__0__Impl : ( '[' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2351:1: rule__Map__Group__0__Impl : ( '[' ) ;
     public final void rule__Map__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2589:1: ( ( '[' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2590:1: ( '[' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2355:1: ( ( '[' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2356:1: ( '[' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2590:1: ( '[' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2591:1: '['
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2356:1: ( '[' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2357:1: '['
             {
              before(grammarAccess.getMapAccess().getLeftSquareBracketKeyword_0()); 
-            match(input,27,FOLLOW_27_in_rule__Map__Group__0__Impl5295); 
+            match(input,27,FOLLOW_27_in_rule__Map__Group__0__Impl4786); 
              after(grammarAccess.getMapAccess().getLeftSquareBracketKeyword_0()); 
 
             }
@@ -7269,21 +6551,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2604:1: rule__Map__Group__1 : rule__Map__Group__1__Impl rule__Map__Group__2 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2370:1: rule__Map__Group__1 : rule__Map__Group__1__Impl rule__Map__Group__2 ;
     public final void rule__Map__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2608:1: ( rule__Map__Group__1__Impl rule__Map__Group__2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2609:2: rule__Map__Group__1__Impl rule__Map__Group__2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2374:1: ( rule__Map__Group__1__Impl rule__Map__Group__2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2375:2: rule__Map__Group__1__Impl rule__Map__Group__2
             {
-            pushFollow(FOLLOW_rule__Map__Group__1__Impl_in_rule__Map__Group__15326);
+            pushFollow(FOLLOW_rule__Map__Group__1__Impl_in_rule__Map__Group__14817);
             rule__Map__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Map__Group__2_in_rule__Map__Group__15329);
+            pushFollow(FOLLOW_rule__Map__Group__2_in_rule__Map__Group__14820);
             rule__Map__Group__2();
 
             state._fsp--;
@@ -7307,23 +6589,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2616:1: rule__Map__Group__1__Impl : ( ( rule__Map__MappingAssignment_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2382:1: rule__Map__Group__1__Impl : ( ( rule__Map__MappingAssignment_1 ) ) ;
     public final void rule__Map__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2620:1: ( ( ( rule__Map__MappingAssignment_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2621:1: ( ( rule__Map__MappingAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2386:1: ( ( ( rule__Map__MappingAssignment_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2387:1: ( ( rule__Map__MappingAssignment_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2621:1: ( ( rule__Map__MappingAssignment_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2622:1: ( rule__Map__MappingAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2387:1: ( ( rule__Map__MappingAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2388:1: ( rule__Map__MappingAssignment_1 )
             {
              before(grammarAccess.getMapAccess().getMappingAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2623:1: ( rule__Map__MappingAssignment_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2623:2: rule__Map__MappingAssignment_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2389:1: ( rule__Map__MappingAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2389:2: rule__Map__MappingAssignment_1
             {
-            pushFollow(FOLLOW_rule__Map__MappingAssignment_1_in_rule__Map__Group__1__Impl5356);
+            pushFollow(FOLLOW_rule__Map__MappingAssignment_1_in_rule__Map__Group__1__Impl4847);
             rule__Map__MappingAssignment_1();
 
             state._fsp--;
@@ -7354,21 +6636,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group__2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2633:1: rule__Map__Group__2 : rule__Map__Group__2__Impl rule__Map__Group__3 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2399:1: rule__Map__Group__2 : rule__Map__Group__2__Impl rule__Map__Group__3 ;
     public final void rule__Map__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2637:1: ( rule__Map__Group__2__Impl rule__Map__Group__3 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2638:2: rule__Map__Group__2__Impl rule__Map__Group__3
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2403:1: ( rule__Map__Group__2__Impl rule__Map__Group__3 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2404:2: rule__Map__Group__2__Impl rule__Map__Group__3
             {
-            pushFollow(FOLLOW_rule__Map__Group__2__Impl_in_rule__Map__Group__25386);
+            pushFollow(FOLLOW_rule__Map__Group__2__Impl_in_rule__Map__Group__24877);
             rule__Map__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Map__Group__3_in_rule__Map__Group__25389);
+            pushFollow(FOLLOW_rule__Map__Group__3_in_rule__Map__Group__24880);
             rule__Map__Group__3();
 
             state._fsp--;
@@ -7392,35 +6674,35 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group__2__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2645:1: rule__Map__Group__2__Impl : ( ( rule__Map__Group_2__0 )* ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2411:1: rule__Map__Group__2__Impl : ( ( rule__Map__Group_2__0 )* ) ;
     public final void rule__Map__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2649:1: ( ( ( rule__Map__Group_2__0 )* ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2650:1: ( ( rule__Map__Group_2__0 )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2415:1: ( ( ( rule__Map__Group_2__0 )* ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2416:1: ( ( rule__Map__Group_2__0 )* )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2650:1: ( ( rule__Map__Group_2__0 )* )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2651:1: ( rule__Map__Group_2__0 )*
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2416:1: ( ( rule__Map__Group_2__0 )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2417:1: ( rule__Map__Group_2__0 )*
             {
              before(grammarAccess.getMapAccess().getGroup_2()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2652:1: ( rule__Map__Group_2__0 )*
-            loop25:
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2418:1: ( rule__Map__Group_2__0 )*
+            loop14:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA25_0==24) ) {
-                    alt25=1;
+                if ( (LA14_0==24) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt14) {
             	case 1 :
-            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2652:2: rule__Map__Group_2__0
+            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2418:2: rule__Map__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__Map__Group_2__0_in_rule__Map__Group__2__Impl5416);
+            	    pushFollow(FOLLOW_rule__Map__Group_2__0_in_rule__Map__Group__2__Impl4907);
             	    rule__Map__Group_2__0();
 
             	    state._fsp--;
@@ -7430,7 +6712,7 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop14;
                 }
             } while (true);
 
@@ -7457,16 +6739,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group__3"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2662:1: rule__Map__Group__3 : rule__Map__Group__3__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2428:1: rule__Map__Group__3 : rule__Map__Group__3__Impl ;
     public final void rule__Map__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2666:1: ( rule__Map__Group__3__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2667:2: rule__Map__Group__3__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2432:1: ( rule__Map__Group__3__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2433:2: rule__Map__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Map__Group__3__Impl_in_rule__Map__Group__35447);
+            pushFollow(FOLLOW_rule__Map__Group__3__Impl_in_rule__Map__Group__34938);
             rule__Map__Group__3__Impl();
 
             state._fsp--;
@@ -7490,20 +6772,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group__3__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2673:1: rule__Map__Group__3__Impl : ( ']' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2439:1: rule__Map__Group__3__Impl : ( ']' ) ;
     public final void rule__Map__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2677:1: ( ( ']' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2678:1: ( ']' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2443:1: ( ( ']' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2444:1: ( ']' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2678:1: ( ']' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2679:1: ']'
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2444:1: ( ']' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2445:1: ']'
             {
              before(grammarAccess.getMapAccess().getRightSquareBracketKeyword_3()); 
-            match(input,28,FOLLOW_28_in_rule__Map__Group__3__Impl5475); 
+            match(input,28,FOLLOW_28_in_rule__Map__Group__3__Impl4966); 
              after(grammarAccess.getMapAccess().getRightSquareBracketKeyword_3()); 
 
             }
@@ -7527,21 +6809,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group_2__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2700:1: rule__Map__Group_2__0 : rule__Map__Group_2__0__Impl rule__Map__Group_2__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2466:1: rule__Map__Group_2__0 : rule__Map__Group_2__0__Impl rule__Map__Group_2__1 ;
     public final void rule__Map__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2704:1: ( rule__Map__Group_2__0__Impl rule__Map__Group_2__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2705:2: rule__Map__Group_2__0__Impl rule__Map__Group_2__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2470:1: ( rule__Map__Group_2__0__Impl rule__Map__Group_2__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2471:2: rule__Map__Group_2__0__Impl rule__Map__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Map__Group_2__0__Impl_in_rule__Map__Group_2__05514);
+            pushFollow(FOLLOW_rule__Map__Group_2__0__Impl_in_rule__Map__Group_2__05005);
             rule__Map__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Map__Group_2__1_in_rule__Map__Group_2__05517);
+            pushFollow(FOLLOW_rule__Map__Group_2__1_in_rule__Map__Group_2__05008);
             rule__Map__Group_2__1();
 
             state._fsp--;
@@ -7565,20 +6847,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group_2__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2712:1: rule__Map__Group_2__0__Impl : ( ',' ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2478:1: rule__Map__Group_2__0__Impl : ( ',' ) ;
     public final void rule__Map__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2716:1: ( ( ',' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2717:1: ( ',' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2482:1: ( ( ',' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2483:1: ( ',' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2717:1: ( ',' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2718:1: ','
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2483:1: ( ',' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2484:1: ','
             {
              before(grammarAccess.getMapAccess().getCommaKeyword_2_0()); 
-            match(input,24,FOLLOW_24_in_rule__Map__Group_2__0__Impl5545); 
+            match(input,24,FOLLOW_24_in_rule__Map__Group_2__0__Impl5036); 
              after(grammarAccess.getMapAccess().getCommaKeyword_2_0()); 
 
             }
@@ -7602,16 +6884,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group_2__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2731:1: rule__Map__Group_2__1 : rule__Map__Group_2__1__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2497:1: rule__Map__Group_2__1 : rule__Map__Group_2__1__Impl ;
     public final void rule__Map__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2735:1: ( rule__Map__Group_2__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2736:2: rule__Map__Group_2__1__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2501:1: ( rule__Map__Group_2__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2502:2: rule__Map__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Map__Group_2__1__Impl_in_rule__Map__Group_2__15576);
+            pushFollow(FOLLOW_rule__Map__Group_2__1__Impl_in_rule__Map__Group_2__15067);
             rule__Map__Group_2__1__Impl();
 
             state._fsp--;
@@ -7635,23 +6917,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__Group_2__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2742:1: rule__Map__Group_2__1__Impl : ( ( rule__Map__OtherMappingAssignment_2_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2508:1: rule__Map__Group_2__1__Impl : ( ( rule__Map__OtherMappingAssignment_2_1 ) ) ;
     public final void rule__Map__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2746:1: ( ( ( rule__Map__OtherMappingAssignment_2_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2747:1: ( ( rule__Map__OtherMappingAssignment_2_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2512:1: ( ( ( rule__Map__OtherMappingAssignment_2_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2513:1: ( ( rule__Map__OtherMappingAssignment_2_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2747:1: ( ( rule__Map__OtherMappingAssignment_2_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2748:1: ( rule__Map__OtherMappingAssignment_2_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2513:1: ( ( rule__Map__OtherMappingAssignment_2_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2514:1: ( rule__Map__OtherMappingAssignment_2_1 )
             {
              before(grammarAccess.getMapAccess().getOtherMappingAssignment_2_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2749:1: ( rule__Map__OtherMappingAssignment_2_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2749:2: rule__Map__OtherMappingAssignment_2_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2515:1: ( rule__Map__OtherMappingAssignment_2_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2515:2: rule__Map__OtherMappingAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__Map__OtherMappingAssignment_2_1_in_rule__Map__Group_2__1__Impl5603);
+            pushFollow(FOLLOW_rule__Map__OtherMappingAssignment_2_1_in_rule__Map__Group_2__1__Impl5094);
             rule__Map__OtherMappingAssignment_2_1();
 
             state._fsp--;
@@ -7682,21 +6964,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2763:1: rule__Mapping__Group__0 : rule__Mapping__Group__0__Impl rule__Mapping__Group__1 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2529:1: rule__Mapping__Group__0 : rule__Mapping__Group__0__Impl rule__Mapping__Group__1 ;
     public final void rule__Mapping__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2767:1: ( rule__Mapping__Group__0__Impl rule__Mapping__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2768:2: rule__Mapping__Group__0__Impl rule__Mapping__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2533:1: ( rule__Mapping__Group__0__Impl rule__Mapping__Group__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2534:2: rule__Mapping__Group__0__Impl rule__Mapping__Group__1
             {
-            pushFollow(FOLLOW_rule__Mapping__Group__0__Impl_in_rule__Mapping__Group__05637);
+            pushFollow(FOLLOW_rule__Mapping__Group__0__Impl_in_rule__Mapping__Group__05128);
             rule__Mapping__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mapping__Group__1_in_rule__Mapping__Group__05640);
+            pushFollow(FOLLOW_rule__Mapping__Group__1_in_rule__Mapping__Group__05131);
             rule__Mapping__Group__1();
 
             state._fsp--;
@@ -7720,23 +7002,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2775:1: rule__Mapping__Group__0__Impl : ( ( rule__Mapping__IdAssignment_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2541:1: rule__Mapping__Group__0__Impl : ( ( rule__Mapping__IdAssignment_0 ) ) ;
     public final void rule__Mapping__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2779:1: ( ( ( rule__Mapping__IdAssignment_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2780:1: ( ( rule__Mapping__IdAssignment_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2545:1: ( ( ( rule__Mapping__IdAssignment_0 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2546:1: ( ( rule__Mapping__IdAssignment_0 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2780:1: ( ( rule__Mapping__IdAssignment_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2781:1: ( rule__Mapping__IdAssignment_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2546:1: ( ( rule__Mapping__IdAssignment_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2547:1: ( rule__Mapping__IdAssignment_0 )
             {
              before(grammarAccess.getMappingAccess().getIdAssignment_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2782:1: ( rule__Mapping__IdAssignment_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2782:2: rule__Mapping__IdAssignment_0
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2548:1: ( rule__Mapping__IdAssignment_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2548:2: rule__Mapping__IdAssignment_0
             {
-            pushFollow(FOLLOW_rule__Mapping__IdAssignment_0_in_rule__Mapping__Group__0__Impl5667);
+            pushFollow(FOLLOW_rule__Mapping__IdAssignment_0_in_rule__Mapping__Group__0__Impl5158);
             rule__Mapping__IdAssignment_0();
 
             state._fsp--;
@@ -7767,21 +7049,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2792:1: rule__Mapping__Group__1 : rule__Mapping__Group__1__Impl rule__Mapping__Group__2 ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2558:1: rule__Mapping__Group__1 : rule__Mapping__Group__1__Impl rule__Mapping__Group__2 ;
     public final void rule__Mapping__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2796:1: ( rule__Mapping__Group__1__Impl rule__Mapping__Group__2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2797:2: rule__Mapping__Group__1__Impl rule__Mapping__Group__2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2562:1: ( rule__Mapping__Group__1__Impl rule__Mapping__Group__2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2563:2: rule__Mapping__Group__1__Impl rule__Mapping__Group__2
             {
-            pushFollow(FOLLOW_rule__Mapping__Group__1__Impl_in_rule__Mapping__Group__15697);
+            pushFollow(FOLLOW_rule__Mapping__Group__1__Impl_in_rule__Mapping__Group__15188);
             rule__Mapping__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Mapping__Group__2_in_rule__Mapping__Group__15700);
+            pushFollow(FOLLOW_rule__Mapping__Group__2_in_rule__Mapping__Group__15191);
             rule__Mapping__Group__2();
 
             state._fsp--;
@@ -7805,23 +7087,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2804:1: rule__Mapping__Group__1__Impl : ( ( rule__Mapping__AssignAssignment_1 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2570:1: rule__Mapping__Group__1__Impl : ( ( rule__Mapping__AssignAssignment_1 ) ) ;
     public final void rule__Mapping__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2808:1: ( ( ( rule__Mapping__AssignAssignment_1 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2809:1: ( ( rule__Mapping__AssignAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2574:1: ( ( ( rule__Mapping__AssignAssignment_1 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2575:1: ( ( rule__Mapping__AssignAssignment_1 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2809:1: ( ( rule__Mapping__AssignAssignment_1 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2810:1: ( rule__Mapping__AssignAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2575:1: ( ( rule__Mapping__AssignAssignment_1 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2576:1: ( rule__Mapping__AssignAssignment_1 )
             {
              before(grammarAccess.getMappingAccess().getAssignAssignment_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2811:1: ( rule__Mapping__AssignAssignment_1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2811:2: rule__Mapping__AssignAssignment_1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2577:1: ( rule__Mapping__AssignAssignment_1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2577:2: rule__Mapping__AssignAssignment_1
             {
-            pushFollow(FOLLOW_rule__Mapping__AssignAssignment_1_in_rule__Mapping__Group__1__Impl5727);
+            pushFollow(FOLLOW_rule__Mapping__AssignAssignment_1_in_rule__Mapping__Group__1__Impl5218);
             rule__Mapping__AssignAssignment_1();
 
             state._fsp--;
@@ -7852,16 +7134,16 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2821:1: rule__Mapping__Group__2 : rule__Mapping__Group__2__Impl ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2587:1: rule__Mapping__Group__2 : rule__Mapping__Group__2__Impl ;
     public final void rule__Mapping__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2825:1: ( rule__Mapping__Group__2__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2826:2: rule__Mapping__Group__2__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2591:1: ( rule__Mapping__Group__2__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2592:2: rule__Mapping__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Mapping__Group__2__Impl_in_rule__Mapping__Group__25757);
+            pushFollow(FOLLOW_rule__Mapping__Group__2__Impl_in_rule__Mapping__Group__25248);
             rule__Mapping__Group__2__Impl();
 
             state._fsp--;
@@ -7885,23 +7167,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__Group__2__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2832:1: rule__Mapping__Group__2__Impl : ( ( rule__Mapping__ValueAssignment_2 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2598:1: rule__Mapping__Group__2__Impl : ( ( rule__Mapping__ValueAssignment_2 ) ) ;
     public final void rule__Mapping__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2836:1: ( ( ( rule__Mapping__ValueAssignment_2 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2837:1: ( ( rule__Mapping__ValueAssignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2602:1: ( ( ( rule__Mapping__ValueAssignment_2 ) ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2603:1: ( ( rule__Mapping__ValueAssignment_2 ) )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2837:1: ( ( rule__Mapping__ValueAssignment_2 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2838:1: ( rule__Mapping__ValueAssignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2603:1: ( ( rule__Mapping__ValueAssignment_2 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2604:1: ( rule__Mapping__ValueAssignment_2 )
             {
              before(grammarAccess.getMappingAccess().getValueAssignment_2()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2839:1: ( rule__Mapping__ValueAssignment_2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2839:2: rule__Mapping__ValueAssignment_2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2605:1: ( rule__Mapping__ValueAssignment_2 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2605:2: rule__Mapping__ValueAssignment_2
             {
-            pushFollow(FOLLOW_rule__Mapping__ValueAssignment_2_in_rule__Mapping__Group__2__Impl5784);
+            pushFollow(FOLLOW_rule__Mapping__ValueAssignment_2_in_rule__Mapping__Group__2__Impl5275);
             rule__Mapping__ValueAssignment_2();
 
             state._fsp--;
@@ -7931,93 +7213,23 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Mapping__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Real__Group__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2855:1: rule__Real__Group__0 : rule__Real__Group__0__Impl rule__Real__Group__1 ;
-    public final void rule__Real__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Id__Group_2__0"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2621:1: rule__Id__Group_2__0 : rule__Id__Group_2__0__Impl rule__Id__Group_2__1 ;
+    public final void rule__Id__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2859:1: ( rule__Real__Group__0__Impl rule__Real__Group__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2860:2: rule__Real__Group__0__Impl rule__Real__Group__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2625:1: ( rule__Id__Group_2__0__Impl rule__Id__Group_2__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2626:2: rule__Id__Group_2__0__Impl rule__Id__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Real__Group__0__Impl_in_rule__Real__Group__05820);
-            rule__Real__Group__0__Impl();
+            pushFollow(FOLLOW_rule__Id__Group_2__0__Impl_in_rule__Id__Group_2__05311);
+            rule__Id__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Real__Group__1_in_rule__Real__Group__05823);
-            rule__Real__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Real__Group__0"
-
-
-    // $ANTLR start "rule__Real__Group__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2867:1: rule__Real__Group__0__Impl : ( RULE_INT ) ;
-    public final void rule__Real__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2871:1: ( ( RULE_INT ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2872:1: ( RULE_INT )
-            {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2872:1: ( RULE_INT )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2873:1: RULE_INT
-            {
-             before(grammarAccess.getRealAccess().getINTTerminalRuleCall_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Real__Group__0__Impl5850); 
-             after(grammarAccess.getRealAccess().getINTTerminalRuleCall_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Real__Group__0__Impl"
-
-
-    // $ANTLR start "rule__Real__Group__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2884:1: rule__Real__Group__1 : rule__Real__Group__1__Impl ;
-    public final void rule__Real__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2888:1: ( rule__Real__Group__1__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2889:2: rule__Real__Group__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Real__Group__1__Impl_in_rule__Real__Group__15879);
-            rule__Real__Group__1__Impl();
+            pushFollow(FOLLOW_rule__Id__Group_2__1_in_rule__Id__Group_2__05314);
+            rule__Id__Group_2__1();
 
             state._fsp--;
 
@@ -8036,35 +7248,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Real__Group__1"
+    // $ANTLR end "rule__Id__Group_2__0"
 
 
-    // $ANTLR start "rule__Real__Group__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2895:1: rule__Real__Group__1__Impl : ( ( rule__Real__Group_1__0 ) ) ;
-    public final void rule__Real__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Id__Group_2__0__Impl"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2633:1: rule__Id__Group_2__0__Impl : ( RULE_WORD ) ;
+    public final void rule__Id__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2899:1: ( ( ( rule__Real__Group_1__0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2900:1: ( ( rule__Real__Group_1__0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2637:1: ( ( RULE_WORD ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2638:1: ( RULE_WORD )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2900:1: ( ( rule__Real__Group_1__0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2901:1: ( rule__Real__Group_1__0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2638:1: ( RULE_WORD )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2639:1: RULE_WORD
             {
-             before(grammarAccess.getRealAccess().getGroup_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2902:1: ( rule__Real__Group_1__0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2902:2: rule__Real__Group_1__0
-            {
-            pushFollow(FOLLOW_rule__Real__Group_1__0_in_rule__Real__Group__1__Impl5906);
-            rule__Real__Group_1__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRealAccess().getGroup_1()); 
+             before(grammarAccess.getIdAccess().getWORDTerminalRuleCall_2_0()); 
+            match(input,RULE_WORD,FOLLOW_RULE_WORD_in_rule__Id__Group_2__0__Impl5341); 
+             after(grammarAccess.getIdAccess().getWORDTerminalRuleCall_2_0()); 
 
             }
 
@@ -8083,26 +7285,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Real__Group__1__Impl"
+    // $ANTLR end "rule__Id__Group_2__0__Impl"
 
 
-    // $ANTLR start "rule__Real__Group_1__0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2916:1: rule__Real__Group_1__0 : rule__Real__Group_1__0__Impl rule__Real__Group_1__1 ;
-    public final void rule__Real__Group_1__0() throws RecognitionException {
+    // $ANTLR start "rule__Id__Group_2__1"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2650:1: rule__Id__Group_2__1 : rule__Id__Group_2__1__Impl ;
+    public final void rule__Id__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2920:1: ( rule__Real__Group_1__0__Impl rule__Real__Group_1__1 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2921:2: rule__Real__Group_1__0__Impl rule__Real__Group_1__1
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2654:1: ( rule__Id__Group_2__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2655:2: rule__Id__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Real__Group_1__0__Impl_in_rule__Real__Group_1__05940);
-            rule__Real__Group_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Real__Group_1__1_in_rule__Real__Group_1__05943);
-            rule__Real__Group_1__1();
+            pushFollow(FOLLOW_rule__Id__Group_2__1__Impl_in_rule__Id__Group_2__15370);
+            rule__Id__Group_2__1__Impl();
 
             state._fsp--;
 
@@ -8121,124 +7318,53 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Real__Group_1__0"
+    // $ANTLR end "rule__Id__Group_2__1"
 
 
-    // $ANTLR start "rule__Real__Group_1__0__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2928:1: rule__Real__Group_1__0__Impl : ( '.' ) ;
-    public final void rule__Real__Group_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2932:1: ( ( '.' ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2933:1: ( '.' )
-            {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2933:1: ( '.' )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2934:1: '.'
-            {
-             before(grammarAccess.getRealAccess().getFullStopKeyword_1_0()); 
-            match(input,29,FOLLOW_29_in_rule__Real__Group_1__0__Impl5971); 
-             after(grammarAccess.getRealAccess().getFullStopKeyword_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Real__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__Real__Group_1__1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2947:1: rule__Real__Group_1__1 : rule__Real__Group_1__1__Impl rule__Real__Group_1__2 ;
-    public final void rule__Real__Group_1__1() throws RecognitionException {
+    // $ANTLR start "rule__Id__Group_2__1__Impl"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2661:1: rule__Id__Group_2__1__Impl : ( ( rule__Id__Group_2_1__0 )* ) ;
+    public final void rule__Id__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2951:1: ( rule__Real__Group_1__1__Impl rule__Real__Group_1__2 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2952:2: rule__Real__Group_1__1__Impl rule__Real__Group_1__2
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2665:1: ( ( ( rule__Id__Group_2_1__0 )* ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2666:1: ( ( rule__Id__Group_2_1__0 )* )
             {
-            pushFollow(FOLLOW_rule__Real__Group_1__1__Impl_in_rule__Real__Group_1__16002);
-            rule__Real__Group_1__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Real__Group_1__2_in_rule__Real__Group_1__16005);
-            rule__Real__Group_1__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Real__Group_1__1"
-
-
-    // $ANTLR start "rule__Real__Group_1__1__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2959:1: rule__Real__Group_1__1__Impl : ( ( '0' )* ) ;
-    public final void rule__Real__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2963:1: ( ( ( '0' )* ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2964:1: ( ( '0' )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2666:1: ( ( rule__Id__Group_2_1__0 )* )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2667:1: ( rule__Id__Group_2_1__0 )*
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2964:1: ( ( '0' )* )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2965:1: ( '0' )*
-            {
-             before(grammarAccess.getRealAccess().getDigitZeroKeyword_1_1()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2966:1: ( '0' )*
-            loop26:
+             before(grammarAccess.getIdAccess().getGroup_2_1()); 
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2668:1: ( rule__Id__Group_2_1__0 )*
+            loop15:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-                if ( (LA26_0==30) ) {
-                    alt26=1;
+                if ( (LA15_0==29) ) {
+                    alt15=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt15) {
             	case 1 :
-            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2967:2: '0'
+            	    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2668:2: rule__Id__Group_2_1__0
             	    {
-            	    match(input,30,FOLLOW_30_in_rule__Real__Group_1__1__Impl6034); 
+            	    pushFollow(FOLLOW_rule__Id__Group_2_1__0_in_rule__Id__Group_2__1__Impl5397);
+            	    rule__Id__Group_2_1__0();
+
+            	    state._fsp--;
+
 
             	    }
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop15;
                 }
             } while (true);
 
-             after(grammarAccess.getRealAccess().getDigitZeroKeyword_1_1()); 
+             after(grammarAccess.getIdAccess().getGroup_2_1()); 
 
             }
 
@@ -8257,21 +7383,26 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Real__Group_1__1__Impl"
+    // $ANTLR end "rule__Id__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__Real__Group_1__2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2978:1: rule__Real__Group_1__2 : rule__Real__Group_1__2__Impl ;
-    public final void rule__Real__Group_1__2() throws RecognitionException {
+    // $ANTLR start "rule__Id__Group_2_1__0"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2682:1: rule__Id__Group_2_1__0 : rule__Id__Group_2_1__0__Impl rule__Id__Group_2_1__1 ;
+    public final void rule__Id__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2982:1: ( rule__Real__Group_1__2__Impl )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2983:2: rule__Real__Group_1__2__Impl
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2686:1: ( rule__Id__Group_2_1__0__Impl rule__Id__Group_2_1__1 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2687:2: rule__Id__Group_2_1__0__Impl rule__Id__Group_2_1__1
             {
-            pushFollow(FOLLOW_rule__Real__Group_1__2__Impl_in_rule__Real__Group_1__26067);
-            rule__Real__Group_1__2__Impl();
+            pushFollow(FOLLOW_rule__Id__Group_2_1__0__Impl_in_rule__Id__Group_2_1__05432);
+            rule__Id__Group_2_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Id__Group_2_1__1_in_rule__Id__Group_2_1__05435);
+            rule__Id__Group_2_1__1();
 
             state._fsp--;
 
@@ -8290,25 +7421,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Real__Group_1__2"
+    // $ANTLR end "rule__Id__Group_2_1__0"
 
 
-    // $ANTLR start "rule__Real__Group_1__2__Impl"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2989:1: rule__Real__Group_1__2__Impl : ( RULE_INT ) ;
-    public final void rule__Real__Group_1__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Id__Group_2_1__0__Impl"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2694:1: rule__Id__Group_2_1__0__Impl : ( '.' ) ;
+    public final void rule__Id__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2993:1: ( ( RULE_INT ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2994:1: ( RULE_INT )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2698:1: ( ( '.' ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2699:1: ( '.' )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2994:1: ( RULE_INT )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2995:1: RULE_INT
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2699:1: ( '.' )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2700:1: '.'
             {
-             before(grammarAccess.getRealAccess().getINTTerminalRuleCall_1_2()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Real__Group_1__2__Impl6094); 
-             after(grammarAccess.getRealAccess().getINTTerminalRuleCall_1_2()); 
+             before(grammarAccess.getIdAccess().getFullStopKeyword_2_1_0()); 
+            match(input,29,FOLLOW_29_in_rule__Id__Group_2_1__0__Impl5463); 
+             after(grammarAccess.getIdAccess().getFullStopKeyword_2_1_0()); 
 
             }
 
@@ -8327,24 +7458,94 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Real__Group_1__2__Impl"
+    // $ANTLR end "rule__Id__Group_2_1__0__Impl"
+
+
+    // $ANTLR start "rule__Id__Group_2_1__1"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2713:1: rule__Id__Group_2_1__1 : rule__Id__Group_2_1__1__Impl ;
+    public final void rule__Id__Group_2_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2717:1: ( rule__Id__Group_2_1__1__Impl )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2718:2: rule__Id__Group_2_1__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Id__Group_2_1__1__Impl_in_rule__Id__Group_2_1__15494);
+            rule__Id__Group_2_1__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Id__Group_2_1__1"
+
+
+    // $ANTLR start "rule__Id__Group_2_1__1__Impl"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2724:1: rule__Id__Group_2_1__1__Impl : ( RULE_WORD ) ;
+    public final void rule__Id__Group_2_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2728:1: ( ( RULE_WORD ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2729:1: ( RULE_WORD )
+            {
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2729:1: ( RULE_WORD )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2730:1: RULE_WORD
+            {
+             before(grammarAccess.getIdAccess().getWORDTerminalRuleCall_2_1_1()); 
+            match(input,RULE_WORD,FOLLOW_RULE_WORD_in_rule__Id__Group_2_1__1__Impl5521); 
+             after(grammarAccess.getIdAccess().getWORDTerminalRuleCall_2_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Id__Group_2_1__1__Impl"
 
 
     // $ANTLR start "rule__Dgs__HeaderAssignment_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3013:1: rule__Dgs__HeaderAssignment_0 : ( ruleHeader ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2746:1: rule__Dgs__HeaderAssignment_0 : ( ruleHeader ) ;
     public final void rule__Dgs__HeaderAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3017:1: ( ( ruleHeader ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3018:1: ( ruleHeader )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2750:1: ( ( ruleHeader ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2751:1: ( ruleHeader )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3018:1: ( ruleHeader )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3019:1: ruleHeader
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2751:1: ( ruleHeader )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2752:1: ruleHeader
             {
              before(grammarAccess.getDgsAccess().getHeaderHeaderParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleHeader_in_rule__Dgs__HeaderAssignment_06134);
+            pushFollow(FOLLOW_ruleHeader_in_rule__Dgs__HeaderAssignment_05559);
             ruleHeader();
 
             state._fsp--;
@@ -8372,20 +7573,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Dgs__EventAssignment_1_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3028:1: rule__Dgs__EventAssignment_1_0 : ( ruleEvent ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2761:1: rule__Dgs__EventAssignment_1_0 : ( ruleEvent ) ;
     public final void rule__Dgs__EventAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3032:1: ( ( ruleEvent ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3033:1: ( ruleEvent )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2765:1: ( ( ruleEvent ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2766:1: ( ruleEvent )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3033:1: ( ruleEvent )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3034:1: ruleEvent
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2766:1: ( ruleEvent )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2767:1: ruleEvent
             {
              before(grammarAccess.getDgsAccess().getEventEventParserRuleCall_1_0_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__Dgs__EventAssignment_1_06165);
+            pushFollow(FOLLOW_ruleEvent_in_rule__Dgs__EventAssignment_1_05590);
             ruleEvent();
 
             state._fsp--;
@@ -8413,20 +7614,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Dgs__CommentAssignment_1_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3043:1: rule__Dgs__CommentAssignment_1_1 : ( RULE_COMMENT ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2776:1: rule__Dgs__CommentAssignment_1_1 : ( RULE_COMMENT ) ;
     public final void rule__Dgs__CommentAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3047:1: ( ( RULE_COMMENT ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3048:1: ( RULE_COMMENT )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2780:1: ( ( RULE_COMMENT ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2781:1: ( RULE_COMMENT )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3048:1: ( RULE_COMMENT )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3049:1: RULE_COMMENT
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2781:1: ( RULE_COMMENT )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2782:1: RULE_COMMENT
             {
              before(grammarAccess.getDgsAccess().getCommentCOMMENTTerminalRuleCall_1_1_0()); 
-            match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_rule__Dgs__CommentAssignment_1_16196); 
+            match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_rule__Dgs__CommentAssignment_1_15621); 
              after(grammarAccess.getDgsAccess().getCommentCOMMENTTerminalRuleCall_1_1_0()); 
 
             }
@@ -8450,20 +7651,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__MagicAssignment_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3058:1: rule__Header__MagicAssignment_0 : ( RULE_MAGIC ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2791:1: rule__Header__MagicAssignment_0 : ( RULE_MAGIC ) ;
     public final void rule__Header__MagicAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3062:1: ( ( RULE_MAGIC ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3063:1: ( RULE_MAGIC )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2795:1: ( ( RULE_MAGIC ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2796:1: ( RULE_MAGIC )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3063:1: ( RULE_MAGIC )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3064:1: RULE_MAGIC
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2796:1: ( RULE_MAGIC )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2797:1: RULE_MAGIC
             {
              before(grammarAccess.getHeaderAccess().getMagicMAGICTerminalRuleCall_0_0()); 
-            match(input,RULE_MAGIC,FOLLOW_RULE_MAGIC_in_rule__Header__MagicAssignment_06227); 
+            match(input,RULE_MAGIC,FOLLOW_RULE_MAGIC_in_rule__Header__MagicAssignment_05652); 
              after(grammarAccess.getHeaderAccess().getMagicMAGICTerminalRuleCall_0_0()); 
 
             }
@@ -8487,31 +7688,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__NameAssignment_2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3073:1: rule__Header__NameAssignment_2 : ( ( rule__Header__NameAlternatives_2_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2806:1: rule__Header__NameAssignment_2 : ( ruleId ) ;
     public final void rule__Header__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3077:1: ( ( ( rule__Header__NameAlternatives_2_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3078:1: ( ( rule__Header__NameAlternatives_2_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2810:1: ( ( ruleId ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2811:1: ( ruleId )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3078:1: ( ( rule__Header__NameAlternatives_2_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3079:1: ( rule__Header__NameAlternatives_2_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2811:1: ( ruleId )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2812:1: ruleId
             {
-             before(grammarAccess.getHeaderAccess().getNameAlternatives_2_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3080:1: ( rule__Header__NameAlternatives_2_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3080:2: rule__Header__NameAlternatives_2_0
-            {
-            pushFollow(FOLLOW_rule__Header__NameAlternatives_2_0_in_rule__Header__NameAssignment_26258);
-            rule__Header__NameAlternatives_2_0();
+             before(grammarAccess.getHeaderAccess().getNameIdParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_ruleId_in_rule__Header__NameAssignment_25683);
+            ruleId();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getHeaderAccess().getNameAlternatives_2_0()); 
+             after(grammarAccess.getHeaderAccess().getNameIdParserRuleCall_2_0()); 
 
             }
 
@@ -8534,20 +7729,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__NumberOfStepsAssignment_3"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3089:1: rule__Header__NumberOfStepsAssignment_3 : ( RULE_INT ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2821:1: rule__Header__NumberOfStepsAssignment_3 : ( RULE_INT ) ;
     public final void rule__Header__NumberOfStepsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3093:1: ( ( RULE_INT ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3094:1: ( RULE_INT )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2825:1: ( ( RULE_INT ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2826:1: ( RULE_INT )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3094:1: ( RULE_INT )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3095:1: RULE_INT
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2826:1: ( RULE_INT )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2827:1: RULE_INT
             {
              before(grammarAccess.getHeaderAccess().getNumberOfStepsINTTerminalRuleCall_3_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Header__NumberOfStepsAssignment_36291); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Header__NumberOfStepsAssignment_35714); 
              after(grammarAccess.getHeaderAccess().getNumberOfStepsINTTerminalRuleCall_3_0()); 
 
             }
@@ -8571,20 +7766,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__NumberOfEventsAssignment_4"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3104:1: rule__Header__NumberOfEventsAssignment_4 : ( RULE_INT ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2836:1: rule__Header__NumberOfEventsAssignment_4 : ( RULE_INT ) ;
     public final void rule__Header__NumberOfEventsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3108:1: ( ( RULE_INT ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3109:1: ( RULE_INT )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2840:1: ( ( RULE_INT ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2841:1: ( RULE_INT )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3109:1: ( RULE_INT )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3110:1: RULE_INT
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2841:1: ( RULE_INT )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2842:1: RULE_INT
             {
              before(grammarAccess.getHeaderAccess().getNumberOfEventsINTTerminalRuleCall_4_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Header__NumberOfEventsAssignment_46322); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Header__NumberOfEventsAssignment_45745); 
              after(grammarAccess.getHeaderAccess().getNumberOfEventsINTTerminalRuleCall_4_0()); 
 
             }
@@ -8608,20 +7803,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__AnAssignment_0_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3119:1: rule__Event__AnAssignment_0_0 : ( ruleAn ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2851:1: rule__Event__AnAssignment_0_0 : ( ruleAn ) ;
     public final void rule__Event__AnAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3123:1: ( ( ruleAn ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3124:1: ( ruleAn )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2855:1: ( ( ruleAn ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2856:1: ( ruleAn )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3124:1: ( ruleAn )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3125:1: ruleAn
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2856:1: ( ruleAn )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2857:1: ruleAn
             {
              before(grammarAccess.getEventAccess().getAnAnParserRuleCall_0_0_0()); 
-            pushFollow(FOLLOW_ruleAn_in_rule__Event__AnAssignment_0_06353);
+            pushFollow(FOLLOW_ruleAn_in_rule__Event__AnAssignment_0_05776);
             ruleAn();
 
             state._fsp--;
@@ -8649,20 +7844,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__CnAssignment_0_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3134:1: rule__Event__CnAssignment_0_1 : ( ruleCn ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2866:1: rule__Event__CnAssignment_0_1 : ( ruleCn ) ;
     public final void rule__Event__CnAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3138:1: ( ( ruleCn ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3139:1: ( ruleCn )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2870:1: ( ( ruleCn ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2871:1: ( ruleCn )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3139:1: ( ruleCn )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3140:1: ruleCn
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2871:1: ( ruleCn )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2872:1: ruleCn
             {
              before(grammarAccess.getEventAccess().getCnCnParserRuleCall_0_1_0()); 
-            pushFollow(FOLLOW_ruleCn_in_rule__Event__CnAssignment_0_16384);
+            pushFollow(FOLLOW_ruleCn_in_rule__Event__CnAssignment_0_15807);
             ruleCn();
 
             state._fsp--;
@@ -8690,20 +7885,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__DnAssignment_0_2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3149:1: rule__Event__DnAssignment_0_2 : ( ruleDn ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2881:1: rule__Event__DnAssignment_0_2 : ( ruleDn ) ;
     public final void rule__Event__DnAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3153:1: ( ( ruleDn ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3154:1: ( ruleDn )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2885:1: ( ( ruleDn ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2886:1: ( ruleDn )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3154:1: ( ruleDn )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3155:1: ruleDn
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2886:1: ( ruleDn )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2887:1: ruleDn
             {
              before(grammarAccess.getEventAccess().getDnDnParserRuleCall_0_2_0()); 
-            pushFollow(FOLLOW_ruleDn_in_rule__Event__DnAssignment_0_26415);
+            pushFollow(FOLLOW_ruleDn_in_rule__Event__DnAssignment_0_25838);
             ruleDn();
 
             state._fsp--;
@@ -8731,20 +7926,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__AeAssignment_0_3"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3164:1: rule__Event__AeAssignment_0_3 : ( ruleAe ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2896:1: rule__Event__AeAssignment_0_3 : ( ruleAe ) ;
     public final void rule__Event__AeAssignment_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3168:1: ( ( ruleAe ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3169:1: ( ruleAe )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2900:1: ( ( ruleAe ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2901:1: ( ruleAe )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3169:1: ( ruleAe )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3170:1: ruleAe
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2901:1: ( ruleAe )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2902:1: ruleAe
             {
              before(grammarAccess.getEventAccess().getAeAeParserRuleCall_0_3_0()); 
-            pushFollow(FOLLOW_ruleAe_in_rule__Event__AeAssignment_0_36446);
+            pushFollow(FOLLOW_ruleAe_in_rule__Event__AeAssignment_0_35869);
             ruleAe();
 
             state._fsp--;
@@ -8772,20 +7967,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__CeAssignment_0_4"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3179:1: rule__Event__CeAssignment_0_4 : ( ruleCe ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2911:1: rule__Event__CeAssignment_0_4 : ( ruleCe ) ;
     public final void rule__Event__CeAssignment_0_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3183:1: ( ( ruleCe ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3184:1: ( ruleCe )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2915:1: ( ( ruleCe ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2916:1: ( ruleCe )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3184:1: ( ruleCe )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3185:1: ruleCe
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2916:1: ( ruleCe )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2917:1: ruleCe
             {
              before(grammarAccess.getEventAccess().getCeCeParserRuleCall_0_4_0()); 
-            pushFollow(FOLLOW_ruleCe_in_rule__Event__CeAssignment_0_46477);
+            pushFollow(FOLLOW_ruleCe_in_rule__Event__CeAssignment_0_45900);
             ruleCe();
 
             state._fsp--;
@@ -8813,20 +8008,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__DeAssignment_0_5"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3194:1: rule__Event__DeAssignment_0_5 : ( ruleDe ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2926:1: rule__Event__DeAssignment_0_5 : ( ruleDe ) ;
     public final void rule__Event__DeAssignment_0_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3198:1: ( ( ruleDe ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3199:1: ( ruleDe )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2930:1: ( ( ruleDe ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2931:1: ( ruleDe )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3199:1: ( ruleDe )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3200:1: ruleDe
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2931:1: ( ruleDe )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2932:1: ruleDe
             {
              before(grammarAccess.getEventAccess().getDeDeParserRuleCall_0_5_0()); 
-            pushFollow(FOLLOW_ruleDe_in_rule__Event__DeAssignment_0_56508);
+            pushFollow(FOLLOW_ruleDe_in_rule__Event__DeAssignment_0_55931);
             ruleDe();
 
             state._fsp--;
@@ -8854,20 +8049,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__CgAssignment_0_6"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3209:1: rule__Event__CgAssignment_0_6 : ( ruleCg ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2941:1: rule__Event__CgAssignment_0_6 : ( ruleCg ) ;
     public final void rule__Event__CgAssignment_0_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3213:1: ( ( ruleCg ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3214:1: ( ruleCg )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2945:1: ( ( ruleCg ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2946:1: ( ruleCg )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3214:1: ( ruleCg )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3215:1: ruleCg
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2946:1: ( ruleCg )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2947:1: ruleCg
             {
              before(grammarAccess.getEventAccess().getCgCgParserRuleCall_0_6_0()); 
-            pushFollow(FOLLOW_ruleCg_in_rule__Event__CgAssignment_0_66539);
+            pushFollow(FOLLOW_ruleCg_in_rule__Event__CgAssignment_0_65962);
             ruleCg();
 
             state._fsp--;
@@ -8895,20 +8090,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__StAssignment_0_7"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3224:1: rule__Event__StAssignment_0_7 : ( ruleSt ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2956:1: rule__Event__StAssignment_0_7 : ( ruleSt ) ;
     public final void rule__Event__StAssignment_0_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3228:1: ( ( ruleSt ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3229:1: ( ruleSt )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2960:1: ( ( ruleSt ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2961:1: ( ruleSt )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3229:1: ( ruleSt )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3230:1: ruleSt
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2961:1: ( ruleSt )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2962:1: ruleSt
             {
              before(grammarAccess.getEventAccess().getStStParserRuleCall_0_7_0()); 
-            pushFollow(FOLLOW_ruleSt_in_rule__Event__StAssignment_0_76570);
+            pushFollow(FOLLOW_ruleSt_in_rule__Event__StAssignment_0_75993);
             ruleSt();
 
             state._fsp--;
@@ -8936,20 +8131,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__ClAssignment_0_8"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3239:1: rule__Event__ClAssignment_0_8 : ( RULE_CL ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2971:1: rule__Event__ClAssignment_0_8 : ( RULE_CL ) ;
     public final void rule__Event__ClAssignment_0_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3243:1: ( ( RULE_CL ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3244:1: ( RULE_CL )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2975:1: ( ( RULE_CL ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2976:1: ( RULE_CL )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3244:1: ( RULE_CL )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3245:1: RULE_CL
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2976:1: ( RULE_CL )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2977:1: RULE_CL
             {
              before(grammarAccess.getEventAccess().getClClTerminalRuleCall_0_8_0()); 
-            match(input,RULE_CL,FOLLOW_RULE_CL_in_rule__Event__ClAssignment_0_86601); 
+            match(input,RULE_CL,FOLLOW_RULE_CL_in_rule__Event__ClAssignment_0_86024); 
              after(grammarAccess.getEventAccess().getClClTerminalRuleCall_0_8_0()); 
 
             }
@@ -8973,20 +8168,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__CommentAssignment_1_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3254:1: rule__Event__CommentAssignment_1_0 : ( RULE_COMMENT ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2986:1: rule__Event__CommentAssignment_1_0 : ( RULE_COMMENT ) ;
     public final void rule__Event__CommentAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3258:1: ( ( RULE_COMMENT ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3259:1: ( RULE_COMMENT )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2990:1: ( ( RULE_COMMENT ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2991:1: ( RULE_COMMENT )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3259:1: ( RULE_COMMENT )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3260:1: RULE_COMMENT
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2991:1: ( RULE_COMMENT )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:2992:1: RULE_COMMENT
             {
              before(grammarAccess.getEventAccess().getCommentCOMMENTTerminalRuleCall_1_0_0()); 
-            match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_rule__Event__CommentAssignment_1_06632); 
+            match(input,RULE_COMMENT,FOLLOW_RULE_COMMENT_in_rule__Event__CommentAssignment_1_06055); 
              after(grammarAccess.getEventAccess().getCommentCOMMENTTerminalRuleCall_1_0_0()); 
 
             }
@@ -9010,31 +8205,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__An__IdNodeAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3269:1: rule__An__IdNodeAssignment_1 : ( ( rule__An__IdNodeAlternatives_1_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3001:1: rule__An__IdNodeAssignment_1 : ( ruleId ) ;
     public final void rule__An__IdNodeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3273:1: ( ( ( rule__An__IdNodeAlternatives_1_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3274:1: ( ( rule__An__IdNodeAlternatives_1_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3005:1: ( ( ruleId ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3006:1: ( ruleId )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3274:1: ( ( rule__An__IdNodeAlternatives_1_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3275:1: ( rule__An__IdNodeAlternatives_1_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3006:1: ( ruleId )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3007:1: ruleId
             {
-             before(grammarAccess.getAnAccess().getIdNodeAlternatives_1_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3276:1: ( rule__An__IdNodeAlternatives_1_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3276:2: rule__An__IdNodeAlternatives_1_0
-            {
-            pushFollow(FOLLOW_rule__An__IdNodeAlternatives_1_0_in_rule__An__IdNodeAssignment_16663);
-            rule__An__IdNodeAlternatives_1_0();
+             before(grammarAccess.getAnAccess().getIdNodeIdParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleId_in_rule__An__IdNodeAssignment_16086);
+            ruleId();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getAnAccess().getIdNodeAlternatives_1_0()); 
+             after(grammarAccess.getAnAccess().getIdNodeIdParserRuleCall_1_0()); 
 
             }
 
@@ -9057,20 +8246,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__An__AttributesAssignment_2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3285:1: rule__An__AttributesAssignment_2 : ( ruleAttributes ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3016:1: rule__An__AttributesAssignment_2 : ( ruleAttributes ) ;
     public final void rule__An__AttributesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3289:1: ( ( ruleAttributes ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3290:1: ( ruleAttributes )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3020:1: ( ( ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3021:1: ( ruleAttributes )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3290:1: ( ruleAttributes )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3291:1: ruleAttributes
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3021:1: ( ruleAttributes )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3022:1: ruleAttributes
             {
              before(grammarAccess.getAnAccess().getAttributesAttributesParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleAttributes_in_rule__An__AttributesAssignment_26696);
+            pushFollow(FOLLOW_ruleAttributes_in_rule__An__AttributesAssignment_26117);
             ruleAttributes();
 
             state._fsp--;
@@ -9098,31 +8287,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cn__IdNodeAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3300:1: rule__Cn__IdNodeAssignment_1 : ( ( rule__Cn__IdNodeAlternatives_1_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3031:1: rule__Cn__IdNodeAssignment_1 : ( ruleId ) ;
     public final void rule__Cn__IdNodeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3304:1: ( ( ( rule__Cn__IdNodeAlternatives_1_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3305:1: ( ( rule__Cn__IdNodeAlternatives_1_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3035:1: ( ( ruleId ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3036:1: ( ruleId )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3305:1: ( ( rule__Cn__IdNodeAlternatives_1_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3306:1: ( rule__Cn__IdNodeAlternatives_1_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3036:1: ( ruleId )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3037:1: ruleId
             {
-             before(grammarAccess.getCnAccess().getIdNodeAlternatives_1_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3307:1: ( rule__Cn__IdNodeAlternatives_1_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3307:2: rule__Cn__IdNodeAlternatives_1_0
-            {
-            pushFollow(FOLLOW_rule__Cn__IdNodeAlternatives_1_0_in_rule__Cn__IdNodeAssignment_16727);
-            rule__Cn__IdNodeAlternatives_1_0();
+             before(grammarAccess.getCnAccess().getIdNodeIdParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleId_in_rule__Cn__IdNodeAssignment_16148);
+            ruleId();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getCnAccess().getIdNodeAlternatives_1_0()); 
+             after(grammarAccess.getCnAccess().getIdNodeIdParserRuleCall_1_0()); 
 
             }
 
@@ -9145,20 +8328,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cn__AttributesAssignment_2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3316:1: rule__Cn__AttributesAssignment_2 : ( ruleAttributes ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3046:1: rule__Cn__AttributesAssignment_2 : ( ruleAttributes ) ;
     public final void rule__Cn__AttributesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3320:1: ( ( ruleAttributes ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3321:1: ( ruleAttributes )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3050:1: ( ( ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3051:1: ( ruleAttributes )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3321:1: ( ruleAttributes )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3322:1: ruleAttributes
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3051:1: ( ruleAttributes )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3052:1: ruleAttributes
             {
              before(grammarAccess.getCnAccess().getAttributesAttributesParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleAttributes_in_rule__Cn__AttributesAssignment_26760);
+            pushFollow(FOLLOW_ruleAttributes_in_rule__Cn__AttributesAssignment_26179);
             ruleAttributes();
 
             state._fsp--;
@@ -9186,31 +8369,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Dn__IdNodeAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3331:1: rule__Dn__IdNodeAssignment_1 : ( ( rule__Dn__IdNodeAlternatives_1_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3061:1: rule__Dn__IdNodeAssignment_1 : ( ruleId ) ;
     public final void rule__Dn__IdNodeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3335:1: ( ( ( rule__Dn__IdNodeAlternatives_1_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3336:1: ( ( rule__Dn__IdNodeAlternatives_1_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3065:1: ( ( ruleId ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3066:1: ( ruleId )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3336:1: ( ( rule__Dn__IdNodeAlternatives_1_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3337:1: ( rule__Dn__IdNodeAlternatives_1_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3066:1: ( ruleId )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3067:1: ruleId
             {
-             before(grammarAccess.getDnAccess().getIdNodeAlternatives_1_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3338:1: ( rule__Dn__IdNodeAlternatives_1_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3338:2: rule__Dn__IdNodeAlternatives_1_0
-            {
-            pushFollow(FOLLOW_rule__Dn__IdNodeAlternatives_1_0_in_rule__Dn__IdNodeAssignment_16791);
-            rule__Dn__IdNodeAlternatives_1_0();
+             before(grammarAccess.getDnAccess().getIdNodeIdParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleId_in_rule__Dn__IdNodeAssignment_16210);
+            ruleId();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getDnAccess().getIdNodeAlternatives_1_0()); 
+             after(grammarAccess.getDnAccess().getIdNodeIdParserRuleCall_1_0()); 
 
             }
 
@@ -9233,31 +8410,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__IdEdgeAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3347:1: rule__Ae__IdEdgeAssignment_1 : ( ( rule__Ae__IdEdgeAlternatives_1_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3076:1: rule__Ae__IdEdgeAssignment_1 : ( ruleId ) ;
     public final void rule__Ae__IdEdgeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3351:1: ( ( ( rule__Ae__IdEdgeAlternatives_1_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3352:1: ( ( rule__Ae__IdEdgeAlternatives_1_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3080:1: ( ( ruleId ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3081:1: ( ruleId )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3352:1: ( ( rule__Ae__IdEdgeAlternatives_1_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3353:1: ( rule__Ae__IdEdgeAlternatives_1_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3081:1: ( ruleId )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3082:1: ruleId
             {
-             before(grammarAccess.getAeAccess().getIdEdgeAlternatives_1_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3354:1: ( rule__Ae__IdEdgeAlternatives_1_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3354:2: rule__Ae__IdEdgeAlternatives_1_0
-            {
-            pushFollow(FOLLOW_rule__Ae__IdEdgeAlternatives_1_0_in_rule__Ae__IdEdgeAssignment_16824);
-            rule__Ae__IdEdgeAlternatives_1_0();
+             before(grammarAccess.getAeAccess().getIdEdgeIdParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleId_in_rule__Ae__IdEdgeAssignment_16241);
+            ruleId();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getAeAccess().getIdEdgeAlternatives_1_0()); 
+             after(grammarAccess.getAeAccess().getIdEdgeIdParserRuleCall_1_0()); 
 
             }
 
@@ -9280,31 +8451,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__IdNode1Assignment_2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3363:1: rule__Ae__IdNode1Assignment_2 : ( ( rule__Ae__IdNode1Alternatives_2_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3091:1: rule__Ae__IdNode1Assignment_2 : ( ruleId ) ;
     public final void rule__Ae__IdNode1Assignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3367:1: ( ( ( rule__Ae__IdNode1Alternatives_2_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3368:1: ( ( rule__Ae__IdNode1Alternatives_2_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3095:1: ( ( ruleId ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3096:1: ( ruleId )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3368:1: ( ( rule__Ae__IdNode1Alternatives_2_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3369:1: ( rule__Ae__IdNode1Alternatives_2_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3096:1: ( ruleId )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3097:1: ruleId
             {
-             before(grammarAccess.getAeAccess().getIdNode1Alternatives_2_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3370:1: ( rule__Ae__IdNode1Alternatives_2_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3370:2: rule__Ae__IdNode1Alternatives_2_0
-            {
-            pushFollow(FOLLOW_rule__Ae__IdNode1Alternatives_2_0_in_rule__Ae__IdNode1Assignment_26857);
-            rule__Ae__IdNode1Alternatives_2_0();
+             before(grammarAccess.getAeAccess().getIdNode1IdParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_ruleId_in_rule__Ae__IdNode1Assignment_26272);
+            ruleId();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getAeAccess().getIdNode1Alternatives_2_0()); 
+             after(grammarAccess.getAeAccess().getIdNode1IdParserRuleCall_2_0()); 
 
             }
 
@@ -9327,20 +8492,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__DirectionAssignment_3"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3379:1: rule__Ae__DirectionAssignment_3 : ( RULE_DIRECTION ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3106:1: rule__Ae__DirectionAssignment_3 : ( RULE_DIRECTION ) ;
     public final void rule__Ae__DirectionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3383:1: ( ( RULE_DIRECTION ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3384:1: ( RULE_DIRECTION )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3110:1: ( ( RULE_DIRECTION ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3111:1: ( RULE_DIRECTION )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3384:1: ( RULE_DIRECTION )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3385:1: RULE_DIRECTION
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3111:1: ( RULE_DIRECTION )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3112:1: RULE_DIRECTION
             {
              before(grammarAccess.getAeAccess().getDirectionDIRECTIONTerminalRuleCall_3_0()); 
-            match(input,RULE_DIRECTION,FOLLOW_RULE_DIRECTION_in_rule__Ae__DirectionAssignment_36890); 
+            match(input,RULE_DIRECTION,FOLLOW_RULE_DIRECTION_in_rule__Ae__DirectionAssignment_36303); 
              after(grammarAccess.getAeAccess().getDirectionDIRECTIONTerminalRuleCall_3_0()); 
 
             }
@@ -9364,31 +8529,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__IdNode2Assignment_4"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3394:1: rule__Ae__IdNode2Assignment_4 : ( ( rule__Ae__IdNode2Alternatives_4_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3121:1: rule__Ae__IdNode2Assignment_4 : ( ruleId ) ;
     public final void rule__Ae__IdNode2Assignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3398:1: ( ( ( rule__Ae__IdNode2Alternatives_4_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3399:1: ( ( rule__Ae__IdNode2Alternatives_4_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3125:1: ( ( ruleId ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3126:1: ( ruleId )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3399:1: ( ( rule__Ae__IdNode2Alternatives_4_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3400:1: ( rule__Ae__IdNode2Alternatives_4_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3126:1: ( ruleId )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3127:1: ruleId
             {
-             before(grammarAccess.getAeAccess().getIdNode2Alternatives_4_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3401:1: ( rule__Ae__IdNode2Alternatives_4_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3401:2: rule__Ae__IdNode2Alternatives_4_0
-            {
-            pushFollow(FOLLOW_rule__Ae__IdNode2Alternatives_4_0_in_rule__Ae__IdNode2Assignment_46921);
-            rule__Ae__IdNode2Alternatives_4_0();
+             before(grammarAccess.getAeAccess().getIdNode2IdParserRuleCall_4_0()); 
+            pushFollow(FOLLOW_ruleId_in_rule__Ae__IdNode2Assignment_46334);
+            ruleId();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getAeAccess().getIdNode2Alternatives_4_0()); 
+             after(grammarAccess.getAeAccess().getIdNode2IdParserRuleCall_4_0()); 
 
             }
 
@@ -9411,20 +8570,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Ae__AttributesAssignment_5"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3410:1: rule__Ae__AttributesAssignment_5 : ( ruleAttributes ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3136:1: rule__Ae__AttributesAssignment_5 : ( ruleAttributes ) ;
     public final void rule__Ae__AttributesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3414:1: ( ( ruleAttributes ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3415:1: ( ruleAttributes )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3140:1: ( ( ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3141:1: ( ruleAttributes )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3415:1: ( ruleAttributes )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3416:1: ruleAttributes
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3141:1: ( ruleAttributes )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3142:1: ruleAttributes
             {
              before(grammarAccess.getAeAccess().getAttributesAttributesParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleAttributes_in_rule__Ae__AttributesAssignment_56954);
+            pushFollow(FOLLOW_ruleAttributes_in_rule__Ae__AttributesAssignment_56365);
             ruleAttributes();
 
             state._fsp--;
@@ -9451,32 +8610,26 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Ae__AttributesAssignment_5"
 
 
-    // $ANTLR start "rule__Ce__IdNodeAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3425:1: rule__Ce__IdNodeAssignment_1 : ( ( rule__Ce__IdNodeAlternatives_1_0 ) ) ;
-    public final void rule__Ce__IdNodeAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Ce__IdEdgeAssignment_1"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3151:1: rule__Ce__IdEdgeAssignment_1 : ( ruleId ) ;
+    public final void rule__Ce__IdEdgeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3429:1: ( ( ( rule__Ce__IdNodeAlternatives_1_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3430:1: ( ( rule__Ce__IdNodeAlternatives_1_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3155:1: ( ( ruleId ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3156:1: ( ruleId )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3430:1: ( ( rule__Ce__IdNodeAlternatives_1_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3431:1: ( rule__Ce__IdNodeAlternatives_1_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3156:1: ( ruleId )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3157:1: ruleId
             {
-             before(grammarAccess.getCeAccess().getIdNodeAlternatives_1_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3432:1: ( rule__Ce__IdNodeAlternatives_1_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3432:2: rule__Ce__IdNodeAlternatives_1_0
-            {
-            pushFollow(FOLLOW_rule__Ce__IdNodeAlternatives_1_0_in_rule__Ce__IdNodeAssignment_16985);
-            rule__Ce__IdNodeAlternatives_1_0();
+             before(grammarAccess.getCeAccess().getIdEdgeIdParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleId_in_rule__Ce__IdEdgeAssignment_16396);
+            ruleId();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getCeAccess().getIdNodeAlternatives_1_0()); 
+             after(grammarAccess.getCeAccess().getIdEdgeIdParserRuleCall_1_0()); 
 
             }
 
@@ -9495,24 +8648,24 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Ce__IdNodeAssignment_1"
+    // $ANTLR end "rule__Ce__IdEdgeAssignment_1"
 
 
     // $ANTLR start "rule__Ce__AttributesAssignment_2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3441:1: rule__Ce__AttributesAssignment_2 : ( ruleAttributes ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3166:1: rule__Ce__AttributesAssignment_2 : ( ruleAttributes ) ;
     public final void rule__Ce__AttributesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3445:1: ( ( ruleAttributes ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3446:1: ( ruleAttributes )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3170:1: ( ( ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3171:1: ( ruleAttributes )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3446:1: ( ruleAttributes )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3447:1: ruleAttributes
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3171:1: ( ruleAttributes )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3172:1: ruleAttributes
             {
              before(grammarAccess.getCeAccess().getAttributesAttributesParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleAttributes_in_rule__Ce__AttributesAssignment_27018);
+            pushFollow(FOLLOW_ruleAttributes_in_rule__Ce__AttributesAssignment_26427);
             ruleAttributes();
 
             state._fsp--;
@@ -9540,31 +8693,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__De__IdEdgeAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3456:1: rule__De__IdEdgeAssignment_1 : ( ( rule__De__IdEdgeAlternatives_1_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3181:1: rule__De__IdEdgeAssignment_1 : ( ruleId ) ;
     public final void rule__De__IdEdgeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3460:1: ( ( ( rule__De__IdEdgeAlternatives_1_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3461:1: ( ( rule__De__IdEdgeAlternatives_1_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3185:1: ( ( ruleId ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3186:1: ( ruleId )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3461:1: ( ( rule__De__IdEdgeAlternatives_1_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3462:1: ( rule__De__IdEdgeAlternatives_1_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3186:1: ( ruleId )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3187:1: ruleId
             {
-             before(grammarAccess.getDeAccess().getIdEdgeAlternatives_1_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3463:1: ( rule__De__IdEdgeAlternatives_1_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3463:2: rule__De__IdEdgeAlternatives_1_0
-            {
-            pushFollow(FOLLOW_rule__De__IdEdgeAlternatives_1_0_in_rule__De__IdEdgeAssignment_17049);
-            rule__De__IdEdgeAlternatives_1_0();
+             before(grammarAccess.getDeAccess().getIdEdgeIdParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleId_in_rule__De__IdEdgeAssignment_16458);
+            ruleId();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getDeAccess().getIdEdgeAlternatives_1_0()); 
+             after(grammarAccess.getDeAccess().getIdEdgeIdParserRuleCall_1_0()); 
 
             }
 
@@ -9587,20 +8734,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Cg__AttributesAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3472:1: rule__Cg__AttributesAssignment_1 : ( ruleAttributes ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3196:1: rule__Cg__AttributesAssignment_1 : ( ruleAttributes ) ;
     public final void rule__Cg__AttributesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3476:1: ( ( ruleAttributes ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3477:1: ( ruleAttributes )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3200:1: ( ( ruleAttributes ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3201:1: ( ruleAttributes )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3477:1: ( ruleAttributes )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3478:1: ruleAttributes
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3201:1: ( ruleAttributes )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3202:1: ruleAttributes
             {
              before(grammarAccess.getCgAccess().getAttributesAttributesParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleAttributes_in_rule__Cg__AttributesAssignment_17082);
+            pushFollow(FOLLOW_ruleAttributes_in_rule__Cg__AttributesAssignment_16489);
             ruleAttributes();
 
             state._fsp--;
@@ -9628,25 +8775,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__St__RealAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3487:1: rule__St__RealAssignment_1 : ( ruleReal ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3211:1: rule__St__RealAssignment_1 : ( RULE_REAL ) ;
     public final void rule__St__RealAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3491:1: ( ( ruleReal ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3492:1: ( ruleReal )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3215:1: ( ( RULE_REAL ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3216:1: ( RULE_REAL )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3492:1: ( ruleReal )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3493:1: ruleReal
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3216:1: ( RULE_REAL )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3217:1: RULE_REAL
             {
-             before(grammarAccess.getStAccess().getRealRealParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleReal_in_rule__St__RealAssignment_17113);
-            ruleReal();
-
-            state._fsp--;
-
-             after(grammarAccess.getStAccess().getRealRealParserRuleCall_1_0()); 
+             before(grammarAccess.getStAccess().getRealREALTerminalRuleCall_1_0()); 
+            match(input,RULE_REAL,FOLLOW_RULE_REAL_in_rule__St__RealAssignment_16520); 
+             after(grammarAccess.getStAccess().getRealREALTerminalRuleCall_1_0()); 
 
             }
 
@@ -9669,20 +8812,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attributes__AttributeAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3502:1: rule__Attributes__AttributeAssignment_1 : ( ruleAttribute ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3226:1: rule__Attributes__AttributeAssignment_1 : ( ruleAttribute ) ;
     public final void rule__Attributes__AttributeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3506:1: ( ( ruleAttribute ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3507:1: ( ruleAttribute )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3230:1: ( ( ruleAttribute ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3231:1: ( ruleAttribute )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3507:1: ( ruleAttribute )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3508:1: ruleAttribute
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3231:1: ( ruleAttribute )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3232:1: ruleAttribute
             {
              before(grammarAccess.getAttributesAccess().getAttributeAttributeParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleAttribute_in_rule__Attributes__AttributeAssignment_17144);
+            pushFollow(FOLLOW_ruleAttribute_in_rule__Attributes__AttributeAssignment_16551);
             ruleAttribute();
 
             state._fsp--;
@@ -9709,32 +8852,63 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Attributes__AttributeAssignment_1"
 
 
+    // $ANTLR start "rule__Attribute__OperatorAssignment_0"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3241:1: rule__Attribute__OperatorAssignment_0 : ( RULE_OPERATOR ) ;
+    public final void rule__Attribute__OperatorAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3245:1: ( ( RULE_OPERATOR ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3246:1: ( RULE_OPERATOR )
+            {
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3246:1: ( RULE_OPERATOR )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3247:1: RULE_OPERATOR
+            {
+             before(grammarAccess.getAttributeAccess().getOperatorOPERATORTerminalRuleCall_0_0()); 
+            match(input,RULE_OPERATOR,FOLLOW_RULE_OPERATOR_in_rule__Attribute__OperatorAssignment_06582); 
+             after(grammarAccess.getAttributeAccess().getOperatorOPERATORTerminalRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Attribute__OperatorAssignment_0"
+
+
     // $ANTLR start "rule__Attribute__IdAttributeAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3517:1: rule__Attribute__IdAttributeAssignment_1 : ( ( rule__Attribute__IdAttributeAlternatives_1_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3256:1: rule__Attribute__IdAttributeAssignment_1 : ( ruleId ) ;
     public final void rule__Attribute__IdAttributeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3521:1: ( ( ( rule__Attribute__IdAttributeAlternatives_1_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3522:1: ( ( rule__Attribute__IdAttributeAlternatives_1_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3260:1: ( ( ruleId ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3261:1: ( ruleId )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3522:1: ( ( rule__Attribute__IdAttributeAlternatives_1_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3523:1: ( rule__Attribute__IdAttributeAlternatives_1_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3261:1: ( ruleId )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3262:1: ruleId
             {
-             before(grammarAccess.getAttributeAccess().getIdAttributeAlternatives_1_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3524:1: ( rule__Attribute__IdAttributeAlternatives_1_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3524:2: rule__Attribute__IdAttributeAlternatives_1_0
-            {
-            pushFollow(FOLLOW_rule__Attribute__IdAttributeAlternatives_1_0_in_rule__Attribute__IdAttributeAssignment_17175);
-            rule__Attribute__IdAttributeAlternatives_1_0();
+             before(grammarAccess.getAttributeAccess().getIdAttributeIdParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleId_in_rule__Attribute__IdAttributeAssignment_16613);
+            ruleId();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getAttributeAccess().getIdAttributeAlternatives_1_0()); 
+             after(grammarAccess.getAttributeAccess().getIdAttributeIdParserRuleCall_1_0()); 
 
             }
 
@@ -9757,20 +8931,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__AssignAssignment_2_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3533:1: rule__Attribute__AssignAssignment_2_0 : ( RULE_ASSIGN ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3271:1: rule__Attribute__AssignAssignment_2_0 : ( RULE_ASSIGN ) ;
     public final void rule__Attribute__AssignAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3537:1: ( ( RULE_ASSIGN ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3538:1: ( RULE_ASSIGN )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3275:1: ( ( RULE_ASSIGN ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3276:1: ( RULE_ASSIGN )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3538:1: ( RULE_ASSIGN )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3539:1: RULE_ASSIGN
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3276:1: ( RULE_ASSIGN )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3277:1: RULE_ASSIGN
             {
              before(grammarAccess.getAttributeAccess().getAssignASSIGNTerminalRuleCall_2_0_0()); 
-            match(input,RULE_ASSIGN,FOLLOW_RULE_ASSIGN_in_rule__Attribute__AssignAssignment_2_07208); 
+            match(input,RULE_ASSIGN,FOLLOW_RULE_ASSIGN_in_rule__Attribute__AssignAssignment_2_06644); 
              after(grammarAccess.getAttributeAccess().getAssignASSIGNTerminalRuleCall_2_0_0()); 
 
             }
@@ -9794,20 +8968,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__ValueAssignment_2_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3548:1: rule__Attribute__ValueAssignment_2_1 : ( ruleValue ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3286:1: rule__Attribute__ValueAssignment_2_1 : ( ruleValue ) ;
     public final void rule__Attribute__ValueAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3552:1: ( ( ruleValue ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3553:1: ( ruleValue )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3290:1: ( ( ruleValue ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3291:1: ( ruleValue )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3553:1: ( ruleValue )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3554:1: ruleValue
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3291:1: ( ruleValue )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3292:1: ruleValue
             {
              before(grammarAccess.getAttributeAccess().getValueValueParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleValue_in_rule__Attribute__ValueAssignment_2_17239);
+            pushFollow(FOLLOW_ruleValue_in_rule__Attribute__ValueAssignment_2_16675);
             ruleValue();
 
             state._fsp--;
@@ -9835,20 +9009,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Attribute__OtherValuesAssignment_2_2_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3563:1: rule__Attribute__OtherValuesAssignment_2_2_1 : ( ruleValue ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3301:1: rule__Attribute__OtherValuesAssignment_2_2_1 : ( ruleValue ) ;
     public final void rule__Attribute__OtherValuesAssignment_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3567:1: ( ( ruleValue ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3568:1: ( ruleValue )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3305:1: ( ( ruleValue ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3306:1: ( ruleValue )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3568:1: ( ruleValue )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3569:1: ruleValue
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3306:1: ( ruleValue )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3307:1: ruleValue
             {
              before(grammarAccess.getAttributeAccess().getOtherValuesValueParserRuleCall_2_2_1_0()); 
-            pushFollow(FOLLOW_ruleValue_in_rule__Attribute__OtherValuesAssignment_2_2_17270);
+            pushFollow(FOLLOW_ruleValue_in_rule__Attribute__OtherValuesAssignment_2_2_16706);
             ruleValue();
 
             state._fsp--;
@@ -9876,20 +9050,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Value__StringAssignment_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3578:1: rule__Value__StringAssignment_0 : ( RULE_STRING ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3316:1: rule__Value__StringAssignment_0 : ( RULE_STRING ) ;
     public final void rule__Value__StringAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3582:1: ( ( RULE_STRING ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3583:1: ( RULE_STRING )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3320:1: ( ( RULE_STRING ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3321:1: ( RULE_STRING )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3583:1: ( RULE_STRING )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3584:1: RULE_STRING
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3321:1: ( RULE_STRING )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3322:1: RULE_STRING
             {
              before(grammarAccess.getValueAccess().getStringSTRINGTerminalRuleCall_0_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Value__StringAssignment_07301); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Value__StringAssignment_06737); 
              after(grammarAccess.getValueAccess().getStringSTRINGTerminalRuleCall_0_0()); 
 
             }
@@ -9913,25 +9087,21 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Value__RealAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3593:1: rule__Value__RealAssignment_1 : ( ruleReal ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3331:1: rule__Value__RealAssignment_1 : ( RULE_REAL ) ;
     public final void rule__Value__RealAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3597:1: ( ( ruleReal ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3598:1: ( ruleReal )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3335:1: ( ( RULE_REAL ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3336:1: ( RULE_REAL )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3598:1: ( ruleReal )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3599:1: ruleReal
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3336:1: ( RULE_REAL )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3337:1: RULE_REAL
             {
-             before(grammarAccess.getValueAccess().getRealRealParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleReal_in_rule__Value__RealAssignment_17332);
-            ruleReal();
-
-            state._fsp--;
-
-             after(grammarAccess.getValueAccess().getRealRealParserRuleCall_1_0()); 
+             before(grammarAccess.getValueAccess().getRealREALTerminalRuleCall_1_0()); 
+            match(input,RULE_REAL,FOLLOW_RULE_REAL_in_rule__Value__RealAssignment_16768); 
+             after(grammarAccess.getValueAccess().getRealREALTerminalRuleCall_1_0()); 
 
             }
 
@@ -9953,26 +9123,63 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Value__RealAssignment_1"
 
 
-    // $ANTLR start "rule__Value__ArrayAssignment_2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3608:1: rule__Value__ArrayAssignment_2 : ( ruleArray ) ;
-    public final void rule__Value__ArrayAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Value__IntAssignment_2"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3346:1: rule__Value__IntAssignment_2 : ( RULE_INT ) ;
+    public final void rule__Value__IntAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3612:1: ( ( ruleArray ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3613:1: ( ruleArray )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3350:1: ( ( RULE_INT ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3351:1: ( RULE_INT )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3613:1: ( ruleArray )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3614:1: ruleArray
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3351:1: ( RULE_INT )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3352:1: RULE_INT
             {
-             before(grammarAccess.getValueAccess().getArrayArrayParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleArray_in_rule__Value__ArrayAssignment_27363);
+             before(grammarAccess.getValueAccess().getIntINTTerminalRuleCall_2_0()); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Value__IntAssignment_26799); 
+             after(grammarAccess.getValueAccess().getIntINTTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Value__IntAssignment_2"
+
+
+    // $ANTLR start "rule__Value__ArrayAssignment_3"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3361:1: rule__Value__ArrayAssignment_3 : ( ruleArray ) ;
+    public final void rule__Value__ArrayAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3365:1: ( ( ruleArray ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3366:1: ( ruleArray )
+            {
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3366:1: ( ruleArray )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3367:1: ruleArray
+            {
+             before(grammarAccess.getValueAccess().getArrayArrayParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_ruleArray_in_rule__Value__ArrayAssignment_36830);
             ruleArray();
 
             state._fsp--;
 
-             after(grammarAccess.getValueAccess().getArrayArrayParserRuleCall_2_0()); 
+             after(grammarAccess.getValueAccess().getArrayArrayParserRuleCall_3_0()); 
 
             }
 
@@ -9991,29 +9198,29 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Value__ArrayAssignment_2"
+    // $ANTLR end "rule__Value__ArrayAssignment_3"
 
 
-    // $ANTLR start "rule__Value__MapAssignment_3"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3623:1: rule__Value__MapAssignment_3 : ( ruleMap ) ;
-    public final void rule__Value__MapAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Value__MapAssignment_4"
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3376:1: rule__Value__MapAssignment_4 : ( ruleMap ) ;
+    public final void rule__Value__MapAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3627:1: ( ( ruleMap ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3628:1: ( ruleMap )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3380:1: ( ( ruleMap ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3381:1: ( ruleMap )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3628:1: ( ruleMap )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3629:1: ruleMap
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3381:1: ( ruleMap )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3382:1: ruleMap
             {
-             before(grammarAccess.getValueAccess().getMapMapParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleMap_in_rule__Value__MapAssignment_37394);
+             before(grammarAccess.getValueAccess().getMapMapParserRuleCall_4_0()); 
+            pushFollow(FOLLOW_ruleMap_in_rule__Value__MapAssignment_46861);
             ruleMap();
 
             state._fsp--;
 
-             after(grammarAccess.getValueAccess().getMapMapParserRuleCall_3_0()); 
+             after(grammarAccess.getValueAccess().getMapMapParserRuleCall_4_0()); 
 
             }
 
@@ -10032,24 +9239,24 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Value__MapAssignment_3"
+    // $ANTLR end "rule__Value__MapAssignment_4"
 
 
     // $ANTLR start "rule__Array__ValueAssignment_2_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3638:1: rule__Array__ValueAssignment_2_0 : ( ruleValue ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3391:1: rule__Array__ValueAssignment_2_0 : ( ruleValue ) ;
     public final void rule__Array__ValueAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3642:1: ( ( ruleValue ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3643:1: ( ruleValue )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3395:1: ( ( ruleValue ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3396:1: ( ruleValue )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3643:1: ( ruleValue )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3644:1: ruleValue
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3396:1: ( ruleValue )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3397:1: ruleValue
             {
              before(grammarAccess.getArrayAccess().getValueValueParserRuleCall_2_0_0()); 
-            pushFollow(FOLLOW_ruleValue_in_rule__Array__ValueAssignment_2_07425);
+            pushFollow(FOLLOW_ruleValue_in_rule__Array__ValueAssignment_2_06892);
             ruleValue();
 
             state._fsp--;
@@ -10077,20 +9284,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Array__OtherValuesAssignment_2_1_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3653:1: rule__Array__OtherValuesAssignment_2_1_1 : ( ruleValue ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3406:1: rule__Array__OtherValuesAssignment_2_1_1 : ( ruleValue ) ;
     public final void rule__Array__OtherValuesAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3657:1: ( ( ruleValue ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3658:1: ( ruleValue )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3410:1: ( ( ruleValue ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3411:1: ( ruleValue )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3658:1: ( ruleValue )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3659:1: ruleValue
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3411:1: ( ruleValue )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3412:1: ruleValue
             {
              before(grammarAccess.getArrayAccess().getOtherValuesValueParserRuleCall_2_1_1_0()); 
-            pushFollow(FOLLOW_ruleValue_in_rule__Array__OtherValuesAssignment_2_1_17456);
+            pushFollow(FOLLOW_ruleValue_in_rule__Array__OtherValuesAssignment_2_1_16923);
             ruleValue();
 
             state._fsp--;
@@ -10118,20 +9325,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__MappingAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3668:1: rule__Map__MappingAssignment_1 : ( ruleMapping ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3421:1: rule__Map__MappingAssignment_1 : ( ruleMapping ) ;
     public final void rule__Map__MappingAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3672:1: ( ( ruleMapping ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3673:1: ( ruleMapping )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3425:1: ( ( ruleMapping ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3426:1: ( ruleMapping )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3673:1: ( ruleMapping )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3674:1: ruleMapping
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3426:1: ( ruleMapping )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3427:1: ruleMapping
             {
              before(grammarAccess.getMapAccess().getMappingMappingParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleMapping_in_rule__Map__MappingAssignment_17487);
+            pushFollow(FOLLOW_ruleMapping_in_rule__Map__MappingAssignment_16954);
             ruleMapping();
 
             state._fsp--;
@@ -10159,20 +9366,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Map__OtherMappingAssignment_2_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3683:1: rule__Map__OtherMappingAssignment_2_1 : ( ruleMapping ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3436:1: rule__Map__OtherMappingAssignment_2_1 : ( ruleMapping ) ;
     public final void rule__Map__OtherMappingAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3687:1: ( ( ruleMapping ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3688:1: ( ruleMapping )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3440:1: ( ( ruleMapping ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3441:1: ( ruleMapping )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3688:1: ( ruleMapping )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3689:1: ruleMapping
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3441:1: ( ruleMapping )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3442:1: ruleMapping
             {
              before(grammarAccess.getMapAccess().getOtherMappingMappingParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleMapping_in_rule__Map__OtherMappingAssignment_2_17518);
+            pushFollow(FOLLOW_ruleMapping_in_rule__Map__OtherMappingAssignment_2_16985);
             ruleMapping();
 
             state._fsp--;
@@ -10200,31 +9407,25 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__IdAssignment_0"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3698:1: rule__Mapping__IdAssignment_0 : ( ( rule__Mapping__IdAlternatives_0_0 ) ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3451:1: rule__Mapping__IdAssignment_0 : ( ruleId ) ;
     public final void rule__Mapping__IdAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3702:1: ( ( ( rule__Mapping__IdAlternatives_0_0 ) ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3703:1: ( ( rule__Mapping__IdAlternatives_0_0 ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3455:1: ( ( ruleId ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3456:1: ( ruleId )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3703:1: ( ( rule__Mapping__IdAlternatives_0_0 ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3704:1: ( rule__Mapping__IdAlternatives_0_0 )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3456:1: ( ruleId )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3457:1: ruleId
             {
-             before(grammarAccess.getMappingAccess().getIdAlternatives_0_0()); 
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3705:1: ( rule__Mapping__IdAlternatives_0_0 )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3705:2: rule__Mapping__IdAlternatives_0_0
-            {
-            pushFollow(FOLLOW_rule__Mapping__IdAlternatives_0_0_in_rule__Mapping__IdAssignment_07549);
-            rule__Mapping__IdAlternatives_0_0();
+             before(grammarAccess.getMappingAccess().getIdIdParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_ruleId_in_rule__Mapping__IdAssignment_07016);
+            ruleId();
 
             state._fsp--;
 
-
-            }
-
-             after(grammarAccess.getMappingAccess().getIdAlternatives_0_0()); 
+             after(grammarAccess.getMappingAccess().getIdIdParserRuleCall_0_0()); 
 
             }
 
@@ -10247,20 +9448,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__AssignAssignment_1"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3714:1: rule__Mapping__AssignAssignment_1 : ( RULE_ASSIGN ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3466:1: rule__Mapping__AssignAssignment_1 : ( RULE_ASSIGN ) ;
     public final void rule__Mapping__AssignAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3718:1: ( ( RULE_ASSIGN ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3719:1: ( RULE_ASSIGN )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3470:1: ( ( RULE_ASSIGN ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3471:1: ( RULE_ASSIGN )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3719:1: ( RULE_ASSIGN )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3720:1: RULE_ASSIGN
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3471:1: ( RULE_ASSIGN )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3472:1: RULE_ASSIGN
             {
              before(grammarAccess.getMappingAccess().getAssignASSIGNTerminalRuleCall_1_0()); 
-            match(input,RULE_ASSIGN,FOLLOW_RULE_ASSIGN_in_rule__Mapping__AssignAssignment_17582); 
+            match(input,RULE_ASSIGN,FOLLOW_RULE_ASSIGN_in_rule__Mapping__AssignAssignment_17047); 
              after(grammarAccess.getMappingAccess().getAssignASSIGNTerminalRuleCall_1_0()); 
 
             }
@@ -10284,20 +9485,20 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Mapping__ValueAssignment_2"
-    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3729:1: rule__Mapping__ValueAssignment_2 : ( ruleValue ) ;
+    // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3481:1: rule__Mapping__ValueAssignment_2 : ( ruleValue ) ;
     public final void rule__Mapping__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3733:1: ( ( ruleValue ) )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3734:1: ( ruleValue )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3485:1: ( ( ruleValue ) )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3486:1: ( ruleValue )
             {
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3734:1: ( ruleValue )
-            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3735:1: ruleValue
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3486:1: ( ruleValue )
+            // ../org.graphstream.DGSPlugin.ui/src-gen/org/graphstream/ui/contentassist/antlr/internal/InternalDGS.g:3487:1: ruleValue
             {
              before(grammarAccess.getMappingAccess().getValueValueParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleValue_in_rule__Mapping__ValueAssignment_27613);
+            pushFollow(FOLLOW_ruleValue_in_rule__Mapping__ValueAssignment_27078);
             ruleValue();
 
             state._fsp--;
@@ -10379,268 +9580,247 @@ public class InternalDGSParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleMapping_in_entryRuleMapping1021 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMapping1028 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Mapping__Group__0_in_ruleMapping1054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReal_in_entryRuleReal1081 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReal1088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Real__Group__0_in_ruleReal1114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_entryRuleId1081 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleId1088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Id__Alternatives_in_ruleId1114 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Dgs__EventAssignment_1_0_in_rule__Dgs__Alternatives_11150 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Dgs__CommentAssignment_1_1_in_rule__Dgs__Alternatives_11168 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_EOL_in_rule__Dgs__Alternatives_11186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Header__NameAlternatives_2_01218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Header__NameAlternatives_2_01235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__AnAssignment_0_0_in_rule__Event__Alternatives_01267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__CnAssignment_0_1_in_rule__Event__Alternatives_01285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__DnAssignment_0_2_in_rule__Event__Alternatives_01303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__AeAssignment_0_3_in_rule__Event__Alternatives_01321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__CeAssignment_0_4_in_rule__Event__Alternatives_01339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__DeAssignment_0_5_in_rule__Event__Alternatives_01357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__CgAssignment_0_6_in_rule__Event__Alternatives_01375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__StAssignment_0_7_in_rule__Event__Alternatives_01393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__ClAssignment_0_8_in_rule__Event__Alternatives_01411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__CommentAssignment_1_0_in_rule__Event__Alternatives_11444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EOL_in_rule__Event__Alternatives_11462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__An__IdNodeAlternatives_1_01494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__An__IdNodeAlternatives_1_01511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Cn__IdNodeAlternatives_1_01543 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Cn__IdNodeAlternatives_1_01560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Dn__IdNodeAlternatives_1_01592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Dn__IdNodeAlternatives_1_01609 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Ae__IdEdgeAlternatives_1_01641 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Ae__IdEdgeAlternatives_1_01658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Ae__IdNode1Alternatives_2_01690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Ae__IdNode1Alternatives_2_01707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Ae__IdNode2Alternatives_4_01739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Ae__IdNode2Alternatives_4_01756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Ce__IdNodeAlternatives_1_01788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Ce__IdNodeAlternatives_1_01805 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__De__IdEdgeAlternatives_1_01837 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__De__IdEdgeAlternatives_1_01854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Attribute__Alternatives_01887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Attribute__Alternatives_01907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Attribute__IdAttributeAlternatives_1_01941 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Attribute__IdAttributeAlternatives_1_01958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Value__StringAssignment_0_in_rule__Value__Alternatives1990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Value__RealAssignment_1_in_rule__Value__Alternatives2008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Value__ArrayAssignment_2_in_rule__Value__Alternatives2026 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Value__MapAssignment_3_in_rule__Value__Alternatives2044 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Mapping__IdAlternatives_0_02077 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Mapping__IdAlternatives_0_02094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dgs__Group__0__Impl_in_rule__Dgs__Group__02124 = new BitSet(new long[]{0x0000000000FF0510L});
-    public static final BitSet FOLLOW_rule__Dgs__Group__1_in_rule__Dgs__Group__02127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dgs__HeaderAssignment_0_in_rule__Dgs__Group__0__Impl2154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dgs__Group__1__Impl_in_rule__Dgs__Group__12184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dgs__Alternatives_1_in_rule__Dgs__Group__1__Impl2211 = new BitSet(new long[]{0x0000000000FF0512L});
-    public static final BitSet FOLLOW_rule__Header__Group__0__Impl_in_rule__Header__Group__02246 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Header__Group__1_in_rule__Header__Group__02249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Header__MagicAssignment_0_in_rule__Header__Group__0__Impl2276 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Header__Group__1__Impl_in_rule__Header__Group__12306 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Header__Group__2_in_rule__Header__Group__12309 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EOL_in_rule__Header__Group__1__Impl2336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Header__Group__2__Impl_in_rule__Header__Group__22365 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Header__Group__3_in_rule__Header__Group__22368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Header__NameAssignment_2_in_rule__Header__Group__2__Impl2395 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Header__Group__3__Impl_in_rule__Header__Group__32425 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Header__Group__4_in_rule__Header__Group__32428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Header__NumberOfStepsAssignment_3_in_rule__Header__Group__3__Impl2455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Header__Group__4__Impl_in_rule__Header__Group__42485 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Header__Group__5_in_rule__Header__Group__42488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Header__NumberOfEventsAssignment_4_in_rule__Header__Group__4__Impl2515 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Header__Group__5__Impl_in_rule__Header__Group__52545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EOL_in_rule__Header__Group__5__Impl2572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group__0__Impl_in_rule__Event__Group__02613 = new BitSet(new long[]{0x0000000000000110L});
-    public static final BitSet FOLLOW_rule__Event__Group__1_in_rule__Event__Group__02616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Alternatives_0_in_rule__Event__Group__0__Impl2643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group__1__Impl_in_rule__Event__Group__12673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Alternatives_1_in_rule__Event__Group__1__Impl2700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__An__Group__0__Impl_in_rule__An__Group__02734 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__An__Group__1_in_rule__An__Group__02737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__An__Group__0__Impl2765 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__An__Group__1__Impl_in_rule__An__Group__12796 = new BitSet(new long[]{0x000000000000C060L});
-    public static final BitSet FOLLOW_rule__An__Group__2_in_rule__An__Group__12799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__An__IdNodeAssignment_1_in_rule__An__Group__1__Impl2826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__An__Group__2__Impl_in_rule__An__Group__22856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__An__AttributesAssignment_2_in_rule__An__Group__2__Impl2883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cn__Group__0__Impl_in_rule__Cn__Group__02919 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Cn__Group__1_in_rule__Cn__Group__02922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Cn__Group__0__Impl2950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cn__Group__1__Impl_in_rule__Cn__Group__12981 = new BitSet(new long[]{0x000000000000C060L});
-    public static final BitSet FOLLOW_rule__Cn__Group__2_in_rule__Cn__Group__12984 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cn__IdNodeAssignment_1_in_rule__Cn__Group__1__Impl3011 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cn__Group__2__Impl_in_rule__Cn__Group__23041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cn__AttributesAssignment_2_in_rule__Cn__Group__2__Impl3068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dn__Group__0__Impl_in_rule__Dn__Group__03104 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Dn__Group__1_in_rule__Dn__Group__03107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Dn__Group__0__Impl3135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dn__Group__1__Impl_in_rule__Dn__Group__13166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dn__IdNodeAssignment_1_in_rule__Dn__Group__1__Impl3193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__Group__0__Impl_in_rule__Ae__Group__03227 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Ae__Group__1_in_rule__Ae__Group__03230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Ae__Group__0__Impl3258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__Group__1__Impl_in_rule__Ae__Group__13289 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Ae__Group__2_in_rule__Ae__Group__13292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__IdEdgeAssignment_1_in_rule__Ae__Group__1__Impl3319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__Group__2__Impl_in_rule__Ae__Group__23349 = new BitSet(new long[]{0x0000000000000860L});
-    public static final BitSet FOLLOW_rule__Ae__Group__3_in_rule__Ae__Group__23352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__IdNode1Assignment_2_in_rule__Ae__Group__2__Impl3379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__Group__3__Impl_in_rule__Ae__Group__33409 = new BitSet(new long[]{0x0000000000000860L});
-    public static final BitSet FOLLOW_rule__Ae__Group__4_in_rule__Ae__Group__33412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__DirectionAssignment_3_in_rule__Ae__Group__3__Impl3439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__Group__4__Impl_in_rule__Ae__Group__43470 = new BitSet(new long[]{0x000000000000C060L});
-    public static final BitSet FOLLOW_rule__Ae__Group__5_in_rule__Ae__Group__43473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__IdNode2Assignment_4_in_rule__Ae__Group__4__Impl3500 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__Group__5__Impl_in_rule__Ae__Group__53530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__AttributesAssignment_5_in_rule__Ae__Group__5__Impl3557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ce__Group__0__Impl_in_rule__Ce__Group__03599 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Ce__Group__1_in_rule__Ce__Group__03602 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Ce__Group__0__Impl3630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ce__Group__1__Impl_in_rule__Ce__Group__13661 = new BitSet(new long[]{0x000000000000C060L});
-    public static final BitSet FOLLOW_rule__Ce__Group__2_in_rule__Ce__Group__13664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ce__IdNodeAssignment_1_in_rule__Ce__Group__1__Impl3691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ce__Group__2__Impl_in_rule__Ce__Group__23721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ce__AttributesAssignment_2_in_rule__Ce__Group__2__Impl3748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__De__Group__0__Impl_in_rule__De__Group__03784 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__De__Group__1_in_rule__De__Group__03787 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__De__Group__0__Impl3815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__De__Group__1__Impl_in_rule__De__Group__13846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__De__IdEdgeAssignment_1_in_rule__De__Group__1__Impl3873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cg__Group__0__Impl_in_rule__Cg__Group__03907 = new BitSet(new long[]{0x000000000000C060L});
-    public static final BitSet FOLLOW_rule__Cg__Group__1_in_rule__Cg__Group__03910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Cg__Group__0__Impl3938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cg__Group__1__Impl_in_rule__Cg__Group__13969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cg__AttributesAssignment_1_in_rule__Cg__Group__1__Impl3996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__St__Group__0__Impl_in_rule__St__Group__04030 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__St__Group__1_in_rule__St__Group__04033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__St__Group__0__Impl4061 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__St__Group__1__Impl_in_rule__St__Group__14092 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__St__RealAssignment_1_in_rule__St__Group__1__Impl4119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attributes__Group__0__Impl_in_rule__Attributes__Group__04153 = new BitSet(new long[]{0x000000000000C060L});
-    public static final BitSet FOLLOW_rule__Attributes__Group__1_in_rule__Attributes__Group__04156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attributes__Group__1__Impl_in_rule__Attributes__Group__14214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attributes__AttributeAssignment_1_in_rule__Attributes__Group__1__Impl4241 = new BitSet(new long[]{0x000000000000C062L});
-    public static final BitSet FOLLOW_rule__Attribute__Group__0__Impl_in_rule__Attribute__Group__04276 = new BitSet(new long[]{0x000000000000C060L});
-    public static final BitSet FOLLOW_rule__Attribute__Group__1_in_rule__Attribute__Group__04279 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Alternatives_0_in_rule__Attribute__Group__0__Impl4306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group__1__Impl_in_rule__Attribute__Group__14337 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__Attribute__Group__2_in_rule__Attribute__Group__14340 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__IdAttributeAssignment_1_in_rule__Attribute__Group__1__Impl4367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group__2__Impl_in_rule__Attribute__Group__24397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group_2__0_in_rule__Attribute__Group__2__Impl4424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group_2__0__Impl_in_rule__Attribute__Group_2__04461 = new BitSet(new long[]{0x000000000A0000C0L});
-    public static final BitSet FOLLOW_rule__Attribute__Group_2__1_in_rule__Attribute__Group_2__04464 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__AssignAssignment_2_0_in_rule__Attribute__Group_2__0__Impl4491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group_2__1__Impl_in_rule__Attribute__Group_2__14521 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__Attribute__Group_2__2_in_rule__Attribute__Group_2__14524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__ValueAssignment_2_1_in_rule__Attribute__Group_2__1__Impl4551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group_2__2__Impl_in_rule__Attribute__Group_2__24581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group_2_2__0_in_rule__Attribute__Group_2__2__Impl4608 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group_2_2__0__Impl_in_rule__Attribute__Group_2_2__04645 = new BitSet(new long[]{0x000000000A0000C0L});
-    public static final BitSet FOLLOW_rule__Attribute__Group_2_2__1_in_rule__Attribute__Group_2_2__04648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Attribute__Group_2_2__0__Impl4676 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__Group_2_2__1__Impl_in_rule__Attribute__Group_2_2__14707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__OtherValuesAssignment_2_2_1_in_rule__Attribute__Group_2_2__1__Impl4734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__Group__0__Impl_in_rule__Array__Group__04768 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Array__Group__1_in_rule__Array__Group__04771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__Group__1__Impl_in_rule__Array__Group__14829 = new BitSet(new long[]{0x000000000E0000C0L});
-    public static final BitSet FOLLOW_rule__Array__Group__2_in_rule__Array__Group__14832 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Array__Group__1__Impl4860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__Group__2__Impl_in_rule__Array__Group__24891 = new BitSet(new long[]{0x000000000E0000C0L});
-    public static final BitSet FOLLOW_rule__Array__Group__3_in_rule__Array__Group__24894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__Group_2__0_in_rule__Array__Group__2__Impl4921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__Group__3__Impl_in_rule__Array__Group__34952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Array__Group__3__Impl4980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__Group_2__0__Impl_in_rule__Array__Group_2__05019 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__Array__Group_2__1_in_rule__Array__Group_2__05022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__ValueAssignment_2_0_in_rule__Array__Group_2__0__Impl5049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__Group_2__1__Impl_in_rule__Array__Group_2__15079 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__Group_2_1__0_in_rule__Array__Group_2__1__Impl5106 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_rule__Array__Group_2_1__0__Impl_in_rule__Array__Group_2_1__05141 = new BitSet(new long[]{0x000000000A0000C0L});
-    public static final BitSet FOLLOW_rule__Array__Group_2_1__1_in_rule__Array__Group_2_1__05144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Array__Group_2_1__0__Impl5172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__Group_2_1__1__Impl_in_rule__Array__Group_2_1__15203 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__OtherValuesAssignment_2_1_1_in_rule__Array__Group_2_1__1__Impl5230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Map__Group__0__Impl_in_rule__Map__Group__05264 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Map__Group__1_in_rule__Map__Group__05267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Map__Group__0__Impl5295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Map__Group__1__Impl_in_rule__Map__Group__15326 = new BitSet(new long[]{0x0000000011000000L});
-    public static final BitSet FOLLOW_rule__Map__Group__2_in_rule__Map__Group__15329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Map__MappingAssignment_1_in_rule__Map__Group__1__Impl5356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Map__Group__2__Impl_in_rule__Map__Group__25386 = new BitSet(new long[]{0x0000000011000000L});
-    public static final BitSet FOLLOW_rule__Map__Group__3_in_rule__Map__Group__25389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Map__Group_2__0_in_rule__Map__Group__2__Impl5416 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_rule__Map__Group__3__Impl_in_rule__Map__Group__35447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Map__Group__3__Impl5475 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Map__Group_2__0__Impl_in_rule__Map__Group_2__05514 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Map__Group_2__1_in_rule__Map__Group_2__05517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Map__Group_2__0__Impl5545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Map__Group_2__1__Impl_in_rule__Map__Group_2__15576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Map__OtherMappingAssignment_2_1_in_rule__Map__Group_2__1__Impl5603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__0__Impl_in_rule__Mapping__Group__05637 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__1_in_rule__Mapping__Group__05640 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__IdAssignment_0_in_rule__Mapping__Group__0__Impl5667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__1__Impl_in_rule__Mapping__Group__15697 = new BitSet(new long[]{0x000000000A0000C0L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__2_in_rule__Mapping__Group__15700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__AssignAssignment_1_in_rule__Mapping__Group__1__Impl5727 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__Group__2__Impl_in_rule__Mapping__Group__25757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__ValueAssignment_2_in_rule__Mapping__Group__2__Impl5784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Real__Group__0__Impl_in_rule__Real__Group__05820 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_rule__Real__Group__1_in_rule__Real__Group__05823 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Real__Group__0__Impl5850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Real__Group__1__Impl_in_rule__Real__Group__15879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Real__Group_1__0_in_rule__Real__Group__1__Impl5906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Real__Group_1__0__Impl_in_rule__Real__Group_1__05940 = new BitSet(new long[]{0x0000000040000080L});
-    public static final BitSet FOLLOW_rule__Real__Group_1__1_in_rule__Real__Group_1__05943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Real__Group_1__0__Impl5971 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Real__Group_1__1__Impl_in_rule__Real__Group_1__16002 = new BitSet(new long[]{0x0000000040000080L});
-    public static final BitSet FOLLOW_rule__Real__Group_1__2_in_rule__Real__Group_1__16005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__Real__Group_1__1__Impl6034 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_rule__Real__Group_1__2__Impl_in_rule__Real__Group_1__26067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Real__Group_1__2__Impl6094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHeader_in_rule__Dgs__HeaderAssignment_06134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__Dgs__EventAssignment_1_06165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_rule__Dgs__CommentAssignment_1_16196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MAGIC_in_rule__Header__MagicAssignment_06227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Header__NameAlternatives_2_0_in_rule__Header__NameAssignment_26258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Header__NumberOfStepsAssignment_36291 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Header__NumberOfEventsAssignment_46322 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAn_in_rule__Event__AnAssignment_0_06353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCn_in_rule__Event__CnAssignment_0_16384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDn_in_rule__Event__DnAssignment_0_26415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAe_in_rule__Event__AeAssignment_0_36446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCe_in_rule__Event__CeAssignment_0_46477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDe_in_rule__Event__DeAssignment_0_56508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCg_in_rule__Event__CgAssignment_0_66539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSt_in_rule__Event__StAssignment_0_76570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CL_in_rule__Event__ClAssignment_0_86601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COMMENT_in_rule__Event__CommentAssignment_1_06632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__An__IdNodeAlternatives_1_0_in_rule__An__IdNodeAssignment_16663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributes_in_rule__An__AttributesAssignment_26696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cn__IdNodeAlternatives_1_0_in_rule__Cn__IdNodeAssignment_16727 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributes_in_rule__Cn__AttributesAssignment_26760 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Dn__IdNodeAlternatives_1_0_in_rule__Dn__IdNodeAssignment_16791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__IdEdgeAlternatives_1_0_in_rule__Ae__IdEdgeAssignment_16824 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__IdNode1Alternatives_2_0_in_rule__Ae__IdNode1Assignment_26857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DIRECTION_in_rule__Ae__DirectionAssignment_36890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ae__IdNode2Alternatives_4_0_in_rule__Ae__IdNode2Assignment_46921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributes_in_rule__Ae__AttributesAssignment_56954 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ce__IdNodeAlternatives_1_0_in_rule__Ce__IdNodeAssignment_16985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributes_in_rule__Ce__AttributesAssignment_27018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__De__IdEdgeAlternatives_1_0_in_rule__De__IdEdgeAssignment_17049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributes_in_rule__Cg__AttributesAssignment_17082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReal_in_rule__St__RealAssignment_17113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttribute_in_rule__Attributes__AttributeAssignment_17144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Attribute__IdAttributeAlternatives_1_0_in_rule__Attribute__IdAttributeAssignment_17175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ASSIGN_in_rule__Attribute__AssignAssignment_2_07208 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValue_in_rule__Attribute__ValueAssignment_2_17239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValue_in_rule__Attribute__OtherValuesAssignment_2_2_17270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Value__StringAssignment_07301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReal_in_rule__Value__RealAssignment_17332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArray_in_rule__Value__ArrayAssignment_27363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMap_in_rule__Value__MapAssignment_37394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValue_in_rule__Array__ValueAssignment_2_07425 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValue_in_rule__Array__OtherValuesAssignment_2_1_17456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMapping_in_rule__Map__MappingAssignment_17487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMapping_in_rule__Map__OtherMappingAssignment_2_17518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Mapping__IdAlternatives_0_0_in_rule__Mapping__IdAssignment_07549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ASSIGN_in_rule__Mapping__AssignAssignment_17582 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValue_in_rule__Mapping__ValueAssignment_27613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__AnAssignment_0_0_in_rule__Event__Alternatives_01218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__CnAssignment_0_1_in_rule__Event__Alternatives_01236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__DnAssignment_0_2_in_rule__Event__Alternatives_01254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__AeAssignment_0_3_in_rule__Event__Alternatives_01272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__CeAssignment_0_4_in_rule__Event__Alternatives_01290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__DeAssignment_0_5_in_rule__Event__Alternatives_01308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__CgAssignment_0_6_in_rule__Event__Alternatives_01326 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__StAssignment_0_7_in_rule__Event__Alternatives_01344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__ClAssignment_0_8_in_rule__Event__Alternatives_01362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__CommentAssignment_1_0_in_rule__Event__Alternatives_11395 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EOL_in_rule__Event__Alternatives_11413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Value__StringAssignment_0_in_rule__Value__Alternatives1445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Value__RealAssignment_1_in_rule__Value__Alternatives1463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Value__IntAssignment_2_in_rule__Value__Alternatives1481 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Value__ArrayAssignment_3_in_rule__Value__Alternatives1499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Value__MapAssignment_4_in_rule__Value__Alternatives1517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Id__Alternatives1550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Id__Alternatives1567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Id__Group_2__0_in_rule__Id__Alternatives1584 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dgs__Group__0__Impl_in_rule__Dgs__Group__01615 = new BitSet(new long[]{0x0000000000FF0510L});
+    public static final BitSet FOLLOW_rule__Dgs__Group__1_in_rule__Dgs__Group__01618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dgs__HeaderAssignment_0_in_rule__Dgs__Group__0__Impl1645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dgs__Group__1__Impl_in_rule__Dgs__Group__11675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dgs__Alternatives_1_in_rule__Dgs__Group__1__Impl1702 = new BitSet(new long[]{0x0000000000FF0512L});
+    public static final BitSet FOLLOW_rule__Header__Group__0__Impl_in_rule__Header__Group__01737 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Header__Group__1_in_rule__Header__Group__01740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Header__MagicAssignment_0_in_rule__Header__Group__0__Impl1767 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Header__Group__1__Impl_in_rule__Header__Group__11797 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_rule__Header__Group__2_in_rule__Header__Group__11800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EOL_in_rule__Header__Group__1__Impl1827 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Header__Group__2__Impl_in_rule__Header__Group__21856 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Header__Group__3_in_rule__Header__Group__21859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Header__NameAssignment_2_in_rule__Header__Group__2__Impl1886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Header__Group__3__Impl_in_rule__Header__Group__31916 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Header__Group__4_in_rule__Header__Group__31919 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Header__NumberOfStepsAssignment_3_in_rule__Header__Group__3__Impl1946 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Header__Group__4__Impl_in_rule__Header__Group__41976 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Header__Group__5_in_rule__Header__Group__41979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Header__NumberOfEventsAssignment_4_in_rule__Header__Group__4__Impl2006 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Header__Group__5__Impl_in_rule__Header__Group__52036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EOL_in_rule__Header__Group__5__Impl2063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group__0__Impl_in_rule__Event__Group__02104 = new BitSet(new long[]{0x0000000000000110L});
+    public static final BitSet FOLLOW_rule__Event__Group__1_in_rule__Event__Group__02107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Alternatives_0_in_rule__Event__Group__0__Impl2134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group__1__Impl_in_rule__Event__Group__12164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Alternatives_1_in_rule__Event__Group__1__Impl2191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__An__Group__0__Impl_in_rule__An__Group__02225 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_rule__An__Group__1_in_rule__An__Group__02228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__An__Group__0__Impl2256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__An__Group__1__Impl_in_rule__An__Group__12287 = new BitSet(new long[]{0x00000000000020E0L});
+    public static final BitSet FOLLOW_rule__An__Group__2_in_rule__An__Group__12290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__An__IdNodeAssignment_1_in_rule__An__Group__1__Impl2317 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__An__Group__2__Impl_in_rule__An__Group__22347 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__An__AttributesAssignment_2_in_rule__An__Group__2__Impl2374 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Cn__Group__0__Impl_in_rule__Cn__Group__02410 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_rule__Cn__Group__1_in_rule__Cn__Group__02413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Cn__Group__0__Impl2441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Cn__Group__1__Impl_in_rule__Cn__Group__12472 = new BitSet(new long[]{0x00000000000020E0L});
+    public static final BitSet FOLLOW_rule__Cn__Group__2_in_rule__Cn__Group__12475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Cn__IdNodeAssignment_1_in_rule__Cn__Group__1__Impl2502 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Cn__Group__2__Impl_in_rule__Cn__Group__22532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Cn__AttributesAssignment_2_in_rule__Cn__Group__2__Impl2559 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dn__Group__0__Impl_in_rule__Dn__Group__02595 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_rule__Dn__Group__1_in_rule__Dn__Group__02598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Dn__Group__0__Impl2626 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dn__Group__1__Impl_in_rule__Dn__Group__12657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Dn__IdNodeAssignment_1_in_rule__Dn__Group__1__Impl2684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ae__Group__0__Impl_in_rule__Ae__Group__02718 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_rule__Ae__Group__1_in_rule__Ae__Group__02721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Ae__Group__0__Impl2749 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ae__Group__1__Impl_in_rule__Ae__Group__12780 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_rule__Ae__Group__2_in_rule__Ae__Group__12783 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ae__IdEdgeAssignment_1_in_rule__Ae__Group__1__Impl2810 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ae__Group__2__Impl_in_rule__Ae__Group__22840 = new BitSet(new long[]{0x00000000000008E0L});
+    public static final BitSet FOLLOW_rule__Ae__Group__3_in_rule__Ae__Group__22843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ae__IdNode1Assignment_2_in_rule__Ae__Group__2__Impl2870 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ae__Group__3__Impl_in_rule__Ae__Group__32900 = new BitSet(new long[]{0x00000000000008E0L});
+    public static final BitSet FOLLOW_rule__Ae__Group__4_in_rule__Ae__Group__32903 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ae__DirectionAssignment_3_in_rule__Ae__Group__3__Impl2930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ae__Group__4__Impl_in_rule__Ae__Group__42961 = new BitSet(new long[]{0x00000000000020E0L});
+    public static final BitSet FOLLOW_rule__Ae__Group__5_in_rule__Ae__Group__42964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ae__IdNode2Assignment_4_in_rule__Ae__Group__4__Impl2991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ae__Group__5__Impl_in_rule__Ae__Group__53021 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ae__AttributesAssignment_5_in_rule__Ae__Group__5__Impl3048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ce__Group__0__Impl_in_rule__Ce__Group__03090 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_rule__Ce__Group__1_in_rule__Ce__Group__03093 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Ce__Group__0__Impl3121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ce__Group__1__Impl_in_rule__Ce__Group__13152 = new BitSet(new long[]{0x00000000000020E0L});
+    public static final BitSet FOLLOW_rule__Ce__Group__2_in_rule__Ce__Group__13155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ce__IdEdgeAssignment_1_in_rule__Ce__Group__1__Impl3182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ce__Group__2__Impl_in_rule__Ce__Group__23212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Ce__AttributesAssignment_2_in_rule__Ce__Group__2__Impl3239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__De__Group__0__Impl_in_rule__De__Group__03275 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_rule__De__Group__1_in_rule__De__Group__03278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__De__Group__0__Impl3306 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__De__Group__1__Impl_in_rule__De__Group__13337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__De__IdEdgeAssignment_1_in_rule__De__Group__1__Impl3364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Cg__Group__0__Impl_in_rule__Cg__Group__03398 = new BitSet(new long[]{0x00000000000020E0L});
+    public static final BitSet FOLLOW_rule__Cg__Group__1_in_rule__Cg__Group__03401 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__Cg__Group__0__Impl3429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Cg__Group__1__Impl_in_rule__Cg__Group__13460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Cg__AttributesAssignment_1_in_rule__Cg__Group__1__Impl3487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__St__Group__0__Impl_in_rule__St__Group__03521 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__St__Group__1_in_rule__St__Group__03524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__St__Group__0__Impl3552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__St__Group__1__Impl_in_rule__St__Group__13583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__St__RealAssignment_1_in_rule__St__Group__1__Impl3610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attributes__Group__0__Impl_in_rule__Attributes__Group__03644 = new BitSet(new long[]{0x00000000000020E0L});
+    public static final BitSet FOLLOW_rule__Attributes__Group__1_in_rule__Attributes__Group__03647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attributes__Group__1__Impl_in_rule__Attributes__Group__13705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attributes__AttributeAssignment_1_in_rule__Attributes__Group__1__Impl3732 = new BitSet(new long[]{0x00000000000020E2L});
+    public static final BitSet FOLLOW_rule__Attribute__Group__0__Impl_in_rule__Attribute__Group__03767 = new BitSet(new long[]{0x00000000000020E0L});
+    public static final BitSet FOLLOW_rule__Attribute__Group__1_in_rule__Attribute__Group__03770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__OperatorAssignment_0_in_rule__Attribute__Group__0__Impl3797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group__1__Impl_in_rule__Attribute__Group__13828 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__Attribute__Group__2_in_rule__Attribute__Group__13831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__IdAttributeAssignment_1_in_rule__Attribute__Group__1__Impl3858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group__2__Impl_in_rule__Attribute__Group__23888 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group_2__0_in_rule__Attribute__Group__2__Impl3915 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group_2__0__Impl_in_rule__Attribute__Group_2__03952 = new BitSet(new long[]{0x000000000A001060L});
+    public static final BitSet FOLLOW_rule__Attribute__Group_2__1_in_rule__Attribute__Group_2__03955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__AssignAssignment_2_0_in_rule__Attribute__Group_2__0__Impl3982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group_2__1__Impl_in_rule__Attribute__Group_2__14012 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Attribute__Group_2__2_in_rule__Attribute__Group_2__14015 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__ValueAssignment_2_1_in_rule__Attribute__Group_2__1__Impl4042 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group_2__2__Impl_in_rule__Attribute__Group_2__24072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group_2_2__0_in_rule__Attribute__Group_2__2__Impl4099 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group_2_2__0__Impl_in_rule__Attribute__Group_2_2__04136 = new BitSet(new long[]{0x000000000A001060L});
+    public static final BitSet FOLLOW_rule__Attribute__Group_2_2__1_in_rule__Attribute__Group_2_2__04139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Attribute__Group_2_2__0__Impl4167 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__Group_2_2__1__Impl_in_rule__Attribute__Group_2_2__14198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Attribute__OtherValuesAssignment_2_2_1_in_rule__Attribute__Group_2_2__1__Impl4225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__Group__0__Impl_in_rule__Array__Group__04259 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Array__Group__1_in_rule__Array__Group__04262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__Group__1__Impl_in_rule__Array__Group__14320 = new BitSet(new long[]{0x000000000E001060L});
+    public static final BitSet FOLLOW_rule__Array__Group__2_in_rule__Array__Group__14323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Array__Group__1__Impl4351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__Group__2__Impl_in_rule__Array__Group__24382 = new BitSet(new long[]{0x000000000E001060L});
+    public static final BitSet FOLLOW_rule__Array__Group__3_in_rule__Array__Group__24385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__Group_2__0_in_rule__Array__Group__2__Impl4412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__Group__3__Impl_in_rule__Array__Group__34443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Array__Group__3__Impl4471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__Group_2__0__Impl_in_rule__Array__Group_2__04510 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Array__Group_2__1_in_rule__Array__Group_2__04513 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__ValueAssignment_2_0_in_rule__Array__Group_2__0__Impl4540 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__Group_2__1__Impl_in_rule__Array__Group_2__14570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__Group_2_1__0_in_rule__Array__Group_2__1__Impl4597 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_rule__Array__Group_2_1__0__Impl_in_rule__Array__Group_2_1__04632 = new BitSet(new long[]{0x000000000A001060L});
+    public static final BitSet FOLLOW_rule__Array__Group_2_1__1_in_rule__Array__Group_2_1__04635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Array__Group_2_1__0__Impl4663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__Group_2_1__1__Impl_in_rule__Array__Group_2_1__14694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__OtherValuesAssignment_2_1_1_in_rule__Array__Group_2_1__1__Impl4721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Map__Group__0__Impl_in_rule__Map__Group__04755 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_rule__Map__Group__1_in_rule__Map__Group__04758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Map__Group__0__Impl4786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Map__Group__1__Impl_in_rule__Map__Group__14817 = new BitSet(new long[]{0x0000000011000000L});
+    public static final BitSet FOLLOW_rule__Map__Group__2_in_rule__Map__Group__14820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Map__MappingAssignment_1_in_rule__Map__Group__1__Impl4847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Map__Group__2__Impl_in_rule__Map__Group__24877 = new BitSet(new long[]{0x0000000011000000L});
+    public static final BitSet FOLLOW_rule__Map__Group__3_in_rule__Map__Group__24880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Map__Group_2__0_in_rule__Map__Group__2__Impl4907 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_rule__Map__Group__3__Impl_in_rule__Map__Group__34938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Map__Group__3__Impl4966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Map__Group_2__0__Impl_in_rule__Map__Group_2__05005 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_rule__Map__Group_2__1_in_rule__Map__Group_2__05008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Map__Group_2__0__Impl5036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Map__Group_2__1__Impl_in_rule__Map__Group_2__15067 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Map__OtherMappingAssignment_2_1_in_rule__Map__Group_2__1__Impl5094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__0__Impl_in_rule__Mapping__Group__05128 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__1_in_rule__Mapping__Group__05131 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__IdAssignment_0_in_rule__Mapping__Group__0__Impl5158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__1__Impl_in_rule__Mapping__Group__15188 = new BitSet(new long[]{0x000000000A001060L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__2_in_rule__Mapping__Group__15191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__AssignAssignment_1_in_rule__Mapping__Group__1__Impl5218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__Group__2__Impl_in_rule__Mapping__Group__25248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Mapping__ValueAssignment_2_in_rule__Mapping__Group__2__Impl5275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Id__Group_2__0__Impl_in_rule__Id__Group_2__05311 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_rule__Id__Group_2__1_in_rule__Id__Group_2__05314 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WORD_in_rule__Id__Group_2__0__Impl5341 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Id__Group_2__1__Impl_in_rule__Id__Group_2__15370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Id__Group_2_1__0_in_rule__Id__Group_2__1__Impl5397 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_rule__Id__Group_2_1__0__Impl_in_rule__Id__Group_2_1__05432 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Id__Group_2_1__1_in_rule__Id__Group_2_1__05435 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__Id__Group_2_1__0__Impl5463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Id__Group_2_1__1__Impl_in_rule__Id__Group_2_1__15494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WORD_in_rule__Id__Group_2_1__1__Impl5521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHeader_in_rule__Dgs__HeaderAssignment_05559 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__Dgs__EventAssignment_1_05590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_rule__Dgs__CommentAssignment_1_15621 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_MAGIC_in_rule__Header__MagicAssignment_05652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_rule__Header__NameAssignment_25683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Header__NumberOfStepsAssignment_35714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Header__NumberOfEventsAssignment_45745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAn_in_rule__Event__AnAssignment_0_05776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCn_in_rule__Event__CnAssignment_0_15807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDn_in_rule__Event__DnAssignment_0_25838 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAe_in_rule__Event__AeAssignment_0_35869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCe_in_rule__Event__CeAssignment_0_45900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDe_in_rule__Event__DeAssignment_0_55931 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCg_in_rule__Event__CgAssignment_0_65962 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSt_in_rule__Event__StAssignment_0_75993 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CL_in_rule__Event__ClAssignment_0_86024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COMMENT_in_rule__Event__CommentAssignment_1_06055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_rule__An__IdNodeAssignment_16086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributes_in_rule__An__AttributesAssignment_26117 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_rule__Cn__IdNodeAssignment_16148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributes_in_rule__Cn__AttributesAssignment_26179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_rule__Dn__IdNodeAssignment_16210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_rule__Ae__IdEdgeAssignment_16241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_rule__Ae__IdNode1Assignment_26272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DIRECTION_in_rule__Ae__DirectionAssignment_36303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_rule__Ae__IdNode2Assignment_46334 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributes_in_rule__Ae__AttributesAssignment_56365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_rule__Ce__IdEdgeAssignment_16396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributes_in_rule__Ce__AttributesAssignment_26427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_rule__De__IdEdgeAssignment_16458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributes_in_rule__Cg__AttributesAssignment_16489 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_REAL_in_rule__St__RealAssignment_16520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttribute_in_rule__Attributes__AttributeAssignment_16551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_OPERATOR_in_rule__Attribute__OperatorAssignment_06582 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_rule__Attribute__IdAttributeAssignment_16613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ASSIGN_in_rule__Attribute__AssignAssignment_2_06644 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValue_in_rule__Attribute__ValueAssignment_2_16675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValue_in_rule__Attribute__OtherValuesAssignment_2_2_16706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Value__StringAssignment_06737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_REAL_in_rule__Value__RealAssignment_16768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Value__IntAssignment_26799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArray_in_rule__Value__ArrayAssignment_36830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMap_in_rule__Value__MapAssignment_46861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValue_in_rule__Array__ValueAssignment_2_06892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValue_in_rule__Array__OtherValuesAssignment_2_1_16923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMapping_in_rule__Map__MappingAssignment_16954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMapping_in_rule__Map__OtherMappingAssignment_2_16985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleId_in_rule__Mapping__IdAssignment_07016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ASSIGN_in_rule__Mapping__AssignAssignment_17047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValue_in_rule__Mapping__ValueAssignment_27078 = new BitSet(new long[]{0x0000000000000002L});
 
 }

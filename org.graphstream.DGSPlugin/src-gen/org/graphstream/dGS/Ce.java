@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.graphstream.dGS.Ce#getIdNode <em>Id Node</em>}</li>
+ *   <li>{@link org.graphstream.dGS.Ce#getIdEdge <em>Id Edge</em>}</li>
  *   <li>{@link org.graphstream.dGS.Ce#getAttributes <em>Attributes</em>}</li>
  * </ul>
  * </p>
@@ -28,30 +28,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Ce extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Id Node</b></em>' attribute.
+   * Returns the value of the '<em><b>Id Edge</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Id Node</em>' attribute isn't clear,
+   * If the meaning of the '<em>Id Edge</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id Node</em>' attribute.
-   * @see #setIdNode(String)
-   * @see org.graphstream.dGS.DGSPackage#getCe_IdNode()
+   * @return the value of the '<em>Id Edge</em>' attribute.
+   * @see #setIdEdge(String)
+   * @see org.graphstream.dGS.DGSPackage#getCe_IdEdge()
    * @model
    * @generated
    */
-  String getIdNode();
+  String getIdEdge();
 
   /**
-   * Sets the value of the '{@link org.graphstream.dGS.Ce#getIdNode <em>Id Node</em>}' attribute.
+   * Sets the value of the '{@link org.graphstream.dGS.Ce#getIdEdge <em>Id Edge</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id Node</em>' attribute.
-   * @see #getIdNode()
+   * @param value the new value of the '<em>Id Edge</em>' attribute.
+   * @see #getIdEdge()
    * @generated
    */
-  void setIdNode(String value);
+  void setIdEdge(String value);
 
   /**
    * Returns the value of the '<em><b>Attributes</b></em>' containment reference.

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.graphstream.dGS.Value#getString <em>String</em>}</li>
  *   <li>{@link org.graphstream.dGS.Value#getReal <em>Real</em>}</li>
+ *   <li>{@link org.graphstream.dGS.Value#getInt <em>Int</em>}</li>
  *   <li>{@link org.graphstream.dGS.Value#getArray <em>Array</em>}</li>
  *   <li>{@link org.graphstream.dGS.Value#getMap <em>Map</em>}</li>
  * </ul>
@@ -80,6 +81,32 @@ public interface Value extends EObject
    * @generated
    */
   void setReal(double value);
+
+  /**
+   * Returns the value of the '<em><b>Int</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Int</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Int</em>' attribute.
+   * @see #setInt(int)
+   * @see org.graphstream.dGS.DGSPackage#getValue_Int()
+   * @model
+   * @generated
+   */
+  int getInt();
+
+  /**
+   * Sets the value of the '{@link org.graphstream.dGS.Value#getInt <em>Int</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Int</em>' attribute.
+   * @see #getInt()
+   * @generated
+   */
+  void setInt(int value);
 
   /**
    * Returns the value of the '<em><b>Array</b></em>' containment reference.

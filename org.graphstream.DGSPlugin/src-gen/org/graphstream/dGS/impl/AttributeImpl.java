@@ -33,6 +33,7 @@ import org.graphstream.dGS.Value;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.graphstream.dGS.impl.AttributeImpl#getOperator <em>Operator</em>}</li>
  *   <li>{@link org.graphstream.dGS.impl.AttributeImpl#getIdAttribute <em>Id Attribute</em>}</li>
  *   <li>{@link org.graphstream.dGS.impl.AttributeImpl#getAssign <em>Assign</em>}</li>
  *   <li>{@link org.graphstream.dGS.impl.AttributeImpl#getValue <em>Value</em>}</li>
@@ -44,6 +45,26 @@ import org.graphstream.dGS.Value;
  */
 public class AttributeImpl extends MinimalEObjectImpl.Container implements Attribute
 {
+  /**
+   * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOperator()
+   * @generated
+   * @ordered
+   */
+  protected static final String OPERATOR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOperator()
+   * @generated
+   * @ordered
+   */
+  protected String operator = OPERATOR_EDEFAULT;
+
   /**
    * The default value of the '{@link #getIdAttribute() <em>Id Attribute</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -123,6 +144,29 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   protected EClass eStaticClass()
   {
     return DGSPackage.Literals.ATTRIBUTE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getOperator()
+  {
+    return operator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOperator(String newOperator)
+  {
+    String oldOperator = operator;
+    operator = newOperator;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DGSPackage.ATTRIBUTE__OPERATOR, oldOperator, operator));
   }
 
   /**
@@ -261,6 +305,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
+      case DGSPackage.ATTRIBUTE__OPERATOR:
+        return getOperator();
       case DGSPackage.ATTRIBUTE__ID_ATTRIBUTE:
         return getIdAttribute();
       case DGSPackage.ATTRIBUTE__ASSIGN:
@@ -284,6 +330,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
+      case DGSPackage.ATTRIBUTE__OPERATOR:
+        setOperator((String)newValue);
+        return;
       case DGSPackage.ATTRIBUTE__ID_ATTRIBUTE:
         setIdAttribute((String)newValue);
         return;
@@ -311,6 +360,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
+      case DGSPackage.ATTRIBUTE__OPERATOR:
+        setOperator(OPERATOR_EDEFAULT);
+        return;
       case DGSPackage.ATTRIBUTE__ID_ATTRIBUTE:
         setIdAttribute(ID_ATTRIBUTE_EDEFAULT);
         return;
@@ -337,6 +389,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
+      case DGSPackage.ATTRIBUTE__OPERATOR:
+        return OPERATOR_EDEFAULT == null ? operator != null : !OPERATOR_EDEFAULT.equals(operator);
       case DGSPackage.ATTRIBUTE__ID_ATTRIBUTE:
         return ID_ATTRIBUTE_EDEFAULT == null ? idAttribute != null : !ID_ATTRIBUTE_EDEFAULT.equals(idAttribute);
       case DGSPackage.ATTRIBUTE__ASSIGN:
@@ -360,7 +414,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (idAttribute: ");
+    result.append(" (operator: ");
+    result.append(operator);
+    result.append(", idAttribute: ");
     result.append(idAttribute);
     result.append(", assign: ");
     result.append(assign);

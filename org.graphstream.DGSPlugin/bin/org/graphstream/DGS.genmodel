@@ -51,7 +51,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Ae/attributes"/>
     </genClasses>
     <genClasses ecoreClass="DGS.ecore#//Ce">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Ce/idNode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Ce/idEdge"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Ce/attributes"/>
     </genClasses>
     <genClasses ecoreClass="DGS.ecore#//De">
@@ -67,6 +67,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Attributes/attribute"/>
     </genClasses>
     <genClasses ecoreClass="DGS.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Attribute/operator"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Attribute/idAttribute"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Attribute/assign"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Attribute/value"/>
@@ -75,6 +76,7 @@
     <genClasses ecoreClass="DGS.ecore#//Value">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Value/string"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Value/real"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DGS.ecore#//Value/int"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Value/array"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Value/map"/>
     </genClasses>

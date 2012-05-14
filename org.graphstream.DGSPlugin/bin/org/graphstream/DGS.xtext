@@ -1,61 +1,126 @@
+/*
+* Copyright 2006 - 2012
+* Florian Yger <florian.yger@graphstream-project.org> 
+*
+* GraphStream is a library whose purpose is to handle static or dynamic
+* graph, create them from scratch, file or any source and display them.
+*
+* This program is free software distributed under the terms of two licenses, the
+* CeCILL-C license that fits European law, and the GNU Lesser General Public
+* License. You can use, modify and/ or redistribute the software under the terms
+* of the CeCILL-C license as circulated by CEA, CNRS and INRIA at the following
+* URL <http://www.cecill.info> or under the terms of the GNU LGPL as published by
+* the Free Software Foundation, either version 3 of the License, or (at your
+* option) any later version.
+*
+* This program is distributed in the hope that it will be useful, but WITHOUT ANY
+* WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+* PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+*
+* You should have received a copy of the GNU Lesser General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
+*
+* The fact that you are presently reading this means that you have had
+* knowledge of the CeCILL-C and LGPL licenses and that you accept their terms.
+*/
+
+/************************************ Begin of Summary ************************************/
+/*
+	This document contains DGS's EBNF grammar used by ANTLR.
+ */
+/************************************* End of Summary *************************************/
+
 grammar org.graphstream.DGS hidden(WS)
 
 generate dGS "http://www.graphstream.org/DGS"
-
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-Dgs: header=Header (event+=Event | comment+=COMMENT | EOL)*;
+Dgs:
+	header=Header (event+=Event | comment+=COMMENT | EOL)*;
 
-Header: magic=MAGIC EOL name=(ID | STRING) numberOfSteps=INT numberOfEvents=INT EOL;
+Header:
+	magic=MAGIC EOL name=Id numberOfSteps=INT numberOfEvents=INT EOL;
 
-terminal MAGIC: 'DGS003'|'DGS004';
+terminal MAGIC:
+	'DGS003' | 'DGS004';
 
-Event: (an=An|cn=Cn|dn=Dn|ae=Ae|ce=Ce|de=De|cg=Cg|st=St|cl=Cl) (comment=COMMENT | EOL);
+Event:
+	(an=An | cn=Cn | dn=Dn | ae=Ae | ce=Ce | de=De | cg=Cg | st=St | cl=Cl) (comment=COMMENT | EOL);
 
-An: 'an' idNode=(ID | STRING) attributes=Attributes;
-	
-Cn: 'cn' idNode=(ID | STRING) attributes=Attributes;
-	
-Dn: 'dn' idNode=(ID | STRING);
-	
-Ae: 'ae' idEdge=(ID | STRING) idNode1=(ID | STRING) (direction=DIRECTION)? idNode2=(ID | STRING) attributes=Attributes;
-	
-Ce: 'ce' idNode=(ID | STRING) attributes=Attributes;
-	
-De: 'de' idEdge=(ID | STRING);
-	
-Cg: 'cg' attributes=Attributes;
-	
-St: 'st' real=Real;
+An:
+	'an' idNode=Id attributes=Attributes;
 
-terminal Cl: 'cl';
+Cn:
+	'cn' idNode=Id attributes=Attributes;
 
-Attributes: {Attributes} (attribute+=Attribute)*;
-	
-Attribute: ('+'|'-')? idAttribute=(ID | STRING) (assign=ASSIGN value=Value (',' otherValues+=Value)*)?;
-	
-Value: (string=STRING | real=Real | array=Array | map=Map);
-	
-Array: {Array} '{' (value=Value (',' otherValues+=Value)*)? '}';
-		
-Map: '[' mapping=Mapping (',' otherMapping+=Mapping)* ']';
+Dn:
+	'dn' idNode=Id;
 
-Mapping: id=(ID | STRING) assign=ASSIGN value=Value;
+Ae:
+	'ae' idEdge=Id idNode1=Id (direction=DIRECTION)? idNode2=Id attributes=Attributes;
 
-terminal DIRECTION: '<'|'>';
-	
-terminal ASSIGN: '='|':';
+Ce:
+	'ce' idEdge=Id attributes=Attributes;
 
-terminal COMMENT: '#' -> EOL;
+De:
+	'de' idEdge=Id;
 
-Real returns ecore::EDouble: INT ('.' ('0')* INT);
+Cg:
+	'cg' attributes=Attributes;
 
-terminal INT returns ecore::EInt: ('0' | ('1'..'9') ('0'..'9')*);
+St:
+	'st' real=REAL;
 
-terminal STRING returns ecore::EString: '"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"';
+terminal Cl:
+	'cl';
 
-terminal ID returns ecore::EString: ('a'..'z' | 'A'..'Z' | '0'..'9')+; //?
+Attributes:
+	{Attributes} (attribute+=Attribute)*;
 
-terminal EOL: ('\r')? '\n';
+Attribute:
+	(operator=OPERATOR)? idAttribute=Id (assign=ASSIGN value=Value (',' otherValues+=Value)*)?;
 
-terminal WS: (' '|'\t')+;
+Value:
+	(string=STRING | real=REAL | int=INT | array=Array | map=Map);
+
+Array:
+	{Array} '{' (value=Value (',' otherValues+=Value)*)? '}';
+
+Map:
+	'[' mapping=Mapping (',' otherMapping+=Mapping)* ']';
+
+Mapping:
+	id=Id assign=ASSIGN value=Value;
+
+terminal OPERATOR:
+	'+' | '-';
+
+terminal DIRECTION:
+	'<' | '>';
+
+terminal ASSIGN:
+	'=' | ':';
+
+Id returns ecore::EString:
+	STRING | INT | (WORD ('.' WORD)*);
+
+terminal COMMENT:
+	'#'->EOL;
+
+terminal INT returns ecore::EInt:
+	('0' | ('1'..'9') ('0'..'9')*);
+
+terminal REAL returns ecore::EDouble:
+	INT ('.' ('0')* INT)?;
+
+terminal WORD returns ecore::EString:
+	('a'..'z' | 'A'..'Z') ('a'..'z' | 'A'..'Z' | '0'..'9' | '-' | '_')*;
+
+terminal STRING returns ecore::EString:
+	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | 'u' | '"' | "'" | '\\') | !('\\' | '"'))* '"';
+
+terminal EOL:
+	('\r')? '\n';
+
+terminal WS:
+	(' ' | '\t')+;

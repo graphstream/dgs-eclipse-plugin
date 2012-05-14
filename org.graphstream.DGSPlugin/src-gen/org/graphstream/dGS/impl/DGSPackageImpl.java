@@ -578,7 +578,7 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCe_IdNode()
+  public EAttribute getCe_IdEdge()
   {
     return (EAttribute)ceEClass.getEStructuralFeatures().get(0);
   }
@@ -688,7 +688,7 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttribute_IdAttribute()
+  public EAttribute getAttribute_Operator()
   {
     return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
   }
@@ -698,7 +698,7 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttribute_Assign()
+  public EAttribute getAttribute_IdAttribute()
   {
     return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
   }
@@ -708,9 +708,19 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getAttribute_Assign()
+  {
+    return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getAttribute_Value()
   {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(2);
+    return (EReference)attributeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -720,7 +730,7 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
    */
   public EReference getAttribute_OtherValues()
   {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(3);
+    return (EReference)attributeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -758,9 +768,19 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getValue_Int()
+  {
+    return (EAttribute)valueEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getValue_Array()
   {
-    return (EReference)valueEClass.getEStructuralFeatures().get(2);
+    return (EReference)valueEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -770,7 +790,7 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
    */
   public EReference getValue_Map()
   {
-    return (EReference)valueEClass.getEStructuralFeatures().get(3);
+    return (EReference)valueEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -945,7 +965,7 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
     createEReference(aeEClass, AE__ATTRIBUTES);
 
     ceEClass = createEClass(CE);
-    createEAttribute(ceEClass, CE__ID_NODE);
+    createEAttribute(ceEClass, CE__ID_EDGE);
     createEReference(ceEClass, CE__ATTRIBUTES);
 
     deEClass = createEClass(DE);
@@ -961,6 +981,7 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
     createEReference(attributesEClass, ATTRIBUTES__ATTRIBUTE);
 
     attributeEClass = createEClass(ATTRIBUTE);
+    createEAttribute(attributeEClass, ATTRIBUTE__OPERATOR);
     createEAttribute(attributeEClass, ATTRIBUTE__ID_ATTRIBUTE);
     createEAttribute(attributeEClass, ATTRIBUTE__ASSIGN);
     createEReference(attributeEClass, ATTRIBUTE__VALUE);
@@ -969,6 +990,7 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
     valueEClass = createEClass(VALUE);
     createEAttribute(valueEClass, VALUE__STRING);
     createEAttribute(valueEClass, VALUE__REAL);
+    createEAttribute(valueEClass, VALUE__INT);
     createEReference(valueEClass, VALUE__ARRAY);
     createEReference(valueEClass, VALUE__MAP);
 
@@ -1059,7 +1081,7 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
     initEReference(getAe_Attributes(), this.getAttributes(), null, "attributes", null, 0, 1, Ae.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ceEClass, Ce.class, "Ce", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCe_IdNode(), ecorePackage.getEString(), "idNode", null, 0, 1, Ce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCe_IdEdge(), ecorePackage.getEString(), "idEdge", null, 0, 1, Ce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCe_Attributes(), this.getAttributes(), null, "attributes", null, 0, 1, Ce.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deEClass, De.class, "De", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1075,6 +1097,7 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
     initEReference(getAttributes_Attribute(), this.getAttribute(), null, "attribute", null, 0, -1, Attributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAttribute_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_IdAttribute(), ecorePackage.getEString(), "idAttribute", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_Assign(), ecorePackage.getEString(), "assign", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAttribute_Value(), this.getValue(), null, "value", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1083,6 +1106,7 @@ public class DGSPackageImpl extends EPackageImpl implements DGSPackage
     initEClass(valueEClass, Value.class, "Value", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getValue_String(), ecorePackage.getEString(), "string", null, 0, 1, Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getValue_Real(), ecorePackage.getEDouble(), "real", null, 0, 1, Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getValue_Int(), ecorePackage.getEInt(), "int", null, 0, 1, Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getValue_Array(), this.getArray(), null, "array", null, 0, 1, Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getValue_Map(), this.getMap(), null, "map", null, 0, 1, Value.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -169,7 +169,7 @@ public class AbstractDGSSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((idEdge=ID | idEdge=STRING) (idNode1=ID | idNode1=STRING) direction=DIRECTION? (idNode2=ID | idNode2=STRING) attributes=Attributes)
+	 *     (idEdge=Id idNode1=Id direction=DIRECTION? idNode2=Id attributes=Attributes)
 	 */
 	protected void sequence_Ae(EObject context, Ae semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -178,10 +178,20 @@ public class AbstractDGSSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((idNode=ID | idNode=STRING) attributes=Attributes)
+	 *     (idNode=Id attributes=Attributes)
 	 */
 	protected void sequence_An(EObject context, An semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.AN__ID_NODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.AN__ID_NODE));
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.AN__ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.AN__ATTRIBUTES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getAnAccess().getIdNodeIdParserRuleCall_1_0(), semanticObject.getIdNode());
+		feeder.accept(grammarAccess.getAnAccess().getAttributesAttributesParserRuleCall_2_0(), semanticObject.getAttributes());
+		feeder.finish();
 	}
 	
 	
@@ -196,7 +206,7 @@ public class AbstractDGSSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((idAttribute=ID | idAttribute=STRING) (assign=ASSIGN value=Value otherValues+=Value*)?)
+	 *     (operator=OPERATOR? idAttribute=Id (assign=ASSIGN value=Value otherValues+=Value*)?)
 	 */
 	protected void sequence_Attribute(EObject context, Attribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -214,10 +224,20 @@ public class AbstractDGSSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((idNode=ID | idNode=STRING) attributes=Attributes)
+	 *     (idEdge=Id attributes=Attributes)
 	 */
 	protected void sequence_Ce(EObject context, Ce semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.CE__ID_EDGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.CE__ID_EDGE));
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.CE__ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.CE__ATTRIBUTES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getCeAccess().getIdEdgeIdParserRuleCall_1_0(), semanticObject.getIdEdge());
+		feeder.accept(grammarAccess.getCeAccess().getAttributesAttributesParserRuleCall_2_0(), semanticObject.getAttributes());
+		feeder.finish();
 	}
 	
 	
@@ -239,19 +259,36 @@ public class AbstractDGSSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((idNode=ID | idNode=STRING) attributes=Attributes)
+	 *     (idNode=Id attributes=Attributes)
 	 */
 	protected void sequence_Cn(EObject context, Cn semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.CN__ID_NODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.CN__ID_NODE));
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.CN__ATTRIBUTES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.CN__ATTRIBUTES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getCnAccess().getIdNodeIdParserRuleCall_1_0(), semanticObject.getIdNode());
+		feeder.accept(grammarAccess.getCnAccess().getAttributesAttributesParserRuleCall_2_0(), semanticObject.getAttributes());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (idEdge=ID | idEdge=STRING)
+	 *     idEdge=Id
 	 */
 	protected void sequence_De(EObject context, De semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.DE__ID_EDGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.DE__ID_EDGE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDeAccess().getIdEdgeIdParserRuleCall_1_0(), semanticObject.getIdEdge());
+		feeder.finish();
 	}
 	
 	
@@ -266,10 +303,17 @@ public class AbstractDGSSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (idNode=ID | idNode=STRING)
+	 *     idNode=Id
 	 */
 	protected void sequence_Dn(EObject context, Dn semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.DN__ID_NODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.DN__ID_NODE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDnAccess().getIdNodeIdParserRuleCall_1_0(), semanticObject.getIdNode());
+		feeder.finish();
 	}
 	
 	
@@ -297,10 +341,26 @@ public class AbstractDGSSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (magic=MAGIC (name=ID | name=STRING) numberOfSteps=INT numberOfEvents=INT)
+	 *     (magic=MAGIC name=Id numberOfSteps=INT numberOfEvents=INT)
 	 */
 	protected void sequence_Header(EObject context, Header semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.HEADER__MAGIC) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.HEADER__MAGIC));
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.HEADER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.HEADER__NAME));
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.HEADER__NUMBER_OF_STEPS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.HEADER__NUMBER_OF_STEPS));
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.HEADER__NUMBER_OF_EVENTS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.HEADER__NUMBER_OF_EVENTS));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getHeaderAccess().getMagicMAGICTerminalRuleCall_0_0(), semanticObject.getMagic());
+		feeder.accept(grammarAccess.getHeaderAccess().getNameIdParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getHeaderAccess().getNumberOfStepsINTTerminalRuleCall_3_0(), semanticObject.getNumberOfSteps());
+		feeder.accept(grammarAccess.getHeaderAccess().getNumberOfEventsINTTerminalRuleCall_4_0(), semanticObject.getNumberOfEvents());
+		feeder.finish();
 	}
 	
 	
@@ -315,16 +375,29 @@ public class AbstractDGSSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((id=ID | id=STRING) assign=ASSIGN value=Value)
+	 *     (id=Id assign=ASSIGN value=Value)
 	 */
 	protected void sequence_Mapping(EObject context, Mapping semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.MAPPING__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.MAPPING__ID));
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.MAPPING__ASSIGN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.MAPPING__ASSIGN));
+			if(transientValues.isValueTransient(semanticObject, DGSPackage.Literals.MAPPING__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DGSPackage.Literals.MAPPING__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getMappingAccess().getIdIdParserRuleCall_0_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getMappingAccess().getAssignASSIGNTerminalRuleCall_1_0(), semanticObject.getAssign());
+		feeder.accept(grammarAccess.getMappingAccess().getValueValueParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     real=Real
+	 *     real=REAL
 	 */
 	protected void sequence_St(EObject context, St semanticObject) {
 		if(errorAcceptor != null) {
@@ -333,14 +406,14 @@ public class AbstractDGSSemanticSequencer extends AbstractSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStAccess().getRealRealParserRuleCall_1_0(), semanticObject.getReal());
+		feeder.accept(grammarAccess.getStAccess().getRealREALTerminalRuleCall_1_0(), semanticObject.getReal());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (string=STRING | real=Real | array=Array | map=Map)
+	 *     (string=STRING | real=REAL | int=INT | array=Array | map=Map)
 	 */
 	protected void sequence_Value(EObject context, Value semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

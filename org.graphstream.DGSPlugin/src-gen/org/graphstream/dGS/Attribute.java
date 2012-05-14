@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.graphstream.dGS.Attribute#getOperator <em>Operator</em>}</li>
  *   <li>{@link org.graphstream.dGS.Attribute#getIdAttribute <em>Id Attribute</em>}</li>
  *   <li>{@link org.graphstream.dGS.Attribute#getAssign <em>Assign</em>}</li>
  *   <li>{@link org.graphstream.dGS.Attribute#getValue <em>Value</em>}</li>
@@ -31,6 +32,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Attribute extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Operator</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Operator</em>' attribute.
+   * @see #setOperator(String)
+   * @see org.graphstream.dGS.DGSPackage#getAttribute_Operator()
+   * @model
+   * @generated
+   */
+  String getOperator();
+
+  /**
+   * Sets the value of the '{@link org.graphstream.dGS.Attribute#getOperator <em>Operator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Operator</em>' attribute.
+   * @see #getOperator()
+   * @generated
+   */
+  void setOperator(String value);
+
   /**
    * Returns the value of the '<em><b>Id Attribute</b></em>' attribute.
    * <!-- begin-user-doc -->

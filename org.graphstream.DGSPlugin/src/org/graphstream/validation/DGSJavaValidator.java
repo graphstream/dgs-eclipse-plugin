@@ -1,83 +1,203 @@
+/*
+ * Copyright 2006 - 2012
+ * Florian Yger <florian.yger@graphstream-project.org> 
+ *
+ * GraphStream is a library whose purpose is to handle static or dynamic
+ * graph, create them from scratch, file or any source and display them.
+ *
+ * This program is free software distributed under the terms of two licenses, the
+ * CeCILL-C license that fits European law, and the GNU Lesser General Public
+ * License. You can use, modify and/ or redistribute the software under the terms
+ * of the CeCILL-C license as circulated by CEA, CNRS and INRIA at the following
+ * URL <http://www.cecill.info> or under the terms of the GNU LGPL as published by
+ * the Free Software Foundation, either version 3 of the License, or (at your
+ * option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+ * PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * The fact that you are presently reading this means that you have had
+ * knowledge of the CeCILL-C and LGPL licenses and that you accept their terms.
+ */
+
 package org.graphstream.validation;
 
 import org.eclipse.xtext.validation.Check;
 import org.graphstream.dGS.Ae;
 import org.graphstream.dGS.An;
+import org.graphstream.dGS.Attribute;
+import org.graphstream.dGS.Ce;
+import org.graphstream.dGS.Cn;
 import org.graphstream.dGS.DGSPackage;
 import org.graphstream.dGS.De;
 import org.graphstream.dGS.Dgs;
 import org.graphstream.dGS.Dn;
 import org.graphstream.dGS.Event;
 import org.graphstream.dGS.Header;
+import org.graphstream.graph.Edge;
 import org.graphstream.graph.Graph;
+import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.AdjacencyListGraph;
- 
+
+/************************************ Begin of Summary ************************************/
+/*
+ This class allows to add new errors to error parser.
+
+ Used to implements warnings (idNode, idEdge, idAttribute).
+ */
+/************************************* End of Summary *************************************/
+
 public class DGSJavaValidator extends AbstractDGSJavaValidator {
 
+	// Current graph
 	Graph graph = new AdjacencyListGraph("Temp");
-	
+
+	// First node = clear the graph
 	@Check
 	public void clearGraphEachCall(Dgs dgs) {
 		graph.clear();
 	}
-	
+
+	// Header node = warning if text is different from "null 0 0"
 	@Check
 	public void deprecatedHeader(Header header) {
-		if(!header.getName().equals("null"))
+		if (!header.getName().equals("null"))
 			warning("Deprecated, use 'null'", DGSPackage.Literals.HEADER__NAME);
-		if(header.getNumberOfSteps() != 0)
-			warning("Deprecated, put '0'", DGSPackage.Literals.HEADER__NUMBER_OF_STEPS);
-		if(header.getNumberOfEvents() != 0)
-			warning("Deprecated, put '0'", DGSPackage.Literals.HEADER__NUMBER_OF_EVENTS);
+		if (header.getNumberOfSteps() != 0)
+			warning("Deprecated, put '0'",
+					DGSPackage.Literals.HEADER__NUMBER_OF_STEPS);
+		if (header.getNumberOfEvents() != 0)
+			warning("Deprecated, put '0'",
+					DGSPackage.Literals.HEADER__NUMBER_OF_EVENTS);
 	}
-	
+
+	// Cl node = clear the graph
 	@Check
 	public void clearGraph(Event event) {
-		if(event.getCl().equals("cl"))
+		if (event.getCl().equals("cl"))
 			graph.clear();
 	}
-	
+
+	// An node = verify IdNode, verify + & - for Attributes, store Node with
+	// Attributes
 	@Check
 	public void addAn(An an) {
 		String id = an.getIdNode();
-		if(graph.getNode(id) == null){
+		if (graph.getNode(id) == null) {
 			graph.addNode(id);
-			/*for(Attribute a : an.getAttributes().getAttribute()){
-				
-				graph.getNode(id).addAttribute(id,);
-			}*/
-		}
-		else warning("This id already exists", DGSPackage.Literals.AN__ID_NODE);
+			for (Attribute a : an.getAttributes().getAttribute()) {
+				if (a.getOperator() == null || a.getOperator().equals("+"))
+					graph.getNode(id).addAttribute(a.getIdAttribute(),
+							"value_is_not_interesting_here");
+				if (a.getOperator().equals("+"))
+					warning("'+' has no sense here",
+							DGSPackage.Literals.AN__ATTRIBUTES);
+				if (a.getOperator().equals("-"))
+					warning("'-' has no sense here",
+							DGSPackage.Literals.AN__ATTRIBUTES);
+			}
+		} else
+			warning("This id already exists", DGSPackage.Literals.AN__ID_NODE);
 	}
-	
+
+	// Ae node = verify IdEdge and IdNodes, verify + & - for Attributes, store
+	// Edge with Attributes
 	@Check
 	public void addAe(Ae ae) {
-		if(graph.getEdge(ae.getIdEdge()) != null)
+		if (graph.getEdge(ae.getIdEdge()) != null)
 			warning("This id already exists", DGSPackage.Literals.AE__ID_EDGE);
-		
-		if(graph.getNode(ae.getIdNode1()) == null)
+
+		if (graph.getNode(ae.getIdNode1()) == null)
 			warning("This id doesn't exist", DGSPackage.Literals.AE__ID_NODE1);
-		
-		if(graph.getNode(ae.getIdNode2()) == null)
+
+		if (graph.getNode(ae.getIdNode2()) == null)
 			warning("This id doesn't exist", DGSPackage.Literals.AE__ID_NODE2);
-		
-		if(graph.getEdge(ae.getIdEdge()) == null && graph.getNode(ae.getIdNode1()) != null && graph.getNode(ae.getIdNode2()) != null)
-			graph.addEdge(ae.getIdEdge(),ae.getIdNode1(),ae.getIdNode2());
+
+		String id = ae.getIdEdge();
+		if (graph.getEdge(id) == null && graph.getNode(ae.getIdNode1()) != null
+				&& graph.getNode(ae.getIdNode2()) != null) {
+			graph.addEdge(id, ae.getIdNode1(), ae.getIdNode2());
+			for (Attribute a : ae.getAttributes().getAttribute()) {
+				if (a.getOperator() == null || a.getOperator().equals("+"))
+					graph.getEdge(id).addAttribute(a.getIdAttribute(),
+							"value_is_not_interesting_here");
+				if (a.getOperator().equals("+"))
+					warning("'+' has no sense here",
+							DGSPackage.Literals.AE__ATTRIBUTES);
+				if (a.getOperator().equals("-"))
+					warning("'-' has no sense here",
+							DGSPackage.Literals.AE__ATTRIBUTES);
+			}
+		}
 	}
-	
+
+	// Cn node = verify IdNode, IdAttributes.
+	@Check
+	public void changeCn(Cn cn) {
+		Node n = graph.getNode(cn.getIdNode());
+		if (n != null) {
+			for (Attribute a : cn.getAttributes().getAttribute()) {
+				if (n.getAttribute(a.getIdAttribute()) == null) {
+					if (a.getOperator() == null || a.getOperator().equals("+"))
+						graph.getNode(n.getId()).addAttribute(
+								a.getIdAttribute(),
+								"value_is_not_interesting_here");
+					else
+						warning("This id doesn't exist",
+								DGSPackage.Literals.CN__ATTRIBUTES);
+				} else {
+					if (a.getOperator().equals("-"))
+						graph.getNode(n.getId()).removeAttribute(
+								a.getIdAttribute());
+				}
+			}
+		} else
+			warning("This id doesn't exist", DGSPackage.Literals.CN__ID_NODE);
+	}
+
+	// Ce node = verify IdEdge, IdAttributes.
+	@Check
+	public void changeCe(Ce ce) {
+		Edge e = graph.getEdge(ce.getIdEdge());
+		if (e != null) {
+			for (Attribute a : ce.getAttributes().getAttribute()) {
+				if (e.getAttribute(a.getIdAttribute()) == null) {
+					if (a.getOperator() == null || a.getOperator().equals("+"))
+						graph.getEdge(e.getId()).addAttribute(
+								a.getIdAttribute(),
+								"value_is_not_interesting_here");
+					else
+						warning("This id doesn't exist",
+								DGSPackage.Literals.CE__ATTRIBUTES);
+				} else {
+					if (a.getOperator().equals("-"))
+						graph.getEdge(e.getId()).removeAttribute(
+								a.getIdAttribute());
+				}
+			}
+		} else
+			warning("This id doesn't exist", DGSPackage.Literals.CE__ID_EDGE);
+	}
+
+	// Dn node = verify IdNode, remove node
 	@Check
 	public void removeDn(Dn dn) {
-		if(graph.getNode(dn.getIdNode()) != null){
+		if (graph.getNode(dn.getIdNode()) != null) {
 			graph.removeNode(dn.getIdNode());
-		}
-		else warning("This id doesn't exist", DGSPackage.Literals.DN__ID_NODE);
+		} else
+			warning("This id doesn't exist", DGSPackage.Literals.DN__ID_NODE);
 	}
-	
+
+	// Dn node = verify IdEdge, remove edge
 	@Check
 	public void removeDe(De de) {
-		if(graph.getNode(de.getIdEdge()) != null){
-			graph.removeNode(de.getIdEdge());
-		}
-		else warning("This id doesn't exist", DGSPackage.Literals.DE__ID_EDGE);
+		if (graph.getEdge(de.getIdEdge()) != null) {
+			graph.removeEdge(de.getIdEdge());
+		} else
+			warning("This id doesn't exist", DGSPackage.Literals.DE__ID_EDGE);
 	}
 }

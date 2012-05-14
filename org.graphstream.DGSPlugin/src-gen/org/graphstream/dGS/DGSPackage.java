@@ -447,13 +447,13 @@ public interface DGSPackage extends EPackage
   int CE = 7;
 
   /**
-   * The feature id for the '<em><b>Id Node</b></em>' attribute.
+   * The feature id for the '<em><b>Id Edge</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CE__ID_NODE = 0;
+  int CE__ID_EDGE = 0;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference.
@@ -596,13 +596,22 @@ public interface DGSPackage extends EPackage
   int ATTRIBUTE = 12;
 
   /**
+   * The feature id for the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__OPERATOR = 0;
+
+  /**
    * The feature id for the '<em><b>Id Attribute</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__ID_ATTRIBUTE = 0;
+  int ATTRIBUTE__ID_ATTRIBUTE = 1;
 
   /**
    * The feature id for the '<em><b>Assign</b></em>' attribute.
@@ -611,7 +620,7 @@ public interface DGSPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__ASSIGN = 1;
+  int ATTRIBUTE__ASSIGN = 2;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -620,7 +629,7 @@ public interface DGSPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__VALUE = 2;
+  int ATTRIBUTE__VALUE = 3;
 
   /**
    * The feature id for the '<em><b>Other Values</b></em>' containment reference list.
@@ -629,7 +638,7 @@ public interface DGSPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__OTHER_VALUES = 3;
+  int ATTRIBUTE__OTHER_VALUES = 4;
 
   /**
    * The number of structural features of the '<em>Attribute</em>' class.
@@ -638,7 +647,7 @@ public interface DGSPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_FEATURE_COUNT = 4;
+  int ATTRIBUTE_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.graphstream.dGS.impl.ValueImpl <em>Value</em>}' class.
@@ -669,13 +678,22 @@ public interface DGSPackage extends EPackage
   int VALUE__REAL = 1;
 
   /**
+   * The feature id for the '<em><b>Int</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE__INT = 2;
+
+  /**
    * The feature id for the '<em><b>Array</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VALUE__ARRAY = 2;
+  int VALUE__ARRAY = 3;
 
   /**
    * The feature id for the '<em><b>Map</b></em>' containment reference.
@@ -684,7 +702,7 @@ public interface DGSPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VALUE__MAP = 3;
+  int VALUE__MAP = 4;
 
   /**
    * The number of structural features of the '<em>Value</em>' class.
@@ -693,7 +711,7 @@ public interface DGSPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VALUE_FEATURE_COUNT = 4;
+  int VALUE_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.graphstream.dGS.impl.ArrayImpl <em>Array</em>}' class.
@@ -1194,15 +1212,15 @@ public interface DGSPackage extends EPackage
   EClass getCe();
 
   /**
-   * Returns the meta object for the attribute '{@link org.graphstream.dGS.Ce#getIdNode <em>Id Node</em>}'.
+   * Returns the meta object for the attribute '{@link org.graphstream.dGS.Ce#getIdEdge <em>Id Edge</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id Node</em>'.
-   * @see org.graphstream.dGS.Ce#getIdNode()
+   * @return the meta object for the attribute '<em>Id Edge</em>'.
+   * @see org.graphstream.dGS.Ce#getIdEdge()
    * @see #getCe()
    * @generated
    */
-  EAttribute getCe_IdNode();
+  EAttribute getCe_IdEdge();
 
   /**
    * Returns the meta object for the containment reference '{@link org.graphstream.dGS.Ce#getAttributes <em>Attributes</em>}'.
@@ -1310,6 +1328,17 @@ public interface DGSPackage extends EPackage
   EClass getAttribute();
 
   /**
+   * Returns the meta object for the attribute '{@link org.graphstream.dGS.Attribute#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operator</em>'.
+   * @see org.graphstream.dGS.Attribute#getOperator()
+   * @see #getAttribute()
+   * @generated
+   */
+  EAttribute getAttribute_Operator();
+
+  /**
    * Returns the meta object for the attribute '{@link org.graphstream.dGS.Attribute#getIdAttribute <em>Id Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1384,6 +1413,17 @@ public interface DGSPackage extends EPackage
    * @generated
    */
   EAttribute getValue_Real();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.graphstream.dGS.Value#getInt <em>Int</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Int</em>'.
+   * @see org.graphstream.dGS.Value#getInt()
+   * @see #getValue()
+   * @generated
+   */
+  EAttribute getValue_Int();
 
   /**
    * Returns the meta object for the containment reference '{@link org.graphstream.dGS.Value#getArray <em>Array</em>}'.
@@ -1834,12 +1874,12 @@ public interface DGSPackage extends EPackage
     EClass CE = eINSTANCE.getCe();
 
     /**
-     * The meta object literal for the '<em><b>Id Node</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Id Edge</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CE__ID_NODE = eINSTANCE.getCe_IdNode();
+    EAttribute CE__ID_EDGE = eINSTANCE.getCe_IdEdge();
 
     /**
      * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.
@@ -1932,6 +1972,14 @@ public interface DGSPackage extends EPackage
     EClass ATTRIBUTE = eINSTANCE.getAttribute();
 
     /**
+     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE__OPERATOR = eINSTANCE.getAttribute_Operator();
+
+    /**
      * The meta object literal for the '<em><b>Id Attribute</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1988,6 +2036,14 @@ public interface DGSPackage extends EPackage
      * @generated
      */
     EAttribute VALUE__REAL = eINSTANCE.getValue_Real();
+
+    /**
+     * The meta object literal for the '<em><b>Int</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VALUE__INT = eINSTANCE.getValue_Int();
 
     /**
      * The meta object literal for the '<em><b>Array</b></em>' containment reference feature.
