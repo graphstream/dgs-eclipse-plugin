@@ -25,14 +25,17 @@ Import-Package: org.apache.log4j,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.graphstream,
  org.graphstream.services,
- org.graphstream.dGS,
- org.graphstream.dGS.impl,
- org.graphstream.dGS.util,
+ org.graphstream.dgs,
+ org.graphstream.dgs.impl,
+ org.graphstream.dgs.util,
  org.graphstream.serializer,
  org.graphstream.parser.antlr,
  org.graphstream.parser.antlr.internal,
  org.graphstream.validation,
  org.graphstream.scoping,
  org.graphstream.generator,
- org.graphstream.formatting
+ org.graphstream.formatting,
+ org.graphstream.dgs,
+ org.graphstream.dgs.impl,
+ org.graphstream.dgs.util
 Bundle-ClassPath: .,lib/gs-core.jar,lib/gs-algo.jar,lib/gs-ui.jar,lib/mbox2.jar,lib/pherd.jar

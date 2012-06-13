@@ -41,12 +41,12 @@ public abstract class AbstractDGSRuntimeModule extends DefaultRuntimeModule {
 
 	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment
 	public Class<? extends org.eclipse.xtext.serializer.sequencer.ISemanticSequencer> bindISemanticSequencer() {
-		return org.graphstream.serializer.AbstractDGSSemanticSequencer.class;
+		return org.graphstream.serializer.DGSSemanticSequencer.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment
 	public Class<? extends org.eclipse.xtext.serializer.sequencer.ISyntacticSequencer> bindISyntacticSequencer() {
-		return org.graphstream.serializer.AbstractDGSSyntacticSequencer.class;
+		return org.graphstream.serializer.DGSSyntacticSequencer.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.serializer.SerializerFragment

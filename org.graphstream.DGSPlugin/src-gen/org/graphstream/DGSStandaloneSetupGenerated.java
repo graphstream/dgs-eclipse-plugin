@@ -36,7 +36,7 @@ public class DGSStandaloneSetupGenerated implements ISetup {
 	
 	public void register(Injector injector) {
 	if (!EPackage.Registry.INSTANCE.containsKey("http://www.graphstream.org/DGS")) {
-		EPackage.Registry.INSTANCE.put("http://www.graphstream.org/DGS", org.graphstream.dGS.DGSPackage.eINSTANCE);
+		EPackage.Registry.INSTANCE.put("http://www.graphstream.org/DGS", org.graphstream.dgs.DgsPackage.eINSTANCE);
 	}
 
 		org.eclipse.xtext.resource.IResourceFactory resourceFactory = injector.getInstance(org.eclipse.xtext.resource.IResourceFactory.class);

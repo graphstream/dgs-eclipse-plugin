@@ -8,6 +8,8 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import org.graphstream.ui.internal.DGSActivator;
+
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -16,12 +18,12 @@ public class DGSExecutableExtensionFactory extends AbstractGuiceAwareExecutableE
 
 	@Override
 	protected Bundle getBundle() {
-		return org.graphstream.ui.internal.DGSActivator.getInstance().getBundle();
+		return DGSActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return org.graphstream.ui.internal.DGSActivator.getInstance().getInjector("org.graphstream.DGS");
+		return DGSActivator.getInstance().getInjector(DGSActivator.ORG_GRAPHSTREAM_DGS);
 	}
 	
 }

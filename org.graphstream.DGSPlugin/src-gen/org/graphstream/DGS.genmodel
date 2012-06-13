@@ -6,8 +6,8 @@
     modelPluginID="org.graphstream.DGSPlugin" forceOverwrite="true" modelName="DGS"
     updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.graphstream.DGSPlugin.edit"
-    editorPluginID="org.graphstream.DGSPlugin.editor">
-  <genPackages prefix="DGS" basePackage="org.graphstream" disposableProviderFactory="true"
+    editorPluginID="org.graphstream.DGSPlugin.editor" runtimeVersion="2.7">
+  <genPackages prefix="Dgs" basePackage="org.graphstream" disposableProviderFactory="true"
       ecorePackage="DGS.ecore#/">
     <genClasses ecoreClass="DGS.ecore#//Dgs">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DGS.ecore#//Dgs/header"/>

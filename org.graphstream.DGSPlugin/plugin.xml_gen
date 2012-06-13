@@ -6,7 +6,7 @@
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
        uri = "http://www.graphstream.org/DGS" 
-       class = "org.graphstream.dGS.DGSPackage"
+       class = "org.graphstream.dgs.DgsPackage"
        genModel = "org/graphstream/DGS.genmodel" /> 
 	
   </extension>

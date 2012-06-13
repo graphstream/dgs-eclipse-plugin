@@ -11,7 +11,7 @@ public class AbstractDGSJavaValidator extends AbstractDeclarativeValidator {
 	@Override
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
-	    result.add(org.graphstream.dGS.DGSPackage.eINSTANCE);
+	    result.add(org.graphstream.dgs.DgsPackage.eINSTANCE);
 		return result;
 	}
 

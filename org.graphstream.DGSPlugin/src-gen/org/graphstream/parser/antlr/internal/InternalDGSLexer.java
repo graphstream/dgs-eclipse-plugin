@@ -1175,9 +1175,9 @@ public class InternalDGSLexer extends Lexer {
 
     protected DFA11 dfa11 = new DFA11(this);
     static final String DFA11_eotS =
-        "\1\uffff\4\22\6\uffff\1\22\4\uffff\2\40\4\uffff\1\43\1\44\1\45"+
-        "\1\46\1\47\1\50\1\51\1\52\1\53\1\22\2\uffff\1\40\11\uffff\3\22\2"+
-        "\61\1\uffff";
+        "\1\uffff\4\22\6\uffff\1\22\4\uffff\2\40\4\uffff\1\43\1\44\1\45\1"+
+        "\46\1\47\1\50\1\51\1\52\1\53\1\22\2\uffff\1\40\11\uffff\3\22\2\61"+
+        "\1\uffff";
     static final String DFA11_eofS =
         "\62\uffff";
     static final String DFA11_minS =
@@ -1218,24 +1218,15 @@ public class InternalDGSLexer extends Lexer {
             "",
             "",
             "",
-            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
-            "\22",
-            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
-            "\22",
-            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
-            "\22",
-            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
-            "\22",
-            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
-            "\22",
-            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
-            "\22",
-            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
-            "\22",
-            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
-            "\22",
-            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
-            "\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
             "\1\54",
             "",
             "",
@@ -1252,10 +1243,8 @@ public class InternalDGSLexer extends Lexer {
             "\1\55",
             "\1\56",
             "\1\57\1\60",
-            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
-            "\22",
-            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32"+
-            "\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\1\22\2\uffff\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
             ""
     };
 
